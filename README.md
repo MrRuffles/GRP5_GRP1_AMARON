@@ -5,7 +5,7 @@ Miembros del grupo:
 - Samuel Arevalo Cañestro
 - Ricardo González Torres
 - Adrían García Olaya
-- Tamara Salcedo
+- Tamara Elizabeth Salcedo Peinado
 - Javier Mena
 
 Descripción:
