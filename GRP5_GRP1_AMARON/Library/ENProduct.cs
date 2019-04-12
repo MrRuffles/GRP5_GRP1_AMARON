@@ -39,7 +39,7 @@ public class ENProduct{
 
         name = "Default Name";
         price = 0.0;
-                
+        description = "This a description by default of the product.";                
 
 	}
 
