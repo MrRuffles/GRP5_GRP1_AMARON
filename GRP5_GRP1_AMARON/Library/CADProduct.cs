@@ -1,19 +1,46 @@
 ﻿using System;
 
-public class CADProduc { 
+namespace Library{
 
-    //Initializates connection string to data  base
-    public CADProduct() { }
+    public class CADProduct{
 
-    /*
-     * Updates the product in the DataBase
-     * Parameters: product to update
-     * Return: true in case that the product could be updated
-    */
-    public bool UpdateProduct(ENProduct product){
-        bool updated = false;
+        //Initializates connection string to data base
+        public CADProduct() { }
 
-        return updated;
-    }
+        /*
+         * Adds a product to the Data Base
+         * Paramaters: product to create
+         * Returns: true if the product could be created
+         */
+        public bool CreateProduct(ENProduct product) { }
 
-}//End class CADProduct
+        /*
+         *Reads a product from Data Base
+         * Parameters: product to read
+         * Returns: true if the product could be read
+         */
+        public bool ReadProduct(ENProduct product)
+        {
+            bool read = false;
+
+            return read;
+
+        }
+
+        /*
+         * Updates the product in the DataBase
+         * Parameters: product to update
+         * Return: true in case that the product could be updated
+        */
+        public bool UpdateProduct(ENProduct product)
+        {
+            bool updated = false;
+
+            return updated;
+        }
+
+    }//End class CADProduct
+
+
+
+}
