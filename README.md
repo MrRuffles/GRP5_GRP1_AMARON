@@ -6,7 +6,7 @@ Miembros del grupo:
 - Ricardo González Torres
 - Adrían García Olaya
 - Tamara Elizabeth Salcedo Peinado
-- Javier Mena
+- Javier de Mena Asenjo
 
 Descripción:
 Se trata de una página web dirigida a la venta de bebidas alcholicas.
