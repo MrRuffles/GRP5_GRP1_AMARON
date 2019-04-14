@@ -79,7 +79,7 @@ namespace Library {
             description = "This a description by default of the product.";
         }
 
-        //Creates a products with the values that recives in the parameters
+        //Creates a products with the values that receives in the parameters
         public ENProduct(int id, string name, float price, int stock, string description){
 
             this.id = id;

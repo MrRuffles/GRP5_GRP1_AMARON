@@ -10,12 +10,11 @@ namespace Library{
             public CADBottle() { }
 
             /*
-             * Adds a product to the Data Base
-             * Paramaters: product to create
-             * Returns: true if the product could be created, false on the contrary
+             * Adds a bottle to the Data Base
+             * Paramaters: bottle to create
+             * Returns: true if the bottle could be created, false on the contrary
              */
-            public bool CreateBottle(ENBottle bottle)
-            {
+            public bool CreateBottle(ENBottle bottle){
 
                 bool created = false;
 
@@ -50,11 +49,10 @@ namespace Library{
 
             /*
              * Deletes the bottle in the Data Base
-             * Parameters: product to delete
-             * Return: true in case that the product could be deleted, false on the contrary
+             * Parameters: bottle to delete
+             * Return: true in case that the bottle could be deleted, false on the contrary
             */
-            public bool DeleteProduct(ENProduct product)
-            {
+            public bool DeleteBottle(ENBottle bottle){
 
                 bool deleted = false;
 
@@ -64,7 +62,4 @@ namespace Library{
 
         }
     }
-
-
-}
 
