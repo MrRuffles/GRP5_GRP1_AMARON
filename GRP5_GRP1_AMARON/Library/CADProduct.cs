@@ -1,12 +1,16 @@
 ﻿using System;
-using Library;
+using System.Configuration;
 
 namespace Library{
 
     public class CADProduct{
 
+        private string constring;
+
         //Initializates connection string to data base
-        public CADProduct() { }
+        public CADProduct() {
+            constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
+        }
 
         /*
          * Adds a product to the Data Base

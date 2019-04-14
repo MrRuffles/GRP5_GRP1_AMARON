@@ -1,13 +1,17 @@
 ﻿using System;
-using Library;
+using System.Configuration;
 
 
 namespace Library{
 
       public class CADBottle{
-       
-            //Initializates connection string to data base
-            public CADBottle() { }
+
+        private string constring;
+
+        //Initializates connection string to data base
+        public CADBottle() {
+            constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
+        }
 
             /*
              * Adds a bottle to the Data Base
@@ -60,6 +64,6 @@ namespace Library{
 
             }
 
-        }
-    }
+      }
+}
 

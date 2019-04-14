@@ -15,25 +15,25 @@ namespace Library
 
         }
 
-        public bool createLootCrate()
+        public bool createLootCrate(ENLootCrate loot)
         {
             bool ok = true;
             return ok;
         }
 
-        public bool readLootCrate()
+        public bool readLootCrate(ENLootCrate loot)
         {
             bool ok = true;
             return ok;
         }
 
-        public bool updateLootCrate()
+        public bool updateLootCrate(ENLootCrate loot)
         {
             bool ok = true;
             return ok;
         }
 
-        public bool deleteLootCrate()
+        public bool deleteLootCrate(ENLootCrate loot)
         {
             bool ok = true;
             return ok;

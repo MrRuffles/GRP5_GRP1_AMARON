@@ -59,7 +59,7 @@ namespace Library
             this.name = name;
             this.age = age;
             this.email = email;
-            thie.addres = addres;
+            this.addres = addres;
         }
 
         public bool CreateUser()
