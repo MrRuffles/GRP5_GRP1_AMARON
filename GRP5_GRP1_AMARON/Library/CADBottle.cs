@@ -23,7 +23,7 @@ namespace Library{
             }
 
             /*
-             *Reads a bottle from Data Base
+             * Reads a bottle from Data Base
              * Parameters: bottle to read
              * Returns: true if the bottle could be read, false on the contrary
              */

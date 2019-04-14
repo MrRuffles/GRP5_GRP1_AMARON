@@ -90,9 +90,8 @@ namespace Library {
         }
 
         /*
-         * Updates the product in the DataBase
-         * Parameters: product to update
-         * Return: true in case that the product could be updated
+         * Creates the product in the DataBase
+         * Return: true in case that the product could be created, false on the contrary
         */
         public bool CreateProduct(){
 
@@ -104,24 +103,30 @@ namespace Library {
 
         }
 
-        //Reads the product from the data base
+        /*
+         * Reads the product from the data base
+         * Return: true in case that the product could be updated, false on the contrary
+        */
         public bool ReadProduct(){
 
             bool read = false;
+
             read = prodCAD.ReadProduct(this);
 
             return read;
         }
 
-        //Updates the product's data in the db
+        /*
+         * Updates the product's data in the db
+         * Return: true in case that the bottle could be updated, false on the contrary
+        */
         public bool UpdateProduct(){
 
             bool updated = false;
 
             updated = prodCAD.UpdateProduct(this);
 
-            return updated;
-            
+            return updated;            
         }
 
         //Deletes the product from de data base
@@ -132,7 +137,6 @@ namespace Library {
             deleted = prodCAD.DeleteProduct(this);
 
             return deleted;
-
         }
 
 

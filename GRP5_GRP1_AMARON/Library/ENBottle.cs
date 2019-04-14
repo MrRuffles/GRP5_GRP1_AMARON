@@ -4,6 +4,8 @@ namespace Library{
 
     public class ENBottle : ENProduct{
 
+        //Todo: Maybe it is possible to delete this enum and recreate it as a class's propertie
+        //and store the diferents types in the data base
         enum AlcoholType{
 
             NonAlcoholic,
@@ -120,9 +122,8 @@ namespace Library{
         }
 
         /*
-          * Updates the product in the DataBase
-          * Parameters: product to update
-          * Return: true in case that the product could be created
+          * Creates the product in the DataBase
+          * Return: true in case that the product could be created, false on the contrary
          */
         public bool CreateBottle(){
 
@@ -133,9 +134,48 @@ namespace Library{
             return created;
         }
 
+        /*
+        * Reads the bottle from the data base
+        * Return: true in case that the product could be read, false on the contrary
+        */
+        public bool ReadBottle(){
+
+            bool read = false;
+
+            read = prodCAD.ReadBottle(this);
+
+            return read;
+        }
+
+        /*
+         * Updates the bottle's data in the db
+         * Return: true in case that the bottle could be updated, false on the contrary
+        */
+        public bool UpdateBottle(){
+
+            bool updated = false;
+
+            updated = prodCAD.UpdateBottle(this);
+
+            return updated;
+        }
+
+        /*
+         * Deletes the bottle in the data base
+         * Return: true in case that the bottle could be updated, false on the contrary
+        */
+        public bool DeleteBottle(){
+
+            bool deleted = false;
+
+            deleted = prodCAD.DeleteBottle(this);
+
+            return deleted;
+        }
+
 
 
     }//End Class ENBottle
 
-    }//end namespace
+}//end namespace
 
