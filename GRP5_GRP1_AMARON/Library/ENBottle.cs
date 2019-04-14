@@ -1,118 +1,141 @@
 ﻿using System;
 
-public class ENBottle : ENProduct{ 
+namespace Library{
 
-    enum AlcoholType{
+    public class ENBottle : ENProduct{
 
-        NonAlcoholic,
-        Gin,
-        Rum,
-        Whisky,
-        Vodka,
-        Liquor,
-        Tequila,
-        Wine,
-        Beer,
-        Cider,
-        Champagne,
-        Other
-    }
+        enum AlcoholType{
 
-
-    //Properties--------------------------------------------------------------------------
-
-    private float BottleGrade;
-    public float grade{
-
-        get { return this.BottleGrade; }
-
-        //Set the bottle's grade in a range between 0 and 100
-        set {
-
-            if (value > 100.0){
-
-                grade = 100.0;
-
-            }else if (value < 0.0){
-
-                grade = 0.0;
-
-            }else{
-
-                this.grade = value;
-            }
-
+            NonAlcoholic,
+            Gin,
+            Rum,
+            Whisky,
+            Vodka,
+            Liquor,
+            Tequila,
+            Wine,
+            Beer,
+            Cider,
+            Champagne,
+            Other
         }
 
-    }
 
-    private float BottleVolume;
-    public float volume{
+        //Properties--------------------------------------------------------------------------
 
-        get { return this.BottleVolumen; }
+        private CADBottle bottleCAD;
 
-        //Controls that the volumen is not 0
-        set{
+        private float BottleGrade;
+        public float grade{
 
-            if (value < 0.0){
+            get { return this.BottleGrade; }
 
-                this.BottleVolume = 0.0;
+            //Set the bottle's grade in a range between 0 and 100
+            set{
 
-            } else{
+                if (value > 100.0){
 
-                this.BottleVolume = value;
-            }
-        }
+                    grade = 100.0;
 
-    }
+                }else if (value < 0.0){
 
-    private AlcoholType Bottletype;
-    public AlcoholType type{
-        
-        get { return this.Bottletype; }
+                    grade = 0.0;
 
-        set{
+                }else{
 
-            bool correctType = false;
-
-            foreach (AlcoholType typeaux in AlcoholType){
-
-                if(value == typeaux){
-
-                    this.Bottletype = value;
-                    correctType = true;
-
+                    this.grade = value;
                 }
 
             }
 
-            if (!correctType) {
+        }
 
-                this.BottleType = AlcoholType.Other;
+        private float BottleVolume;
+        public float volume{
+
+            get { return this.BottleVolume; }
+
+            //Controls that the volume is not 0
+            set{
+
+                if (value < 0.0) {
+
+                    this.BottleVolume = 0.0;
+
+                }else{
+
+                    this.BottleVolume = value;
+                }
+            }
+
+        }
+
+        private AlcoholType Bottletype;
+        public AlcoholType type
+        {
+
+            get { return this.Bottletype; }
+
+            set{
+
+                bool correctType = false;
+
+                foreach (AlcoholType typeaux in AlcoholType){
+
+                    if (value == typeaux)
+                    {
+
+                        this.Bottletype = value;
+                        correctType = true;
+
+                    }
+
+                }
+
+                if (!correctType){
+
+                    this.BottleType = AlcoholType.Other;
+                }
             }
         }
-    }
 
-    //------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------
 
-    //Creates a bottle by default
-    public ENBottle(){
+        //Creates a bottle by default
+        public ENBottle(){
 
-        this.grade = 0.0;
-        this.volume = 0.0;
-        this.type = AlcoholType.Other;
+            this.grade = 0.0;
+            this.volume = 0.0;
+            this.type = AlcoholType.Other;
 
-	}
+        }
 
-    //Creates a bottle with values given in the params
-    public ENBottle(float grade, float volume, AlcoholType type){
+        //Creates a bottle with values given in the params
+        public ENBottle(float grade, float volume, AlcoholType type){
 
-        this.grade = grade;
-        this.volume = volume;
-        this.type = type;
+            this.grade = grade;
+            this.volume = volume;
+            this.type = type;
 
-    }
+        }
+
+        /*
+          * Updates the product in the DataBase
+          * Parameters: product to update
+          * Return: true in case that the product could be created
+         */
+        public bool CreateBottle(){
+
+            bool created = false;
+
+            created = bottleCAD.CreateBottle(this);
+
+            return created;
+        }
 
 
 
-}//End Class ENBottle
+    }//End Class ENBottle
+
+    }//end namespace
+
