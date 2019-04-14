@@ -5,16 +5,42 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
-public class CADCart
+
+namespace Library
 {
-	public CADCart()
-	{
-	}
-
-    public bool CreateCart(ENCart cart)
+    public class CADCart
     {
-        bool created = false;
+        public CADCart()
+        {
+        }
 
-        return created;
+        public bool CreateCart(ENCart cart)
+        {
+            bool created = false;
+
+            return created;
+        }
+
+        public bool ReadCart(ENCart cart)
+        {
+            bool readed = false;
+
+            return readed;
+        }
+
+        public bool UpdateCart(ENCart cart)
+        {
+            bool updated = false;
+
+            return updated;
+        }
+
+        public bool DeleteCart(ENCart cart)
+        {
+            bool deleted = false;
+
+            return deleted;
+        }
+
     }
 }
