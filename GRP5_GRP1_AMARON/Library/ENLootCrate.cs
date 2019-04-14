@@ -10,7 +10,7 @@ namespace Library
 {
     class ENLootCrate
     {
-        enum SuscriptionType
+        public enum SuscriptionType
         {
             Basic,
             Normal,

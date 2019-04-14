@@ -1,6 +1,7 @@
 ﻿//Paula Guadalajara Saiz
 
 using System;
+using System.Configuration;
 
 namespace Library
 {
