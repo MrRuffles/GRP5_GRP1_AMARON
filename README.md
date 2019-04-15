@@ -5,8 +5,8 @@ Miembros del grupo:
 - Samuel Arevalo Cañestro
 - Ricardo González Torres
 - Adrían García Olaya
-- Tamara Salcedo
-- Javier Mena
+- Tamara Elizabeth Salcedo Peinado
+- Javier de Mena Asenjo
 
 Descripción:
 Se trata de una página web dirigida a la venta de bebidas alcholicas.
@@ -39,3 +39,6 @@ Posibles mejoras:
 - Internacionalización de la pagina
 - Suscripción premium
 - Packs de productos
+
+Documento Base de Datos:
+- GRP5_GRP1_AMARON/GRP5_GRP1_AMARON/Esquema_BD.png
