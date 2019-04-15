@@ -6,7 +6,7 @@ namespace Library{
 
         //Todo: Maybe it is possible to delete this enum and recreate it as a class's propertie
         //and store the diferents types in the data base
-        enum AlcoholType{
+        public enum AlcoholType{
 
             NonAlcoholic,
             Gin,
@@ -37,11 +37,11 @@ namespace Library{
 
                 if (value > 100.0){
 
-                    grade = 100.0;
+                    grade = 100.0F;
 
                 }else if (value < 0.0){
 
-                    grade = 0.0;
+                    grade = 0.0F;
 
                 }else{
 
@@ -62,7 +62,7 @@ namespace Library{
 
                 if (value < 0.0) {
 
-                    this.BottleVolume = 0.0;
+                    this.BottleVolume = 0.0F;
 
                 }else{
 
@@ -82,7 +82,7 @@ namespace Library{
 
                 bool correctType = false;
 
-                foreach (AlcoholType typeaux in AlcoholType){
+                /*foreach (AlcoholType typeaux in AlcoholType){
 
                     if (value == typeaux)
                     {
@@ -92,11 +92,11 @@ namespace Library{
 
                     }
 
-                }
+                }*/
 
                 if (!correctType){
 
-                    this.BottleType = AlcoholType.Other;
+                    this.Bottletype = AlcoholType.Other;
                 }
             }
         }
@@ -106,8 +106,8 @@ namespace Library{
         //Creates a bottle by default
         public ENBottle(){
 
-            this.grade = 0.0;
-            this.volume = 0.0;
+            this.grade = 0.0F;
+            this.volume = 0.0F;
             this.type = AlcoholType.Other;
 
         }
@@ -142,7 +142,7 @@ namespace Library{
 
             bool read = false;
 
-            read = prodCAD.ReadBottle(this);
+            read = bottleCAD.ReadBottle(this);
 
             return read;
         }
@@ -155,7 +155,7 @@ namespace Library{
 
             bool updated = false;
 
-            updated = prodCAD.UpdateBottle(this);
+            updated = bottleCAD.UpdateBottle(this);
 
             return updated;
         }
@@ -168,7 +168,7 @@ namespace Library{
 
             bool deleted = false;
 
-            deleted = prodCAD.DeleteBottle(this);
+            deleted = bottleCAD.DeleteBottle(this);
 
             return deleted;
         }

@@ -1,7 +1,7 @@
 ﻿//Tamara Elizabeth Salcedo Peinado, 75944876A
 
 using System;
-using Library.CADProduct;
+//using Library.CADProduct;
 
 
 namespace Library {
@@ -55,7 +55,7 @@ namespace Library {
         public string description
         {
 
-            get { return this.ProductPrice; }
+            get { return this.ProductDescription; }
 
             set { this.ProductDescription = value; }
 
@@ -70,19 +70,17 @@ namespace Library {
          * Creates a default product except for the id
          * Pameter: the id given for the product
          */
-        public ENProduct(int id){
+        public ENProduct(){
 
-            this.id = id;
             name = "Default Name";
-            price = 0.0;
+            price = 0.0F;
             stock = 0;
             description = "This a description by default of the product.";
         }
 
         //Creates a products with the values that receives in the parameters
-        public ENProduct(int id, string name, float price, int stock, string description){
+        public ENProduct(string name, float price, int stock, string description){
 
-            this.id = id;
             this.name = name;
             this.price = price;
             this.stock = stock;
@@ -97,7 +95,7 @@ namespace Library {
 
             bool created = false;
 
-            created = prodCAD.CreateProduct();
+            created = prodCAD.CreateProduct(this);
 
             return created;
 

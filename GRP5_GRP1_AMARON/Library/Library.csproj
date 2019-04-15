@@ -44,6 +44,26 @@
   <ItemGroup>
     <Compile Include="CADRatting.cs" />
     <Compile Include="ENRatting.cs" />
+    <Compile Include="CADUser.cs" />
+    <Compile Include="ENUser.cs" />
+    <Compile Include="CADProvider.cs" />
+    <Compile Include="ENProvider.cs" />
+    <Compile Include="CADLootCrate.cs" />
+    <Compile Include="ENLootCrate.cs" />
+    <Compile Include="CADPack.cs" />
+    <Compile Include="ENPack.cs" />
+    <Compile Include="CADProduct.cs" />
+    <Compile Include="ENProduct.cs" />
+    <Compile Include="CADBottle.cs" />
+    <Compile Include="ENBottle.cs" />
+    <Compile Include="CADOrder.cs" />
+    <Compile Include="ENOrder.cs" />
+    <Compile Include="CADCart.cs" />
+    <Compile Include="ENCart.cs" />
+    <Compile Include="CADSuggest.cs" />
+    <Compile Include="ENSuggest.cs" />
+    <Compile Include="CADSupport.cs" />
+    <Compile Include="ENSupport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
