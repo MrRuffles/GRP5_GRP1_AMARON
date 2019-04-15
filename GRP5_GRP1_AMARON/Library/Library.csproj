@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>3eda1d07-ec76-448d-92e7-69296cf60042</ProjectGuid>
+    <ProjectGuid>{3EDA1D07-EC76-448D-92E7-69296CF60042}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Library</RootNamespace>
@@ -31,24 +31,40 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CADRatting.cs" />
+    <Compile Include="ENRatting.cs" />
+    <Compile Include="CADUser.cs" />
+    <Compile Include="ENUser.cs" />
+    <Compile Include="CADProvider.cs" />
+    <Compile Include="ENProvider.cs" />
+    <Compile Include="CADLootCrate.cs" />
+    <Compile Include="ENLootCrate.cs" />
+    <Compile Include="CADPack.cs" />
+    <Compile Include="ENPack.cs" />
+    <Compile Include="CADProduct.cs" />
+    <Compile Include="ENProduct.cs" />
+    <Compile Include="CADBottle.cs" />
+    <Compile Include="ENBottle.cs" />
+    <Compile Include="CADOrder.cs" />
+    <Compile Include="ENOrder.cs" />
+    <Compile Include="CADCart.cs" />
+    <Compile Include="ENCart.cs" />
+    <Compile Include="CADSuggest.cs" />
+    <Compile Include="ENSuggest.cs" />
+    <Compile Include="CADSupport.cs" />
+    <Compile Include="ENSupport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
