@@ -1,6 +1,7 @@
 ﻿//Paula Guadalajara Saiz
 
 using System;
+using System.Configuration;
 
 namespace Library
 {
@@ -11,7 +12,7 @@ namespace Library
         private string constring;
 
         /**  Initializes connection string to data base  **/
-        public CADUSer()
+        public CADUser()
         {
             constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
         }
