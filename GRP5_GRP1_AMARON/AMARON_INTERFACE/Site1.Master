@@ -8,12 +8,27 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+            <div id="header" style="background-color: coral" >
+                <div id="logo" >
+                    <asp:ImageButton ID="ImageButtonHeader"  runat="server" ImageUrl="https://cdn.shopify.com/s/files/1/0068/8750/6031/files/lootboxlogo2_195x.jpg?v=1540029821" Width="100%" Height="105px" />
+                </div>
+                <div id="nav-bar">
+                    <asp:Menu runat="server" ID="NavigationMenu" Orientation="Horizontal" >
+                        <Items>
+                            <asp:MenuItem Text="Catalog"></asp:MenuItem>
+                            <asp:MenuItem Text="Login"></asp:MenuItem>
+                            <asp:MenuItem Text="Register"></asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                </div>
+            </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-
             </asp:ContentPlaceHolder>
         </div>
     </form>
