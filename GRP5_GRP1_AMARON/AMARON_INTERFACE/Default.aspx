@@ -35,7 +35,7 @@
             <asp:Image runat="server" ID="Image1" Height="200" Width="500" ImageUrl="Imagenes/ron.jpg" AlternateText="Roncico pa to el mundo" />
             <asp:Button CssClass="button-slide" ID="Button1" runat="server" Text="<" />
             <asp:Button CssClass="button-slide" ID="Button2" runat="server" Text=">" />
-            <ajaxToolkit:SlideShowExtender ID="Image1_SlideShowExtender" runat="server" Enabled="True" SlideShowServicePath="SlideService.asmx" TargetControlID="Image1" SlideShowServiceMethod="GetSlides" NextButtonID="Button2" PreviousButtonID="Button1" />
+            <ajaxToolkit:SlideShowExtender ID="Image1_SlideShowExtender" runat="server" Enabled="True" SlideShowServicePath="SlideService.asmx" TargetControlID="Image1" SlideShowServiceMethod="GetSlides" NextButtonID="Button2" PreviousButtonID="Button1" AutoPlay="True" Loop="True" />
         </div>
     </div>
     
