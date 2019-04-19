@@ -41,13 +41,13 @@
             <ajaxToolkit:SlideShowExtender ID="Image1_SlideShowExtender" runat="server" Enabled="True" SlideShowServicePath="SlideService.asmx" TargetControlID="Image1" SlideShowServiceMethod="GetSlides" NextButtonID="Button2" PreviousButtonID="Button1" AutoPlay="True" Loop="True" />
         </div>
     </div>
-    <div class="row d-flex justify-content-around" style="margin-top:30px">
+    <div class="row d-flex justify-content-around" style="margin-top:30px; margin-bottom:30px">
         <div class="card" style="width: 18rem;">
-            <asp:Image runat="server" ID="Image2" ImageUrl="Imagenes/ron.jpg" AlternateText="Roncico pa to el mundo" />
+            <asp:Image runat="server" ID="Image2" Height="270" ImageUrl="Imagenes/ron.jpg" AlternateText="Roncico pa to el mundo" />
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <asp:Button runat="server" href="#" class="btn btn-primary" Text="Go somewhere" />
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -55,15 +55,23 @@
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <asp:Button runat="server" href="#" class="btn btn-primary" Text="Go somewhere" />
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <asp:Image runat="server" ID="Image4" ImageUrl="Imagenes/ginebra.jpg" AlternateText="Mejor en chupitazos" />
+            <asp:Image runat="server" ID="Image4" Height="270" ImageUrl="Imagenes/ginebra.jpg" AlternateText="Mejor en chupitazos" />
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <asp:Button runat="server" href="#" class="btn btn-primary" Text="Go somewhere" />
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <asp:Image runat="server" ID="Image5" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <asp:Button runat="server" href="#" class="btn btn-primary" Text="Go somewhere" />
             </div>
         </div>
     </div>
