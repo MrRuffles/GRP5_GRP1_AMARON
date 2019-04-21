@@ -14,5 +14,26 @@ namespace AMARON_INTERFACE
         {
 
         }
+
+        protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            switch (e.Item.Value) {
+                case "Catalog":
+                    Response.Redirect("Catalog.aspx");
+                    break;
+                case "Login":
+                    return;
+                case "Register":
+                    return;
+            }
+        }
+
+        protected void ImageButtonHeader_Click(object sender, ImageClickEventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                Response.Redirect("Default.aspx");
+            }
+        }
     }
 }
