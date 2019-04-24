@@ -13,12 +13,13 @@
         #navbar{
           position:fixed;
           min-width:290px;
-          top:0px;
-          left:0px;
+          top:130px;
+          left:-1px;
           width:300px;
           height:100%;
-          border-right:solid;
-          border-color:rgba(0,22,22,0.4)
+          border-right-style: solid;
+          border-right-color: inherit;
+          border-right-width: medium;
         }
 
         #navbar ul{
@@ -29,14 +30,27 @@
 
         #navbar li{
           color: #4e89aa;
-          border:1px solid;
-          border-bottom-width:0px;
-          padding:8px;
+          border-bottom-width:1px;
           padding-left:45px;
           list-style: none;
           position:relative;
-          left:-50px;
-          width:100%;
+          left:-60px;
+          width:148%;
+          top: 0px;
+          border-left-style: solid;
+          border-left-color: inherit;
+          border-left-width: 0px;
+          border-right-style: solid;
+          border-right-color: inherit;
+          border-right-width: 0px;
+          border-top-style: solid;
+          border-top-color: inherit;
+          border-top-width: 1px;
+          border-bottom-style: solid;
+          border-bottom-color: inherit;
+          padding-right: 8px;
+          padding-top: 8px;
+          padding-bottom: 8px;
         }
         #navbar a{
           text-decoration: none;
@@ -52,7 +66,6 @@
         }
 
         #main-doc{
-          position: absolute;
           margin-left:310px;
           padding:20px;
           margin-bottom:110px;
@@ -132,13 +145,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
         <nav id="navbar">
-      <header>C Languaje</header>
+      <header>Filter</header>
       <ul>
-        <a class="nav-link" href="#Introduction"><li>Introduction</li></a>
-        <a class="nav-link" href="#History"><li>History</li></a>
-        <a class="nav-link" href="#Hello_World"><li>Hello World</li></a>
-        <a class="nav-link" href="#Data_Types"><li>Data Types</li></a>
-        <a class="nav-link" href="#Function_Declaration"><li>Function Declaration</li></a>
+        <a class="nav-link" href="Catalog.aspx?cat=bottle"><li>Bottle</li></a>
+        <a class="nav-link" href="Catalog.aspx?cat=packs"><li>Packs</li></a>
+        <a class="nav-link" href="Catalog.aspx?cat=loot"><li>Lootboxes</li></a>
+        <a class="nav-link" href="Catalog.aspx?cat=misc"><li>Miscellaneous</li></a>
+        <!--<a class="nav-link" href="Catalog.aspx?cat=bottle"><li>Function Declaration</li></a>-->
       </ul>
     </nav>
     <main id="main-doc">
