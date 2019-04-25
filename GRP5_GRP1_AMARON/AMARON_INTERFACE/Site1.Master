@@ -13,6 +13,30 @@
         <script src="Scripts/popper.min.js"></script>
     </asp:ContentPlaceHolder>
     <style type="text/css">
+        #footer{
+            background-color: #ddd;
+            z-index=1;
+        }
+
+        span {
+            margin-top: 5px;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 0.9em;
+            color: #444;
+        }
+
+
+        #footer ul {
+            display: flex;
+            justify-content: flex-end;
+            width: inherit;
+        }
+
+        #footer ul li{
+            padding: 0 10px;
+            list-style: none;
+        }
     </style>
 </head>
 <body>
@@ -34,6 +58,14 @@
             </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+            <div id="footer" >
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <span>&copy; 2019 - Alcohol para todos!!</span>
+            </div>
         </div>
     </form>
 </body>
