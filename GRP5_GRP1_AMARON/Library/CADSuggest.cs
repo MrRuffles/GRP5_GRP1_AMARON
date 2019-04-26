@@ -14,10 +14,10 @@ namespace Library
 
         public CADSuggest()
         {
-            constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
+            //constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
         }
 
-        public bool createSuggest(ENSuggest en)
+        public bool storeSuggest(ENSuggest en)
         {
 
             return true;

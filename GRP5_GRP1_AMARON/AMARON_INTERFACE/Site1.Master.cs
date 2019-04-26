@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
 
 namespace AMARON_INTERFACE
 {
@@ -12,6 +13,30 @@ namespace AMARON_INTERFACE
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            switch (e.Item.Value)
+            {
+                case "Catalog":
+                    break;
+                case "Login":
+                    return;
+                case "Register":
+                    return;
+                case "Contact":
+                    Response.Redirect("Contact.aspx");
+                    break;
+            }
+        }
+
+        protected void ImageButtonHeader_Click(object sender, ImageClickEventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                Response.Redirect("Default.aspx");
+            }
         }
     }
 }

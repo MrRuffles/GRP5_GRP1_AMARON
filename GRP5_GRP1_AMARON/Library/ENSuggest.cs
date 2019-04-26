@@ -8,9 +8,35 @@ namespace Library
 {
     public class ENSuggest
     {
-
+        private string name;
+        private string subject;
+        private string email;
         private string text;
-        private int userID;
+
+        public string namePublic
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+
+        }
+        public string emailPublic
+        {
+            get
+            {
+                return email;
+            }
+            set
+            {
+                email = value;
+            }
+
+        }
         public string textPublic
         {
             get
@@ -23,31 +49,36 @@ namespace Library
             }
 
         }
-        public int userIDPublic
+        public string subjectPublic
         {
             get
             {
-                return userID;
+                return subject;
             }
             set
             {
-                userID = value;
+                subject = value;
             }
 
         }
-        public ENSuggest(int userID, string text)
+        public ENSuggest()
         {
-            this.userIDPublic = userID;
+            this.namePublic = this.emailPublic = this.subjectPublic = this.textPublic = null;
+        }
+        public ENSuggest(string nickname, string email, string topic, string text)
+        {
+            this.namePublic = nickname;
+            this.emailPublic = email;
+            this.subjectPublic = topic;
             this.textPublic = text;
             
         }
-
-        public bool createSuggest()
+        public bool storeSuggest()
         {
 
             CADSuggest cadsup = new CADSuggest();
 
-            return cadsup.createSuggest(this);
+            return cadsup.storeSuggest(this);
         }
 
         public bool readSuggest()
