@@ -1,10 +1,13 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Library;
+using System.Net;
+using System.Net.Mail;
 
 namespace AMARON_INTERFACE
 {
@@ -15,80 +18,78 @@ namespace AMARON_INTERFACE
 
         }
         
-        private void ClearErrorLabels()
+        private void ClearBoxes()
         {
-            LabelErrorEmail.Text = "";
-            LabelErrorName.Text = "";
-            LabelErrorSubject.Text = "";
-            LabelErrorMsg.Text = "";
+
+            form_name.Value = "";
+            form_email.Value = "";
+            form_subject.Value = "";
+            form_message.Value = "";
 
         }
-
-        private bool numbersInName(string name)
+        
+        
+        protected bool SendMail (string name, string email, string subject, string message) 
         {
-            string numbers = "0123456789";
-            int size = name.Length;
-            char[] a = new char[size];
-            a = name.ToCharArray();
+            try
+            {
+                MailMessage toSend = new MailMessage();
+                toSend.Subject = "AMARON Contact Form Mail from " + email;
+                toSend.From = new MailAddress("contactformamaron@gmail.com");
+                toSend.To.Add("ContactFormAMARON@gmail.com");
+                toSend.Body = "From:\t" + name + "\n";
+                toSend.Body += "Email:\t" + email + "\n\n";
+                toSend.Body += "Subject:\t" + subject + "\n";
+                toSend.Body += "Message:\n" + message + "\n";
 
-            for (int i = 0; i < size; i++)
-                if (numbers.Contains(a[i]))
-                    return true;
-
-            return false;
-        }
-        protected bool Form_Check(object sender, EventArgs e)
-        {
-            bool error = false;
-            if (tbName.Text.ToString() == "")
-            {
-                LabelErrorName.Text = "Name is required";
-
-                error = true;
-            }
-            if (numbersInName(tbName.Text.ToString()))
-            {
-                LabelErrorName.Text = "Field name can't have numeric values";
-                error = true;
-            }
-            if (tbEmail.Text.ToString() == "" )
-            {
-                LabelErrorEmail.Text = "Valid email is required: ex@abc.xyz";
-                error = true;
-            }
-            if (error)
-                return false;
-            else
-                return true;
-        }
-        public void Send_email(object sender, EventArgs e)
-        {
-            MainLabel.Text = "";
-            if (Form_Check(sender, e))
-            {
-                ClearErrorLabels();
-               
-                ENSuggest ensug = new ENSuggest(tbName.Text.ToString(), tbEmail.Text.ToString(),tbSubject.Text.ToString(), TextArea1.Value);
-                if (ensug.storeSuggest())
+                var smtp = new System.Net.Mail.SmtpClient();
                 {
-                    tbName.Text = "";
-                    tbEmail.Text = "";
-                    tbSubject.Text = "";
-                    TextArea1.Value = "";
-                    MainLabel.Text = "Message sent";
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.Port = 587;
+                    smtp.UseDefaultCredentials = false;
+                    smtp.EnableSsl = true;
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtp.Credentials = new NetworkCredential(toSend.From.Address, "amaronform");
+                    smtp.Timeout = 20000;
+                }
+                smtp.Send(toSend);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        
+        protected void Button_send_click(object sender, EventArgs e)
+        {
+            Label_Main.Visible = false;
+            Label_Sending_Error.Visible = false;
+            Label_Sending_Success.Visible = false;
+            string name = form_name.Value.ToString();
+            string email = form_email.Value.ToString();
+            string subject = form_subject.Value.ToString();
+            string message = form_message.Value.ToString();
+            try
+            {
+                if (SendMail(name, email, subject, message))
+                {
+                    ENSuggest ensug = new ENSuggest(name, email, subject, message);
+                    ensug.storeSuggest();
+                    Label_Sending_Success.Visible = true;
+                    ClearBoxes();
                 }
                 else
                 {
-                    MainLabel.Text = "An error ocurred when storing your message, try again later...";
+                    Label_Sending_Error.Visible = true;
                 }
+                
             }
-            else
+            catch (Exception ex)
             {
-                tbName.Text = tbName.Text;
-                tbEmail.Text = tbEmail.Text;
-                tbSubject.Text = tbSubject.Text;
+                Label_Main.Text = ex.Message;
+                Label_Main.Visible = true;
             }
-
         }
         
     }

@@ -13,138 +13,75 @@ namespace AMARON_INTERFACE {
     public partial class Contact {
         
         /// <summary>
-        /// Control LabelContactUs.
+        /// Control form_name.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelContactUs;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText form_name;
         
         /// <summary>
-        /// Control Label1.
+        /// Control form_email.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl form_email;
         
         /// <summary>
-        /// Control LabelName.
+        /// Control form_subject.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText form_subject;
         
         /// <summary>
-        /// Control tbName.
+        /// Control form_message.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbName;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea form_message;
         
         /// <summary>
-        /// Control LabelErrorName.
+        /// Control send_button.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelErrorName;
+        protected global::System.Web.UI.WebControls.Button send_button;
         
         /// <summary>
-        /// Control LabelEmail.
+        /// Control Label_Sending_Success.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelEmail;
+        protected global::System.Web.UI.WebControls.Label Label_Sending_Success;
         
         /// <summary>
-        /// Control tbEmail.
+        /// Control Label_Sending_Error.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbEmail;
+        protected global::System.Web.UI.WebControls.Label Label_Sending_Error;
         
         /// <summary>
-        /// Control LabelErrorEmail.
+        /// Control Label_Main.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelErrorEmail;
-        
-        /// <summary>
-        /// Control LabelSubject.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelSubject;
-        
-        /// <summary>
-        /// Control tbSubject.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbSubject;
-        
-        /// <summary>
-        /// Control LabelErrorSubject.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelErrorSubject;
-        
-        /// <summary>
-        /// Control LabelMessage.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelMessage;
-        
-        /// <summary>
-        /// Control TextArea1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea TextArea1;
-        
-        /// <summary>
-        /// Control LabelErrorMsg.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelErrorMsg;
-        
-        /// <summary>
-        /// Control MainLabel.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label MainLabel;
+        protected global::System.Web.UI.WebControls.Label Label_Main;
     }
 }

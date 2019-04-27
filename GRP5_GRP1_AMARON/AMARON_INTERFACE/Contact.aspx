@@ -1,106 +1,93 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="AMARON_INTERFACE.Contact" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .js-tilt {
-            margin-left: 80px;
-            height: 32px;
-            width: 144px;
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+    <style>
+        body {
+            background-color: darkorange;
         }
 
-        .ph1 {
-            background: url('Imagenes/contact_background.jpg');
-            background-attachment:scroll;
-            background-size:cover;
-        }
-
-        #TextArea1 {
-            width: 318px;
-            margin-top: 0px;
+        @keyframes backgound {
+            100% {
+                background-color: #faa166;
+            }
         }
     </style>
+
 </asp:Content>
-<asp:Content ID="Content2"  ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="ph1">
-        <div>
-            <div class="js-tilt" data-tilt="">
-                <asp:Label ID="LabelContactUs" runat="server" Font-Names="LIQUOR" Text="Contact;: Us" Font-Bold="True" Font-Italic="True" Font-Size="X-Large" Font-Overline="False" Font-Strikeout="False" Font-Underline="True" ForeColor="Black"></asp:Label>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container" id="contact-form">
 
-                <br />
-                <br />
+        <div class="row">
+            <div class="col-xl-8 offset-xl-2 py-5">
+                <h1 style="font-family: LIQUOR; font-size: 35px; text-align: center">Contact Us</h1>
+                <p class="lead" style="font-style: italic">Please fill this form in a decen t manner</p>
+                <div class="messages"></div>
+                <div class="controls">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_name">Name *</label>
+                                <input id="form_name" type="text" runat="server" name="name" class="form-control" placeholder="Please enter your name *" required="required" data-error="Firstname is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_email">Email *</label>
+                                <input id="form_email" type="email" runat="server" name="email" class="form-control" placeholder="Please enter your email *" 
+                                    required="required" oninvalid="this.setCustomValidity('Valid email is required: ex@abc.xyz')" 
+                                    oninput="this.setCustomValidity('')" onkeyup="EnforceMaximumLength(this,320)">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_subject">Subject *</label>
+                                <input id="form_subject" type="text" runat="server" name="subject" class="form-control" placeholder="Subject *" required="required" data-error="Subject is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="form_message">Message *</label>
+                                <textarea id="form_message" name="message" runat="server" class="form-control" placeholder="Message *" rows="8" required="required" data-error="Please, leave us a message."></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <asp:Button CssClass="btn btn-success" ID="send_button" OnClick="Button_send_click" runat="server" Text="Send Message"/>
+                        </div>
+                        <div class="col-md-6">
+                            <asp:Label ID="Label_Sending_Success" runat="server" Text="Email sent" Visible="false" ForeColor="LimeGreen" Font-Bold="true"></asp:Label>
+                            <asp:Label ID="Label_Sending_Error" runat="server" Text="There was an error trying to send your message, please try again." Visible="false" ForeColor="OrangeRed" Font-Bold="true"></asp:Label>
+                            <asp:Label ID="Label_Main" runat="server" Text="" Visible="false" ForeColor="Red" Font-Bold="false"></asp:Label>
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-muted">
+                                <strong>*</strong> These fields are required.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <asp:Label ID="Label1" runat="server" Font-Names="Times" Text="Please fill this form in a decent manner" Font-Italic="True" Font-Bold="True" ForeColor="Black"></asp:Label>
-
-            <br />
-
-            <table>
-                <tr>
-                    <td>
-                        <asp:Label ID="LabelName" runat="server" Font-Bold="True" Font-Italic="True" Font-Names="LIQUOR" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" Text="NAME : "></asp:Label>
-                    </td>
-                    <td>
-                        <asp:TextBox ID="tbName" required="true" pattern="[A-Za-z]{1,30}" oninvalid="this.setCustomValidity('A valid name is required')" oninput="this.setCustomValidity('')" input="text" runat="server" minlenght="1" MaxLength="30" onkeyup="EnforceMaximumLength(this,30)" Height="16px" Width="319px"></asp:TextBox>
-
-                    </td>
-                    <td>
-                        <asp:Label ID="LabelErrorName" runat="server" Text="" Font-Bold="True" Font-Italic="True" ForeColor="Red" Font-Overline="False"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label ID="LabelEmail" runat="server" Font-Bold="True" Font-Italic="True" Font-Names="LIQUOR" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" Text="Email : "></asp:Label>
-                    </td>
-                    <td>
-                        <asp:TextBox ID="tbEmail" oninvalid="this.setCustomValidity('Valid email is required: ex@abc.xyz')" oninput="this.setCustomValidity('')" type="email" runat="server" minlenght="1" Height="16px" Width="318px" required="true" onkeyup="EnforceMaximumLength(this,300)"></asp:TextBox>
-                    </td>
-                    <td>
-                        <asp:Label ID="LabelErrorEmail" runat="server" Text="" Font-Bold="True" Font-Italic="True" ForeColor="Red" Font-Overline="False"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label ID="LabelSubject" runat="server" Font-Bold="True" Font-Italic="True" Font-Names="LIQUOR" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" Text="Subject : "></asp:Label>
-
-                    </td>
-                    <td>
-                        <asp:TextBox ID="tbSubject" type="text" runat="server" Height="16px" Width="318px" onkeyup="EnforceMaximumLength(this,500)"></asp:TextBox>
-
-                    </td>
-                    <td>
-                        <asp:Label ID="LabelErrorSubject" runat="server" Text="" Font-Bold="True" Font-Italic="True" ForeColor="Red" Font-Overline="False"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:Label ID="LabelMessage" runat="server" Font-Bold="True" Font-Italic="True" Font-Names="LIQUOR" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" Text="Message : "></asp:Label></td>
-
-                    <td>
-
-                        <textarea id="TextArea1" rows="8" name="S1" required runat="server" onkeyup="EnforceMaximumLength(this,100000)" oninvalid="this.setCustomValidity('Message field is required')" oninput="this.setCustomValidity('')"></textarea>
-                    </td>
-                    <td>
-                        <asp:Label ID="LabelErrorMsg" runat="server" Text="" Font-Bold="True" Font-Italic="True" ForeColor="Red" Font-Overline="False"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                    </td>
-                    <td>
-                        <asp:Button runat="server" OnClick="Send_email" Style="font-family: LIQUOR; font-size: larger; font-weight: 500; font-style: oblique;" title="SEND EMAIL" Text="Send    Email"></asp:Button>
-                    </td>
-                    <td>
-                        <asp:Label ID="MainLabel" runat="server" Text=""></asp:Label>                        
-                    </td>
-                </tr>
-            </table>
         </div>
     </div>
-
-    <script type="text/javascript"><!--
+    <script type="text/javascript">
     function EnforceMaximumLength(fld, len) {
         if (fld.value.length > len) { fld.value = fld.value.substr(0, len); }
     }
-//-->
     </script>
-
 </asp:Content>
