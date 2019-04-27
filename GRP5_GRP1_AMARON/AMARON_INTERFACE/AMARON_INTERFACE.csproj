@@ -70,6 +70,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Perfil.aspx" />
+    <Content Include="EditarPerfil.aspx" />
+    <Content Include="AboutUs.aspx" />
     <Content Include="Catalog.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
