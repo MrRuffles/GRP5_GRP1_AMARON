@@ -20,13 +20,16 @@ namespace AMARON_INTERFACE
             switch (e.Item.Value)
             {
                 case "Catalog":
-                    break;
+                    return;
                 case "Login":
                     return;
                 case "Register":
                     return;
                 case "Contact":
                     Response.Redirect("Contact.aspx");
+                    break;
+                case "Support":
+                    Response.Redirect("Support.aspx");
                     break;
             }
         }

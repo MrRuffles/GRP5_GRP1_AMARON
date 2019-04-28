@@ -91,6 +91,11 @@ namespace AMARON_INTERFACE
                 Label_Main.Visible = true;
             }
         }
-        
+        protected void ButtonSupport(object sender, EventArgs e)
+        {
+            Response.Redirect("Support.aspx");
+        }
+
+
     }
 }
