@@ -58,8 +58,6 @@
                             <asp:MenuItem Text="-" Value=""></asp:MenuItem>
                             <asp:MenuItem Text="Contact Us" Value="Contact"></asp:MenuItem>
                             <asp:MenuItem Text="-" Value=""></asp:MenuItem>
-                            <asp:MenuItem Text="Support" Value="Support"></asp:MenuItem>
-                            <asp:MenuItem Text="-" Value=""></asp:MenuItem>
                         </Items>
                     </asp:Menu>
                 </div>

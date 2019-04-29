@@ -63,6 +63,7 @@ namespace AMARON_INTERFACE
         
         protected void Button_send_click(object sender, EventArgs e)
         {
+
             Label_Main.Visible = false;
             Label_Sending_Error.Visible = false;
             Label_Sending_Success.Visible = false;

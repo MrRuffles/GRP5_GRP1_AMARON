@@ -28,9 +28,6 @@ namespace AMARON_INTERFACE
                 case "Contact":
                     Response.Redirect("Contact.aspx");
                     break;
-                case "Support":
-                    Response.Redirect("Support.aspx");
-                    break;
             }
         }
 
