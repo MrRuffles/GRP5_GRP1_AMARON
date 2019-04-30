@@ -46,10 +46,17 @@
             display: block;
             font-size: 20px;
             border: 1px solid #CCCCCC;
+            padding: 40px 20px;
         }
         .formulario{
             margin-top: 30px;
             margin-left: 100px;
+            width: 100%;
+            text-align: center;
+            align-content: center;
+        }
+        .form-control {
+            width: 100%;
         }
 
     </style>
@@ -61,27 +68,35 @@
                 <div class="header">
                     <h1>EDITAR PERFIL</h1>
                 </div>
-                <div class="parte-izquierda">
-                    <div class="col-md-13">
-                        <img class="img-responsive img-portfolio img-hover" src="Imagenes/fotoPerfil.jpg">
+                <div class="row">
+                    <div class="parte-izquierda">
+                        <div class="col-md-13">
+                            <img class="img-responsive img-portfolio img-hover" src="Imagenes/fotoPerfil.jpg">
+                        </div>
+                    </div>
+                    <div class="parte-derecha">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Cambiar foto de perfil</label>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="parte-derecha">
+                <div class="row">
                     <form>
-                        <div class="form-group">
-                            <label for="exampleFormControlFile1">Cambiar foto de perfil</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        <div class="row">
+                            <h3>Nombre:</h3>
+                            <input class="form-control" placeholder="Nombre actual">
+                            <h3>Apellidos:</h3>
+                            <input class="form-control" placeholder="Apellidos actuales">
+                            <h3>Dirección:</h3>
+                            <input class="form-control" placeholder="Dirección actual">
+                            <h3>Email:</h3>
+                            <input class="form-control" placeholder="Email actual">
                         </div>
                     </form>
                 </div>
-                <form>
-                    <div class="formulario">
-                        <h3>Nombre: <input class="form-control" placeholder="Nombre actual"></h3>
-                        <h3>Apellidos: <input class="form-control" placeholder="Apellidos actuales"></h3>
-                        <h3>Dirección: <input class="form-control" placeholder="Dirección actual"></h3>
-                        <h3>Email: <input class="form-control" placeholder="Email actual"></h3>
-                    </div>
-                </form>
                 <a href="#" class="btn btn-success" role="button"> Guardar</a>
             </div>
     </div>

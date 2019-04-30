@@ -12,7 +12,9 @@
             width: 20%;
             padding: 10px;
             float: left;
-            text-align: justify;
+            text-align: center;
+            justify-content: center;
+
         }
         .parte-central {
             width: 77%;
@@ -36,11 +38,14 @@
         .list-primary a {
             text-align: center;
         }
+        .clearfix {
+            clear: both;
+        }
     </style>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
+    <div class="clearfix">
         <div class="columna-izquierda">
             <div class="col-md-13">
                 <img class="img-responsive img-portfolio img-hover" src="Imagenes/fotoPerfil.jpg">
@@ -48,8 +53,8 @@
             <div class="col-md-13">
                 <br/>
                 <ul class="list-group list-primary">
-                    <a href="#" class="list-group-item">Ver pedidos hechos</a>
-                    <a href="#" class="list-group-item">Editar perfil</a>
+                    <asp:Button runat="server" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" onclick="verPedidos" text="Ver pedidos hechos"/>
+                    <asp:Button runat="server" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" onclick="editarPerfil" text="Editar perfil"/>
                 </ul>
             </div>
         </div>
