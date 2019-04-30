@@ -8,10 +8,22 @@ namespace Library
 {
     public class ENSupport
     {
-        private int userID;
+        private string name;
         private string emailaddress;
         private string text;
         private string subject;
+        public string namePublic
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+
+        }
         public string emailAddressPublic
         {
             get
@@ -21,18 +33,6 @@ namespace Library
             set
             {
                 emailaddress = value;
-            }
-
-        }
-        public int userIDPublic
-        {
-            get
-            {
-                return userID;
-            }
-            set
-            {
-                userID = value;
             }
 
         }
@@ -59,12 +59,19 @@ namespace Library
             }
 
         }
-        
-        public ENSupport(string email, string topic, string text)
+
+
+        public ENSupport()
         {
+            this.namePublic = this.emailAddressPublic = this.subjectPublic = this.textPublic = null;
+        }
+
+        public ENSupport(string name, string email, string topic, string text)
+        {
+            this.namePublic = name;
             this.emailAddressPublic = email;
-            this.textPublic = text;
             this.subjectPublic = topic;
+            this.textPublic = text;
         }
 
         public bool createSupport()

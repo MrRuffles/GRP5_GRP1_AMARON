@@ -21,14 +21,22 @@ namespace AMARON_INTERFACE
             {
                 case "Catalog":
                     return;
-                case "Login":
-                    return;
-                case "Register":
-                    return;
                 case "Contact":
                     Response.Redirect("Contact.aspx");
                     break;
             }
+        }
+        protected void Button_Login_click(object sender, MenuEventArgs e)
+        {
+            //Login 
+        }
+        protected void Button_Register_click(object sender, MenuEventArgs e)
+        {
+            //Registro
+        }
+        protected void Button_Logoff_click(object sender, MenuEventArgs e)
+        {
+            //Logoff when logged
         }
 
         protected void ImageButtonHeader_Click(object sender, ImageClickEventArgs e)

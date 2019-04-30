@@ -17,7 +17,7 @@ namespace Library
             //constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
         }
 
-        public bool storeSuggest(ENSuggest en)
+        public bool createSuggest(ENSuggest en)
         {
 
             return true;

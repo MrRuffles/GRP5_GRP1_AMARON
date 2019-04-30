@@ -15,7 +15,6 @@ namespace AMARON_INTERFACE
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
         
         private void ClearBoxes()
@@ -29,7 +28,7 @@ namespace AMARON_INTERFACE
         }
         
         
-        protected bool SendMail (string name, string email, string subject, string message) 
+        protected bool SendMail (string name, string email, string subject, string message, string option) 
         {
             try
             {
@@ -39,6 +38,7 @@ namespace AMARON_INTERFACE
                 toSend.To.Add("ContactFormAMARON@gmail.com");
                 toSend.Body = "From:\t" + name + "\n";
                 toSend.Body += "Email:\t" + email + "\n\n";
+                toSend.Body += "Requested:\t"+ option+ "\n";
                 toSend.Body += "Subject:\t" + subject + "\n";
                 toSend.Body += "Message:\n" + message + "\n";
 
@@ -64,19 +64,26 @@ namespace AMARON_INTERFACE
         protected void Button_send_click(object sender, EventArgs e)
         {
 
-            Label_Main.Visible = false;
-            Label_Sending_Error.Visible = false;
-            Label_Sending_Success.Visible = false;
+            
+            string option = form_option.SelectedValue;
             string name = form_name.Value.ToString();
             string email = form_email.Value.ToString();
             string subject = form_subject.Value.ToString();
             string message = form_message.Value.ToString();
             try
             {
-                if (SendMail(name, email, subject, message))
+                if ((option != "") &&  SendMail(name, email, subject, message, option))
                 {
-                    ENSuggest ensug = new ENSuggest(name, email, subject, message);
-                    ensug.storeSuggest();
+                    if (option == "Suggestion")
+                    {
+                        ENSuggest ensug = new ENSuggest(name, email, subject, message);
+                        ensug.createSuggest();
+                    }
+                    if (option == "Support")
+                    {
+                        ENSupport ensupport = new ENSupport(name, email, subject, message);
+                        ensupport.createSupport();
+                    }
                     Label_Sending_Success.Visible = true;
                     ClearBoxes();
                 }
@@ -92,11 +99,6 @@ namespace AMARON_INTERFACE
                 Label_Main.Visible = true;
             }
         }
-        protected void ButtonSupport(object sender, EventArgs e)
-        {
-            Response.Redirect("Support.aspx");
-        }
-
 
     }
 }

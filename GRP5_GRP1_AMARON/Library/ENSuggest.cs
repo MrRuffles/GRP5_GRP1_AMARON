@@ -73,12 +73,12 @@ namespace Library
             this.textPublic = text;
             
         }
-        public bool storeSuggest()
+        public bool createSuggest()
         {
 
             CADSuggest cadsup = new CADSuggest();
 
-            return cadsup.storeSuggest(this);
+            return cadsup.createSuggest(this);
         }
 
         public bool readSuggest()
