@@ -76,6 +76,24 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.Label ProductBrandLabel;
         
         /// <summary>
+        /// Control ProdAmount.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ProdAmount;
+        
+        /// <summary>
+        /// Control ProdQuantity.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ProdQuantity;
+        
+        /// <summary>
         /// Control AddCartButton.
         /// </summary>
         /// <remarks>
@@ -101,14 +119,5 @@ namespace AMARON_INTERFACE {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CommentTextBox;
-        
-        /// <summary>
-        /// Control SendCommentButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SendCommentButton;
     }
 }
