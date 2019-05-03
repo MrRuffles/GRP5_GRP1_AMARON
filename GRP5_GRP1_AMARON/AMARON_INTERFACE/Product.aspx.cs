@@ -13,5 +13,14 @@ namespace AMARON_INTERFACE
         {
 
         }
+
+        protected void AddCartButton_Click(object sender, EventArgs e){
+
+            if (Page.IsValid){
+
+                Response.Redirect("Cart.aspx");
+            }
+        }
+
     }
 }
