@@ -7,14 +7,64 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
+        <link href="Content/bootstrap.min.css" rel="stylesheet" />
+        <script src="Scripts/bootstrap.min.js"></script>
+        <script src="Scripts/jquery-3.3.1.min.js"></script>
+        <script src="Scripts/popper.min.js"></script>
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #footer{
+            background-color: #ddd;
+            z-index: 1;
+        }
+
+        span {
+            margin-top: 5px;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 0.9em;
+            color: #444;
+        }
+
+
+        #footer ul {
+            display: flex;
+            justify-content: flex-end;
+            width: inherit;
+        }
+
+        #footer ul li{
+            padding: 0 10px;
+            list-style: none;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+            <div id="header" class="col sticky-top" style="background-color: coral; width:100%" >
+                <div id="logo" class="row" >
+                    <asp:ImageButton ID="ImageButtonHeader" Onclick="ImageButtonHeader_Click" runat="server" ImageUrl="Imagenes/ron.jpg" Width="100%" Height="105px" />
+                </div>
+                <div id="nav-bar" class="row d-flex justify-content-center" >
+                    <asp:Menu runat="server" OnMenuItemClick="NavigationMenu_MenuItemClick" ID="NavigationMenu" Orientation="Horizontal" >
+                        <Items>
+                            <asp:MenuItem Text="Catalog" Value="Catalog"></asp:MenuItem>
+                            <asp:MenuItem Text="Login" Value="Login"></asp:MenuItem>
+                            <asp:MenuItem Text="Register" Value="Register"></asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                </div>
+            </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-
             </asp:ContentPlaceHolder>
+            <div id="footer" >
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <span>&copy; 2019 - Alcohol para todos!!</span>
+            </div>
         </div>
     </form>
 </body>
