@@ -8,8 +8,9 @@
 //------------------------------------------------------------------------------
 
 namespace AMARON_INTERFACE {
-    
-    
-    public partial class AboutUs {
+  
+    public partial class AboutUs
+    {
+
     }
 }
