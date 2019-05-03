@@ -37,13 +37,7 @@
             background-color: lawngreen;   
         }
        .prod-info-letter{
-           padding-top: 0.15em;
-       }
-       .row{
-           max-width:750px;
-       }
-       #CommentTextBox{
-           background-color: grey;
+            padding-top: 0.15em;
        }
     </style>
     <title> PRODUCT PAGE </title>
@@ -134,12 +128,12 @@
                     <!--ADD TO CART-->
                    <div class="row">
                        <div class="col-xs-1">
-                           <asp:Button ID="AddCartButton" runat="server" CssClass="btn btn-add-cart" Text="AÑADIR AL CARRITO"/>
+                           <asp:Button ID="AddCartButton" runat="server" CssClass="btn btn-add-cart" Text="AÑADIR AL CARRITO" OnClick="AddCartButton_Click"/>
                        </div>
                    </div>
-                   <!-- AÑADIR PARA ELEGIR CANTIDAD-->
-                </!--div>
-        </div><!-- End MediaProduct Row -->
+
+            </div>
+         </div><!-- End MediaProduct Row -->
         
         <!------------------------------------- DESCRIPTION SECTION ------------------------------------------------------------>        
         <div class="row" style="padding-top: 1em;">
@@ -155,23 +149,25 @@
                 </div>
             </div>
         </div>
-      <!----------------------------------------- COMMENTS SECTION ----------------------------------------------------------------->
+        <!----------------------------------------- COMMENTS SECTION ----------------------------------------------------------------->
         <div class="row">
-            <div class="col">
+            <div class="col-xs-12">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-xs-1">
                          <label for="InputComment">¡Añade un comentario!</label>
-                    </div>
-                    <div class="col">
-                        <asp:TextBox ID="CommentTextBox" runat="server" ></asp:TextBox>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
-                        <button type="submit" class="btn btn-success">Enviar Comentario</button>
+                    <div class="col-xs-1">
+                        <asp:TextBox ID="CommentTextBox" runat="server" style="padding-bottom: 0.5em"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1">
+                        <button type="submit" class="btn btn-success" style="margin-top:0.5em">Enviar Comentario</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div><!--END CONTAINER-->
 </asp:Content>
