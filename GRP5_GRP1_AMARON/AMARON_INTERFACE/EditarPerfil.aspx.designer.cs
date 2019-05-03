@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 // <generado automáticamente>
 //     Este código fue generado por una herramienta.
 //
@@ -11,7 +11,6 @@ namespace AMARON_INTERFACE {
     
     
     public partial class EditarPerfil {
-        
-        
+
     }
 }
