@@ -100,7 +100,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Default.aspx" />
-    <Content Include="EditarPerfil.aspx" />
     <Content Include="Imagenes\fotoPerfil.jpg" />
     <Content Include="Imagenes\ginebra.jpg" />
     <Content Include="Imagenes\GIN_PUERTOINDIAS_AZUL.jpg" />
@@ -205,20 +204,6 @@
     </Compile>
     <Compile Include="Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="EditarPerfil.aspx.cs">
-      <DependentUpon>EditarPerfil.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EditarPerfil.aspx.designer.cs">
-      <DependentUpon>EditarPerfil.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AboutUs.aspx.cs">
-      <DependentUpon>AboutUs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AboutUs.aspx.designer.cs">
-      <DependentUpon>AboutUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="SlideService.asmx.cs">
       <DependentUpon>SlideService.asmx</DependentUpon>
