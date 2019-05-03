@@ -42,7 +42,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <div id="header" class="col sticky-top" style="background-color: coral" >
+            <div id="header" class="col sticky-top" style="background-color: coral; width:100%" >
                 <div id="logo" class="row" >
                     <asp:ImageButton ID="ImageButtonHeader" Onclick="ImageButtonHeader_Click" runat="server" ImageUrl="Imagenes/ron.jpg" Width="100%" Height="105px" />
                 </div>
