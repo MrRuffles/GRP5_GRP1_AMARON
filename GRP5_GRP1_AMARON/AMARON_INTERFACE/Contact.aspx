@@ -5,13 +5,10 @@
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script src="Scripts/popper.min.js"></script>
+    <script async defer src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.3"></script>
     <style type="text/css">
         body {
             background-color: darkorange;
-        }
-
-        div#googleMap {
-            margin: 0 auto 0 auto;
         }
 
         @keyframes backgound {
@@ -63,11 +60,9 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="form_option">Choose an option *</label>
-                                <asp:DropDownList ID="form_option" CssClass="form-control" runat="server" data-error="Please specify your need.">
-
-                                    <asp:ListItem Value=""></asp:ListItem>
-                                    <asp:ListItem Value="Suggestion" Text="Suggestion"></asp:ListItem>
+                                <label for="form_option">Are you making a suggestion or do you need support?</label>
+                                <asp:DropDownList ID="form_option" CssClass="form-control" runat="server">
+                                    <asp:ListItem Value="Suggestion" Text="I'd like to make a suggestion"></asp:ListItem>
                                     <asp:ListItem Value="Support" Text="I need support"></asp:ListItem>
                                 </asp:DropDownList>
                             </div>
@@ -98,8 +93,17 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="https://twitter.com/UA_Universidad?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @UA_Universidad</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            <div class="fb-like" data-href="https://www.facebook.com/campusUA/" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-end">
+                            <asp:HyperLink runat="server" ImageUrl="~/Imagenes/Logo_UA.jpg" NavigateUrl="https://www.ua.es/"></asp:HyperLink>
 
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

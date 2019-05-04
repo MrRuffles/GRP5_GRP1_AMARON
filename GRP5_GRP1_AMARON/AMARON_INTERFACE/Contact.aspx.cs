@@ -32,9 +32,11 @@ namespace AMARON_INTERFACE
         {
             try
             {
-                MailMessage toSend = new MailMessage();
-                toSend.Subject = "AMARON Contact Form Mail from " + email;
-                toSend.From = new MailAddress("contactformamaron@gmail.com");
+                MailMessage toSend = new MailMessage
+                {
+                    Subject = "AMARON Contact Form Mail from " + email,
+                    From = new MailAddress("contactformamaron@gmail.com")
+                };
                 toSend.To.Add("ContactFormAMARON@gmail.com");
                 toSend.Body = "From:\t" + name + "\n";
                 toSend.Body += "Email:\t" + email + "\n\n";
