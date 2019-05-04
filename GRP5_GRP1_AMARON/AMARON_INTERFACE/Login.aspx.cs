@@ -13,5 +13,10 @@ namespace AMARON_INTERFACE
         {
 
         }
+
+        protected void login_button_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

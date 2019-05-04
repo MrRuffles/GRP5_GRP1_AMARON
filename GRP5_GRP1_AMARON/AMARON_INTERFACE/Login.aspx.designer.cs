@@ -22,6 +22,24 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.Label login_label;
         
         /// <summary>
+        /// Control login_email.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox login_email;
+        
+        /// <summary>
+        /// Control login_password.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox login_password;
+        
+        /// <summary>
         /// Control login_button.
         /// </summary>
         /// <remarks>

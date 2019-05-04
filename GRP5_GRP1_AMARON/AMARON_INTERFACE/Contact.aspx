@@ -24,6 +24,7 @@
     <div style="align-content: center; align-items: center; text-align: center">
         <h1 style="padding: 50px 0px 0px 0px; font-size: 50px; text-align: center; align-items: center">Contact Us</h1>
     </div>
+    <hr width="60%" align="center"/>
     <div class="container col-md-8" id="contact-form">
         <div class="row">
             <div class="col-md-8 offset-xl-2 py-5">

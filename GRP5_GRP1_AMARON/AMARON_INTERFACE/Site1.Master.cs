@@ -12,9 +12,8 @@ namespace AMARON_INTERFACE
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
-
         protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)
         {
             switch (e.Item.Value)
@@ -26,19 +25,10 @@ namespace AMARON_INTERFACE
                     break;
             }
         }
-        protected void Button_Login_click(object sender, MenuEventArgs e)
-        {
-            //Login 
-        }
-        protected void Button_Register_click(object sender, MenuEventArgs e)
-        {
-            //Registro
-        }
         protected void Button_Logoff_click(object sender, MenuEventArgs e)
         {
             //Logoff when logged
         }
-
         protected void ImageButtonHeader_Click(object sender, ImageClickEventArgs e)
         {
             if (Page.IsValid)

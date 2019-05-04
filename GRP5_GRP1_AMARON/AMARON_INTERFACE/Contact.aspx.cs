@@ -26,8 +26,6 @@ namespace AMARON_INTERFACE
             tb_message.Text = "";
 
         }
-        
-        
         protected bool SendMail (string name, string email, string subject, string message, string option) 
         {
             try
@@ -65,8 +63,6 @@ namespace AMARON_INTERFACE
         
         protected void Button_send_click(object sender, EventArgs e)
         {
-
-            
             string option = form_option.SelectedValue;
             string name = tb_name.Text.ToString();
             string email = tb_email.Text.ToString();
