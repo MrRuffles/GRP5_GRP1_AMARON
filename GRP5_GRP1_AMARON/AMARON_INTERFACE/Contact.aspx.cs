@@ -20,10 +20,10 @@ namespace AMARON_INTERFACE
         private void ClearBoxes()
         {
 
-            form_name.Value = "";
-            form_email.Value = "";
-            form_subject.Value = "";
-            form_message.Value = "";
+            tb_name.Text = "";
+            tb_name.Text = "";
+            tb_subject.Text = "";
+            tb_message.Text = "";
 
         }
         
@@ -68,10 +68,10 @@ namespace AMARON_INTERFACE
 
             
             string option = form_option.SelectedValue;
-            string name = form_name.Value.ToString();
-            string email = form_email.Value.ToString();
-            string subject = form_subject.Value.ToString();
-            string message = form_message.Value.ToString();
+            string name = tb_name.Text.ToString();
+            string email = tb_email.Text.ToString();
+            string subject = tb_subject.Text.ToString();
+            string message = tb_message.Text.ToString();
             try
             {
                 if ((option != "") &&  SendMail(name, email, subject, message, option))

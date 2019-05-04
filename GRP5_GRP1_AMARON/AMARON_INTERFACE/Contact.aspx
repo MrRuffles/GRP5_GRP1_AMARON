@@ -22,7 +22,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="align-content: center; align-items: center; text-align: center">
-        <h1 style="padding: 50px 0px 0px 0px; font-family: LIQUOR; font-size: 50px; text-align: center; align-items: center">Contact Us</h1>
+        <h1 style="padding: 50px 0px 0px 0px; font-size: 50px; text-align: center; align-items: center">Contact Us</h1>
     </div>
     <div class="container col-md-8" id="contact-form">
         <div class="row">
@@ -33,8 +33,10 @@
                     <div class="row ">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="form_name">Name *</label>
-                                <input id="form_name" type="text" runat="server" name="name" class="form-control" placeholder="Please enter your name *" required="required" data-error="Firstname is required.">
+                                <div class="d-flex align-baseline">
+                                    <asp:Label runat="server" Font-Size="Larger" Text="Name *"></asp:Label>
+                                </div>
+                                <asp:TextBox runat="server" ID="tb_name" TextMode="SingleLine" CssClass="form-control" placeholder="Please enter your name *" required="required"></asp:TextBox>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -42,10 +44,11 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="form_email">Email *</label>
-                                <input id="form_email" type="email" runat="server" name="email" class="form-control" placeholder="Please enter your email *"
-                                    required="required" oninvalid="this.setCustomValidity('Valid email is required: ex@abc.xyz')"
-                                    oninput="this.setCustomValidity('')" onkeyup="EnforceMaximumLength(this,320)">
+                                <div class="d-flex align-baseline">
+                                    <asp:Label runat="server" Font-Size="Larger" Text="Email *"></asp:Label>
+                                </div>
+                                <asp:TextBox runat="server" ID="tb_email" TextMode="Email" CssClass="form-control" placeholder="Please enter your email *" required="required" oninvalid="this.setCustomValidity('Valid email is required: ex@abc.xyz')"
+                                    oninput="this.setCustomValidity('')" onkeyup="EnforceMaximumLength(this,320)"></asp:TextBox>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -53,14 +56,18 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="form_subject">Subject *</label>
-                                <input id="form_subject" type="text" runat="server" name="subject" class="form-control" placeholder="Subject *" required="required" data-error="Subject is required.">
+                                <div class="d-flex align-baseline">
+                                    <asp:Label runat="server" Font-Size="Larger" Text="Subject *"></asp:Label>
+                                </div>
+                                <asp:TextBox runat="server" ID="tb_subject" TextMode="SingleLine" CssClass="form-control" placeholder="Subject *" required="required"></asp:TextBox>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="form_option">Are you making a suggestion or do you need support?</label>
+                            <div class="form-group"> 
+                                <div class="d-flex align-baseline">
+                                    <asp:Label runat="server" Font-Size="Larger" Text="Suggestion / Support?"></asp:Label>
+                                </div>
                                 <asp:DropDownList ID="form_option" CssClass="form-control" runat="server">
                                     <asp:ListItem Value="Suggestion" Text="I'd like to make a suggestion"></asp:ListItem>
                                     <asp:ListItem Value="Support" Text="I need support"></asp:ListItem>
@@ -71,8 +78,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="form_message">Message *</label>
-                                <textarea id="form_message" name="message" runat="server" class="form-control" placeholder="Message *" rows="8" required="required" data-error="Please, leave us a message."></textarea>
+                                <div class="d-flex align-baseline">
+                                    <asp:Label runat="server" Font-Size="Larger" Text="Message *"></asp:Label>
+                                </div>
+                                <asp:TextBox runat="server" ID="tb_message" type="text" TextMode="MultiLine" CssClass="form-control" placeholder="Message *" required="required" Rows="8"></asp:TextBox>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -80,10 +89,9 @@
                             <asp:Button CssClass="btn btn-success" ID="send_button" OnClick="Button_send_click" runat="server" Text="Send Message" />
                         </div>
                         <div class="col-md-6">
-                            <asp:Label ID="Label_Sending_Success" runat="server" Text="Email sent" Visible="false" ForeColor="Green" Font-Bold="true"></asp:Label>
-                            <asp:Label ID="Label_Sending_Error" runat="server" Text="There was an error trying to send your message, please try again." Visible="false" ForeColor="OrangeRed" Font-Bold="true"></asp:Label>
+                            <asp:Label ID="Label_Sending_Success" runat="server" Text="Email sent" Visible="false" ForeColor="Green" Font-Size="X-Large" Font-Bold="true" Font-Italic="true"></asp:Label>
+                            <asp:Label ID="Label_Sending_Error" runat="server" Text="There was an error trying to send your message, please try again." Visible="false" ForeColor="OrangeRed" Font-Size="X-Large"></asp:Label>
                             <asp:Label ID="Label_Main" runat="server" Text="" Visible="false" ForeColor="Red" Font-Bold="false"></asp:Label>
-
                         </div>
                     </div>
                     <div class="row">
@@ -100,7 +108,6 @@
                         </div>
                         <div class="col-md-6 d-flex justify-content-end">
                             <asp:HyperLink runat="server" ImageUrl="~/Imagenes/Logo_UA.jpg" NavigateUrl="https://www.ua.es/"></asp:HyperLink>
-
                         </div>
                     </div>
                 </div>
@@ -111,6 +118,12 @@
     <script type="text/javascript">
         function EnforceMaximumLength(fld, len) {
             if (fld.value.length > len) { fld.value = fld.value.substr(0, len); }
+        }
+    </script>
+    <script>
+        //Prevent resumbitting when reloading page
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
         }
     </script>
 </asp:Content>

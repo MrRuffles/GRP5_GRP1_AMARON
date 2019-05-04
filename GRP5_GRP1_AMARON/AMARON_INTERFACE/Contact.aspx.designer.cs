@@ -13,31 +13,31 @@ namespace AMARON_INTERFACE {
     public partial class Contact {
         
         /// <summary>
-        /// Control form_name.
+        /// Control tb_name.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText form_name;
+        protected global::System.Web.UI.WebControls.TextBox tb_name;
         
         /// <summary>
-        /// Control form_email.
+        /// Control tb_email.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl form_email;
+        protected global::System.Web.UI.WebControls.TextBox tb_email;
         
         /// <summary>
-        /// Control form_subject.
+        /// Control tb_subject.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText form_subject;
+        protected global::System.Web.UI.WebControls.TextBox tb_subject;
         
         /// <summary>
         /// Control form_option.
@@ -49,13 +49,13 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.DropDownList form_option;
         
         /// <summary>
-        /// Control form_message.
+        /// Control tb_message.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea form_message;
+        protected global::System.Web.UI.WebControls.TextBox tb_message;
         
         /// <summary>
         /// Control send_button.
