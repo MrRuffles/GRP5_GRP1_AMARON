@@ -14,7 +14,7 @@ namespace Library
 
         public CADSupport()
         {
-            constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
+            //constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
         }
 
         public bool createSupport(ENSupport en)

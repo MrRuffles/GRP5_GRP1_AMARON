@@ -10,87 +10,114 @@
 namespace AMARON_INTERFACE {
     
     
-    public partial class Site1 {
+    public partial class Product {
         
         /// <summary>
-        /// Control head.
+        /// Control ProductImage.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Image ProductImage;
         
         /// <summary>
-        /// Control form1.
+        /// Control ProductName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label ProductName;
         
         /// <summary>
-        /// Control ImageButtonHeader.
+        /// Control ProductPriceLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButtonHeader;
+        protected global::System.Web.UI.WebControls.Label ProductPriceLabel;
         
         /// <summary>
-        /// Control NavigationMenu.
+        /// Control ProductGradeLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu NavigationMenu;
+        protected global::System.Web.UI.WebControls.Label ProductGradeLabel;
         
         /// <summary>
-        /// Control login_menu_button.
+        /// Control ProductVolumeLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink login_menu_button;
+        protected global::System.Web.UI.WebControls.Label ProductVolumeLabel;
         
         /// <summary>
-        /// Control register_menu_button.
+        /// Control AlcoholTypeLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink register_menu_button;
+        protected global::System.Web.UI.WebControls.Label AlcoholTypeLabel;
         
         /// <summary>
-        /// Control username_menu_label.
+        /// Control ProductBrandLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label username_menu_label;
+        protected global::System.Web.UI.WebControls.Label ProductBrandLabel;
         
         /// <summary>
-        /// Control menu_logoff.
+        /// Control ProdAmount.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button menu_logoff;
+        protected global::System.Web.UI.WebControls.TextBox ProdAmount;
         
         /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// Control ProdQuantity.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.TextBox ProdQuantity;
+        
+        /// <summary>
+        /// Control AddCartButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddCartButton;
+        
+        /// <summary>
+        /// Control Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// Control CommentTextBox.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CommentTextBox;
     }
 }
