@@ -13,11 +13,14 @@ namespace AMARON_INTERFACE
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            recover_email.Text = "";
         }
         private void ClearBoxes()
         {
-            recover_email.Text = "";
+            Label_Sending_Success.Visible = false;
+            Label_Main.Text = "";
+            Label_Main.Visible = false;
+            Label_Sending_Error.Visible = false;
         }
         /*
         protected bool SendMail(string name, string email, string data)
@@ -56,12 +59,31 @@ namespace AMARON_INTERFACE
         */
         protected void Send_email_Click(object sender, EventArgs e)
         {
-            Label_Sending_Success.Visible = false;
-            // SendMail("xxx", recover_email.Text.ToString(), "password");
-            // If email exists in DB, send an email to that address that contains user's password.
+            ClearBoxes();
 
+            /*
+            // If email exists in DB, change password for that email and send it back to that email address.
+            
+                ENUser user = new ENUser();
+                user.email = recover_email.Text.ToString();
+                if(user.ReadUser())
+                {
+                    //Changes DB password for this user
+                    user.changepassword("defaultpassword");
+                    //If info can be sent, then show success message
+                    if(SendMail(user.name, user.email, user.password))
+                    {
+                        Label_Sending_Success.Visible = true;
+                    }else{
+                        Label_Main.Text = "An error occurred while sending email";
+                        Label_Main.Visible = true;
+                    }
 
-            Label_Sending_Success.Visible = true;
+                }else{
+                    Label_Sending_Error.Visible = true;        
+                }
+            */
+
         }
     }
 }

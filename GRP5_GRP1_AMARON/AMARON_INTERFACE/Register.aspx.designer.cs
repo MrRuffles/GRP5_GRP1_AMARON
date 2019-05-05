@@ -31,6 +31,15 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.TextBox tb_birth;
         
         /// <summary>
+        /// Control Error_Birth.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Error_Birth;
+        
+        /// <summary>
         /// Control tb_email.
         /// </summary>
         /// <remarks>

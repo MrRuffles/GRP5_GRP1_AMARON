@@ -12,12 +12,33 @@ namespace AMARON_INTERFACE
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            HttpCookie cookie = Request.Cookies["damncookie"];
+            if (cookie != null)
+            {
+                
+                login_menu_button.Visible = false;
+                register_menu_button.Visible = false;
+                menu_logoff.Visible = true;
+                username_menu_label.Visible = true;
+                //username_menu_label.Text = Response.Cookies["authcookie"]["username"];
+                username_menu_label.Text = cookie["username"];
+
+            }
+            else
+            {
+                login_menu_button.Visible = true;
+                register_menu_button.Visible = true;
+                menu_logoff.Visible = false;
+                username_menu_label.Visible = false;
+            }
         }
         protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)
         {
             switch (e.Item.Value)
             {
+                case "Home":
+                    Response.Redirect("Default.aspx");
+                    break;
                 case "Catalog":
                     return;
                 case "Contact":
@@ -25,9 +46,10 @@ namespace AMARON_INTERFACE
                     break;
             }
         }
-        protected void Button_Logoff_click(object sender, MenuEventArgs e)
+        protected void menu_logoff_click(object sender, EventArgs e)
         {
-            //Logoff when logged
+            Response.Cookies["damncookie"].Expires = DateTime.Now.AddDays(-1);
+            Response.Redirect("Default.aspx");
         }
         protected void ImageButtonHeader_Click(object sender, ImageClickEventArgs e)
         {

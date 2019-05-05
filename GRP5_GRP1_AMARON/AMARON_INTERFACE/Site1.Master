@@ -15,7 +15,7 @@
     <style type="text/css">
         #footer {
             background-color: #ddd;
-            z-index : 1;
+            z-index: 1;
         }
 
         span {
@@ -33,10 +33,10 @@
             width: inherit;
         }
 
-        #footer ul li {
-            padding: 0 10px;
-            list-style: none;
-        }
+            #footer ul li {
+                padding: 0 10px;
+                list-style: none;
+            }
 
         #global_actions {
             position: absolute;
@@ -66,9 +66,10 @@
 
                 </div>
                 <div id="global_actions" class="content " style="align-self: flex-end">
-                    <asp:LoginStatus ID="LoginStatus1" runat="server"/>
-                    <asp:HyperLink runat="server" Text="Register" NavigateUrl="/Register.aspx"></asp:HyperLink>
-                    Logoff_Button
+                    <asp:HyperLink ID="login_menu_button" runat="server" Visible="true" Text="Log in" NavigateUrl="/Login.aspx"></asp:HyperLink>
+                    <asp:HyperLink ID="register_menu_button" runat="server" Visible="true" Text="Register" NavigateUrl="/Register.aspx"></asp:HyperLink>
+                    <asp:Label ID="username_menu_label" runat="server" Text="" Visible="false"></asp:Label>
+                    <asp:Button  class="btn btn-danger btn-round "  ID="menu_logoff" runat="server" Visible="false" Text="Log off" OnClick="menu_logoff_click"  CausesValidation="False" UseSubmitBehavior="False" />
                 </div>
             </div>
 
@@ -84,5 +85,6 @@
             </div>
         </div>
     </form>
+    
 </body>
 </html>

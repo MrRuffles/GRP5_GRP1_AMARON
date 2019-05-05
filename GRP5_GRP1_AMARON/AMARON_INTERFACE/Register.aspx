@@ -19,7 +19,6 @@
                 background-color: #faa166;
             }
         }
-        
     </style>
 
 
@@ -27,7 +26,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="align-content: center; align-items: center; text-align: center">
         <h2 style="padding: 50px 0px 0px 0px; font-size: 50px; text-align: center; align-items: center">Register</h2>
-        <hr width="60%" align="center"/>
+        <hr width="60%" align="center" />
     </div>
     <div class="container col-md-8" id="register-form">
         <div class="row">
@@ -43,11 +42,12 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group" style="width: 150px">
+                            <div class="form-group" style="width: 200px">
                                 <div class="d-flex align-baseline">
                                     <asp:Label runat="server" Font-Size="Larger" Text="Date of birth *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_birth" TextMode="Date" CssClass="form-control" required="required"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="tb_birth" Width="150px" TextMode="Date" CssClass="form-control" required="required" ></asp:TextBox>
+                                <asp:Label runat="server" ID="Error_Birth" ForeColor="Red" Visible="false" Text="Your age must be over 18 !"></asp:Label>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                                 <div class="d-flex align-baseline">
                                     <asp:Label runat="server" Font-Size="Larger" Text="Password *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_password" TextMode="password" CssClass="form-control" placeholder="********" required="required"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="tb_password" pattern=".{6,}" TextMode="password" CssClass="form-control" placeholder="********" required="required" oninvalid="this.setCustomValidity('Your password must have at least 6 characters length')"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="d-flex align-baseline">
-                                    <asp:Label runat="server" Font-Size="Larger" Text="Password *"></asp:Label>
+                                    <asp:Label runat="server" Font-Size="Larger" Text="Re-enter password *"></asp:Label>
                                 </div>
                                 <asp:TextBox runat="server" ID="tb_password_confirm" TextMode="password" CssClass="form-control" placeholder="********" required="required"></asp:TextBox>
                                 <asp:Label runat="server" ID="Error_password" ForeColor="Red" Visible="false" Text="Paswords must match!"></asp:Label>
@@ -118,6 +118,9 @@
                             <p class="text-muted">
                                 <strong>*</strong> These fields are required.
                             </p>
+                            <p class="text-muted">
+                                Creating your account means you accept our ToS.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -130,13 +133,14 @@
             if (fld.value.length > len) { fld.value = fld.value.substr(0, len); }
         }
 
-
     </script>
+
     <script>
         //Prevent resumbitting when reloading page
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
         }
     </script>
+
 </asp:Content>
 
