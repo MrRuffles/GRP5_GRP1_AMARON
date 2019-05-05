@@ -68,8 +68,7 @@
             </asp:ContentPlaceHolder>
             <div id="footer" >
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="AboutUs.aspx">About Us</a></li>
                     </ul>
                     <span>&copy; 2019 - Alcohol para todos!!</span>
             </div>

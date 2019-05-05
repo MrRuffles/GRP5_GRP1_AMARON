@@ -164,6 +164,7 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
     <Content Include="SlideService.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -209,6 +210,7 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditarPerfil.aspx.cs">
       <DependentUpon>EditarPerfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -12,7 +12,7 @@ namespace AMARON_INTERFACE
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            HttpCookie cookie = Request.Cookies["damncookie"];
+           /* HttpCookie cookie = Request.Cookies["damncookie"];
             if (cookie != null)
             {
                 
@@ -30,7 +30,7 @@ namespace AMARON_INTERFACE
                 register_menu_button.Visible = true;
                 menu_logoff.Visible = false;
                 username_menu_label.Visible = false;
-            }
+            }*/
         }
         protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)
         {
@@ -40,7 +40,8 @@ namespace AMARON_INTERFACE
                     Response.Redirect("Default.aspx");
                     break;
                 case "Catalog":
-                    return;
+                    Response.Redirect("Catalog.aspx");
+                    break;
                 case "Contact":
                     Response.Redirect("Contact.aspx");
                     break;
@@ -48,30 +49,9 @@ namespace AMARON_INTERFACE
         }
         protected void menu_logoff_click(object sender, EventArgs e)
         {
-            Response.Cookies["damncookie"].Expires = DateTime.Now.AddDays(-1);
+            //Response.Cookies["damncookie"].Expires = DateTime.Now.AddDays(-1);
             Response.Redirect("Default.aspx");
         }
-        protected void ImageButtonHeader_Click(object sender, ImageClickEventArgs e)
-        {
-            if (Page.IsValid)
-            {
-                Response.Redirect("Default.aspx");
-            }
-        }
-
-        protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)
-        {
-            switch (e.Item.Value) {
-                case "Catalog":
-                    Response.Redirect("Catalog.aspx");
-                    break;
-                case "Login":
-                    return;
-                case "Register":
-                    return;
-            }
-        }
-
         protected void ImageButtonHeader_Click(object sender, ImageClickEventArgs e)
         {
             if (Page.IsValid)
