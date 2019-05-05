@@ -9,12 +9,14 @@
     <script src="Scripts/popper.min.js"></script>
     <style>
         body{
-            background-color:aqua;
+            background-color:white;
         }
         .button-slide{
-            background-color: orange;
+            background-color: transparent;
             border-radius:4px;
             border-style:none;
+            font-size-adjust: 1.5;
+            color:dimgray;
             
         }
         .button-slide:hover{
@@ -22,9 +24,10 @@
             animation-duration:1s;
             animation-fill-mode:forwards;
         }
+
         @keyframes backgound{
             100%{
-                background-color: #faa166;
+                background-color: #e3e3e3;
             }
         }
     </style>

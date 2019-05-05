@@ -13,7 +13,7 @@
         <script src="Scripts/popper.min.js"></script>
     </asp:ContentPlaceHolder>
     <style type="text/css">
-        #footer {
+        #footer{
             background-color: #ddd;
             z-index: 1;
         }
@@ -32,17 +32,9 @@
             justify-content: flex-end;
             width: inherit;
         }
-
-            #footer ul li {
-                padding: 0 10px;
-                list-style: none;
-            }
-
-        #global_actions {
-            position: absolute;
-            right: 50px;
-            height: 21px;
-            line-height: 21px;
+        #footer ul li{
+            padding: 0 10px;
+            list-style: none;
         }
     </style>
 </head>
@@ -72,16 +64,14 @@
                     <asp:Button  class="btn btn-danger btn-round "  ID="menu_logoff" runat="server" Visible="false" Text="Log off" OnClick="menu_logoff_click"  CausesValidation="False" UseSubmitBehavior="False" />
                 </div>
             </div>
-
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-            <div id="footer">
-                <ul>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <span>&copy; 2019 - Alcohol para todos!!</span>
+            <div id="footer" >
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <span>&copy; 2019 - Alcohol para todos!!</span>
             </div>
         </div>
     </form>
