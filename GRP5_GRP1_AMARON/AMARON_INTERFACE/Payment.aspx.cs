@@ -15,12 +15,12 @@ namespace AMARON_INTERFACE
         }
         protected void Button_ChangeDir(object sender, EventArgs e)
         {
-
+            Response.Redirect("EditarPerfil.aspx");
         }
 
         protected void Button_FinCompra(object sender, EventArgs e)
         {
-
+            Response.Redirect("Default.aspx");
         }
     }
 }
