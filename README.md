@@ -39,6 +39,6 @@ Posibles mejoras:
 - Internacionalización de la pagina
 - Suscripción premium
 - Packs de productos
- 
+
 Documento Base de Datos:
 - GRP5_GRP1_AMARON/GRP5_GRP1_AMARON/Esquema_BD.png
