@@ -49,7 +49,7 @@
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <asp:Button runat="server" href="#" class="btn btn-primary" Text="Go somewhere" />
+                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Go somewhere" />
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -57,7 +57,7 @@
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <asp:Button runat="server" href="#" class="btn btn-primary" Text="Go somewhere" />
+                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Go somewhere" />
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -65,7 +65,7 @@
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <asp:Button runat="server" href="#" class="btn btn-primary" Text="Go somewhere" />
+                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Go somewhere" />
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -73,7 +73,7 @@
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <asp:Button runat="server" href="#" class="btn btn-primary" Text="Go somewhere" />
+                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Go somewhere" />
             </div>
         </div>
     </div>
