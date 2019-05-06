@@ -78,7 +78,7 @@
                 <section class="about-contact">
                     <h2>Contacta</h2>
                     <h4>¿Tienes alguna duda? Contacta con nosotros aquí.</h4>
-                    <a href="#" class="btn btn-success" role="button"> Contáctanos</a>
+                    <a href="Contact.aspx" class="btn btn-success" role="button"> Contáctanos</a>
                 </section>
             </div>
         </div>

@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
         <link href="Content/bootstrap.min.css" rel="stylesheet" />
@@ -32,7 +32,6 @@
             justify-content: flex-end;
             width: inherit;
         }
-
         #footer ul li{
             padding: 0 10px;
             list-style: none;
@@ -42,30 +41,39 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <div id="header" class="col sticky-top" style="background-color: coral; width:100%" >
-                <div id="logo" class="row" >
-                    <asp:ImageButton ID="ImageButtonHeader" Onclick="ImageButtonHeader_Click" runat="server" ImageUrl="Imagenes/ron.jpg" Width="100%" Height="105px" />
+            <div id="header" class="col sticky-top" style="background-color: coral">
+                <div id="logo" class="row">
+                    <asp:ImageButton ID="ImageButtonHeader" OnClick="ImageButtonHeader_Click" runat="server" ImageUrl="Imagenes/ron.jpg" Width="100%" Height="105px" />
                 </div>
-                <div id="nav-bar" class="row d-flex justify-content-center" >
-                    <asp:Menu runat="server" OnMenuItemClick="NavigationMenu_MenuItemClick" ID="NavigationMenu" Orientation="Horizontal" >
+                <span></span>
+                <div id="nav-bar" class="row d-flex justify-content-center">
+
+                    <asp:Menu runat="server" OnMenuItemClick="NavigationMenu_MenuItemClick" ID="NavigationMenu" Orientation="Horizontal">
                         <Items>
+                            <asp:MenuItem Text="Home" Value="Home"></asp:MenuItem>
                             <asp:MenuItem Text="Catalog" Value="Catalog"></asp:MenuItem>
-                            <asp:MenuItem Text="Login" Value="Login"></asp:MenuItem>
-                            <asp:MenuItem Text="Register" Value="Register"></asp:MenuItem>
+                            <asp:MenuItem Text="Contact" Value="Contact"></asp:MenuItem>
                         </Items>
                     </asp:Menu>
+
+                </div>
+                <div id="global_actions" class="content " style="align-self: flex-end">
+                    <asp:HyperLink ID="login_menu_button" runat="server" Visible="true" Text="Log in" NavigateUrl="/Login.aspx"></asp:HyperLink>
+                    <asp:HyperLink ID="register_menu_button" runat="server" Visible="true" Text="Register" NavigateUrl="/Register.aspx"></asp:HyperLink>
+                    <asp:Label ID="username_menu_label" runat="server" Text="" Visible="false"></asp:Label>
+                    <asp:Button  class="btn btn-danger btn-round "  ID="menu_logoff" runat="server" Visible="false" Text="Log off" OnClick="menu_logoff_click"  CausesValidation="False" UseSubmitBehavior="False" />
                 </div>
             </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
             <div id="footer" >
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="AboutUs.aspx">About Us</a></li>
                     </ul>
                     <span>&copy; 2019 - Alcohol para todos!!</span>
             </div>
         </div>
     </form>
+    
 </body>
 </html>
