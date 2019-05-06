@@ -54,10 +54,10 @@ namespace AMARON_INTERFACE
         }
         protected void ImageButtonHeader_Click(object sender, ImageClickEventArgs e)
         {
-            if (Page.IsValid)
-            {
-                Response.Redirect("Default.aspx");
-            }
+            //if (Page.IsValid)
+            //{
+                Response.Redirect("Perfil.aspx");
+            //}
         }
     }
 }

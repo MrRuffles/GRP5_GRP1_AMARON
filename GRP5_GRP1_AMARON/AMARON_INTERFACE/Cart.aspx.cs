@@ -16,7 +16,7 @@ namespace AMARON_INTERFACE
 
         protected void Button_FinCompra(object sender, EventArgs e)
         {
-
+            Response.Redirect("Payment.aspx");
         }
     }
 }
