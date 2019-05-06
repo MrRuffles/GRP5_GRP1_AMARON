@@ -10,87 +10,87 @@
 namespace AMARON_INTERFACE {
     
     
-    public partial class Site1 {
+    public partial class Contact {
         
         /// <summary>
-        /// Control head.
+        /// Control tb_name.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.TextBox tb_name;
         
         /// <summary>
-        /// Control form1.
+        /// Control tb_email.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox tb_email;
         
         /// <summary>
-        /// Control ImageButtonHeader.
+        /// Control tb_subject.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButtonHeader;
+        protected global::System.Web.UI.WebControls.TextBox tb_subject;
         
         /// <summary>
-        /// Control NavigationMenu.
+        /// Control form_option.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu NavigationMenu;
+        protected global::System.Web.UI.WebControls.DropDownList form_option;
         
         /// <summary>
-        /// Control login_menu_button.
+        /// Control tb_message.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink login_menu_button;
+        protected global::System.Web.UI.WebControls.TextBox tb_message;
         
         /// <summary>
-        /// Control register_menu_button.
+        /// Control send_button.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink register_menu_button;
+        protected global::System.Web.UI.WebControls.Button send_button;
         
         /// <summary>
-        /// Control username_menu_label.
+        /// Control Label_Sending_Success.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label username_menu_label;
+        protected global::System.Web.UI.WebControls.Label Label_Sending_Success;
         
         /// <summary>
-        /// Control menu_logoff.
+        /// Control Label_Sending_Error.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button menu_logoff;
+        protected global::System.Web.UI.WebControls.Label Label_Sending_Error;
         
         /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// Control Label_Main.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Label Label_Main;
     }
 }

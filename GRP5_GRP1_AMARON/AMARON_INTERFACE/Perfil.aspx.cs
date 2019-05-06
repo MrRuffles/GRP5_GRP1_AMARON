@@ -17,7 +17,7 @@ namespace AMARON_INTERFACE
 
         protected void verPedidos(object sender, EventArgs e)
         {
-            
+            Response.Redirect("Orders.aspx");
         }
 
         protected void editarPerfil(object sender, EventArgs e)
