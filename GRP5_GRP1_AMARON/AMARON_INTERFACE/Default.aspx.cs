@@ -14,5 +14,10 @@ namespace AMARON_INTERFACE
         {
 
         }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Product.aspx");
+        }
     }
 }

@@ -6,7 +6,7 @@
     <script src="Scripts/popper.min.js"></script>
     <style>
         body{
-            background-color:aqua;
+            background-color:white;
             min-width:290px;
             line-height: 1.5;
         }
@@ -18,7 +18,7 @@
           width:300px;
           height:100%;
           border-right-style: solid;
-          border-right-color: inherit;
+          border-right-color: #ddd;
           border-right-width: medium;
         }
 
@@ -75,28 +75,13 @@
           text-align:left;
           margin:0px;
         }
-        section article{
-          margin:15px;
-          font-size:0.96em;
+        a{
+            list-style: none;
+            text-decoration:none;
         }
 
-        section li{
-          margin: 15px 0px 0px 30px;
-        }
-
-        code{
-          display:block;
-          text-align: left;
-          white-space: pre;
-          position: relative;
-          word-break: normal;
-          word-wrap: normal;
-          line-height: 2;
-          background-color:#f7f7f7;
-          padding:15px;
-          margin:10px;
-          border-radius:5px;
-        }
+        
+       
 
         @media only screen and (max-width: 815px) {
             /* For mobile phones: */
@@ -121,9 +106,6 @@
             margin-left:0px;
             margin-top:270px;
           }
-          #main-doc section {
-            /*     padding-top: 240px; */
-          }
         }
 
         @media only screen and (max-width: 400px) {
@@ -145,91 +127,88 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
         <nav id="navbar">
-      <header>Filter</header>
-      <ul>
-        <a class="nav-link" href="Catalog.aspx?cat=bottle"><li>Bottle</li></a>
-        <a class="nav-link" href="Catalog.aspx?cat=packs"><li>Packs</li></a>
-        <a class="nav-link" href="Catalog.aspx?cat=loot"><li>Lootboxes</li></a>
-        <a class="nav-link" href="Catalog.aspx?cat=misc"><li>Miscellaneous</li></a>
-        <!--<a class="nav-link" href="Catalog.aspx?cat=bottle"><li>Function Declaration</li></a>-->
-      </ul>
-    </nav>
-    <main id="main-doc">
-      <section class="main-section" id="Introduction">
-        <header>Introduction</header>
-        <article>
-          <p>C (/siː/, as in the letter c) is a general-purpose, imperative computer programming language, supporting structured programming, lexical variable scope and recursion, while a static type system prevents many unintended operations. By design, C provides constructs that map efficiently to typical machine instructions, and it has therefore found lasting use in applications that were previously coded in assembly language. Such applications include operating systems, as well as various application software for computers ranging from supercomputers to embedded systems.</p>
-          <p>C is an imperative procedural language. It was designed to be compiled using a relatively straightforward compiler, to provide low-level access to memory, to provide language constructs that map efficiently to machine instructions, and to require minimal runtime support. Despite its low-level capabilities, the language was designed to encourage cross-platform programming. A standards-compliant C program that is written with portability in mind can be compiled for a wide variety of computer platforms and operating systems with few changes to its source code; the language has become available on various platforms, from embedded microcontrollers to supercomputers.</p>
-        </article>
-      </section>
-      <section class="main-section" id="History">
-        <header>History</header>
-        <article>
-          <p>In 1972, Ritchie started to improve B, which resulted in creating a new language C. C compiler and some utilities made by C were included in Version 2 Unix. At Version 4 Unix released at Nov. 1973, the Unix kernel was extensively re-implemented by C. By this time, the C language had acquired some powerful features such as struct types. </p>
-          <li>1972 Birth of the C languaje.</li>
-          <li>C18 is the actual standard. Published June 2018.</li>
-          <p>Unix was one of the first operating system kernels implemented in a language other than assembly. Earlier instances include the Multics system (which was written in PL/I) and Master Control Program (MCP) for the Burroughs B5000 (which was written in ALGOL) in 1961. In around 1977, Ritchie and Stephen C. Johnson made further changes to the language to facilitate portability of the Unix operating system. Johnson's Portable C Compiler served as the basis for several implementations of C on new platforms.</p>
-        </article>
-      </section>
-      <section class="main-section" id="Hello_World">
-        <header>Hello World</header>
-        <article>
-          <p>For get started with writting C, open a text document rename it with ".c" and write your first "Hello World" C code:</p>
-          <code>
-            main()
-            {
-              printf("hello, world\n");
-            }
-            </code>
-          <p>A standard-conforming "Hello World" program is:</p>
-          <code>
-            #include "stdio.h"
-            int main(void)
-            {
-              printf("hello, world\n");
-            }
-          </code>
-        </article>
-      </section>
-      <section class="main-section" id="Data_Types">
-        <header>Data Types</header>
-        <article>
-          <p>Here we can see some of the data types most commons in C:</p>
-          <li>char: Smallest addressable unit of the machine that can contain basic character set.</li>
-          <li>int: Basic signed integer type. Capable of containing at least the [−32,767, +32,767] range; Thus, it is at least 16 bits in size.</li>
-          <li>struct: Structures aggregate the storage of multiple data items, of potentially differing data types, into one memory block referenced by a single variable.</li>
-          <code>
-            struct birthday {
-              char name[20];
-              int day;
-              int month;
-              int year;
-            };
-            struct birthday John;</code>
-          <li>arrys: An array is a collection of values, all of the same type, stored contiguously in memory. An array of size N is indexed by integers from 0 up to and including N−1.</li>
-          <code>int cat[10];  // array of 10 elements, each of type int</code>
-          <p>C is often used in low-level systems programming where escapes from the type system may be necessary. The compiler attempts to ensure type correctness of most expressions, but the programmer can override the checks in various ways, either by using a type cast to explicitly convert a value from one type to another, or by using pointers or unions to reinterpret the underlying bits of a data object in some other way.</p>
-        </article>
-      </section>
-      <section class="main-section" id="Function_Declaration">
-        <header>Function Declaration</header>
-        <article>
-          <p>Functions are used for managin the behavior of a program. They can be called by other functions for receving some type of data or for making something on the program.</p>
-          <code>
-            void print_age(int age){
-              printf("Your age is: %d", age);
-            }
-            
-            int main(){
-              int n=0;
-              scanf("Your age please: ", n);
-              print_age(n);
-             return 0;
-            }
-          </code>
-          <p>On the example above the program print a string that is inside the function print_age that is called on the main function.</p>
-        </article>
-      </section>
-    </main>
+            <header>Filter</header>
+            <ul>
+                <a class="nav-link" href="Catalog.aspx?cat=bottle">
+                    <li>Bottle</li>
+                </a>
+                <a class="nav-link" href="Catalog.aspx?cat=packs">
+                    <li>Packs</li>
+                </a>
+                <a class="nav-link" href="Catalog.aspx?cat=loot">
+                    <li>Lootboxes</li>
+                </a>
+                <a class="nav-link" href="Catalog.aspx?cat=misc">
+                    <li>Miscellaneous</li>
+                </a>
+                <!--<a class="nav-link" href="Catalog.aspx?cat=bottle"><li>Function Declaration</li></a>-->
+            </ul>
+        </nav>
+        <main id="main-doc">
+            <div class="row d-flex justify-content-around">
+                <a href="Product.aspx" style="margin-bottom: 10px;">
+                    <div class="card" style="width: 18rem;">
+                        <asp:Image runat="server" ID="Image5" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
+                        <div class="card-body">
+                            <asp:Label runat="server" Text="Ron Barcelo 700ml" Font-Size="Large"></asp:Label>
+                        </div>
+                    </div>
+                </a>
+                <a href="Product.aspx" style="margin-bottom: 10px;">
+                    <div class="card" style="width: 18rem;">
+                        <asp:Image runat="server" ID="Image1" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
+                        <div class="card-body">
+                            <asp:Label runat="server" Text="Ron Barcelo 700ml" Font-Size="Large"></asp:Label>
+                        </div>
+                    </div>
+                </a>
+                <a href="Product.aspx" style="margin-bottom: 10px;">
+                    <div class="card" style="width: 18rem;">
+                        <asp:Image runat="server" ID="Image2" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
+                        <div class="card-body">
+                            <asp:Label runat="server" Text="Ron Barcelo 700ml" Font-Size="Large"></asp:Label>
+                        </div>
+                    </div>
+                </a>
+                <a href="Product.aspx" style="margin-bottom: 10px;">
+                    <div class="card" style="width: 18rem;">
+                        <asp:Image runat="server" ID="Image3" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
+                        <div class="card-body">
+                            <asp:Label runat="server" Text="Ron Barcelo 700ml" Font-Size="Large"></asp:Label>
+                        </div>
+                    </div>
+                </a>
+                <a href="Product.aspx" class="" style="margin-bottom: 10px;">
+                    <div class="card" style="width: 18rem;">
+                        <asp:Image runat="server" ID="Image4" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
+                        <div class="card-body">
+                            <asp:Label runat="server" Text="Ron Barcelo 700ml" Font-Size="Large"></asp:Label>
+                        </div>
+                    </div>
+                </a>
+                <a href="Product.aspx" class="" style="margin-bottom: 10px;">
+                    <div class="card" style="width: 18rem;">
+                        <asp:Image runat="server" ID="Image6" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
+                        <div class="card-body">
+                            <asp:Label runat="server" Text="Ron Barcelo 700ml" Font-Size="Large"></asp:Label>
+                        </div>
+                    </div>
+                </a>
+                <a href="Product.aspx" class="" style="margin-bottom: 10px;">
+                    <div class="card" style="width: 18rem;">
+                        <asp:Image runat="server" ID="Image7" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
+                        <div class="card-body">
+                            <asp:Label runat="server" Text="Ron Barcelo 700ml" Font-Size="Large"></asp:Label>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <asp:Table runat="server">
+                <asp:TableRow>
+                    <asp:TableCell></asp:TableCell>
+                </asp:TableRow>
+
+            </asp:Table> 
+        </main>
     </div>
 </asp:Content>

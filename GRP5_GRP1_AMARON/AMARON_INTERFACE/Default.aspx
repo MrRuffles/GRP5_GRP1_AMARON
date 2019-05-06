@@ -9,12 +9,14 @@
     <script src="Scripts/popper.min.js"></script>
     <style>
         body{
-            background-color:aqua;
+            background-color:white;
         }
         .button-slide{
-            background-color: orange;
+            background-color: transparent;
             border-radius:4px;
             border-style:none;
+            font-size-adjust: 1.5;
+            color:dimgray;
             
         }
         .button-slide:hover{
@@ -25,7 +27,7 @@
 
         @keyframes backgound{
             100%{
-                background-color: #faa166;
+                background-color: #e3e3e3;
             }
         }
     </style>
@@ -47,7 +49,7 @@
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <asp:Button runat="server" href="#" class="btn btn-primary" Text="Go somewhere" />
+                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Go somewhere" />
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -55,7 +57,7 @@
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <asp:Button runat="server" href="#" class="btn btn-primary" Text="Go somewhere" />
+                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Go somewhere" />
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -63,7 +65,7 @@
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <asp:Button runat="server" href="#" class="btn btn-primary" Text="Go somewhere" />
+                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Go somewhere" />
             </div>
         </div>
         <div class="card" style="width: 18rem;">
@@ -71,7 +73,7 @@
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <asp:Button runat="server" href="#" class="btn btn-primary" Text="Go somewhere" />
+                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Go somewhere" />
             </div>
         </div>
     </div>
