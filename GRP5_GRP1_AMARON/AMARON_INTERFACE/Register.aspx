@@ -108,8 +108,7 @@
                                     <asp:Label runat="server" Text="Foto de perfil *"></asp:Label>
                                 </div>
                                 <div id="form2" runat="server" enctype="multipart/form-data">
-                                    <asp:FileUpload ID="pictureUpload" class="form-control input-sm input-spacing" runat="server" />
-                                    <asp:Button runat="server" ID="btnUpload" CssClass="btn btn-primary" OnClick="btnUploadClick" Text="Upload" />
+                                    <asp:FileUpload ID="pictureUpload" class="btn btn-primary" runat="server" />
                                 </div>
                             </div>
                         </div>
@@ -118,9 +117,9 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="d-flex align-baseline">
-                                    <asp:Label runat="server" Font-Size="Larger" Text="Empresa *"></asp:Label>
+                                    <asp:Label runat="server" Font-Size="Larger" Text="Empresa"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_empresa" TextMode="SingleLine" CssClass="form-control" placeholder="Si eres un proveedor, añade tu empres" required="required"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="tb_empresa" TextMode="SingleLine" CssClass="form-control" placeholder="Si eres un proveedor, añade tu empres"></asp:TextBox>
                             </div>
                         </div>
                     </div>

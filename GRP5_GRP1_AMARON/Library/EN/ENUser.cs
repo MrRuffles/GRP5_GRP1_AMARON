@@ -53,11 +53,11 @@ namespace Library
             set { this.UserEmpresa = value; }
         }
 
-        private string UserAddres;
-        public string addres
+        private string UserAddress;
+        public string address
         {
-            get { return this.UserAddres; }
-            set { this.UserAddres = value; }
+            get { return this.UserAddress; }
+            set { this.UserAddress = value; }
         }
 
         ////////////////////////////////////////////////////////////////////////////
@@ -73,11 +73,11 @@ namespace Library
             age = 0;
             url = "";
             empresa = "";
-            addres = "Default addres";
+            address = "Default addres";
         }
 
         /** Creates a user with the values of the parameters **/
-        public ENUser(string name, string pass, string email, int age, string url, string empresa, string addres)
+        public ENUser(string name, string pass, string email, int age, string url, string empresa, string address)
         {
             this.name = name;
             this.pass = pass;
@@ -85,7 +85,7 @@ namespace Library
             this.email = email;
             this.url = url;
             this.empresa = empresa;
-            this.addres = addres;
+            this.address = address;
         }
 
         public bool CreateUser()

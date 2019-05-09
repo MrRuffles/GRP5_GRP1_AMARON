@@ -29,12 +29,22 @@ namespace AMARON_INTERFACE
         protected void Button_register_click(object sender, EventArgs e)
         {
             ClearBoxes();
-            bool echeck = check_email(), pcheck = check_pass(), agecheck = check_age();
-            if(echeck && pcheck && agecheck )
+            bool echeck = check_email(), pcheck = check_pass();
+            int agecheck = check_age();
+            if(echeck && pcheck && agecheck>=18 )
             {
-                
+                HttpPostedFile file = pictureUpload.PostedFile;
+                string url = "";
+                //check file was submitted
+                if (file != null && file.ContentLength > 0)
+                {
+                    string fname = Path.GetFileName(file.FileName);
+                    url = Path.Combine("~/Imagenes/Users/", fname);
+                    file.SaveAs(Server.MapPath(url));
+                }
+
                 //Create user with given info.
-                ENUser user = new ENUser(tb_name.Text, tb_password.Text,tb_email.Text,0,"",tb_empresa.Text, tb_delivery_address.Text);
+                ENUser user = new ENUser(tb_name.Text, tb_password.Text, tb_email.Text, agecheck, url, tb_empresa.Text, tb_delivery_address.Text);
                 if (user.CreateUser())
                 {
                     Label_Sending_Success.Visible = true;
@@ -72,34 +82,21 @@ namespace AMARON_INTERFACE
                 return true;
             }
         }
-        protected bool check_age()
+        protected int check_age()
         {
             CultureInfo culture = new CultureInfo("");
             DateTime tempDate = DateTime.ParseExact(tb_birth.Text, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
             DateTime nowDate = DateTime.Now;
-            double years = nowDate.Subtract(tempDate).TotalDays / 365;
+            int years = Convert.ToInt32(nowDate.Subtract(tempDate).TotalDays) / 365;
             
             if (years < 18) {
                 Error_Birth.Visible = true;
-                return false;
+                return years;
             }
             else
             {
                 Error_Birth.Visible = false;
-                return true;
-            }
-        }
-
-        protected void btnUploadClick(object sender, EventArgs e)
-        {
-
-
-            HttpPostedFile file = pictureUpload.PostedFile;
-            //check file was submitted
-            if (file != null && file.ContentLength > 0)
-            {
-                string fname = Path.GetFileName(file.FileName);
-                file.SaveAs(Server.MapPath(Path.Combine("~/Imagenes/Users/", fname)));
+                return years;
             }
         }
     }

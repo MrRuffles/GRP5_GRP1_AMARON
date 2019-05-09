@@ -1,6 +1,7 @@
 ﻿//Paula Guadalajara Saiz
 
 using System;
+using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
 
@@ -22,7 +23,34 @@ namespace Library
         public bool CreateUser(ENUser user)
         {
             SqlConnection con = new SqlConnection(constring);
-            return true;
+            bool correct = true;
+
+            try
+            {
+                con.Open();
+                if (con.State == ConnectionState.Open)
+                {
+                    Console.WriteLine("Esto va perfectisiiiimo");
+                }
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+                    cmd.CommandText = "INSERT INTO User (name, password, email, age, urlImage, empresa, address) values ('" + user.name + "', '" + user.pass + "', '" + user.email + "', " + user.age + ", '" + user.url + "', '" + user.empresa + "', '" + user.address + "');";
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+                correct = false;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return correct;
+
         }
 
         /**  Reads a user from data base  **/
