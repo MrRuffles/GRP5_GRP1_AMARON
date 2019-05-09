@@ -1,9 +1,13 @@
 ﻿//Paula Guadalajara Saiz
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Data;
-using System.Configuration;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Library
 {
@@ -34,7 +38,14 @@ namespace Library
                 }
                 using (SqlCommand cmd = new SqlCommand("", con))
                 {
-                    cmd.CommandText = "INSERT INTO User (name, password, email, age, urlImage, empresa, address) values ('" + user.name + "', '" + user.pass + "', '" + user.email + "', " + user.age + ", '" + user.url + "', '" + user.empresa + "', '" + user.address + "');";
+                    if (user.empresa == "")
+                    {
+                        cmd.CommandText = "INSERT INTO \"User\" (name, password, email, age, urlImage, address) values ('" + user.name + "', '" + user.pass + "', '" + user.email + "', " + user.age + ", '" + user.url + "', '" + user.address + "');";
+                    }
+                    else
+                    {
+                        cmd.CommandText = "INSERT INTO \"User\" (name, password, email, age, urlImage, empresa, address) values ('" + user.name + "', '" + user.pass + "', '" + user.email + "', " + user.age + ", '" + user.url + "', '" + user.empresa + "', '" + user.address + "');";
+                    }
                     cmd.ExecuteNonQuery();
                 }
 
