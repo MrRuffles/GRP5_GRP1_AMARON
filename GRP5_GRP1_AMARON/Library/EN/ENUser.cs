@@ -19,6 +19,13 @@ namespace Library
             set { this.UserName = value; }
         }
 
+        private string UserPass;
+        public string pass
+        {
+            get { return this.UserPass; }
+            set { this.UserPass = value; }
+        }
+
         private int UserAge;
         public int age
         {
@@ -31,6 +38,19 @@ namespace Library
         {
             get { return this.UserEmail; }
             set { this.UserEmail = value; }
+        }
+
+        private string UserUrl;
+        public string url
+        {
+            get { return this.UserUrl; }
+            set { this.UserUrl = value; }
+        }
+        private string UserEmpresa;
+        public string empresa
+        {
+            get { return this.UserEmpresa; }
+            set { this.UserEmpresa = value; }
         }
 
         private string UserAddres;
@@ -48,17 +68,23 @@ namespace Library
         public ENUser()
         {
             name = "Default name";
-            age = 0;
+            pass = "";
             email = "Default email";
+            age = 0;
+            url = "";
+            empresa = "";
             addres = "Default addres";
         }
 
         /** Creates a user with the values of the parameters **/
-        public ENUser(string name, int age, string email, string addres)
+        public ENUser(string name, string pass, string email, int age, string url, string empresa, string addres)
         {
             this.name = name;
+            this.pass = pass;
             this.age = age;
             this.email = email;
+            this.url = url;
+            this.empresa = empresa;
             this.addres = addres;
         }
 

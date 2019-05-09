@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -33,7 +34,7 @@ namespace AMARON_INTERFACE
             {
                 
                 //Create user with given info.
-                ENUser user = new ENUser(tb_name.Text,0,tb_email.Text, tb_delivery_address.Text);
+                ENUser user = new ENUser(tb_name.Text, tb_password.Text,tb_email.Text,0,"",tb_empresa.Text, tb_delivery_address.Text);
                 if (user.CreateUser())
                 {
                     Label_Sending_Success.Visible = true;
@@ -86,6 +87,19 @@ namespace AMARON_INTERFACE
             {
                 Error_Birth.Visible = false;
                 return true;
+            }
+        }
+
+        protected void btnUploadClick(object sender, EventArgs e)
+        {
+
+
+            HttpPostedFile file = pictureUpload.PostedFile;
+            //check file was submitted
+            if (file != null && file.ContentLength > 0)
+            {
+                string fname = Path.GetFileName(file.FileName);
+                file.SaveAs(Server.MapPath(Path.Combine("~/Imagenes/Users/", fname)));
             }
         }
     }

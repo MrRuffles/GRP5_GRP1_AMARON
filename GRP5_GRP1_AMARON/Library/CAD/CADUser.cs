@@ -2,6 +2,7 @@
 
 using System;
 using System.Configuration;
+using System.Data.SqlClient;
 
 namespace Library
 {
@@ -14,12 +15,13 @@ namespace Library
         /**  Initializes connection string to data base  **/
         public CADUser()
         {
-            //constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
+            constring = ConfigurationManager.ConnectionStrings["AmaronDataBase"].ConnectionString;
         }
 
         /**  Adds a new user to data base  **/
         public bool CreateUser(ENUser user)
         {
+            SqlConnection con = new SqlConnection(constring);
             return true;
         }
 
