@@ -88,9 +88,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-
     <Content Include="Contact.aspx" />
     <Content Include="AddNewProduct.aspx" />
+    <Content Include="Imagenes\cart.png" />
+    <Content Include="Imagenes\contact-phone.png" />
+    <Content Include="Imagenes\glass-cocktail.png" />
+    <Content Include="Imagenes\home.png" />
     <Content Include="Orders.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="EditarPerfil.aspx" />
