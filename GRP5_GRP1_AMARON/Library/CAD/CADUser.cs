@@ -32,10 +32,6 @@ namespace Library
             try
             {
                 con.Open();
-                if (con.State == ConnectionState.Open)
-                {
-                    Console.WriteLine("Esto va perfectisiiiimo");
-                }
                 using (SqlCommand cmd = new SqlCommand("", con))
                 {
                     if (user.empresa == "")
@@ -67,7 +63,40 @@ namespace Library
         /**  Reads a user from data base  **/
         public bool ReadUser(ENUser user)
         {
-            return true;
+            SqlConnection con = new SqlConnection(constring);
+            bool correct = true;
+
+            try
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+                    cmd.CommandText = "SELECT email, password FROM \"User\" where email='" + user.email + "' and password='"+ user.pass + "';";
+
+                    SqlDataReader auxLectura = cmd.ExecuteReader();
+
+                    while (auxLectura.Read())
+                    {
+                        user.email = Convert.ToString(auxLectura[0]);
+                        user.pass = Convert.ToString(auxLectura[1]);
+                    }
+
+                    auxLectura.Close();
+                }
+
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+                correct = false;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return correct;
         }
 
         /** Updates a user from data base **/

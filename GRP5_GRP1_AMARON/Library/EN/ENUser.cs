@@ -92,6 +92,12 @@ namespace Library
             this.address = address;
         }
 
+        public ENUser(string pass, string email)
+        {
+            this.pass = pass;
+            this.email = email;
+        }
+
         public bool CreateUser()
         {
             CADUser user = new CADUser();
