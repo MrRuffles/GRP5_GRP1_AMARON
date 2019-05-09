@@ -45,6 +45,9 @@ namespace AMARON_INTERFACE
                 case "Contact":
                     Response.Redirect("Contact.aspx");
                     break;
+                case "Cart":
+                    Response.Redirect("Cart.aspx");
+                    break;
             }
         }
         protected void menu_logoff_click(object sender, EventArgs e)

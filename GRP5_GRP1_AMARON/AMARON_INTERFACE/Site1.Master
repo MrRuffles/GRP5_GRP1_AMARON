@@ -50,16 +50,17 @@
 
                     <asp:Menu runat="server" OnMenuItemClick="NavigationMenu_MenuItemClick" ID="NavigationMenu" Orientation="Horizontal">
                         <Items>
-                            <asp:MenuItem Text="Home" Value="Home"></asp:MenuItem>
-                            <asp:MenuItem Text="Catalog" Value="Catalog"></asp:MenuItem>
-                            <asp:MenuItem Text="Contact" Value="Contact"></asp:MenuItem>
+                            <asp:MenuItem Text="" Value="Home" ImageUrl="Imagenes/home.png"></asp:MenuItem>
+                            <asp:MenuItem Text="" Value="Catalog" ImageUrl="Imagenes/glass-cocktail.png"></asp:MenuItem>
+                            <asp:MenuItem Text="" Value="Contact" ImageUrl="Imagenes/contact-phone.png"></asp:MenuItem>
+                            <asp:MenuItem Text="Cart" Value="Cart" ImageUrl="Imagenes/cart.png"></asp:MenuItem>
                         </Items>
                     </asp:Menu>
 
                 </div>
                 <div id="global_actions" class="content " style="align-self: flex-end">
-                    <asp:HyperLink ID="login_menu_button" runat="server" Visible="true" Text="Log in" NavigateUrl="/Login.aspx"></asp:HyperLink>
-                    <asp:HyperLink ID="register_menu_button" runat="server" Visible="true" Text="Register" NavigateUrl="/Register.aspx"></asp:HyperLink>
+                    <asp:HyperLink ID="login_menu_button" runat="server" Visible="true" Text="Log in" NavigateUrl="Login.aspx"></asp:HyperLink>
+                    <asp:HyperLink ID="register_menu_button" runat="server" Visible="true" Text="Register" NavigateUrl="Register.aspx"></asp:HyperLink>
                     <asp:Label ID="username_menu_label" runat="server" Text="" Visible="false"></asp:Label>
                     <asp:Button  class="btn btn-danger btn-round "  ID="menu_logoff" runat="server" Visible="false" Text="Log off" OnClick="menu_logoff_click"  CausesValidation="False" UseSubmitBehavior="False" />
                 </div>
