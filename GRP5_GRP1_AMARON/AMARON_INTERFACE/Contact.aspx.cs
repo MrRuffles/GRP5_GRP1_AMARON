@@ -32,15 +32,15 @@ namespace AMARON_INTERFACE
             {
                 MailMessage toSend = new MailMessage
                 {
-                    Subject = "AMARON Contact Form Mail from " + email,
+                    Subject = "AMARON Formulario de contacto de:" + email,
                     From = new MailAddress("contactformamaron@gmail.com")
                 };
                 toSend.To.Add("ContactFormAMARON@gmail.com");
-                toSend.Body = "From:\t" + name + "\n";
+                toSend.Body = "De:\t" + name + "\n";
                 toSend.Body += "Email:\t" + email + "\n\n";
-                toSend.Body += "Requested:\t"+ option+ "\n";
-                toSend.Body += "Subject:\t" + subject + "\n";
-                toSend.Body += "Message:\n" + message + "\n";
+                toSend.Body += "\t"+ option+ "\n";
+                toSend.Body += "Asunto:\t" + subject + "\n";
+                toSend.Body += "Mensaje:\n" + message + "\n";
 
                 var smtp = new System.Net.Mail.SmtpClient();
                 {
