@@ -98,6 +98,26 @@
                                 <asp:TextBox runat="server" ID="tb_delivery_address" TextMode="SingleLine" CssClass="form-control" placeholder="Introduzca la dirección de envio" required="required"></asp:TextBox>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="d-flex align-baseline">
+                                    <asp:Label runat="server" Text="Foto de perfil *"></asp:Label>
+                                </div>
+                                <div id="form2" runat="server" enctype="multipart/form-data">
+                                    <asp:FileUpload ID="pictureUpload" class="btn btn-primary" runat="server" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" typeof="file">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="d-flex align-baseline">
+                                    <asp:Label runat="server" Font-Size="Larger" Text="Empresa"></asp:Label>
+                                </div>
+                                <asp:TextBox runat="server" ID="tb_empresa" TextMode="SingleLine" CssClass="form-control" placeholder="Si eres un proveedor, añade tu empres"></asp:TextBox>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
