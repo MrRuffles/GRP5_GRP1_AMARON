@@ -7,16 +7,12 @@
     <script src="Scripts/popper.min.js"></script>
     <style type="text/css">
         body {
-            background-color: darkorange;
+            background-color: whitesmoke;
         }
-
-        #login-group {
-            background-color: darkorange;
-        }
-
+        
         @keyframes backgound {
             100% {
-                background-color: #faa166;
+                background-color: #ffffff;
             }
         }
     </style>
@@ -28,9 +24,9 @@
         <h2 style="padding: 50px 0px 0px 0px; font-size: 50px; text-align: center; align-items: center">Registro</h2>
         <hr width="60%" align="center" />
     </div>
-    <div class="container col-md-8" id="register-form">
-        <div class="row">
-            <div class="col-md-8 offset-xl-2 py-5">
+    <div class="container col-md-8" id="register-form" >
+        <div class="row rounded"style ="border-radius:200px; background-color:coral">
+            <div class="col-md-8 offset-xl-2 py-5" >
                 <div class="controls">
                     <div class="row ">
                         <div class="col-md-6">
