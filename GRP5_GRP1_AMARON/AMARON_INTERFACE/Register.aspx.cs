@@ -42,6 +42,9 @@ namespace AMARON_INTERFACE
                     url = Path.Combine("~/Imagenes/Users/", fname);
                     file.SaveAs(Server.MapPath(url));
                 }
+                else {
+                    url = "~/Imagenes/fotoPerfil.jpg";
+                }
 
                 //Create user with given info.
                 ENUser user = new ENUser(tb_name.Text, tb_password.Text, tb_email.Text, agecheck, url, tb_empresa.Text, tb_delivery_address.Text);

@@ -10,8 +10,7 @@ namespace AMARON_INTERFACE
 {
     public partial class Login : System.Web.UI.Page
     {
-        string uemail = "admin@admin";
-        string pass = "password";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             
