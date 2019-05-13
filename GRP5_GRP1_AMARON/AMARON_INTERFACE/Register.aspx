@@ -101,7 +101,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="d-flex align-baseline">
-                                    <asp:Label runat="server" Text="Foto de perfil *"></asp:Label>
+                                    <asp:Label runat="server" Text="Foto de perfil"></asp:Label>
                                 </div>
                                 <div id="form2" runat="server" enctype="multipart/form-data">
                                     <asp:FileUpload ID="pictureUpload" class="btn btn-primary" runat="server" />
