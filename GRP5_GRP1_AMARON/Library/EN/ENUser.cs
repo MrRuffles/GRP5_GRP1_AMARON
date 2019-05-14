@@ -121,6 +121,12 @@ namespace Library
             return user.ReadUserPerfil(this);
         }
 
+        public bool ReadUserEDPerfil()
+        {
+            CADUser user = new CADUser();
+            return user.ReadUserEDPerfil(this);
+        }
+
         public bool UpdateUser()
         {
             CADUser user = new CADUser();

@@ -13,7 +13,9 @@ namespace AMARON_INTERFACE
     {
 
         string passw = "";
-        string comp = "";
+        string nameText = "";
+        string url = "";
+        string addressText = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,15 +25,13 @@ namespace AMARON_INTERFACE
             {
                 ENUser user = new ENUser("", "", cookie["username"], 0, "", "", "");
 
-                if (user.ReadUserPerfil())
+                if (user.ReadUserEDPerfil())
                 {
-                    name.Text = user.name;
-                    mail.Text = user.email;
-                    address.Text = user.address;
+                    nameText = user.name;
+                    addressText = user.address;
                     img.ImageUrl = user.url;
-                    age.Text = Convert.ToString(user.age);
+                    url = user.url;
                     passw = user.pass;
-                    comp = user.empresa;
                 }
             }
         }
@@ -39,8 +39,8 @@ namespace AMARON_INTERFACE
         protected void Unnamed_Click(object sender, EventArgs e)
         {
             HttpPostedFile file = pictureUpload.PostedFile;
+            HttpCookie cookie = Request.Cookies["damncookie"];
 
-            string url = "";
             if (file != null && file.ContentLength > 0)
             {
                 string fname = Path.GetFileName(file.FileName);
@@ -48,9 +48,15 @@ namespace AMARON_INTERFACE
                 file.SaveAs(Server.MapPath(url));
             }
 
-            ENUser user = new ENUser("", "", "", 0,"", "", "");
-
-            user.name = name.Text;
+            ENUser user = new ENUser();
+            if (name.Text=="")
+            {
+                user.name = nameText;
+            }
+            else
+            {
+                user.name = name.Text;
+            }
             if (pass.Text == "")
             {
                 user.pass = passw;
@@ -59,22 +65,24 @@ namespace AMARON_INTERFACE
             {
                 user.pass = pass.Text;
             }
-            user.email = mail.Text;
-            user.age = Convert.ToInt32(age.Text);
-            if (file == null)
+
+            user.url = url;
+
+            if (address.Text == "")
             {
-                user.url = img.ImageUrl;
+                user.address = addressText;
             }
             else
             {
-                user.url = url;
+                user.address = address.Text;
             }
-            user.address = address.Text;
-            user.empresa = comp;
+            
+
+            user.email = cookie["username"];
 
             if (user.UpdateUser())
             {
-                Response.Redirect("Perfil.aspx");
+                Response.Redirect("Perfil.aspx?ok="+name.Text);
             }
         }
     }

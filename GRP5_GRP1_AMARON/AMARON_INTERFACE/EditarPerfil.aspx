@@ -1,4 +1,3 @@
-   
 <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="EditarPerfil.aspx.cs" Inherits="AMARON_INTERFACE.EditarPerfil" %>
 
 
@@ -77,30 +76,29 @@
                         </div>
                     </div>
                     <div class="parte-derecha">
-                        <form>
+                        
                             <div class="form-group">
-                                <asp:Label runat="server" Text="Cambiar foto de perfil"></asp:Label>
+                                <div class="d-flex justify-content-start">
+                                    <asp:Label runat="server" Text="Cambiar foto de perfil"></asp:Label>
+                                </div>
                                 <div id="form2" runat="server" enctype="multipart/form-data">
                                     <asp:FileUpload ID="pictureUpload" class="btn btn-primary" runat="server" />
                                 </div>
                             </div>
-                        </form>
+                        
                     </div>
                 </div>
                 <div class="row">
-                    <form>
+                    
                         <div class="row">
                             <h3>Nombre:</h3>
-                            <asp:Textbox runat="server" ID="name" class="form-control" Text="" placeholder="Nuevo nombre"></asp:Textbox>
+                            <asp:Textbox runat="server" ID="name" class="form-control" placeholder="Nuevo nombre"></asp:Textbox>
                             <h3>Dirección:</h3>
-                            <asp:Textbox runat="server" ID="address" class="form-control" Text="" placeholder="Nueva dirección"></asp:Textbox>
-                            <h3>Email:</h3>
-                            <asp:Textbox runat="server" ID="mail" class="form-control" Text="" placeholder="Nuevo email"></asp:Textbox>
+                            <asp:Textbox runat="server" ID="address" class="form-control" placeholder="Nueva dirección"></asp:Textbox>
                             <h3>Cambiar contraseña:</h3>
-                            <asp:Textbox runat="server" ID="pass" class="form-control" Text="" TextMode="password" placeholder="Nueva contraseña"></asp:Textbox>
-                            <asp:TextBox runat="server" ID="age" Visible="false"></asp:TextBox>
+                            <asp:Textbox runat="server" ID="pass" class="form-control" TextMode="password" placeholder="Nueva contraseña"></asp:Textbox>
                         </div>
-                    </form>
+                    
                 </div>
                 <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-success" Text="Guardar" />
             </div>
