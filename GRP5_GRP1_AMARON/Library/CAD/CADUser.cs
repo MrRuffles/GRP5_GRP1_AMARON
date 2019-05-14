@@ -113,7 +113,7 @@ namespace Library
                         user.email = Convert.ToString(auxLectura[3]);
                         user.age = Convert.ToInt16(auxLectura[4]);
                         user.url = Convert.ToString(auxLectura[5]);
-                        if(auxLectura[5] != null) {
+                        if(auxLectura[6] != null) {
                             user.empresa = Convert.ToString(auxLectura[6]);
                         }
                         user.address = Convert.ToString(auxLectura[7]);

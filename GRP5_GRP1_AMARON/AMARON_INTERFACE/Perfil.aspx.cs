@@ -29,6 +29,8 @@ namespace AMARON_INTERFACE
                     {
                         company.Visible = true;
                         company1.Text = user.empresa;
+                        productos.Visible = true;
+                        pedidios.Visible = false;
                     }
                     fotoPerfil.ImageUrl = user.url;
                 }
@@ -43,6 +45,11 @@ namespace AMARON_INTERFACE
         protected void editarPerfil(object sender, EventArgs e)
         {
             Response.Redirect("EditarPerfil.aspx");
+        }
+
+        protected void crearProducto(object sender, EventArgs e)
+        {
+            Response.Redirect("AddNewProduct.aspx");
         }
     }
 }
