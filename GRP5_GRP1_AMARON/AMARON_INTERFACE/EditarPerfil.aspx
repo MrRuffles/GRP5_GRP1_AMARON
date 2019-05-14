@@ -73,14 +73,16 @@
                 <div class="row">
                     <div class="parte-izquierda">
                         <div class="col-md-13">
-                            <img class="img-responsive img-portfolio img-hover" src="Imagenes/fotoPerfil.jpg">
+                            <asp:Image ID="img" runat="server" class="img-responsive img-portfolio img-hover" Imageurl="Imagenes/fotoPerfil.jpg" />
                         </div>
                     </div>
                     <div class="parte-derecha">
                         <form>
                             <div class="form-group">
-                                <label for="exampleFormControlFile1">Cambiar foto de perfil</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                <asp:Label runat="server" Text="Cambiar foto de perfil"></asp:Label>
+                                <div id="form2" runat="server" enctype="multipart/form-data">
+                                    <asp:FileUpload ID="pictureUpload" class="btn btn-primary" runat="server" />
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -89,17 +91,18 @@
                     <form>
                         <div class="row">
                             <h3>Nombre:</h3>
-                            <input class="form-control" placeholder="Nombre actual">
-                            <h3>Apellidos:</h3>
-                            <input class="form-control" placeholder="Apellidos actuales">
+                            <asp:Textbox runat="server" ID="name" class="form-control" Text="" placeholder="Nuevo nombre"></asp:Textbox>
                             <h3>Dirección:</h3>
-                            <input class="form-control" placeholder="Dirección actual">
+                            <asp:Textbox runat="server" ID="address" class="form-control" Text="" placeholder="Nueva dirección"></asp:Textbox>
                             <h3>Email:</h3>
-                            <input class="form-control" placeholder="Email actual">
+                            <asp:Textbox runat="server" ID="mail" class="form-control" Text="" placeholder="Nuevo email"></asp:Textbox>
+                            <h3>Cambiar contraseña:</h3>
+                            <asp:Textbox runat="server" ID="pass" class="form-control" Text="" TextMode="password" placeholder="Nueva contraseña"></asp:Textbox>
+                            <asp:TextBox runat="server" ID="age" Visible="false"></asp:TextBox>
                         </div>
                     </form>
                 </div>
-                <a href="#" class="btn btn-success" role="button"> Guardar</a>
+                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-success" Text="Guardar" />
             </div>
     </div>
 </asp:Content>

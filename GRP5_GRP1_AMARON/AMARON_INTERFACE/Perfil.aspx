@@ -48,7 +48,7 @@
     <div class="clearfix">
         <div class="columna-izquierda">
             <div class="col-md-13">
-                <asp:Image runat="server" id="fotoPerfil" class="img-responsive img-portfolio img-hover" ImageUrl="Imagenes/fotoPerfil.jpg" />
+                <asp:Image runat="server" style="border-width: 1px 1px 1px 1px; border-style: solid; border-color: coral;" ID="fotoPerfil" class="img-responsive img-portfolio img-hover" ImageUrl="Imagenes/fotoPerfil.jpg" />
             </div>
             <div class="col-md-13">
                 <br/>
@@ -62,11 +62,26 @@
         <div class="parte-central">
             <div class="col-md-12" style="border-width: 1px 1px 1px 1px; border-style: solid; border-color: lightgrey; margin: 10px auto">
                 <h3 style="text-align: center">Mi perfil </h3>
-                <asp:Label runat="server" Text="Nombre: "> <asp:Label ID="name" runat="server" Text=""></asp:Label> </asp:Label>
-                <asp:Label runat="server" Text="Edad: "> <asp:Label ID="age" runat="server" Text=""></asp:Label> </asp:Label>
-                <asp:Label runat="server" Text="Email: "> <asp:Label ID="mail" runat="server" Text=""></asp:Label> </asp:Label>
-                <asp:Label runat="server" Text="Dirección: "> <asp:Label ID="address" runat="server" Text=""></asp:Label> </asp:Label>
-                <asp:Label runat="server" Text="Empresa: " ID="company" Visible="false"> <asp:Label ID="company1" runat="server" Text=""></asp:Label> </asp:Label>
+                <div class="d-flex justify-content-start">
+                    <asp:Label runat="server" Width="10%" Text="Nombre:" Font-Size="Large">  </asp:Label>
+                    <asp:Label ID="name"  runat="server" Font-Size="Large" Text=""></asp:Label>
+                    </div>
+                <div class="d-flex justify-content-start">
+                    <asp:Label runat="server" Width="10%" Text="Edad:" Font-Size="Large">  </asp:Label>
+                    <asp:Label ID="age"  runat="server" Font-Size="Large" Text=""></asp:Label>
+                </div>
+                <div class="d-flex justify-content-start">
+                    <asp:Label runat="server" Width="10%" Text="Email:" Font-Size="Large">  </asp:Label>
+                    <asp:Label ID="mail"  runat="server" Font-Size="Large" Text=""></asp:Label>
+                </div>
+                <div class="d-flex justify-content-start">
+                    <asp:Label runat="server" Width="10%" Text="Dirección:" Font-Size="Large">  </asp:Label>
+                    <asp:Label ID="address"  runat="server" Font-Size="Large" Text=""></asp:Label>
+                </div>
+                <div class="d-flex justify-content-start">
+                    <asp:Label runat="server" Width="10%" Text="Empresa:" ID="company" Visible="false" Font-Size="Large">  </asp:Label>
+                    <asp:Label ID="company1"  runat="server" Font-Size="Large" Text=""></asp:Label>
+                </div>
             </div>
         </div>
     </div>
