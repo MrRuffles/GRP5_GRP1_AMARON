@@ -47,16 +47,32 @@ namespace AMARON_INTERFACE
                 }
 
                 //Create user with given info.
-                ENUser user = new ENUser(tb_name.Text, tb_password.Text, tb_email.Text, agecheck, url, tb_empresa.Text, tb_delivery_address.Text);
-                if (user.CreateUser())
+                if (tb_empresa.Text == "")
                 {
-                    Label_Sending_Success.Visible = true;
+                    ENUser user = new ENUser(tb_name.Text, tb_password.Text, tb_email.Text, agecheck, url, tb_empresa.Text, tb_delivery_address.Text);
+
+                    if (user.CreateUser())
+                    {
+                        Label_Sending_Success.Visible = true;
+                    }
+                    else
+                    {
+                        Label_Sending_Error.Visible = true;
+                    }
                 }
                 else
                 {
-                    Label_Sending_Error.Visible = true;
-                }
+                    ENProvider prov = new ENProvider(tb_name.Text, tb_password.Text, tb_email.Text, agecheck, url, tb_empresa.Text, tb_delivery_address.Text);
 
+                    if (prov.CreateProvider())
+                    {
+                        Label_Sending_Success.Visible = true;
+                    }
+                    else
+                    {
+                        Label_Sending_Error.Visible = true;
+                    }
+                }
             }
         }
         protected bool check_pass()

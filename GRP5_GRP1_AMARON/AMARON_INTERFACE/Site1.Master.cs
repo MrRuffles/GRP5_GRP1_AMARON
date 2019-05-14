@@ -19,9 +19,9 @@ namespace AMARON_INTERFACE
                 login_menu_button.Visible = false;
                 register_menu_button.Visible = false;
                 menu_logoff.Visible = true;
-                username_menu_label.Visible = true;
+                username_menu_button.Visible = true;
                 //username_menu_label.Text = Response.Cookies["authcookie"]["username"];
-                username_menu_label.Text = cookie["username"];
+                username_menu_button.Text = cookie["username"];
 
             }
             else
@@ -29,7 +29,7 @@ namespace AMARON_INTERFACE
                 login_menu_button.Visible = true;
                 register_menu_button.Visible = true;
                 menu_logoff.Visible = false;
-                username_menu_label.Visible = false;
+                username_menu_button.Visible = false;
             }
         }
         protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)
@@ -61,6 +61,11 @@ namespace AMARON_INTERFACE
             //{
                 Response.Redirect("Perfil.aspx");
             //}
+        }
+
+        protected void username_menu_button_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Perfil.aspx");
         }
     }
 }

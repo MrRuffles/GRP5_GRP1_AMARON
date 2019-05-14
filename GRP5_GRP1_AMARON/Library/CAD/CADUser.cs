@@ -34,14 +34,7 @@ namespace Library
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("", con))
                 {
-                    if (user.empresa == "")
-                    {
-                        cmd.CommandText = "INSERT INTO \"User\" (name, password, email, age, urlImage, address) values ('" + user.name + "', '" + user.pass + "', '" + user.email + "', " + user.age + ", '" + user.url + "', '" + user.address + "');";
-                    }
-                    else
-                    {
-                        cmd.CommandText = "INSERT INTO \"User\" (name, password, email, age, urlImage, empresa, address) values ('" + user.name + "', '" + user.pass + "', '" + user.email + "', " + user.age + ", '" + user.url + "', '" + user.empresa + "', '" + user.address + "');";
-                    }
+                    cmd.CommandText = "INSERT INTO \"User\" (name, password, email, age, urlImage, address) values ('" + user.name + "', '" + user.pass + "', '" + user.email + "', " + user.age + ", '" + user.url + "', '" + user.address + "');";
                     cmd.ExecuteNonQuery();
                 }
 
@@ -79,6 +72,51 @@ namespace Library
                     {
                         user.email = Convert.ToString(auxLectura[0]);
                         user.pass = Convert.ToString(auxLectura[1]);
+                    }
+
+                    auxLectura.Close();
+                }
+
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+                correct = false;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return correct;
+        }
+
+        /**  Reads a user from data base to show data on the profile page  **/
+        public bool ReadUserPerfil(ENUser user)
+        {
+            SqlConnection con = new SqlConnection(constring);
+            bool correct = true;
+
+            try
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+                    cmd.CommandText = "SELECT * FROM \"User\" where email='" + user.email + "';";
+
+                    SqlDataReader auxLectura = cmd.ExecuteReader();
+
+                    while (auxLectura.Read())
+                    {
+                        user.name = Convert.ToString(auxLectura[1]);
+                        user.email = Convert.ToString(auxLectura[3]);
+                        user.age = Convert.ToInt16(auxLectura[4]);
+                        user.url = Convert.ToString(auxLectura[5]);
+                        if(auxLectura[5] != null) {
+                            user.empresa = Convert.ToString(auxLectura[6]);
+                        }
+                        user.address = Convert.ToString(auxLectura[7]);
                     }
 
                     auxLectura.Close();

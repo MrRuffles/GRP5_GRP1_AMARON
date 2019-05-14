@@ -48,7 +48,7 @@
     <div class="clearfix">
         <div class="columna-izquierda">
             <div class="col-md-13">
-                <img class="img-responsive img-portfolio img-hover" src="Imagenes/fotoPerfil.jpg">
+                <asp:Image runat="server" id="fotoPerfil" class="img-responsive img-portfolio img-hover" ImageUrl="Imagenes/fotoPerfil.jpg" />
             </div>
             <div class="col-md-13">
                 <br/>
@@ -61,11 +61,11 @@
         <div class="parte-central">
             <div class="col-md-12" style="border-width: 1px 1px 1px 1px; border-style: solid; border-color: lightgrey; margin: 10px auto">
                 <h3 style="text-align: center">Mi perfil </h3>
-                <h4>Nombre:<strong>  Nombre random</strong></h4>
-                <h4>Apellidos:<strong>  Apellidos random</strong></h4>
-                <h4>Edad:<strong>  Edad random</strong></h4>
-                <h4>Email:<strong>  Email random</strong></h4>
-                <h4>Dirección:<strong>  Dirección random</strong></h4>
+                <asp:Label runat="server" Text="Nombre: "> <asp:Label ID="name" runat="server" Text=""></asp:Label> </asp:Label>
+                <asp:Label runat="server" Text="Edad: "> <asp:Label ID="age" runat="server" Text=""></asp:Label> </asp:Label>
+                <asp:Label runat="server" Text="Email: "> <asp:Label ID="mail" runat="server" Text=""></asp:Label> </asp:Label>
+                <asp:Label runat="server" Text="Dirección: "> <asp:Label ID="address" runat="server" Text=""></asp:Label> </asp:Label>
+                <asp:Label runat="server" Text="Empresa: " ID="company" Visible="false"> <asp:Label ID="company1" runat="server" Text=""></asp:Label> </asp:Label>
             </div>
         </div>
     </div>

@@ -67,13 +67,13 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.HyperLink register_menu_button;
         
         /// <summary>
-        /// Control username_menu_label.
+        /// Control username_menu_button.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label username_menu_label;
+        protected global::System.Web.UI.WebControls.Button username_menu_button;
         
         /// <summary>
         /// Control menu_logoff.

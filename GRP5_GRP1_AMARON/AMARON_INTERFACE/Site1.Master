@@ -48,7 +48,7 @@
                 <span></span>
                 <div id="nav-bar" class="row d-flex justify-content-center">
 
-                    <asp:Menu runat="server"  OnMenuItemClick="NavigationMenu_MenuItemClick" ID="NavigationMenu" Orientation="Horizontal">
+                    <asp:Menu runat="server"  OnMenuItemClick="NavigationMenu_MenuItemClick" CssClass="d-flex justify-content-around" ID="NavigationMenu" Orientation="Horizontal">
                         <Items>
                             <asp:MenuItem Text="" Value="Home" ImageUrl="Imagenes/home.png"></asp:MenuItem>
                             <asp:MenuItem Text="" Value="Catalog" ImageUrl="Imagenes/glass-cocktail.png"></asp:MenuItem>
@@ -61,7 +61,7 @@
                 <div id="global_actions" class="content " style="align-self: flex-end">
                     <asp:HyperLink ID="login_menu_button" runat="server" Visible="true" Text="Log in" NavigateUrl="Login.aspx"></asp:HyperLink>
                     <asp:HyperLink ID="register_menu_button" runat="server" Visible="true" Text="Register" NavigateUrl="Register.aspx"></asp:HyperLink>
-                    <asp:Label ID="username_menu_label" runat="server" Text="" Visible="false"></asp:Label>
+                    <asp:Button ID="username_menu_button" CssClass="btn" runat="server" Text="" Visible="false" OnClick="username_menu_button_Click" />
                     <asp:Button  class="btn btn-danger btn-round "  ID="menu_logoff" runat="server" Visible="false" Text="Log off" OnClick="menu_logoff_click"  CausesValidation="False" UseSubmitBehavior="False" />
                 </div>
             </div>

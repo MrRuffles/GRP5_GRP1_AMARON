@@ -98,6 +98,11 @@ namespace Library
             this.email = email;
         }
 
+        public ENUser(string email)
+        {
+            this.email = email;
+        }
+
         public bool CreateUser()
         {
             CADUser user = new CADUser();
@@ -108,6 +113,12 @@ namespace Library
         {
             CADUser user = new CADUser();
             return user.ReadUser(this);
+        }
+
+        public bool ReadUserPerfil()
+        {
+            CADUser user = new CADUser();
+            return user.ReadUserPerfil(this);
         }
 
         public bool UpdateUser()
