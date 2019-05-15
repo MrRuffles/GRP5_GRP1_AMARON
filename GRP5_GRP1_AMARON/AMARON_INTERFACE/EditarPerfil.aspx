@@ -91,11 +91,11 @@
                 <div class="row">
                     
                         <div class="row">
-                            <h3>Nombre:</h3>
+                            <asp:Label runat="server" Text="Nombre:" Font-Size="Larger"></asp:Label>
                             <asp:Textbox runat="server" ID="name" class="form-control" placeholder="Nuevo nombre"></asp:Textbox>
-                            <h3>Dirección:</h3>
-                            <asp:Textbox runat="server" ID="address" class="form-control" placeholder="Nueva dirección"></asp:Textbox>
-                            <h3>Cambiar contraseña:</h3>
+                            <asp:Label runat="server" Text="Direccion:" Font-Size="Larger"></asp:Label>
+                            <asp:Textbox runat="server" ID="address" class="form-control" placeholder="Nueva direccion"></asp:Textbox>
+                            <asp:Label runat="server" Text="Cambiar contraseña:" Font-Size="Larger"></asp:Label>
                             <asp:Textbox runat="server" ID="pass" class="form-control" TextMode="password" placeholder="Nueva contraseña"></asp:Textbox>
                         </div>
                     
