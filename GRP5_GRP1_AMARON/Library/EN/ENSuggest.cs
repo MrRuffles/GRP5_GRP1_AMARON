@@ -81,11 +81,11 @@ namespace Library
             return cadsup.createSuggest(this);
         }
 
-        public bool readSuggest()
+        public bool readSuggest(int id)
         {
             CADSuggest cadsup = new CADSuggest();
 
-            return cadsup.readSuggest(this);
+            return cadsup.readSuggest(this,id);
         }
 
         public bool updateSuggest()
@@ -95,11 +95,11 @@ namespace Library
             return cadsup.updateSuggest(this);
         }
 
-        public bool deleteSuggest()
+        public bool deleteSuggest(int id)
         {
             CADSuggest cadsup = new CADSuggest();
 
-            return cadsup.deleteSuggest(this);
+            return cadsup.deleteSuggest(this,id);
         }
     }
 }

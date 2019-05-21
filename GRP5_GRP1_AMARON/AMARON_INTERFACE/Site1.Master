@@ -13,7 +13,7 @@
         <script src="Scripts/popper.min.js"></script>
     </asp:ContentPlaceHolder>
     <style type="text/css">
-        #footer{
+        #footer {
             background-color: #ddd;
             z-index: 1;
         }
@@ -32,10 +32,11 @@
             justify-content: flex-end;
             width: inherit;
         }
-        #footer ul li{
-            padding: 0 10px;
-            list-style: none;
-        }
+
+            #footer ul li {
+                padding: 0 10px;
+                list-style: none;
+            }
     </style>
 </head>
 <body>
@@ -46,35 +47,35 @@
                     <asp:ImageButton ID="ImageButtonHeader" OnClick="ImageButtonHeader_Click" runat="server" ImageUrl="Imagenes/ron.jpg" Width="100%" Height="105px" />
                 </div>
                 <span></span>
-                <div id="nav-bar" class="row d-flex justify-content-center">
-
-                    <asp:Menu runat="server"  OnMenuItemClick="NavigationMenu_MenuItemClick" CssClass="d-flex justify-content-around" ID="NavigationMenu" Orientation="Horizontal">
-                        <Items>
-                            <asp:MenuItem Text="" Value="Home" ImageUrl="Imagenes/home.png"></asp:MenuItem>
-                            <asp:MenuItem Text="" Value="Catalog" ImageUrl="Imagenes/glass-cocktail.png"></asp:MenuItem>
-                            <asp:MenuItem Text="" Value="Contact" ImageUrl="Imagenes/contact-phone.png"></asp:MenuItem>
-                            <asp:MenuItem Text="" Value="Cart" ImageUrl="Imagenes/cart.png"></asp:MenuItem>
-                        </Items>
-                    </asp:Menu>
-
-                </div>
-                <div id="global_actions" class="content " style="align-self: flex-end">
-                    <asp:HyperLink ID="login_menu_button" runat="server" Visible="true" Text="Log in" NavigateUrl="Login.aspx"></asp:HyperLink>
-                    <asp:HyperLink ID="register_menu_button" runat="server" Visible="true" Text="Register" NavigateUrl="Register.aspx"></asp:HyperLink>
-                    <asp:Button ID="username_menu_button" CssClass="btn" runat="server" Text="" Visible="false" OnClick="username_menu_button_Click" />
-                    <asp:Button  class="btn btn-danger btn-round "  ID="menu_logoff" runat="server" Visible="false" Text="Log off" OnClick="menu_logoff_click"  CausesValidation="False" UseSubmitBehavior="False" />
+                <div id="nav-bar" class="row">
+                    <div class="col-md-6 d-flex justify-content-center offset-3 " >
+                        <asp:Menu runat="server" OnMenuItemClick="NavigationMenu_MenuItemClick" ID="NavigationMenu" Orientation="Horizontal">
+                            <Items>
+                                <asp:MenuItem runat="server" Text="" Value="Home" ImageUrl="Imagenes/home.png"></asp:MenuItem>
+                                <asp:MenuItem runat="server" Text="" Value="Catalog" ImageUrl="Imagenes/glass-cocktail.png"></asp:MenuItem>
+                                <asp:MenuItem runat="server" Text="" Value="Contact" ImageUrl="Imagenes/contact-phone.png"></asp:MenuItem>
+                                <asp:MenuItem runat="server" Text="" Value="Cart" ImageUrl="Imagenes/cart.png"></asp:MenuItem>
+                            </Items>
+                        </asp:Menu>
+                    </div>
+                    <div id="global_actions" class="col-3 d-flex justify-content-end">
+                        <asp:HyperLink ID="login_menu_button" runat="server" Visible="true" Text="Log in" NavigateUrl="Login.aspx"></asp:HyperLink>
+                        <asp:HyperLink ID="register_menu_button" runat="server" Visible="true" Text="Register" NavigateUrl="Register.aspx"></asp:HyperLink>
+                        <asp:Label ID="username_menu_label" runat="server" Text="" Visible="false"></asp:Label>
+                        <asp:Button class="btn btn-danger btn-round " ID="menu_logoff" runat="server" Visible="false" Text="Log off" OnClick="menu_logoff_click" CausesValidation="False" UseSubmitBehavior="False" />
+                    </div>
                 </div>
             </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-            <div id="footer" >
-                    <ul>
-                        <li><a href="AboutUs.aspx">About Us</a></li>
-                    </ul>
-                    <span>&copy; 2019 - Alcohol para todos!!</span>
+            <div id="footer">
+                <ul>
+                    <li><a href="AboutUs.aspx">About Us</a></li>
+                </ul>
+                <span>&copy; 2019 - Alcohol para todos!!</span>
             </div>
         </div>
     </form>
-    
+
 </body>
 </html>
