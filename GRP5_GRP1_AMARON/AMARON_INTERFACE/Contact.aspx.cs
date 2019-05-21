@@ -77,7 +77,7 @@ namespace AMARON_INTERFACE
                         ENSuggest ensug = new ENSuggest(name, email, subject, message);
                         ensug.createSuggest();
                     }
-                    if (option == "Support")
+                    else if (option == "Support")
                     {
                         ENSupport ensupport = new ENSupport(name, email, subject, message);
                         ensupport.createSupport();
