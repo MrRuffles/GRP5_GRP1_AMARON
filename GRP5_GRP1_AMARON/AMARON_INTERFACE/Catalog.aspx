@@ -203,12 +203,6 @@
                     </div>
                 </a>
             </div>
-            <asp:Table runat="server">
-                <asp:TableRow>
-                    <asp:TableCell></asp:TableCell>
-                </asp:TableRow>
-
-            </asp:Table> 
         </main>
     </div>
 </asp:Content>

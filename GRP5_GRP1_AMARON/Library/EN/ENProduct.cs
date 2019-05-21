@@ -1,6 +1,7 @@
 ﻿//Tamara Elizabeth Salcedo Peinado, 75944876A
 
 using System;
+using System.Data;
 //using Library.CADProduct;
 
 
@@ -51,6 +52,16 @@ namespace Library {
 
         }
 
+        private string ProductType;
+        public string type
+        {
+
+            get { return this.ProductType; }
+
+            set { this.ProductType = value; }
+
+        }
+
         private string ProductDescription;
         public string description
         {
@@ -58,6 +69,16 @@ namespace Library {
             get { return this.ProductDescription; }
 
             set { this.ProductDescription = value; }
+
+        }
+
+        private string ProductUrl;
+        public string url
+        {
+
+            get { return this.ProductUrl; }
+
+            set { this.ProductUrl = value; }
 
         }
 
@@ -79,12 +100,14 @@ namespace Library {
         }
 
         //Creates a products with the values that receives in the parameters
-        public ENProduct(string name, float price, int stock, string description){
+        public ENProduct(string name, float price, int stock, string type ,string description, string url){
 
             this.name = name;
             this.price = price;
             this.stock = stock;
+            this.type = type;
             this.description = description;
+            this.url = url;
         }
 
         /*
@@ -105,11 +128,9 @@ namespace Library {
          * Reads the product from the data base
          * Return: true in case that the product could be updated, false on the contrary
         */
-        public bool ReadProduct(){
+        public DataTable ReadProductCat(){
 
-            bool read = false;
-
-            read = prodCAD.ReadProduct(this);
+            DataTable read = prodCAD.ReadProductCat(this);
 
             return read;
         }
