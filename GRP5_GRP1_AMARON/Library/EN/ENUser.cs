@@ -1,6 +1,10 @@
 ﻿//Paula Guadalajara Saiz
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Library
 {
@@ -19,6 +23,13 @@ namespace Library
             set { this.UserName = value; }
         }
 
+        private string UserPass;
+        public string pass
+        {
+            get { return this.UserPass; }
+            set { this.UserPass = value; }
+        }
+
         private int UserAge;
         public int age
         {
@@ -33,11 +44,24 @@ namespace Library
             set { this.UserEmail = value; }
         }
 
-        private string UserAddres;
-        public string addres
+        private string UserUrl;
+        public string url
         {
-            get { return this.UserAddres; }
-            set { this.UserAddres = value; }
+            get { return this.UserUrl; }
+            set { this.UserUrl = value; }
+        }
+        private string UserEmpresa;
+        public string empresa
+        {
+            get { return this.UserEmpresa; }
+            set { this.UserEmpresa = value; }
+        }
+
+        private string UserAddress;
+        public string address
+        {
+            get { return this.UserAddress; }
+            set { this.UserAddress = value; }
         }
 
         ////////////////////////////////////////////////////////////////////////////
@@ -48,18 +72,35 @@ namespace Library
         public ENUser()
         {
             name = "Default name";
-            age = 0;
+            pass = "";
             email = "Default email";
-            addres = "Default addres";
+            age = 0;
+            url = "";
+            empresa = "";
+            address = "Default addres";
         }
 
         /** Creates a user with the values of the parameters **/
-        public ENUser(string name, int age, string email, string addres)
+        public ENUser(string name, string pass, string email, int age, string url, string empresa, string address)
         {
             this.name = name;
+            this.pass = pass;
             this.age = age;
             this.email = email;
-            this.addres = addres;
+            this.url = url;
+            this.empresa = empresa;
+            this.address = address;
+        }
+
+        public ENUser(string pass, string email)
+        {
+            this.pass = pass;
+            this.email = email;
+        }
+
+        public ENUser(string email)
+        {
+            this.email = email;
         }
 
         public bool CreateUser()
@@ -72,6 +113,18 @@ namespace Library
         {
             CADUser user = new CADUser();
             return user.ReadUser(this);
+        }
+
+        public bool ReadUserPerfil()
+        {
+            CADUser user = new CADUser();
+            return user.ReadUserPerfil(this);
+        }
+
+        public bool ReadUserEDPerfil()
+        {
+            CADUser user = new CADUser();
+            return user.ReadUserEDPerfil(this);
         }
 
         public bool UpdateUser()
