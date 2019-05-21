@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Library;
+using System.Security.Cryptography;
 
 namespace AMARON_INTERFACE
 {
@@ -46,10 +47,24 @@ namespace AMARON_INTERFACE
                     url = "~/Imagenes/fotoPerfil.jpg";
                 }
 
+                byte[] salt;
+
+                new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+
+                var pb = new Rfc2898DeriveBytes(tb_password.Text, salt, 1000);
+
+                byte[] hash = pb.GetBytes(20);
+
+                byte[] hashBytes = new byte[36];
+                Array.Copy(salt, 0, hashBytes, 0, 16);
+                Array.Copy(hash, 0, hashBytes, 16, 20);
+
+                string passw = Convert.ToBase64String(hashBytes);
+
                 //Create user with given info.
                 if (tb_empresa.Text == "")
                 {
-                    ENUser user = new ENUser(tb_name.Text, tb_password.Text, tb_email.Text, agecheck, url, tb_empresa.Text, tb_delivery_address.Text);
+                    ENUser user = new ENUser(tb_name.Text, passw, tb_email.Text, agecheck, url, tb_empresa.Text, tb_delivery_address.Text);
 
                     if (user.CreateUser())
                     {
@@ -62,7 +77,7 @@ namespace AMARON_INTERFACE
                 }
                 else
                 {
-                    ENProvider prov = new ENProvider(tb_name.Text, tb_password.Text, tb_email.Text, agecheck, url, tb_empresa.Text, tb_delivery_address.Text);
+                    ENProvider prov = new ENProvider(tb_name.Text, passw, tb_email.Text, agecheck, url, tb_empresa.Text, tb_delivery_address.Text);
 
                     if (prov.CreateProvider())
                     {

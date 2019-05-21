@@ -73,9 +73,17 @@
        <!-- Imagen del producto -->
         <div class="row">
             <div class="col-md-12">
-                 <div class="form-group">
-                    <label for="ProductImg">Imagen del producto:</label>
-                    <input type="file" id="ProductImg" >
+                 <div class="form-group form-inline">
+                     <asp:Label runat="server" Text="Imagen del producto: " Font-Size="Large"></asp:Label>&nbsp;
+                     <asp:FileUpload ID="pictureUpload" class="btn btn-primary" runat="server" />
+                 </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                 <div class="form-group form-inline">
+                     <asp:Button runat="server" Text="Añadir producto." ID="addP" OnClick="addP_Click"/>
                  </div>
             </div>
         </div>

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Security.Cryptography;
 
 namespace Library
 {
@@ -34,7 +35,7 @@ namespace Library
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("", con))
                 {
-                    cmd.CommandText = "INSERT INTO \"User\" (name, password, email, age, urlImage, address) values ('" + user.name + "', '" + user.pass + "', '" + user.email + "', " + user.age + ", '" + user.url + "', '" + user.address + "');";
+                    cmd.CommandText = "INSERT INTO Users (name, password, email, age, urlImage, address) values ('" + user.name + "', '" + user.pass + "', '" + user.email + "', " + user.age + ", '" + user.url + "', '" + user.address + "');";
                     cmd.ExecuteNonQuery();
                 }
 
@@ -47,8 +48,8 @@ namespace Library
             finally
             {
                 con.Close();
+                 
             }
-
             return correct;
 
         }
@@ -58,24 +59,36 @@ namespace Library
         {
             SqlConnection con = new SqlConnection(constring);
             bool correct = true;
+            string savedPass="";
+            
 
             try
             {
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("", con))
                 {
-                    cmd.CommandText = "SELECT email, password FROM \"User\" where email='" + user.email + "' and password='"+ user.pass + "';";
+                    cmd.CommandText = "SELECT email, password FROM Users where email='" + user.email + "';"; // "' and password='" + user.pass + "';";
 
                     SqlDataReader auxLectura = cmd.ExecuteReader();
 
                     while (auxLectura.Read())
                     {
                         user.email = Convert.ToString(auxLectura[0]);
-                        user.pass = Convert.ToString(auxLectura[1]);
+                        savedPass = Convert.ToString(auxLectura[1]);
                     }
 
                     auxLectura.Close();
                 }
+
+                byte[] hashBytes = Convert.FromBase64String(savedPass);
+                byte[] salt = new byte[16];
+                Array.Copy(hashBytes, 0, salt, 0, 16);
+                var pbkdf2 = new Rfc2898DeriveBytes(user.pass, salt, 1000);
+                byte[] hash = pbkdf2.GetBytes(20);
+
+                for (int i = 0; i < 20; i++)
+                    if (hashBytes[i + 16] != hash[i])
+                        throw new UnauthorizedAccessException();
 
 
             }
@@ -103,7 +116,7 @@ namespace Library
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("", con))
                 {
-                    cmd.CommandText = "SELECT * FROM \"User\" where email='" + user.email + "';";
+                    cmd.CommandText = "SELECT * FROM Users where email='" + user.email + "';";
 
                     SqlDataReader auxLectura = cmd.ExecuteReader();
 
@@ -147,7 +160,7 @@ namespace Library
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("", con))
                 {
-                    cmd.CommandText = "SELECT * FROM \"User\" where email='" + user.email + "';";
+                    cmd.CommandText = "SELECT * FROM Users where email='" + user.email + "';";
 
                     SqlDataReader auxLectura = cmd.ExecuteReader();
 
@@ -195,7 +208,7 @@ namespace Library
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("", con))
                 {
-                    cmd.CommandText = "UPDATE \"User\" set name='" + user.name + "', password='" + user.pass + "', urlImage='" + user.url + "', address='" + user.address +"' where email='" + user.email + "';";
+                    cmd.CommandText = "UPDATE Users set name='" + user.name + "', password='" + user.pass + "', urlImage='" + user.url + "', address='" + user.address +"' where email='" + user.email + "';";
                     cmd.ExecuteNonQuery();
                 }
 

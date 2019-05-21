@@ -30,7 +30,7 @@ namespace Library
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("", con))
                 {
-                    cmd.CommandText = "INSERT INTO \"User\" (name, password, email, age, urlImage, empresa, address) values ('" + provider.name + "', '" + provider.pass + "', '" + provider.email + "', " + provider.age + ", '" + provider.url + "', '" + provider.company + "', '" + provider.address + "');";
+                    cmd.CommandText = "INSERT INTO Users (name, password, email, age, urlImage, empresa, address) values ('" + provider.name + "', '" + provider.pass + "', '" + provider.email + "', " + provider.age + ", '" + provider.url + "', '" + provider.company + "', '" + provider.address + "');";
                     cmd.ExecuteNonQuery();
                 }
 
