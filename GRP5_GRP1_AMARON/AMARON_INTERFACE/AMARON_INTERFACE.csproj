@@ -123,7 +123,7 @@
     <Content Include="Register.aspx" />
     <Content Include="Imagenes\fotoPerfil.jpg" />
     <Content Include="Imagenes\ginebra.jpg" />
-    <Content Include="Imagenes\GIN_PUERTOINDIAS_AZUL.jpg" />
+    <Content Include="Imagenes\GIN_Puerto.jpg" />
     <Content Include="Imagenes\ron.jpg" />
     <Content Include="Imagenes\vodka.jpg" />
     <Content Include="Imagenes\whisky.jpg" />
