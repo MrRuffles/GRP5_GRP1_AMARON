@@ -8,7 +8,7 @@ namespace Library{
         private string constring;
 
         //Initializates connection string to data base
-        public CADProduct() {
+        public CADProduct(){
             constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
         }
 

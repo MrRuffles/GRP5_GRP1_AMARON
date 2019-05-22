@@ -88,9 +88,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-
+    <Content Include="App_Data\AmaronDataBase.mdf" />
+    <Content Include="App_Data\AmaronDataBase_log.ldf">
+      <DependentUpon>AmaronDataBase.mdf</DependentUpon>
+    </Content>
     <Content Include="Contact.aspx" />
     <Content Include="AddNewProduct.aspx" />
+    <Content Include="InterfaceImgs\EmptyStar1.png" />
+    <Content Include="InterfaceImgs\FilledStar.jpg" />
+    <Content Include="InterfaceImgs\FilledStar.png" />
+    <Content Include="InterfaceImgs\WaitingStar1.png" />
     <Content Include="Orders.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="EditarPerfil.aspx" />
@@ -168,7 +175,9 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Content Include="SlideService.asmx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutUs.aspx.cs">
@@ -311,6 +320,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
