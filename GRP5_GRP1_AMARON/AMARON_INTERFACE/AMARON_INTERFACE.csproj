@@ -94,10 +94,14 @@
     </Content>
     <Content Include="Contact.aspx" />
     <Content Include="AddNewProduct.aspx" />
+    <Content Include="Imagenes\account-plus.png" />
+    <Content Include="Imagenes\barcelo.jpg" />
+    <Content Include="Imagenes\brugal.jpg" />
     <Content Include="Imagenes\cart.png" />
     <Content Include="Imagenes\contact-phone.png" />
     <Content Include="Imagenes\glass-cocktail.png" />
     <Content Include="Imagenes\home.png" />
+    <Content Include="Imagenes\login.png" />
     <Content Include="Orders.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="EditarPerfil.aspx" />
