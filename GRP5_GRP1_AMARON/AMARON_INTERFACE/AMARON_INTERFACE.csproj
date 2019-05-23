@@ -88,13 +88,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-  <Content Include="App_Data\AmaronDataBase.mdf" />
+    <Content Include="App_Data\AmaronDataBase.mdf" />
     <Content Include="App_Data\AmaronDataBase_log.ldf">
       <DependentUpon>AmaronDataBase.mdf</DependentUpon>
     </Content>
     <Content Include="Contact.aspx" />
     <Content Include="AddNewProduct.aspx" />
-	Content Include="Imagenes\bebidas\Absolut.jpg" />
+    <Content Include="Imagenes\bebidas\Absolut.jpg" />
     <Content Include="Imagenes\bebidas\Ballantine%27s.jpg" />
     <Content Include="Imagenes\bebidas\Beefeater.jpg" />
     <Content Include="Imagenes\bebidas\Bombay_Sapphire.jpg" />
@@ -134,7 +134,8 @@
     <Content Include="Imagenes\Sandias_Gominola.jpg" />
     <Content Include="Imagenes\Sombrillas.jpg" />
     <Content Include="Imagenes\Vasos.jpg" />
-    <Content Includ <Content Include="Orders.aspx" />
+    <Content Include="Imagenes\Vasos_Colores.jpg" />
+    <Content Include="Orders.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="EditarPerfil.aspx" />
     <Content Include="AboutUs.aspx" />
