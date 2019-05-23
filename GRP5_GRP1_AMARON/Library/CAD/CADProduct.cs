@@ -32,6 +32,45 @@ namespace Library{
          * Parameters: product to read
          * Returns: true if the product could be read, false on the contrary
          */
+
+
+        public bool ReadProduct(ENProduct prod)
+        {
+
+            SqlConnection con = new SqlConnection(constring);
+            bool correct = true;
+
+
+            try
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+                    cmd.CommandText = "SELECT * FROM Product where cod='" + prod.id + "';";
+
+                    SqlDataReader auxLectura = cmd.ExecuteReader();
+
+                    while (auxLectura.Read())
+                    {
+                        
+                    }
+
+                    auxLectura.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+                correct = false;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return correct;
+
+        }
         public DataTable ReadProductCat(ENProduct product){
 
             SqlConnection con = new SqlConnection(constring);

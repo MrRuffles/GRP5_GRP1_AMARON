@@ -52,6 +52,16 @@ namespace Library {
 
         }
 
+        private string ProductBrand;
+        public string brand
+        {
+
+            get { return this.ProductBrand; }
+
+            set { this.ProductBrand = value; }
+
+        }
+
         private string ProductType;
         public string type
         {
@@ -100,11 +110,12 @@ namespace Library {
         }
 
         //Creates a products with the values that receives in the parameters
-        public ENProduct(string name, float price, int stock, string type ,string description, string url){
+        public ENProduct(int id,string name, float price, int stock, string brand, string type ,string description, string url){
 
             this.name = name;
             this.price = price;
             this.stock = stock;
+            this.brand = brand;
             this.type = type;
             this.description = description;
             this.url = url;
@@ -128,6 +139,19 @@ namespace Library {
          * Reads the product from the data base
          * Return: true in case that the product could be updated, false on the contrary
         */
+
+
+        public bool ReadProduct()
+        {
+
+            bool read = false;
+
+            read = prodCAD.ReadProduct(this);
+
+            return read;
+
+        }
+
         public DataTable ReadProductCat(){
 
             DataTable read = prodCAD.ReadProductCat(this);

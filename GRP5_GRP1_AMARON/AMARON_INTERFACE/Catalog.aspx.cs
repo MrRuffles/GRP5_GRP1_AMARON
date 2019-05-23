@@ -14,7 +14,7 @@ namespace AMARON_INTERFACE
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ENProduct prod = new ENProduct("",0.00F,0,"","","");
+            ENProduct prod = new ENProduct(0,"",0.00F,0,"","","","");
             
 
             if (Request.QueryString["cat"] == "bottle")
@@ -32,7 +32,7 @@ namespace AMARON_INTERFACE
                             TableCell cell = new TableCell();
                             HyperLink hy = new HyperLink();
                             Image im = new Image();
-                            im.ImageUrl = t.Rows[cont][6].ToString();
+                            im.ImageUrl = t.Rows[cont][7].ToString();
                             im.Height = 400;
                             im.Width = 220;
                             hy.ID = t.Rows[cont][0].ToString();
@@ -52,7 +52,7 @@ namespace AMARON_INTERFACE
                             TableCell cell = new TableCell();
                             HyperLink hy = new HyperLink();
                             Image im = new Image();
-                            im.ImageUrl = t.Rows[cont][6].ToString();
+                            im.ImageUrl = t.Rows[cont][7].ToString();
                             im.Height = 400;
                             im.Width = 220;
                             hy.ID = t.Rows[cont][0].ToString();
@@ -83,7 +83,7 @@ namespace AMARON_INTERFACE
                             TableCell cell = new TableCell();
                             HyperLink hy = new HyperLink();
                             Image im = new Image();
-                            im.ImageUrl = t.Rows[cont][6].ToString();
+                            im.ImageUrl = t.Rows[cont][7].ToString();
                             im.Height = 400;
                             im.Width = 220;
                             hy.ID = t.Rows[cont][0].ToString();
@@ -103,7 +103,7 @@ namespace AMARON_INTERFACE
                             TableCell cell = new TableCell();
                             HyperLink hy = new HyperLink();
                             Image im = new Image();
-                            im.ImageUrl = t.Rows[cont][6].ToString();
+                            im.ImageUrl = t.Rows[cont][7].ToString();
                             im.Height = 400;
                             im.Width = 220;
                             hy.ID = t.Rows[cont][0].ToString();
@@ -134,7 +134,7 @@ namespace AMARON_INTERFACE
                             TableCell cell = new TableCell();
                             HyperLink hy = new HyperLink();
                             Image im = new Image();
-                            im.ImageUrl = t.Rows[cont][6].ToString();
+                            im.ImageUrl = t.Rows[cont][7].ToString();
                             im.Height = 400;
                             im.Width = 220;
                             hy.ID = t.Rows[cont][0].ToString();
@@ -154,7 +154,7 @@ namespace AMARON_INTERFACE
                             TableCell cell = new TableCell();
                             HyperLink hy = new HyperLink();
                             Image im = new Image();
-                            im.ImageUrl = t.Rows[cont][6].ToString();
+                            im.ImageUrl = t.Rows[cont][7].ToString();
                             im.Height = 400;
                             im.Width = 220;
                             hy.ID = t.Rows[cont][0].ToString();
@@ -186,7 +186,7 @@ namespace AMARON_INTERFACE
                             TableCell cell = new TableCell();
                             HyperLink hy = new HyperLink();
                             Image im = new Image();
-                            im.ImageUrl = t.Rows[cont][6].ToString();
+                            im.ImageUrl = t.Rows[cont][7].ToString();
                             im.Height = 400;
                             im.Width = 220;
                             hy.ID = t.Rows[cont][0].ToString();
@@ -206,7 +206,7 @@ namespace AMARON_INTERFACE
                             TableCell cell = new TableCell();
                             HyperLink hy = new HyperLink();
                             Image im = new Image();
-                            im.ImageUrl = t.Rows[cont][6].ToString();
+                            im.ImageUrl = t.Rows[cont][7].ToString();
                             im.Height = 400;
                             im.Width = 220;
                             hy.ID = t.Rows[cont][0].ToString();
