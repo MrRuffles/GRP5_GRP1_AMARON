@@ -25,7 +25,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="align-content: center; align-items: center; text-align: center">
-        <h1 style="padding: 50px 0px 0px 0px; font-size: 50px; text-align: center; align-items: center">Login</h1>
+        <h1 style="padding: 50px 0px 0px 0px; font-size: 50px; text-align: center; align-items: center">Inicio de sesión</h1>
         <hr width="60%" align="center"/>
         <asp:Label ID="login_label" runat="server" CssClass="text-success text-center"></asp:Label>
         <div class=" d-flex justify-content-center" style="">
@@ -35,23 +35,23 @@
                         <div class="d-flex align-baseline">
                             <asp:Label runat="server" Font-Size="Larger" Text="Email"></asp:Label>
                         </div>
-                        <asp:TextBox runat="server" ID="login_email" TextMode="Email" CssClass="form-control" placeholder="Email" required="required" oninvalid="this.setCustomValidity('Valid email is required: ex@abc.xyz')"
+                        <asp:TextBox runat="server" ID="login_email" TextMode="Email" CssClass="form-control" placeholder="Email" required="required" oninvalid="this.setCustomValidity('Se requiere un email válido: ex@abc.xyz')"
                             oninput="this.setCustomValidity('')"></asp:TextBox>
 
                     </div>
                     <div class="form-group">
                         
-                        <asp:Label runat="server" CssClass="float-left" Font-Size="Larger" Text="Password"></asp:Label>
-                        <asp:TextBox runat="server" ID="login_password" TextMode="password" CssClass="form-control" placeholder="Password" required="required" oninvalid="this.setCustomValidity('Please, enter your password')"
+                        <asp:Label runat="server" CssClass="float-left" Font-Size="Larger" Text="Contraseña"></asp:Label>
+                        <asp:TextBox runat="server" ID="login_password" TextMode="password" CssClass="form-control" placeholder="Contraseña" required="required" oninvalid="this.setCustomValidity('Introduzca su contraseña')"
                             oninput="this.setCustomValidity('')"></asp:TextBox>
                         <div style="padding-top: 10px" class="float-right">
-                            <asp:HyperLink runat="server" Text="Forgot password?" NavigateUrl="/Forgot.aspx"></asp:HyperLink>
+                            <asp:HyperLink runat="server" Text="¿Contraseña olvidada?" NavigateUrl="/Forgot.aspx"></asp:HyperLink>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class=" row d-flex justify-content-bottom" style="padding-top:50px">
-                            <asp:Button ID="login_button" Text="Login" runat="server" CssClass="btn btn-primary" OnClick="login_button_Click" />
-                            <asp:HyperLink runat="server" Text="Register" NavigateUrl="/Register.aspx" CssClass="btn btn-outline-dark float-right"></asp:HyperLink>
+                    <div class="form-group"style="padding-top:50px;" >
+                        <div class="d-flex justify-content-center" >
+                            <asp:Button ID="login_button" Text="Iniciar sesión" runat="server" CssClass="btn btn-primary" OnClick="login_button_Click" />
+                            <asp:HyperLink runat="server" Text="Registrarme" NavigateUrl="/Register.aspx" CssClass="btn btn-outline-dark float-right"></asp:HyperLink>
                         </div>
                     </div>
                 </article>

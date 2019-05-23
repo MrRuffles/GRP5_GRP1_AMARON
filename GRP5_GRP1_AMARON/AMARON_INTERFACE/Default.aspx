@@ -47,33 +47,33 @@
         <div class="card" style="width: 18rem;">
             <asp:Image runat="server" ID="Image2" Height="270" ImageUrl="Imagenes/ron.jpg" AlternateText="Roncico pa to el mundo" />
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Go somewhere" />
+                <h5 class="card-title">RON LOOTBOX</h5>
+                <p class="card-text">Quieres disfrutar de los rones mas exoticos del mundo, pues disfruta de este pack mensual con una seleccion diferente de los mejores rones.</p>
+                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Ver más..." />
             </div>
         </div>
         <div class="card" style="width: 18rem;">
             <asp:Image runat="server" ID="Image3" ImageUrl="Imagenes/vodka.jpg" AlternateText="Agua para rusos" />
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Go somewhere" />
+                <h5 class="card-title">VODKA LOOTBOX</h5>
+                <p class="card-text">Vodka para los mas valientes, sientete como un ciudadano del norte con esa seleccion de vodka mensual.</p>
+                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Ver más..." />
             </div>
         </div>
         <div class="card" style="width: 18rem;">
             <asp:Image runat="server" ID="Image4" Height="270" ImageUrl="Imagenes/ginebra.jpg" AlternateText="Mejor en chupitazos" />
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Go somewhere" />
+                <h5 class="card-title">GINEBRA LOOTBOX</h5>
+                <p class="card-text">Para las fiestas más exquisitas, que mejor que una buena ginebra, descubre las mejores y más misteriosas, con este pack mensual de ginebra.</p>
+                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Ver más..." />
             </div>
         </div>
         <div class="card" style="width: 18rem;">
             <asp:Image runat="server" ID="Image5" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Go somewhere" />
+                <h5 class="card-title">WHISKY LOOTBOX</h5>
+                <p class="card-text">Si siempre has querido probar como sabe un buen whisky, este es tu pack, nada más que decir solo pruebalo... :)</p>
+                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Ver más..." />
             </div>
         </div>
     </div>

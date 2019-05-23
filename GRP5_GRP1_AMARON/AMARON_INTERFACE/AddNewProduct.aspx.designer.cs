@@ -22,13 +22,13 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.TextBox NewProNameTB;
         
         /// <summary>
-        /// Control NewProdBrandTB.
+        /// Control NewProdTYPRTB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NewProdBrandTB;
+        protected global::System.Web.UI.WebControls.TextBox NewProdTYPRTB;
         
         /// <summary>
         /// Control NewProdTypeTB.
@@ -65,5 +65,23 @@ namespace AMARON_INTERFACE {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox NewProdStockTB;
+        
+        /// <summary>
+        /// Control pictureUpload.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload pictureUpload;
+        
+        /// <summary>
+        /// Control addP.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button addP;
     }
 }
