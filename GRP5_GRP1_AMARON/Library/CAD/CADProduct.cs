@@ -46,6 +46,51 @@ namespace Library{
             return tb;
         }
 
+        public DataTable ReadProductBot(ENProduct product)
+        {
+
+            SqlConnection con = new SqlConnection(constring);
+
+            DataSet set = new DataSet();
+
+            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product where type='bottle';", con);
+            ad.Fill(set, "Product");
+
+            DataTable tb = new DataTable();
+            tb = set.Tables["Product"];
+            return tb;
+        }
+
+        public DataTable ReadProductPack(ENProduct product)
+        {
+
+            SqlConnection con = new SqlConnection(constring);
+
+            DataSet set = new DataSet();
+
+            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product where type='pack';", con);
+            ad.Fill(set, "Product");
+
+            DataTable tb = new DataTable();
+            tb = set.Tables["Product"];
+            return tb;
+        }
+
+        public DataTable ReadProductMisc(ENProduct product)
+        {
+
+            SqlConnection con = new SqlConnection(constring);
+
+            DataSet set = new DataSet();
+
+            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product where type='misc';", con);
+            ad.Fill(set, "Product");
+
+            DataTable tb = new DataTable();
+            tb = set.Tables["Product"];
+            return tb;
+        }
+
         /*
          * Updates the product in the DataBase
          * Parameters: product to update

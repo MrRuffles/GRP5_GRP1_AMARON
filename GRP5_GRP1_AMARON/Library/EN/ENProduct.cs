@@ -135,6 +135,30 @@ namespace Library {
             return read;
         }
 
+        public DataTable ReadProductBot()
+        {
+
+            DataTable read = prodCAD.ReadProductBot(this);
+
+            return read;
+        }
+
+        public DataTable ReadProductPack()
+        {
+
+            DataTable read = prodCAD.ReadProductPack(this);
+
+            return read;
+        }
+
+        public DataTable ReadProductMisc()
+        {
+
+            DataTable read = prodCAD.ReadProductMisc(this);
+
+            return read;
+        }
+
         /*
          * Updates the product's data in the db
          * Return: true in case that the bottle could be updated, false on the contrary

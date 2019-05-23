@@ -15,89 +15,213 @@ namespace AMARON_INTERFACE
         protected void Page_Load(object sender, EventArgs e)
         {
             ENProduct prod = new ENProduct("",0.00F,0,"","","");
-            //ENBottle bot = new ENBottle(0F,0.0F,);
             
-            DataTable t = prod.ReadProductCat();
-            int cont = 0;
-            for(int i = -1; i< t.Rows.Count%3; i++)
+
+            if (Request.QueryString["cat"] == "bottle")
             {
-                int obj = t.Rows.Count;
-                TableRow row = new TableRow();
-                if (obj >= 4)
+                DataTable t = prod.ReadProductBot();
+                int cont = 0;
+                for (int i = -1; i < t.Rows.Count % 3; i++)
                 {
-                    for (int j = 0; j < 4; j++)
+                    int obj = t.Rows.Count;
+                    TableRow row = new TableRow();
+                    if (obj >= 4)
                     {
-                        TableCell cell = new TableCell();
-                        HyperLink hy = new HyperLink();
-                        Image im = new Image();
-                        im.ImageUrl = t.Rows[cont][6].ToString();
-                        im.Height = 400;
-                        im.Width = 220;
-                        hy.ID = t.Rows[cont][0].ToString();
-                        hy.CssClass = "card";
-                        hy.Text = t.Rows[cont][1].ToString();
-                        hy.NavigateUrl = "Product.aspx?id=" + hy.ID.ToString();
-                        hy.Controls.Add(im);
-                        cell.Controls.Add(hy);
-                        row.Cells.Add(cell);
-                        cont++;
+                        for (int j = 0; j < 4; j++)
+                        {
+                            TableCell cell = new TableCell();
+                            HyperLink hy = new HyperLink();
+                            Image im = new Image();
+                            im.ImageUrl = t.Rows[cont][6].ToString();
+                            im.Height = 400;
+                            im.Width = 220;
+                            hy.ID = t.Rows[cont][0].ToString();
+                            hy.CssClass = "card";
+                            hy.Text = t.Rows[cont][1].ToString();
+                            hy.NavigateUrl = "Product.aspx?id=" + hy.ID.ToString();
+                            hy.Controls.Add(im);
+                            cell.Controls.Add(hy);
+                            row.Cells.Add(cell);
+                            cont++;
+                        }
                     }
-                }
-                else
-                {
-                    for (int j = 0; j < obj; j++)
+                    else
                     {
-                        TableCell cell = new TableCell();
-                        HyperLink hy = new HyperLink();
-                        Image im = new Image();
-                        im.ImageUrl = t.Rows[cont][6].ToString();
-                        im.Height = 400;
-                        im.Width = 220;
-                        hy.ID = t.Rows[cont][0].ToString();
-                        hy.CssClass = "card";
-                        hy.Text = t.Rows[cont][1].ToString();
-                        hy.NavigateUrl = "Product.aspx?id=" + hy.ID.ToString();
-                        hy.Controls.Add(im);
-                        cell.Controls.Add(hy);
-                        row.Cells.Add(cell);
-                        cont++;
+                        for (int j = 0; j < obj; j++)
+                        {
+                            TableCell cell = new TableCell();
+                            HyperLink hy = new HyperLink();
+                            Image im = new Image();
+                            im.ImageUrl = t.Rows[cont][6].ToString();
+                            im.Height = 400;
+                            im.Width = 220;
+                            hy.ID = t.Rows[cont][0].ToString();
+                            hy.CssClass = "card";
+                            hy.Text = t.Rows[cont][1].ToString();
+                            hy.NavigateUrl = "Product.aspx?id=" + hy.ID.ToString();
+                            hy.Controls.Add(im);
+                            cell.Controls.Add(hy);
+                            row.Cells.Add(cell);
+                            cont++;
+                        }
                     }
+                    cat.Rows.Add(row);
                 }
-                cat.Rows.Add(row);
             }
-            
-
-            //t.Rows[0][6].ToString();
-            //string d=t.Rows[0][1].ToString() + " " + t.Rows[0]["stock"].ToString() + " ml.";
-            
-
-            /*foreach (DataRow row in t.Rows)
+            else if (Request.QueryString["cat"] == "packs")
             {
-                /*ImageButton i = new ImageButton
+                DataTable t = prod.ReadProductPack();
+                int cont = 0;
+                for (int i = -1; i < t.Rows.Count % 3; i++)
                 {
-                    ID = "Image" + row[0],
-                    ImageUrl = row[6].ToString()
-                };
-                Image5.ImageUrl = row[6].ToString();
-
-            }*/
-
-
-
-        }
-
-        protected void Image_Click(object sender, ImageClickEventArgs e)
-        {
-           
-
-            //ENProduct prod = new ENProduct("",0.0F,0,"","",);
-
-            /*if (prod.ReadProduct())
+                    int obj = t.Rows.Count;
+                    TableRow row = new TableRow();
+                    if (obj >= 4)
+                    {
+                        for (int j = 0; j < 4; j++)
+                        {
+                            TableCell cell = new TableCell();
+                            HyperLink hy = new HyperLink();
+                            Image im = new Image();
+                            im.ImageUrl = t.Rows[cont][6].ToString();
+                            im.Height = 400;
+                            im.Width = 220;
+                            hy.ID = t.Rows[cont][0].ToString();
+                            hy.CssClass = "card";
+                            hy.Text = t.Rows[cont][1].ToString();
+                            hy.NavigateUrl = "Product.aspx?id=" + hy.ID.ToString();
+                            hy.Controls.Add(im);
+                            cell.Controls.Add(hy);
+                            row.Cells.Add(cell);
+                            cont++;
+                        }
+                    }
+                    else
+                    {
+                        for (int j = 0; j < obj; j++)
+                        {
+                            TableCell cell = new TableCell();
+                            HyperLink hy = new HyperLink();
+                            Image im = new Image();
+                            im.ImageUrl = t.Rows[cont][6].ToString();
+                            im.Height = 400;
+                            im.Width = 220;
+                            hy.ID = t.Rows[cont][0].ToString();
+                            hy.CssClass = "card";
+                            hy.Text = t.Rows[cont][1].ToString();
+                            hy.NavigateUrl = "Product.aspx?id=" + hy.ID.ToString();
+                            hy.Controls.Add(im);
+                            cell.Controls.Add(hy);
+                            row.Cells.Add(cell);
+                            cont++;
+                        }
+                    }
+                    cat.Rows.Add(row);
+                }
+            }
+            else if (Request.QueryString["cat"] == "misc")
             {
-                Response.Redirect("Product.aspx?type=" + prod.type);
-            }*/
+                DataTable t = prod.ReadProductMisc();
+                int cont = 0;
+                for (int i = -1; i < t.Rows.Count % 3; i++)
+                {
+                    int obj = t.Rows.Count;
+                    TableRow row = new TableRow();
+                    if (obj >= 4)
+                    {
+                        for (int j = 0; j < 4; j++)
+                        {
+                            TableCell cell = new TableCell();
+                            HyperLink hy = new HyperLink();
+                            Image im = new Image();
+                            im.ImageUrl = t.Rows[cont][6].ToString();
+                            im.Height = 400;
+                            im.Width = 220;
+                            hy.ID = t.Rows[cont][0].ToString();
+                            hy.CssClass = "card";
+                            hy.Text = t.Rows[cont][1].ToString();
+                            hy.NavigateUrl = "Product.aspx?id=" + hy.ID.ToString();
+                            hy.Controls.Add(im);
+                            cell.Controls.Add(hy);
+                            row.Cells.Add(cell);
+                            cont++;
+                        }
+                    }
+                    else
+                    {
+                        for (int j = 0; j < obj; j++)
+                        {
+                            TableCell cell = new TableCell();
+                            HyperLink hy = new HyperLink();
+                            Image im = new Image();
+                            im.ImageUrl = t.Rows[cont][6].ToString();
+                            im.Height = 400;
+                            im.Width = 220;
+                            hy.ID = t.Rows[cont][0].ToString();
+                            hy.CssClass = "card";
+                            hy.Text = t.Rows[cont][1].ToString();
+                            hy.NavigateUrl = "Product.aspx?id=" + hy.ID.ToString();
+                            hy.Controls.Add(im);
+                            cell.Controls.Add(hy);
+                            row.Cells.Add(cell);
+                            cont++;
+                        }
+                    }
+                    cat.Rows.Add(row);
+                }
+            }
+            else
+            {
 
-            
+                DataTable t = prod.ReadProductCat();
+                int cont = 0;
+                for (int i = -1; i < t.Rows.Count % 3; i++)
+                {
+                    int obj = t.Rows.Count;
+                    TableRow row = new TableRow();
+                    if (obj >= 4)
+                    {
+                        for (int j = 0; j < 4; j++)
+                        {
+                            TableCell cell = new TableCell();
+                            HyperLink hy = new HyperLink();
+                            Image im = new Image();
+                            im.ImageUrl = t.Rows[cont][6].ToString();
+                            im.Height = 400;
+                            im.Width = 220;
+                            hy.ID = t.Rows[cont][0].ToString();
+                            hy.CssClass = "card";
+                            hy.Text = t.Rows[cont][1].ToString();
+                            hy.NavigateUrl = "Product.aspx?id=" + hy.ID.ToString();
+                            hy.Controls.Add(im);
+                            cell.Controls.Add(hy);
+                            row.Cells.Add(cell);
+                            cont++;
+                        }
+                    }
+                    else
+                    {
+                        for (int j = 0; j < obj; j++)
+                        {
+                            TableCell cell = new TableCell();
+                            HyperLink hy = new HyperLink();
+                            Image im = new Image();
+                            im.ImageUrl = t.Rows[cont][6].ToString();
+                            im.Height = 400;
+                            im.Width = 220;
+                            hy.ID = t.Rows[cont][0].ToString();
+                            hy.CssClass = "card";
+                            hy.Text = t.Rows[cont][1].ToString();
+                            hy.NavigateUrl = "Product.aspx?id=" + hy.ID.ToString();
+                            hy.Controls.Add(im);
+                            cell.Controls.Add(hy);
+                            row.Cells.Add(cell);
+                            cont++;
+                        }
+                    }
+                    cat.Rows.Add(row);
+                }
+            }
         }
     }
 }
