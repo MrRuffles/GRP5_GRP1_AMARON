@@ -22,22 +22,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="align-content: center; align-items: center; text-align: center">
-        <h1 style="padding: 50px 0px 0px 0px; font-size: 50px; text-align: center; align-items: center">Contact Us</h1>
+        <h1 style="padding: 50px 0px 0px 0px; font-size: 50px; text-align: center; align-items: center">Contáctanos</h1>
     </div>
     <hr width="60%" align="center"/>
     <div class="container col-md-8" id="contact-form">
         <div class="row">
             <div class="col-md-8 offset-xl-2 py-5">
-                <p class="lead" style="font-style: italic">Please fill this form in a decent manner</p>
                 <div class="messages"></div>
                 <div class="controls">
                     <div class="row ">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="d-flex align-baseline">
-                                    <asp:Label runat="server" Font-Size="Larger" Text="Name *"></asp:Label>
+                                    <asp:Label runat="server" Font-Size="Larger" Text="Nombre *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_name" TextMode="SingleLine" CssClass="form-control" placeholder="Please enter your name *" required="required"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="tb_name" TextMode="SingleLine" CssClass="form-control" placeholder="Introduzca su nombre *" required="required"></asp:TextBox>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -48,7 +47,7 @@
                                 <div class="d-flex align-baseline">
                                     <asp:Label runat="server" Font-Size="Larger" Text="Email *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_email" TextMode="Email" CssClass="form-control" placeholder="Please enter your email *" required="required" oninvalid="this.setCustomValidity('Valid email is required: ex@abc.xyz')"
+                                <asp:TextBox runat="server" ID="tb_email" TextMode="Email" CssClass="form-control" placeholder="Introduzca su email *" required="required" oninvalid="this.setCustomValidity('Introduzca un email válido: ex@abc.xyz')"
                                     oninput="this.setCustomValidity('')" onkeyup="EnforceMaximumLength(this,320)"></asp:TextBox>
                                 <div class="help-block with-errors"></div>
                             </div>
@@ -58,20 +57,20 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <div class="d-flex align-baseline">
-                                    <asp:Label runat="server" Font-Size="Larger" Text="Subject *"></asp:Label>
+                                    <asp:Label runat="server" Font-Size="Larger" Text="Asunto *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_subject" TextMode="SingleLine" CssClass="form-control" placeholder="Subject *" required="required"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="tb_subject" TextMode="SingleLine" CssClass="form-control" placeholder="Asunto *" required="required"></asp:TextBox>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group"> 
                                 <div class="d-flex align-baseline">
-                                    <asp:Label runat="server" Font-Size="Larger" Text="Suggestion / Support?"></asp:Label>
+                                    <asp:Label runat="server" Font-Size="Larger" Text="¿Hace una sugerencia o necesita soporte? *"></asp:Label>
                                 </div>
                                 <asp:DropDownList ID="form_option" CssClass="form-control" runat="server">
-                                    <asp:ListItem Value="Suggestion" Text="I'd like to make a suggestion"></asp:ListItem>
-                                    <asp:ListItem Value="Support" Text="I need support"></asp:ListItem>
+                                    <asp:ListItem Value="Suggestion" Text="Me gustaría hacer una sugerencia"></asp:ListItem>
+                                    <asp:ListItem Value="Support" Text="Necesito soporte"></asp:ListItem>
                                 </asp:DropDownList>
                             </div>
                         </div>
@@ -80,31 +79,31 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <div class="d-flex align-baseline">
-                                    <asp:Label runat="server" Font-Size="Larger" Text="Message *"></asp:Label>
+                                    <asp:Label runat="server" Font-Size="Larger" Text="Mensaje *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_message" type="text" TextMode="MultiLine" CssClass="form-control" placeholder="Message *" required="required" Rows="8"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="tb_message" type="text" TextMode="MultiLine" CssClass="form-control" placeholder="Mensaje *" required="required" Rows="8"></asp:TextBox>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <asp:Button CssClass="btn btn-success" ID="send_button" OnClick="Button_send_click" runat="server" Text="Send Message" />
+                            <asp:Button CssClass="btn btn-success" ID="send_button" OnClick="Button_send_click" runat="server" Text="Enviar mensaje" />
                         </div>
                         <div class="col-md-6">
-                            <asp:Label ID="Label_Sending_Success" runat="server" Text="Email sent" Visible="false" ForeColor="Green" Font-Size="X-Large" Font-Bold="true" Font-Italic="true"></asp:Label>
-                            <asp:Label ID="Label_Sending_Error" runat="server" Text="There was an error trying to send your message, please try again." Visible="false" ForeColor="OrangeRed" Font-Size="X-Large"></asp:Label>
+                            <asp:Label ID="Label_Sending_Success" runat="server" Text="Mensaje enviado" Visible="false" ForeColor="Green" Font-Size="X-Large" Font-Bold="true" Font-Italic="true"></asp:Label>
+                            <asp:Label ID="Label_Sending_Error" runat="server" Text="Ocurrió un error al enviar su mensaje, inténtelo de nuevo en unos segundos." Visible="false" ForeColor="OrangeRed" Font-Size="X-Large"></asp:Label>
                             <asp:Label ID="Label_Main" runat="server" Text="" Visible="false" ForeColor="Red" Font-Bold="false"></asp:Label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                             <p class="text-muted">
-                                <strong>*</strong> These fields are required.
+                                <strong>(*)</strong> Estos campos son obligatorios
                             </p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="https://twitter.com/UA_Universidad?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @UA_Universidad</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            <a href="https://twitter.com/UA_Universidad?ref_src=twsrc%5Etfw" class="twitter-follow-button " data-show-count="false">Sigue a @UA_Universidad</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                             <div class="fb-like" data-href="https://www.facebook.com/campusUA/" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
                         </div>
                         <div class="col-md-6 d-flex justify-content-end">
