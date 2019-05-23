@@ -40,13 +40,22 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.TextBox NewProdTypeTB;
         
         /// <summary>
-        /// Control NewPordVolume.
+        /// Control NewProdVolume.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NewPordVolume;
+        protected global::System.Web.UI.WebControls.TextBox NewProdVolume;
+        
+        /// <summary>
+        /// Control NewProdMarca.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NewProdMarca;
         
         /// <summary>
         /// Control NewProdPriceTB.

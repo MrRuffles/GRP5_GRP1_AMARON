@@ -32,11 +32,23 @@ namespace AMARON_INTERFACE
                 url = "~/Imagenes/fotoPerfil.jpg";
             }
 
-            ENProduct prod = new ENProduct();
+            ENProduct prod = new ENProduct(0,"",0.0F,0,"","","",url);
 
             if (NewProdTYPRTB.Text == "Botella") { 
                 ENBottle bot = new ENBottle();
             }
+            prod.name = NewProNameTB.Text;
+            prod.stock = Convert.ToInt32(NewProdStockTB.Text);
+            prod.type = NewProdTYPRTB.Text;
+            prod.price = Convert.ToInt32(NewProdPriceTB.Text);
+            prod.brand = NewProdMarca.Text;
+
+            if (prod.CreateProduct())
+            {
+                Response.Redirect("Catalog.aspx");
+            }
+
+
         }
     }
 }

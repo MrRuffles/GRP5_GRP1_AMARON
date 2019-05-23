@@ -92,7 +92,7 @@ namespace Library{
 
             DataSet set = new DataSet();
 
-            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product where type='bottle';", con);
+            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product where type='botella';", con);
             ad.Fill(set, "Product");
 
             DataTable tb = new DataTable();

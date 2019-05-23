@@ -48,7 +48,16 @@
             <div class="col-md-12">
                 <div class="form-group form-inline">
                     <asp:Label runat="server" Text="Volumen de la botella (ml): " Font-Size="Large"></asp:Label>&nbsp;
-                    <asp:TextBox ID="NewPordVolume" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="NewProdVolume" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+            </div>
+        </div>
+        <!-- Marca -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group form-inline">
+                    <asp:Label runat="server" Text="Marca: " Font-Size="Large"></asp:Label>&nbsp;
+                    <asp:TextBox ID="NewProdMarca" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
             </div>
         </div>
@@ -79,7 +88,7 @@
                  </div>
             </div>
         </div>
-
+        <!-- Boton Añadir -->
         <div class="row">
             <div class="col-md-12">
                  <div class="form-group form-inline">
