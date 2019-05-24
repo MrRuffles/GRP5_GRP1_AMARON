@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Library{
 
@@ -9,7 +11,7 @@ namespace Library{
 
         //Initializates connection string to data base
         public CADProduct() {
-            constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
+            constring = ConfigurationManager.ConnectionStrings["AmaronDataBase"].ConnectionString;
         }
 
         /*
@@ -30,12 +32,102 @@ namespace Library{
          * Parameters: product to read
          * Returns: true if the product could be read, false on the contrary
          */
-        public bool ReadProduct(ENProduct product){
 
-            bool read = false;
 
-            return read;
+        public bool ReadProduct(ENProduct prod)
+        {
 
+            SqlConnection con = new SqlConnection(constring);
+            bool correct = true;
+
+
+            try
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+                    cmd.CommandText = "SELECT * FROM Product where cod='" + prod.id + "';";
+
+                    SqlDataReader auxLectura = cmd.ExecuteReader();
+
+                    while (auxLectura.Read())
+                    {
+                        
+                    }
+
+                    auxLectura.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+                correct = false;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return correct;
+
+        }
+        public DataTable ReadProductCat(ENProduct product){
+
+            SqlConnection con = new SqlConnection(constring);
+
+            DataSet set = new DataSet();
+
+            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product;", con);
+            ad.Fill(set,"Product");
+
+            DataTable tb = new DataTable();
+            tb = set.Tables["Product"];
+            return tb;
+        }
+
+        public DataTable ReadProductBot(ENProduct product)
+        {
+
+            SqlConnection con = new SqlConnection(constring);
+
+            DataSet set = new DataSet();
+
+            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product where type='botella';", con);
+            ad.Fill(set, "Product");
+
+            DataTable tb = new DataTable();
+            tb = set.Tables["Product"];
+            return tb;
+        }
+
+        public DataTable ReadProductPack(ENProduct product)
+        {
+
+            SqlConnection con = new SqlConnection(constring);
+
+            DataSet set = new DataSet();
+
+            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product where type='pack';", con);
+            ad.Fill(set, "Product");
+
+            DataTable tb = new DataTable();
+            tb = set.Tables["Product"];
+            return tb;
+        }
+
+        public DataTable ReadProductMisc(ENProduct product)
+        {
+
+            SqlConnection con = new SqlConnection(constring);
+
+            DataSet set = new DataSet();
+
+            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product where type='miscelanea';", con);
+            ad.Fill(set, "Product");
+
+            DataTable tb = new DataTable();
+            tb = set.Tables["Product"];
+            return tb;
         }
 
         /*

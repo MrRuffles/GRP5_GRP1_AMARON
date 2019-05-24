@@ -88,9 +88,53 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-
+    <Content Include="App_Data\AmaronDataBase.mdf" />
+    <Content Include="App_Data\AmaronDataBase_log.ldf">
+      <DependentUpon>AmaronDataBase.mdf</DependentUpon>
+    </Content>
     <Content Include="Contact.aspx" />
     <Content Include="AddNewProduct.aspx" />
+    <Content Include="Imagenes\bebidas\Absolut.jpg" />
+    <Content Include="Imagenes\bebidas\Ballantine%27s.jpg" />
+    <Content Include="Imagenes\bebidas\Beefeater.jpg" />
+    <Content Include="Imagenes\bebidas\Bombay_Sapphire.jpg" />
+    <Content Include="Imagenes\bebidas\Cacique.jpg" />
+    <Content Include="Imagenes\bebidas\Campari.jpg" />
+    <Content Include="Imagenes\bebidas\Cutty_Sark.jpg" />
+    <Content Include="Imagenes\bebidas\Esplendido.jpg" />
+    <Content Include="Imagenes\bebidas\Espolon.jpg" />
+    <Content Include="Imagenes\bebidas\Evolution.jpg" />
+    <Content Include="Imagenes\bebidas\Four_Roses.jpg" />
+    <Content Include="Imagenes\bebidas\Goldfield.jpg" />
+    <Content Include="Imagenes\bebidas\Grey_Goose.jpg" />
+    <Content Include="Imagenes\bebidas\Havana_Club.jpg" />
+    <Content Include="Imagenes\bebidas\JB.jpg" />
+    <Content Include="Imagenes\bebidas\Jose_Cuervo.jpg" />
+    <Content Include="Imagenes\bebidas\Kasowa.jpg" />
+    <Content Include="Imagenes\bebidas\Larios.jpg" />
+    <Content Include="Imagenes\bebidas\Los_Aztecas.jpg" />
+    <Content Include="Imagenes\bebidas\Martini_Blanco.jpg" />
+    <Content Include="Imagenes\bebidas\Martini_Rojo.jpg" />
+    <Content Include="Imagenes\bebidas\Negrita.jpg" />
+    <Content Include="Imagenes\bebidas\Rives_Caramelo.jpg" />
+    <Content Include="Imagenes\bebidas\Santa_Teresa.jpg" />
+    <Content Include="Imagenes\bebidas\Seagram.jpg" />
+    <Content Include="Imagenes\bebidas\Smirnoff.jpg" />
+    <Content Include="Imagenes\bebidas\Soberano.jpg" />
+    <Content Include="Imagenes\bebidas\Tanqueray.jpg" />
+    <Content Include="Imagenes\bebidas\Terry_Centenario.jpg" />
+    <Content Include="Imagenes\bebidas\Veterano.jpg" />
+    <Content Include="Imagenes\bebidas\White_Horse.jpg" />
+    <Content Include="Imagenes\Copas_Champan.jpg" />
+    <Content Include="Imagenes\Hielos.jpg" />
+    <Content Include="Imagenes\Limones.jpg" />
+    <Content Include="Imagenes\Nubes.jpg" />
+    <Content Include="Imagenes\Ositos.jpg" />
+    <Content Include="Imagenes\Pajitas.jpg" />
+    <Content Include="Imagenes\Sandias_Gominola.jpg" />
+    <Content Include="Imagenes\Sombrillas.jpg" />
+    <Content Include="Imagenes\Vasos.jpg" />
+    <Content Include="Imagenes\Vasos_Colores.jpg" />
     <Content Include="Orders.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="EditarPerfil.aspx" />
@@ -116,7 +160,7 @@
     <Content Include="Register.aspx" />
     <Content Include="Imagenes\fotoPerfil.jpg" />
     <Content Include="Imagenes\ginebra.jpg" />
-    <Content Include="Imagenes\GIN_PUERTOINDIAS_AZUL.jpg" />
+    <Content Include="Imagenes\GIN_Puerto.jpg" />
     <Content Include="Imagenes\ron.jpg" />
     <Content Include="Imagenes\vodka.jpg" />
     <Content Include="Imagenes\whisky.jpg" />
@@ -145,6 +189,10 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -235,6 +283,11 @@
       <DependentUpon>Product.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

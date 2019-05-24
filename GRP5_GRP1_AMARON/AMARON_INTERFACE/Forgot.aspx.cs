@@ -29,14 +29,15 @@ namespace AMARON_INTERFACE
             {
                 MailMessage toSend = new MailMessage
                 {
-                    Subject = "AMARON Password Recovery System",
+                    Subject = "AMARON Recuperación de contraseña",
                     From = new MailAddress("contactformamaron@gmail.com")
                 };
                 toSend.To.Add(email);
-                toSend.Body = "Hi "+ name +"\n";
-                toSend.Body += "This email contains your personal information. \n\n";
-                toSend.Body += "Password: "+ data + "\n\n\n";
-                toSend.Body += "This is an automatic email from AMARON. Please do not reply back, you can contact us at the website contact form.\n";
+                toSend.Body = "Buenas "+ name +",\n";
+                toSend.Body += "Este email contiene tus nuevas credenciales. \n\n";
+                toSend.Body += "Email: "+ email + "\n";
+                toSend.Body += "Contraseña: "+ data + "\n\n\n";
+                toSend.Body += "Este email ha sigo generado automaticamente.\n No conteste a este mensaje, si desea contactarnos puede hacerlo mediante el formulario de la web\n";
 
                 var smtp = new System.Net.Mail.SmtpClient();
                 {
