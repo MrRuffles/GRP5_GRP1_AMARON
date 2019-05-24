@@ -21,6 +21,10 @@ namespace Library
         private string name;
         private SuscriptionType type;
         private string description;
+        private float price;
+        private int stock;
+        private string brand;
+        private string urlImage;
 
         public string nameLootCrate
         {
@@ -56,6 +60,43 @@ namespace Library
             {
                 description = value;
             }
+        }
+
+        public float priceLootCrate
+        {
+            get
+            {
+                return price;
+            }
+            set
+            {
+                price = value;
+            }
+        }
+
+        public int stockLootCrate
+        {
+
+            get { return this.stock; }
+
+            set { this.stock = value; }
+
+        }
+        public string brandLootCrate
+        {
+
+            get { return this.brand; }
+
+            set { this.brand = value; }
+
+        }
+        public string urlLootCrate
+        {
+
+            get { return this.urlImage; }
+
+            set { this.urlImage = value; }
+
         }
 
         public ENLootCrate(string name, SuscriptionType type, string description)

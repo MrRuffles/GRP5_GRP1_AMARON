@@ -14,6 +14,10 @@ namespace Library
         private string name;
         private float price;
         private string description;
+        private int stock;
+        private string brand;
+        private string type;
+        private string urlImage;
 
         public string namePack
         {
@@ -50,6 +54,44 @@ namespace Library
                 description = value;
             }
         }
+
+        public int stockPack
+        {
+
+            get { return this.stock; }
+
+            set { this.stock = value; }
+
+        }
+
+        public string brandPack
+        {
+
+            get { return this.brand; }
+
+            set { this.brand = value; }
+
+        }
+
+        public string typePack
+        {
+
+            get { return this.type; }
+
+            set { this.type = value; }
+
+        }
+
+        public string urlPack
+        {
+
+            get { return this.urlImage; }
+
+            set { this.urlImage = value; }
+
+        }
+
+
 
         public ENPack(string name, float price, string description)
         {

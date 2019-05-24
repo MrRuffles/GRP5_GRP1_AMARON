@@ -44,7 +44,7 @@
         <div>
             <div id="header" class="col sticky-top" style="background-color: coral">
                 <div id="logo" class="row">
-                    <asp:ImageButton ID="ImageButtonHeader" OnClick="ImageButtonHeader_Click" runat="server" ImageUrl="Imagenes/ron.jpg" Width="100%" Height="105px" />
+                    <asp:ImageButton ID="ImageButtonHeader" OnClick="ImageButtonHeader_Click" runat="server" ImageUrl="Imagenes/Logo_AmaRon2.png" Width="14%" Height="92px" Style="margin-left: 43%" />
                 </div>
                 <span></span>
                 <div id="nav-bar" class="row">
@@ -62,7 +62,7 @@
                         <asp:HyperLink ID="login_menu_button" runat="server" ImageUrl="Imagenes/login.png" Visible="true" Text="Log in" NavigateUrl="Login.aspx"></asp:HyperLink>
                         <asp:HyperLink ID="register_menu_button" runat="server" ImageUrl="Imagenes/account-plus.png" Visible="true" Text="Register" NavigateUrl="Register.aspx"></asp:HyperLink>
                         <asp:Button ID="username_menu_button" runat="server" Text="" Visible="false" OnClick="username_menu_button_Click" CssClass="btn"></asp:Button>
-                        <asp:Button class="btn btn-danger btn-round " ID="menu_logoff" runat="server" Visible="false" Text="Log off" OnClick="menu_logoff_click" CausesValidation="False" UseSubmitBehavior="False" />
+                        <asp:Button class="btn btn-info btn-round" ID="menu_logoff" runat="server" Visible="false" Text="Log off" OnClick="menu_logoff_click" CausesValidation="False" UseSubmitBehavior="False" Style="margin-bottom: 3px"/>
                     </div>
                 </div>
             </div>

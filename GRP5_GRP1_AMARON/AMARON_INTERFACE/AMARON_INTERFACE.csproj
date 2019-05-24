@@ -88,13 +88,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-  <Content Include="App_Data\AmaronDataBase.mdf" />
+    <Content Include="App_Data\AmaronDataBase.mdf" />
     <Content Include="App_Data\AmaronDataBase_log.ldf">
       <DependentUpon>AmaronDataBase.mdf</DependentUpon>
     </Content>
     <Content Include="Contact.aspx" />
     <Content Include="AddNewProduct.aspx" />
-	Content Include="Imagenes\bebidas\Absolut.jpg" />
+    <Content Include="Imagenes\bebidas\Absolut.jpg" />
     <Content Include="Imagenes\bebidas\Ballantine%27s.jpg" />
     <Content Include="Imagenes\bebidas\Beefeater.jpg" />
     <Content Include="Imagenes\bebidas\Bombay_Sapphire.jpg" />
@@ -128,13 +128,25 @@
     <Content Include="Imagenes\Copas_Champan.jpg" />
     <Content Include="Imagenes\Hielos.jpg" />
     <Content Include="Imagenes\Limones.jpg" />
+    <Content Include="Imagenes\Logo_AmaRon.png" />
+    <Content Include="Imagenes\Logo_AmaRon2.png" />
     <Content Include="Imagenes\Nubes.jpg" />
     <Content Include="Imagenes\Ositos.jpg" />
+    <Content Include="Imagenes\packs\ginebra-limon.jpg" />
+    <Content Include="Imagenes\packs\ginebra-tonica.jpg" />
+    <Content Include="Imagenes\packs\jagermeister-cocacola.jpg" />
+    <Content Include="Imagenes\packs\jagermeister-monster.jpg" />
+    <Content Include="Imagenes\packs\licor43-limon.jpg" />
+    <Content Include="Imagenes\packs\projectX.jpg" />
+    <Content Include="Imagenes\packs\ron-cocacola.jpg" />
+    <Content Include="Imagenes\packs\vodka-limon.jpg" />
+    <Content Include="Imagenes\packs\vodka-naranja.jpg" />
+    <Content Include="Imagenes\packs\whiskey-redBull.jpg" />
     <Content Include="Imagenes\Pajitas.jpg" />
     <Content Include="Imagenes\Sandias_Gominola.jpg" />
     <Content Include="Imagenes\Sombrillas.jpg" />
     <Content Include="Imagenes\Vasos.jpg" />
-    <Content Includ <Content Include="Orders.aspx" />
+    <Content Include="Orders.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="EditarPerfil.aspx" />
     <Content Include="AboutUs.aspx" />

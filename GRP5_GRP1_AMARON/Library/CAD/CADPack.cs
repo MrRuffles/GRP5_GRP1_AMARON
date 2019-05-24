@@ -9,6 +9,7 @@ namespace Library
 {
     class CADPack
     {
+        private string constring;
         public CADPack()
         {
 
@@ -16,8 +17,32 @@ namespace Library
 
         public bool createPack(ENPack en)
         {
-            bool ok = true;
-            return ok;
+            
+             SqlConnection con = new SqlConnection(constring);
+             bool correct = true;
+
+             try
+             {
+                 con.Open();
+                 using (SqlCommand cmd = new SqlCommand("", con))
+                 {
+                     cmd.CommandText = "INSERT INTO Product (name, pvp, stock, brand, type, urlImage) values ('" + en.namePack + "', '" + en.pricePack + "', '" + en.stockPack + "', " + en.brandPack + ", '" + en.typePack + "', '" + en.urlPack + "');";
+                     cmd.ExecuteNonQuery();
+                 }
+
+             }
+             catch (SqlException ex)
+             {
+                 Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+                 correct = false;
+             }
+             finally
+             {
+                 con.Close();
+
+             }
+             return correct;
+             
         }
 
         public bool readPack(ENPack en)
