@@ -18,48 +18,6 @@ namespace Library
             set { this.ProviderCompany = value; }
         }
 
-        private string ProviderName;
-        public string name
-        {
-            get { return this.ProviderName; }
-            set { this.ProviderName = value; }
-        }
-
-        private string ProviderPass;
-        public string pass
-        {
-            get { return this.ProviderPass; }
-            set { this.ProviderPass = value; }
-        }
-
-        private int ProviderAge;
-        public int age
-        {
-            get { return this.ProviderAge; }
-            set { this.ProviderAge = value; }
-        }
-
-        private string ProviderEmail;
-        public string email
-        {
-            get { return this.ProviderEmail; }
-            set { this.ProviderEmail = value; }
-        }
-
-        private string ProviderUrl;
-        public string url
-        {
-            get { return this.ProviderUrl; }
-            set { this.ProviderUrl = value; }
-        }
-
-        private string UserAddress;
-        public string address
-        {
-            get { return this.UserAddress; }
-            set { this.UserAddress = value; }
-        }
-
 
         ////////////////////////////////////////////////////////////////////////////
         //                              METHODS
@@ -72,15 +30,9 @@ namespace Library
         }
 
         /**  Creates a provider with the values of the parameters  **/
-        public ENProvider(string name, string pass, string email, int age, string url, string company, string address)
+        public ENProvider(string company)
         {
             this.company = company;
-            this.name = name;
-            this.pass = pass;
-            this.age = age;
-            this.email = email;
-            this.url = url;
-            this.address = address;
         }
 
         public bool CreateProvider()

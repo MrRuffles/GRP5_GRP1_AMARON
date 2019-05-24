@@ -32,15 +32,15 @@ namespace AMARON_INTERFACE
             {
                 MailMessage toSend = new MailMessage
                 {
-                    Subject = "AMARON Formulario de contacto de:" + email,
+                    Subject = "AMARON Contact Form Mail from " + email,
                     From = new MailAddress("contactformamaron@gmail.com")
                 };
                 toSend.To.Add("ContactFormAMARON@gmail.com");
-                toSend.Body = "De:\t" + name + "\n";
+                toSend.Body = "From:\t" + name + "\n";
                 toSend.Body += "Email:\t" + email + "\n\n";
-                toSend.Body += "\t"+ option+ "\n";
-                toSend.Body += "Asunto:\t" + subject + "\n";
-                toSend.Body += "Mensaje:\n" + message + "\n";
+                toSend.Body += "Requested:\t"+ option+ "\n";
+                toSend.Body += "Subject:\t" + subject + "\n";
+                toSend.Body += "Message:\n" + message + "\n";
 
                 var smtp = new System.Net.Mail.SmtpClient();
                 {
@@ -77,7 +77,7 @@ namespace AMARON_INTERFACE
                         ENSuggest ensug = new ENSuggest(name, email, subject, message);
                         ensug.createSuggest();
                     }
-                    else if (option == "Support")
+                    if (option == "Support")
                     {
                         ENSupport ensupport = new ENSupport(name, email, subject, message);
                         ensupport.createSupport();

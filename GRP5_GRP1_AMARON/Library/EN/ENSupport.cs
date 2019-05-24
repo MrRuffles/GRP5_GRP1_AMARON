@@ -82,25 +82,25 @@ namespace Library
             return cadsup.createSupport(this);
         }
 
-        public bool readSupport(int id)
+        public bool readSupport()
         {
             CADSupport cadsup = new CADSupport();
 
-            return cadsup.readSupport(this,id);
+            return cadsup.readSupport(this);
         }
 
-        public bool updateSupport(int id)
+        public bool updateSupport()
         {
             CADSupport cadsup = new CADSupport();
 
             return cadsup.updateSupport(this);
         }
 
-        public bool deleteSupport(int id)
+        public bool deleteSupport()
         {
             CADSupport cadsup = new CADSupport();
 
-            return cadsup.deleteSupport(this, id);
+            return cadsup.deleteSupport(this);
         }
     }
 }

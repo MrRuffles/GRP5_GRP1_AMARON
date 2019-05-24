@@ -14,53 +14,19 @@ namespace Library
 
         public CADSupport()
         {
-            constring = ConfigurationManager.ConnectionStrings["AmaronDataBase"].ConnectionString;
+            //constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
         }
 
         public bool createSupport(ENSupport en)
         {
+           
+            return true;
 
-            SqlConnection c = new SqlConnection(constring);
-            try
-            {
-                c.Open();
-                SqlCommand com = new SqlCommand("Insert Into Support(Email, Name,Subject,Message) VALUES ('" + en.emailAddressPublic + "','"+ en.namePublic +"','"+ en.subjectPublic + "','" + en.textPublic +"')", c);
-                com.ExecuteNonQuery();
-                c.Close();
-                return true;
-            }
-            catch(SqlException ex) {
-
-                Console.WriteLine("User operation has failed.Error: {0}", ex.Message);
-                c.Close();
-                return false;
-            }
         }
 
-        public bool readSupport(ENSupport en, int id)
+        public bool readSupport(ENSupport en)
         {
-            SqlConnection c = new SqlConnection(constring);
-            try
-            {
-                c.Open();
-                SqlCommand com = new SqlCommand("select * from Support where SupportId = '" + id + "'", c);
-                SqlDataReader dr = com.ExecuteReader();
-                dr.Read();
-                en.namePublic = dr["Name"].ToString();
-                en.emailAddressPublic = dr["Email"].ToString();
-                en.subjectPublic = dr["Subject"].ToString();
-                en.textPublic = dr["Message"].ToString();
-
-                c.Close();
-                return true;
-            }
-            catch (SqlException ex)
-            {
-
-                Console.WriteLine("User operation has failed.Error: {0}", ex.Message);
-                c.Close();
-                return false;
-            }
+            return true;
 
         }
 
@@ -70,23 +36,10 @@ namespace Library
 
         }
 
-        public bool deleteSupport(ENSupport en, int id)
+        public bool deleteSupport(ENSupport en)
         {
-            SqlConnection c = new SqlConnection(constring);
-            try
-            {
-                c.Open();
-                SqlCommand com = new SqlCommand("delete from Support where SupportId = '" + id + "'", c);
-                com.ExecuteNonQuery();
-                c.Close();
-                return true;
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine("User operation has failed.Error: {0}", ex.Message);
-                c.Close();
-                return false;
-            }
+
+            return true;
         }
     }
 }

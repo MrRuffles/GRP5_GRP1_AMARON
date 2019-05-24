@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Library;
-using System.Security.Cryptography;
 
 namespace AMARON_INTERFACE
 {
@@ -30,64 +28,21 @@ namespace AMARON_INTERFACE
         protected void Button_register_click(object sender, EventArgs e)
         {
             ClearBoxes();
-            bool echeck = check_email(), pcheck = check_pass();
-            int agecheck = check_age();
-            if(echeck && pcheck && agecheck>=18 )
+            bool echeck = check_email(), pcheck = check_pass(), agecheck = check_age();
+            if(echeck && pcheck && agecheck )
             {
-                HttpPostedFile file = pictureUpload.PostedFile;
-                string url = "";
-                //check file was submitted
-                if (file != null && file.ContentLength > 0)
-                {
-                    string fname = Path.GetFileName(file.FileName);
-                    url = Path.Combine("~/Imagenes/Users/", fname);
-                    file.SaveAs(Server.MapPath(url));
-                }
-                else {
-                    url = "~/Imagenes/fotoPerfil.jpg";
-                }
-
-                byte[] salt;
-
-                new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
-
-                var pb = new Rfc2898DeriveBytes(tb_password.Text, salt, 1000);
-
-                byte[] hash = pb.GetBytes(20);
-
-                byte[] hashBytes = new byte[36];
-                Array.Copy(salt, 0, hashBytes, 0, 16);
-                Array.Copy(hash, 0, hashBytes, 16, 20);
-
-                string passw = Convert.ToBase64String(hashBytes);
-
+                
                 //Create user with given info.
-                if (tb_empresa.Text == "")
+                ENUser user = new ENUser(tb_name.Text,0,tb_email.Text, tb_delivery_address.Text);
+                if (user.CreateUser())
                 {
-                    ENUser user = new ENUser(tb_name.Text, passw, tb_email.Text, agecheck, url, tb_empresa.Text, tb_delivery_address.Text);
-
-                    if (user.CreateUser())
-                    {
-                        Label_Sending_Success.Visible = true;
-                    }
-                    else
-                    {
-                        Label_Sending_Error.Visible = true;
-                    }
+                    Label_Sending_Success.Visible = true;
                 }
                 else
                 {
-                    ENProvider prov = new ENProvider(tb_name.Text, passw, tb_email.Text, agecheck, url, tb_empresa.Text, tb_delivery_address.Text);
-
-                    if (prov.CreateProvider())
-                    {
-                        Label_Sending_Success.Visible = true;
-                    }
-                    else
-                    {
-                        Label_Sending_Error.Visible = true;
-                    }
+                    Label_Sending_Error.Visible = true;
                 }
+
             }
         }
         protected bool check_pass()
@@ -116,21 +71,21 @@ namespace AMARON_INTERFACE
                 return true;
             }
         }
-        protected int check_age()
+        protected bool check_age()
         {
             CultureInfo culture = new CultureInfo("");
             DateTime tempDate = DateTime.ParseExact(tb_birth.Text, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
             DateTime nowDate = DateTime.Now;
-            int years = Convert.ToInt32(nowDate.Subtract(tempDate).TotalDays) / 365;
+            double years = nowDate.Subtract(tempDate).TotalDays / 365;
             
             if (years < 18) {
                 Error_Birth.Visible = true;
-                return years;
+                return false;
             }
             else
             {
                 Error_Birth.Visible = false;
-                return years;
+                return true;
             }
         }
     }

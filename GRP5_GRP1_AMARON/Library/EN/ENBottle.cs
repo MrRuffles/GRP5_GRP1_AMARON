@@ -25,7 +25,7 @@ namespace Library{
 
         //Properties--------------------------------------------------------------------------
 
-        private CADBottle bottleCAD = new CADBottle() ;
+        private CADBottle bottleCAD;
 
         private float BottleGrade;
         public float grade{
@@ -37,15 +37,15 @@ namespace Library{
 
                 if (value > 100.0){
 
-                    this.BottleGrade = 100.0F;
+                    grade = 100.0F;
 
                 }else if (value < 0.0){
 
-                    this.BottleGrade = 0.0F;
+                    grade = 0.0F;
 
                 }else{
 
-                    this.BottleGrade = value;
+                    this.grade = value;
                 }
 
             }

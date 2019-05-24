@@ -14,81 +14,32 @@ namespace Library
 
         public CADSuggest()
         {
-            constring = ConfigurationManager.ConnectionStrings["AmaronDataBase"].ConnectionString;
+            //constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
         }
 
         public bool createSuggest(ENSuggest en)
         {
 
-            SqlConnection c = new SqlConnection(constring);
-            try
-            {
-                c.Open();
-                SqlCommand com = new SqlCommand("Insert Into Suggest(Email, Name,Subject,Message) VALUES ('" + en.emailPublic + "','" + en.namePublic + "','" + en.subjectPublic + "','" + en.textPublic + "')", c);
-                com.ExecuteNonQuery();
-                c.Close();
-                return true;
-            }
-            catch (SqlException ex)
-            {
-
-                Console.WriteLine("User operation has failed.Error: {0}", ex.Message);
-                c.Close();
-                return false;
-            }
+            return true;
 
         }
 
-        public bool readSuggest(ENSuggest en, int id)
+        public bool readSuggest(ENSuggest en)
         {
-            SqlConnection c = new SqlConnection(constring);
-            try
-            {
-                c.Open();
-                SqlCommand com = new SqlCommand("select * from Suggest where SuggestId = '" + id + "'", c);
-                SqlDataReader dr = com.ExecuteReader();
-                dr.Read();
-                en.namePublic = dr["Name"].ToString();
-                en.emailPublic = dr["Email"].ToString();
-                en.subjectPublic = dr["Subject"].ToString();
-                en.textPublic = dr["Message"].ToString();
-
-                c.Close();
-                return true;
-            }
-            catch (SqlException ex)
-            {
-
-                Console.WriteLine("User operation has failed.Error: {0}", ex.Message);
-                c.Close();
-                return false;
-            }
+            return true;
 
         }
 
         public bool updateSuggest(ENSuggest en)
         {
             return true;
+
         }
 
-        public bool deleteSuggest(ENSuggest en, int id)
+        public bool deleteSuggest(ENSuggest en)
         {
 
-            SqlConnection c = new SqlConnection(constring);
-            try
-            {
-                c.Open();
-                SqlCommand com = new SqlCommand("delete from Suggest where SuggestId = " + id.ToString(), c);
-                com.ExecuteNonQuery();
-                c.Close();
-                return true;
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine("User operation has failed.Error: {0}", ex.Message);
-                c.Close();
-                return false;
-            }
+            return true;
         }
     }
 }

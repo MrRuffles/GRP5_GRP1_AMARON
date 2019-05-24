@@ -1,7 +1,6 @@
 ﻿//Tamara Elizabeth Salcedo Peinado, 75944876A
 
 using System;
-using System.Data;
 //using Library.CADProduct;
 
 
@@ -52,26 +51,6 @@ namespace Library {
 
         }
 
-        private string ProductBrand;
-        public string brand
-        {
-
-            get { return this.ProductBrand; }
-
-            set { this.ProductBrand = value; }
-
-        }
-
-        private string ProductType;
-        public string type
-        {
-
-            get { return this.ProductType; }
-
-            set { this.ProductType = value; }
-
-        }
-
         private string ProductDescription;
         public string description
         {
@@ -79,16 +58,6 @@ namespace Library {
             get { return this.ProductDescription; }
 
             set { this.ProductDescription = value; }
-
-        }
-
-        private string ProductUrl;
-        public string url
-        {
-
-            get { return this.ProductUrl; }
-
-            set { this.ProductUrl = value; }
 
         }
 
@@ -110,15 +79,12 @@ namespace Library {
         }
 
         //Creates a products with the values that receives in the parameters
-        public ENProduct(int id,string name, float price, int stock, string brand, string type ,string description, string url){
+        public ENProduct(string name, float price, int stock, string description){
 
             this.name = name;
             this.price = price;
             this.stock = stock;
-            this.brand = brand;
-            this.type = type;
             this.description = description;
-            this.url = url;
         }
 
         /*
@@ -139,46 +105,11 @@ namespace Library {
          * Reads the product from the data base
          * Return: true in case that the product could be updated, false on the contrary
         */
-
-
-        public bool ReadProduct()
-        {
+        public bool ReadProduct(){
 
             bool read = false;
 
             read = prodCAD.ReadProduct(this);
-
-            return read;
-
-        }
-
-        public DataTable ReadProductCat(){
-
-            DataTable read = prodCAD.ReadProductCat(this);
-
-            return read;
-        }
-
-        public DataTable ReadProductBot()
-        {
-
-            DataTable read = prodCAD.ReadProductBot(this);
-
-            return read;
-        }
-
-        public DataTable ReadProductPack()
-        {
-
-            DataTable read = prodCAD.ReadProductPack(this);
-
-            return read;
-        }
-
-        public DataTable ReadProductMisc()
-        {
-
-            DataTable read = prodCAD.ReadProductMisc(this);
 
             return read;
         }

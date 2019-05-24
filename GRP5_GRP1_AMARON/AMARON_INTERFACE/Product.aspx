@@ -52,7 +52,7 @@
 
             <!-- Product Image --><!-- TODO: RESPONSIVE IMAGE-->
             <div class="col-xs-6">
-                <asp:Image runat="server" ID="ProductImage" CssClass="img-responsive" ImageUrl="~/Imagenes/GIN_Puerto.jpg" />
+                <asp:Image runat="server" ID="ProductImage" CssClass="img-responsive" ImageUrl="~/Imagenes/GIN_PUERTOINDIAS_AZUL.jpg" />
             </div>
 
             <!-- The media body is next to the media -->
