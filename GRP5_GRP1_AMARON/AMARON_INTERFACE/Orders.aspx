@@ -38,24 +38,20 @@
     <div>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="orderNum" DataSourceID="SqlDataSource1" Width="100%" HeaderStyle-BackColor="#ff6600">
             <Columns>
-                <asp:BoundField DataField="orderNum" HeaderText="Nº Pedido" ItemStyle-Width="25%" ItemStyle-Wrap="false" >
-<ItemStyle Wrap="False" Width="25%"></ItemStyle>
-                </asp:BoundField>
-                <asp:BoundField DataField="state" HeaderText="Estado" SortExpression="state" ItemStyle-Width="25%" ItemStyle-Wrap="false" >
-<ItemStyle Wrap="False" Width="25%"></ItemStyle>
-                </asp:BoundField>
-                <asp:BoundField DataField="cost" HeaderText="Coste(€)" SortExpression="cost" ItemStyle-Width="25%" ItemStyle-Wrap="false" >
-<ItemStyle Wrap="False" Width="25%"></ItemStyle>
-                </asp:BoundField>
-                <asp:BoundField DataField="date" HeaderText="Fecha" SortExpression="date" DataFormatString="{0:d}" ItemStyle-Width="25%" ItemStyle-Wrap="false" >
-<ItemStyle Wrap="False" Width="25%"></ItemStyle>
-                </asp:BoundField>
+                <asp:BoundField DataField="orderNum" HeaderText="Nº Pedido" ItemStyle-Width="25%" ItemStyle-Wrap="false" InsertVisible="False" ReadOnly="True" SortExpression="orderNum" />
+                <asp:BoundField DataField="state" HeaderText="Estado" SortExpression="state" ItemStyle-Width="25%" ItemStyle-Wrap="false" />
+                <asp:BoundField DataField="cost" HeaderText="Coste(€)" SortExpression="cost" ItemStyle-Width="25%" ItemStyle-Wrap="false" />
+                <asp:BoundField DataField="date" HeaderText="Fecha" SortExpression="date" ItemStyle-Width="25%" ItemStyle-Wrap="false" DataFormatString="{0:d}"/>
             </Columns>
             
 
 <HeaderStyle BackColor="#FF6600"></HeaderStyle>
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\AmaronDataBase.mdf;Integrated Security=True;Connect Timeout=30" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [orderNum], [state], [cost], [date] FROM [Order]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AmaronDataBase %>" SelectCommand="SELECT [orderNum], [state], [cost], [date] FROM [Order] WHERE ([userID] = @userID)">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="userID" QueryStringField="userID" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </div>
 
 

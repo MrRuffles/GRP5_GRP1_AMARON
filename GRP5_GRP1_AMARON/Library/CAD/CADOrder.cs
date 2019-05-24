@@ -55,6 +55,7 @@ namespace Library
                 SqlDataReader dr = com.ExecuteReader();
                 while (dr.Read())
                 {
+                    order.userID = int.Parse(dr["userID"].ToString());
                     order.state = dr["state"].ToString();
                     order.cost = float.Parse(dr["cost"].ToString());
                     order.date = dr["date"].ToString();
@@ -92,7 +93,7 @@ namespace Library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("delete from Order where OrderNum= '" + 5 + "'", c);
+                SqlCommand com = new SqlCommand("delete from Order where userID= '" + order.userID + "'", c);
                 com.ExecuteNonQuery();
             }
             catch (SqlException ex)
