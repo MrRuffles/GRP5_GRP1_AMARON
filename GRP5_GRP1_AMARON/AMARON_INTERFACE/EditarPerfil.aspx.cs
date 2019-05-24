@@ -23,7 +23,7 @@ namespace AMARON_INTERFACE
 
             if (cookie != null)
             {
-                ENUser user = new ENUser("", "", cookie["username"], 0, "", "", "");
+                ENUser user = new ENUser("", "", cookie["username"], new DateTime(), "", "", "");
 
                 if (user.ReadUserEDPerfil())
                 {

@@ -35,7 +35,7 @@ namespace Library
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("", con))
                 {
-                    cmd.CommandText = "INSERT INTO Users (name, password, email, age, urlImage, address) values ('" + user.name + "', '" + user.pass + "', '" + user.email + "', " + user.age + ", '" + user.url + "', '" + user.address + "');";
+                    cmd.CommandText = "INSERT INTO Users (name, password, email, birthdate, urlImage, address) values ('" + user.name + "', '" + user.pass + "', '" + user.email + "', '" + user.birth.ToString("yyyy-MM-dd") + "', '" + user.url + "', '" + user.address + "');";
                     cmd.ExecuteNonQuery();
                 }
 
@@ -124,7 +124,7 @@ namespace Library
                     {
                         user.name = Convert.ToString(auxLectura[1]);
                         user.email = Convert.ToString(auxLectura[3]);
-                        user.age = Convert.ToInt32(auxLectura[4]);
+                        user.birth = Convert.ToDateTime(auxLectura[4]); // Check
                         user.url = Convert.ToString(auxLectura[5]);
                         if(auxLectura[6] != null) {
                             user.empresa = Convert.ToString(auxLectura[6]);
@@ -169,7 +169,7 @@ namespace Library
                         user.name = Convert.ToString(auxLectura[1]);
                         user.pass = Convert.ToString(auxLectura[2]);
                         user.email = Convert.ToString(auxLectura[3]);
-                        user.age = Convert.ToInt32(auxLectura[4]);
+                        user.birth = Convert.ToDateTime(auxLectura[4]); // Check
                         user.url = Convert.ToString(auxLectura[5]);
                         if (auxLectura[6] != null)
                         {
@@ -205,10 +205,26 @@ namespace Library
 
             try
             {
+
+                byte[] salt;
+
+                new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+
+                var pb = new Rfc2898DeriveBytes(user.pass, salt, 1000);
+
+                byte[] hash = pb.GetBytes(20);
+
+                byte[] hashBytes = new byte[36];
+                Array.Copy(salt, 0, hashBytes, 0, 16);
+                Array.Copy(hash, 0, hashBytes, 16, 20);
+
+                string hashpass= Convert.ToBase64String(hashBytes);
+
+
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("", con))
                 {
-                    cmd.CommandText = "UPDATE Users set name='" + user.name + "', password='" + user.pass + "', urlImage='" + user.url + "', address='" + user.address +"' where email='" + user.email + "';";
+                    cmd.CommandText = "UPDATE Users set name='" + user.name + "', password='" + hashpass + "', urlImage='" + user.url + "', address='" + user.address +"' where email='" + user.email + "';";
                     cmd.ExecuteNonQuery();
                 }
 

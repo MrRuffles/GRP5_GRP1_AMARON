@@ -47,7 +47,8 @@
                     </div>
                     <div class="row">
                         <div class="align-baseline" style="text-align: left">
-                            <asp:Label ID="Label_Sending_Error" runat="server" Text="No existe ningún usuario registrado vinculado a este email." Visible="false" ForeColor="red" Font-Size="Large"></asp:Label>
+                            <asp:Label ID="Label_Update_Error" runat="server" Text="Ocurrió un error con su solicitud, contacte con un administrador si el problema persiste." Visible="false" ForeColor="red" Font-Size="Large"></asp:Label>
+                            <asp:Label ID="Label_Finding_Error" runat="server" Text="No existe ningún usuario registrado vinculado a este email." Visible="false" ForeColor="red" Font-Size="Large"></asp:Label>
                             <asp:Label ID="Label_Sending_Success" runat="server" Text="Le hemos enviado sus credenciales al email indicado" Visible="false" ForeColor="Green" CssClass="text-left btn" Font-Size="Large" Font-Italic="false"></asp:Label>
                             <asp:Label ID="Label_Main" runat="server" Text="" Visible="false" ForeColor="Red" Font-Bold="false"></asp:Label>
                         </div>
