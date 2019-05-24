@@ -22,7 +22,7 @@ namespace AMARON_INTERFACE
                 if (user.ReadUserPerfil())
                 {
                     name.Text = user.name;
-                    birth.Text = user.birth.ToShortDateString();
+                    birth.Text = user.birth.ToString("dd-MM-yyyy");
                     mail.Text = user.email;
                     address.Text = user.address;
                     if (user.empresa!="")
