@@ -28,62 +28,33 @@
             border-top: 1px solid #ff6d00;
         }
       
-        .auto-style2 {
-            width: 458px;
-        }
-        .auto-style3 {
-            width: 456px;
-        }
-      
-    </style>
+        </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="orders">
-        <h1>Your Orders</h1>
+        <h1>TUS PEDIDOS</h1>
+    </div>
+    
+    <div>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="orderNum" DataSourceID="SqlDataSource1" Width="100%" HeaderStyle-BackColor="#ff6600">
+            <Columns>
+                <asp:BoundField DataField="orderNum" HeaderText="Nº Pedido" ItemStyle-Width="25%" ItemStyle-Wrap="false" InsertVisible="False" ReadOnly="True" SortExpression="orderNum" />
+                <asp:BoundField DataField="state" HeaderText="Estado" SortExpression="state" ItemStyle-Width="25%" ItemStyle-Wrap="false" />
+                <asp:BoundField DataField="cost" HeaderText="Coste(€)" SortExpression="cost" ItemStyle-Width="25%" ItemStyle-Wrap="false" />
+                <asp:BoundField DataField="date" HeaderText="Fecha" SortExpression="date" ItemStyle-Width="25%" ItemStyle-Wrap="false" DataFormatString="{0:d}"/>
+            </Columns>
+            
+
+<HeaderStyle BackColor="#FF6600"></HeaderStyle>
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AmaronDataBase %>" SelectCommand="SELECT [orderNum], [state], [cost], [date] FROM [Order] WHERE ([userID] = @userID)">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="userID" QueryStringField="userID" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </div>
 
-    <table class="table table-sm">
-  <thead>
-    <tr class="table-warning">
-      <th scope="col" class="auto-style3">Order Number</th>
-      <th scope="col" class="auto-style2">Date</th>
-      <th scope="col">P.V.P(€)</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row" class="auto-style3">1</th>
-      <td class="auto-style2">10/01/2019</td>
-      <td>50</td>
-      
-    </tr>
-    <tr>
-      <th scope="row" class="auto-style3">2</th>
-      <td class="auto-style2">28/01/2019</td>
-      <td>21</td>
-      
-    </tr>
-    <tr>
-      <th scope="row" class="auto-style3">3</th>
-      <td class="auto-style2">02/02/2019</td>
-      <td>15</td>
-      
-    </tr>
-      <tr>
-      <th scope="row" class="auto-style3">4</th>
-      <td class="auto-style2">04/03/2019</td>
-      <td>35</td>
-      
-    </tr>
-      <tr>
-      <th scope="row" class="auto-style3">5</th>
-      <td class="auto-style2">15/04/2019</td>
-      <td>67</td>
-      
-    </tr>
-  </tbody>
-</table>
+
 
 
 </asp:Content>
