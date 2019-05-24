@@ -26,7 +26,7 @@ namespace Library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("Insert into Order(state, cost, date) VALUES ('" + order.state + "', '" + order.cost + "', '" + order.date + "')", c);
+                SqlCommand com = new SqlCommand("Insert into Order(userID, state, cost, date) VALUES (" + order.userID + "'" + order.state + "', " + order.cost + ", '" + order.date + "')", c);
                 com.ExecuteNonQuery();
 
             }
@@ -51,7 +51,7 @@ namespace Library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("Select * from Order", c);
+                SqlCommand com = new SqlCommand("Select * from Order where userID='" + order.userID + "'", c);
                 SqlDataReader dr = com.ExecuteReader();
                 while (dr.Read())
                 {

@@ -8,6 +8,12 @@ namespace Library
 {
     public class ENOrder
     {
+        private int OrderUser;
+        public int userID
+        {
+            get { return OrderUser; }
+            set { OrderUser = userID; }
+        }
 
         private string OrderState;
         public string state
@@ -30,8 +36,9 @@ namespace Library
             set { OrderDate = value; }
         }
 
-        public ENOrder(string state, float cost, string date)
+        public ENOrder(int userID, string state, float cost, string date)
         {
+            this.userID = userID;
             this.state = state;
             this.cost = cost;
             this.date = date;
