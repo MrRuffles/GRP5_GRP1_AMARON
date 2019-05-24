@@ -58,7 +58,7 @@ namespace Library
                     order.userID = int.Parse(dr["userID"].ToString());
                     order.state = dr["state"].ToString();
                     order.cost = float.Parse(dr["cost"].ToString());
-                    order.date = dr["date"].ToString();
+                    order.date = (DateTime) dr["date"];
                 }
 
             }

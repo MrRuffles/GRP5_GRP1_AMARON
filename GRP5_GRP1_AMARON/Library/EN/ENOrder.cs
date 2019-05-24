@@ -29,14 +29,14 @@ namespace Library
             set { OrderCost = value; }
         }
 
-        private string OrderDate;
-        public string date
+        private DateTime OrderDate;
+        public DateTime date
         {
             get { return OrderDate; }
             set { OrderDate = value; }
         }
 
-        public ENOrder(int userID, string state, float cost, string date)
+        public ENOrder(int userID, string state, float cost, DateTime date)
         {
             this.userID = userID;
             this.state = state;
@@ -48,7 +48,7 @@ namespace Library
         {
             state = "";
             cost = 0;
-            date = "0/0/0";
+            date = DateTime.Now;
         }
 
         public bool CreateOrder()

@@ -69,9 +69,29 @@ namespace Library
 
         public bool DeleteCart(ENCart cart)
         {
-            bool deleted = false;
+            SqlConnection con = new SqlConnection(constring);
+            bool correct = true;
 
-            return deleted;
+            try
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+                    cmd.CommandText = "Delete from Cart where userID =" + cart.CartUserID + ";";
+                    cmd.ExecuteNonQuery();
+      
+                }
+            }
+            catch(SqlException e)
+            {
+                Console.WriteLine("Failed operation. Error: {0}", e.Message);
+                correct = false;
+            }
+            finally
+            {
+                con.Close();
+            }
+            return correct;
         }
 
     }

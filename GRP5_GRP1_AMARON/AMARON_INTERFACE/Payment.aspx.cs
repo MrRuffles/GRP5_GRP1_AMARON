@@ -13,13 +13,14 @@ namespace AMARON_INTERFACE
 {
     public partial class Payment : System.Web.UI.Page
     {
+        float paga = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             HttpCookie cookie = Request.Cookies["damncookie"];
 
             if(cookie != null)
             {
-                ENUser user = new ENUser("", "",cookie["username"],0,"","","");
+                ENUser user = new ENUser(0,"", "",cookie["username"],0,"","","");
                 if (user.ReadUserPerfil())
                 {
                     Direccion.Text = user.address;
@@ -27,10 +28,10 @@ namespace AMARON_INTERFACE
                 }
                 ENCart cart = new ENCart(0,0,0.0F,0);
                 DataTable table = cart.ReadCart();
-                float paga = 0;
+                
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    paga = Convert.ToInt32(table.Rows[i][3].ToString()) * Convert.ToInt32(table.Rows[i][4]) + paga;
+                    paga = float.Parse(table.Rows[i][3].ToString()) * float.Parse(table.Rows[i][4].ToString()) + paga;
                     
                 }
 
@@ -47,9 +48,23 @@ namespace AMARON_INTERFACE
 
         protected void Button_FinCompra(object sender, EventArgs e)
         {
+            HttpCookie cookie = Request.Cookies["damncookie"];
             if (check_caducidad())
             {
-                ENUser user = new ENUser(0, "", "", "", 0, "", "", "");
+                ENUser user = new ENUser(0,"","",cookie["username"],0,"","","");
+                if (user.ReadID())
+                {
+                    ENCart cart = new ENCart(0,user.userID,0.0F,0);
+
+                    ENOrder order = new ENOrder(user.userID,"pagado",paga,DateTime.Now.Date);
+                    if (order.CreateOrder())
+                    {
+                        cart.DeleteCart();
+                    }
+
+                }
+
+
 
                 Response.Redirect("Default.aspx");
             }
