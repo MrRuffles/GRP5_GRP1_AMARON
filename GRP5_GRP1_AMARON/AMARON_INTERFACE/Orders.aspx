@@ -39,15 +39,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="orders">
-        <h1>Your Orders</h1>
+        <h1>TUS PEDIDOS</h1>
     </div>
 
     <table class="table table-sm">
   <thead>
     <tr class="table-warning">
-      <th scope="col" class="auto-style3">Order Number</th>
-      <th scope="col" class="auto-style2">Date</th>
-      <th scope="col">P.V.P(€)</th>
+      <th scope="col" class="auto-style3">Nº Pedido</th>
+      <th scope="col" class="auto-style2">Fecha</th>
+      <th scope="col">Precio Total(€)</th>
       
     </tr>
   </thead>
