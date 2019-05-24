@@ -7,11 +7,12 @@
     <script src="Scripts/popper.min.js"></script>
     <style type="text/css">
         body {
-            background-color: darkorange;
+            background-color: whitesmoke;
         }
 
         #login-group {
-            background-color: darkorange;
+            background-color: coral;
+           
         }
 
         @keyframes backgound {
