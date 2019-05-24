@@ -11,100 +11,38 @@ namespace Library
 
     public class CADOrder
     {
-        private string constring;
+ 
         public CADOrder()
         {
-            constring = ConfigurationManager.ConnectionStrings["AmaronDataBase"].ConnectionString;
+           
         }
-
-
-
 
         public bool CreateOrder(ENOrder order)
         {
-            SqlConnection c = new SqlConnection(constring);
-            try
-            {
-                c.Open();
-                SqlCommand com = new SqlCommand("Insert into Order(state, cost, date) VALUES ('" + order.state + "', '" + order.cost + "', '" + order.date + "')", c);
-                com.ExecuteNonQuery();
+            bool updated = false;
 
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
-                return false;
-            }
-            finally
-            {
-                c.Close();
-            }
-            return true;
+            return updated;
         }
-
-
-
 
         public bool ReadOrder(ENOrder order)
         {
-            SqlConnection c = new SqlConnection(constring);
-            try
-            {
-                c.Open();
-                SqlCommand com = new SqlCommand("Select * from Order", c);
-                SqlDataReader dr = com.ExecuteReader();
-                while (dr.Read())
-                {
-                    order.state = dr["state"].ToString();
-                    order.cost = float.Parse(dr["cost"].ToString());
-                    order.date = dr["date"].ToString();
-                }
+            bool readed = false;
 
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
-                return false;
-            }
-            finally
-            {
-                c.Close();
-            }
-            return true;
+            return readed;
         }
-
-
-
-
 
         public bool UpdateOrder(ENOrder order)
         {
-            return true;
+            bool updated = false;
+
+            return updated;
         }
-
-
-
-
 
         public bool DeleteOrder(ENOrder order)
         {
-            SqlConnection c = new SqlConnection(constring);
-            try
-            {
-                c.Open();
-                SqlCommand com = new SqlCommand("delete from Order where OrderNum= '" + 5 + "'", c);
-                com.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
-                return false;
-            }
-            finally
-            {
-                c.Close();
-            }
-            return true;
+            bool deleted = false;
+
+            return deleted;
         }
     }
 }
