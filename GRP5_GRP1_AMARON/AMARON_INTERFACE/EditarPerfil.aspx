@@ -93,8 +93,8 @@
                         <div class="row">
                             <asp:Label runat="server" Text="Nombre:" Font-Size="Larger"></asp:Label>
                             <asp:Textbox runat="server" ID="name" class="form-control" placeholder="Nuevo nombre"></asp:Textbox>
-                            <asp:Label runat="server" Text="Direccion:" Font-Size="Larger"></asp:Label>
-                            <asp:Textbox runat="server" ID="address" class="form-control" placeholder="Nueva direccion"></asp:Textbox>
+                            <asp:Label runat="server" Text="Dirección:" Font-Size="Larger"></asp:Label>
+                            <asp:Textbox runat="server" ID="address" class="form-control" placeholder="Nueva dirección"></asp:Textbox>
                             <asp:Label runat="server" Text="Cambiar contraseña:" Font-Size="Larger"></asp:Label>
                             <asp:Textbox runat="server" ID="pass" class="form-control" TextMode="password" placeholder="Nueva contraseña"></asp:Textbox>
                         </div>
