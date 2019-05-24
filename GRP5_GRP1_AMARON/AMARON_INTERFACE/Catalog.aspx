@@ -80,6 +80,10 @@
             text-decoration:none;
         }
 
+        .imgcat{
+            height: 270px;
+        }
+
         
        
 
@@ -145,70 +149,7 @@
             </ul>
         </nav>
         <main id="main-doc">
-            <div class="row d-flex justify-content-around">
-                <a href="Product.aspx" style="margin-bottom: 10px;">
-                    <div class="card" style="width: 18rem;">
-                        <asp:Image runat="server" ID="Image5" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
-                        <div class="card-body">
-                            <asp:Label runat="server" Text="Ron Barcelo 700ml" Font-Size="Large"></asp:Label>
-                        </div>
-                    </div>
-                </a>
-                <a href="Product.aspx" style="margin-bottom: 10px;">
-                    <div class="card" style="width: 18rem;">
-                        <asp:Image runat="server" ID="Image1" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
-                        <div class="card-body">
-                            <asp:Label runat="server" Text="Ron Barcelo 700ml" Font-Size="Large"></asp:Label>
-                        </div>
-                    </div>
-                </a>
-                <a href="Product.aspx" style="margin-bottom: 10px;">
-                    <div class="card" style="width: 18rem;">
-                        <asp:Image runat="server" ID="Image2" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
-                        <div class="card-body">
-                            <asp:Label runat="server" Text="Ron Barcelo 700ml" Font-Size="Large"></asp:Label>
-                        </div>
-                    </div>
-                </a>
-                <a href="Product.aspx" style="margin-bottom: 10px;">
-                    <div class="card" style="width: 18rem;">
-                        <asp:Image runat="server" ID="Image3" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
-                        <div class="card-body">
-                            <asp:Label runat="server" Text="Ron Barcelo 700ml" Font-Size="Large"></asp:Label>
-                        </div>
-                    </div>
-                </a>
-                <a href="Product.aspx" class="" style="margin-bottom: 10px;">
-                    <div class="card" style="width: 18rem;">
-                        <asp:Image runat="server" ID="Image4" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
-                        <div class="card-body">
-                            <asp:Label runat="server" Text="Ron Barcelo 700ml" Font-Size="Large"></asp:Label>
-                        </div>
-                    </div>
-                </a>
-                <a href="Product.aspx" class="" style="margin-bottom: 10px;">
-                    <div class="card" style="width: 18rem;">
-                        <asp:Image runat="server" ID="Image6" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
-                        <div class="card-body">
-                            <asp:Label runat="server" Text="Ron Barcelo 700ml" Font-Size="Large"></asp:Label>
-                        </div>
-                    </div>
-                </a>
-                <a href="Product.aspx" class="" style="margin-bottom: 10px;">
-                    <div class="card" style="width: 18rem;">
-                        <asp:Image runat="server" ID="Image7" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
-                        <div class="card-body">
-                            <asp:Label runat="server" Text="Ron Barcelo 700ml" Font-Size="Large"></asp:Label>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <asp:Table runat="server">
-                <asp:TableRow>
-                    <asp:TableCell></asp:TableCell>
-                </asp:TableRow>
-
-            </asp:Table> 
+            <asp:Table runat="server" ID="cat"></asp:Table>
         </main>
     </div>
 </asp:Content>
