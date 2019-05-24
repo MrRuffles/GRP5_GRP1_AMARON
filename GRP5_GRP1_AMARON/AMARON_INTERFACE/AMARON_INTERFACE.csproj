@@ -1,6 +1,6 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.Net.Compilers.3.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.0.0\build\Microsoft.Net.Compilers.props')" />
-  <Import Project="..\packages\NUnit.3.11.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" />
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.3.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.1.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -54,8 +54,8 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Web.XmlTransform, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+    <Reference Include="Microsoft.Web.XmlTransform, Version=3.0.0.34420, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Xdt.3.0.0\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -63,8 +63,8 @@
     <Reference Include="NuGet.Core, Version=2.14.0.832, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\NuGet.Core.2.14.0\lib\net40-Client\NuGet.Core.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework, Version=3.11.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -94,10 +94,47 @@
     </Content>
     <Content Include="Contact.aspx" />
     <Content Include="AddNewProduct.aspx" />
-    <Content Include="Imagenes\cart.png" />
-    <Content Include="Imagenes\contact-phone.png" />
-    <Content Include="Imagenes\glass-cocktail.png" />
-    <Content Include="Imagenes\home.png" />
+    <Content Include="Imagenes\bebidas\Absolut.jpg" />
+    <Content Include="Imagenes\bebidas\Ballantine%27s.jpg" />
+    <Content Include="Imagenes\bebidas\Beefeater.jpg" />
+    <Content Include="Imagenes\bebidas\Bombay_Sapphire.jpg" />
+    <Content Include="Imagenes\bebidas\Cacique.jpg" />
+    <Content Include="Imagenes\bebidas\Campari.jpg" />
+    <Content Include="Imagenes\bebidas\Cutty_Sark.jpg" />
+    <Content Include="Imagenes\bebidas\Esplendido.jpg" />
+    <Content Include="Imagenes\bebidas\Espolon.jpg" />
+    <Content Include="Imagenes\bebidas\Evolution.jpg" />
+    <Content Include="Imagenes\bebidas\Four_Roses.jpg" />
+    <Content Include="Imagenes\bebidas\Goldfield.jpg" />
+    <Content Include="Imagenes\bebidas\Grey_Goose.jpg" />
+    <Content Include="Imagenes\bebidas\Havana_Club.jpg" />
+    <Content Include="Imagenes\bebidas\JB.jpg" />
+    <Content Include="Imagenes\bebidas\Jose_Cuervo.jpg" />
+    <Content Include="Imagenes\bebidas\Kasowa.jpg" />
+    <Content Include="Imagenes\bebidas\Larios.jpg" />
+    <Content Include="Imagenes\bebidas\Los_Aztecas.jpg" />
+    <Content Include="Imagenes\bebidas\Martini_Blanco.jpg" />
+    <Content Include="Imagenes\bebidas\Martini_Rojo.jpg" />
+    <Content Include="Imagenes\bebidas\Negrita.jpg" />
+    <Content Include="Imagenes\bebidas\Rives_Caramelo.jpg" />
+    <Content Include="Imagenes\bebidas\Santa_Teresa.jpg" />
+    <Content Include="Imagenes\bebidas\Seagram.jpg" />
+    <Content Include="Imagenes\bebidas\Smirnoff.jpg" />
+    <Content Include="Imagenes\bebidas\Soberano.jpg" />
+    <Content Include="Imagenes\bebidas\Tanqueray.jpg" />
+    <Content Include="Imagenes\bebidas\Terry_Centenario.jpg" />
+    <Content Include="Imagenes\bebidas\Veterano.jpg" />
+    <Content Include="Imagenes\bebidas\White_Horse.jpg" />
+    <Content Include="Imagenes\Copas_Champan.jpg" />
+    <Content Include="Imagenes\Hielos.jpg" />
+    <Content Include="Imagenes\Limones.jpg" />
+    <Content Include="Imagenes\Nubes.jpg" />
+    <Content Include="Imagenes\Ositos.jpg" />
+    <Content Include="Imagenes\Pajitas.jpg" />
+    <Content Include="Imagenes\Sandias_Gominola.jpg" />
+    <Content Include="Imagenes\Sombrillas.jpg" />
+    <Content Include="Imagenes\Vasos.jpg" />
+    <Content Include="Imagenes\Vasos_Colores.jpg" />
     <Content Include="Orders.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="EditarPerfil.aspx" />
@@ -358,8 +395,8 @@
       <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.3.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.3.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.3.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.3.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
