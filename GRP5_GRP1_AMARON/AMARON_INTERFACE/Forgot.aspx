@@ -7,11 +7,11 @@
     <script src="Scripts/popper.min.js"></script>
     <style type="text/css">
         body {
-            background-color: darkorange;
+            background-color: whitesmoke;
         }
 
-        #login-group {
-            background-color: darkorange;
+        #forgot-group {
+            background-color: coral;
         }
 
         @keyframes backgound {
@@ -28,7 +28,7 @@
         <h1 style="padding: 50px 0px 0px 0px; font-size: 50px; text-align: center; align-items: center">Recuperación de credenciales</h1>
         <hr width="60%" align="center" />
         <div class=" d-flex justify-content-center" style="">
-            <div id="login-group" class="card">
+            <div id="forgot-group" class="card">
                 <article class="card-body">
                     <div class="d-flex align-baseline">
                         <asp:Label runat="server" Font-Size="Larger" Text="Introduzca el email vinculado a su cuenta y le enviaremos sus nuevas credenciales."></asp:Label>

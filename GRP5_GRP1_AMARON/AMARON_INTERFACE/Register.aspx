@@ -66,7 +66,7 @@
                                     <asp:Label runat="server" Font-Size="Larger" Text="Contraseña *"></asp:Label>
                                 </div>
                                 <asp:TextBox runat="server" ID="tb_password" TextMode="password" CssClass="form-control" placeholder="********" oninvalid="this.setCustomValidity(')"></asp:TextBox>
-                                <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="tb_password" ID="PasswordValidator" ValidationExpression="^[\s\S]{6,}$" runat="server" ErrorMessage="Tu contraseña debe tener al menos 6 caracteres."></asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="tb_password" ID="PasswordValidator" ValidationExpression="^[\s\S]{6,15}$" runat="server" ErrorMessage="Tu contraseña debe tener entre 6 y 15 caracteres."></asp:RegularExpressionValidator>
                                 <asp:RequiredFieldValidator ID="RequiredPassword" runat="server" ErrorMessage="&laquo; (Required)" ControlToValidate="tb_Password" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                                     <asp:Label runat="server" Font-Size="Larger" Text="Comprobación de contraseña *"></asp:Label>
                                 </div>
                                 <asp:TextBox runat="server" ID="tb_password_confirm" TextMode="password" CssClass="form-control" placeholder="********"></asp:TextBox>
-                                <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="tb_password_confirm" ID="PasswordCheckValidator" ValidationExpression="^[\s\S]{6,}$" runat="server" ErrorMessage="Tu contraseña debe tener al menos 6 caracteres."></asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="tb_password_confirm" ID="PasswordCheckValidator" ValidationExpression="^[\s\S]{6,15}$" runat="server" ErrorMessage="Tu contraseña debe tener entre 6 y 15 caracteres."></asp:RegularExpressionValidator>
                                 <asp:RequiredFieldValidator ID="RequiredPasswordCheck" runat="server" ErrorMessage="&laquo; (Required)" ControlToValidate="tb_Password_confirm" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
 
                             </div>

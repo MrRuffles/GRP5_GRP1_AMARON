@@ -14,7 +14,7 @@ namespace AMARON_INTERFACE
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            recover_email.Text = "";
+            
         }
         private void ClearBoxes()
         {
@@ -68,7 +68,8 @@ namespace AMARON_INTERFACE
             
                 ENUser user = new ENUser();
                 user.email = recover_email.Text.ToString();
-                if(user.ReadUser())
+                user.ReadUserPerfil();
+                if (user.email != "")
                 {
                 //Changes DB password for this user
                     byte[] salt;
@@ -76,11 +77,13 @@ namespace AMARON_INTERFACE
                     var pb = new Rfc2898DeriveBytes(user.pass, salt, 1000);
                     byte[] random = pb.GetBytes(20);
                     string newpass = Convert.ToBase64String(random);
+                    newpass = newpass.Substring(0,10);
+                    user.pass = newpass;
 
                 if (user.UpdateUser())
                     {
                         //If info can be sent, then show success message
-                        if (SendMail(user.name, user.email, newpass.ToString()))
+                        if (SendMail(user.name, user.email, newpass))
                         {
                             Label_Sending_Success.Visible = true;
                         }

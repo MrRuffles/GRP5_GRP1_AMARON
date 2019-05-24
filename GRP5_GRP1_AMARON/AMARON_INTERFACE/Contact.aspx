@@ -8,9 +8,13 @@
     <script async defer src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.3"></script>
     <style type="text/css">
         body {
-            background-color: darkorange;
+            background-color: whitesmoke;
         }
-
+        
+        #contact-form {
+            background-color: coral;
+           
+        }
         @keyframes backgound {
             100% {
                 background-color: #faa166;
