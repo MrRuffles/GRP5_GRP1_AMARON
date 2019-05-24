@@ -3,6 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script src="Scripts/popper.min.js"></script>
@@ -42,8 +43,8 @@
        }
        
        .RatingStar{
-           height:50px;
-           width:50px;
+           height:30px;
+           width:30px;
            cursor: pointer;
            background-repeat: no-repeat;
            display: block;
@@ -60,11 +61,12 @@
            background-color: red;
        }
        .Empty{
-           background-image: url(InterfaceImgs/EmptyStar1.png);
+           background-image: url("Imagenes/EmptyStar1.png");
            background-color: blue;
            border: 2px solid grey;
            border-image-outset: 50px;
        }
+
     </style>
     <title> PRODUCT PAGE </title>
 </asp:Content>
@@ -78,7 +80,7 @@
 
             <!-- Product Image --><!-- TODO: RESPONSIVE IMAGE-->
             <div class="col-md-3 align-self-center">
-                <asp:Image runat="server" ID="ProductImage" CssClass="img-responsive" ImageUrl="~/Imagenes/GIN_PUERTOINDIAS_AZUL.jpg" />
+                <asp:Image runat="server" ID="ProductImage" CssClass="img-responsive" ImageUrl="~/Imagenes/GIN_Puerto.jpg" />
             </div>
 
             <!-- The media body is next to the media -->
@@ -176,11 +178,11 @@
             </div>
         </div>
         <!----------------------------------------- RATING SECTION ------------------------------------------------------------------->
-        <!-- video que menu shadow ayudado: https://www.youtube.com/watch?v=D0ppJ7iF4y0 -->
+        <!-- video que me ha ayudado: https://www.youtube.com/watch?v=D0ppJ7iF4y0 -->
         <div class="row">
             
             <div class="col-md-2">
-              <label for="InputComment">¡Valora este producto!</label>
+              <label for="InputComment" style="padding-top: 0.5em" >¡Valora este producto!</label>
             </div>
             <div class="col-md-10">
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -191,17 +193,30 @@
                             StarCssClass="RatingStar"
                             WaitingStarCSSClass="Saved"
                             FilledStarCSSClass="Filled"
-                            EmptyStarCSSClass="Empty"                          
+                            EmptyStarCSSClass="Empty"                            
                         >
                         </ajaxToolkit:Rating>
                     </ContentTemplate>
                 </asp:UpdatePanel>
+            </div>            
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="star-rating">
+                    <span class="fa fa-star-o" data-rating="1"></span>
+                    <span class="fa fa-star-o" data-rating="2"></span>
+                    <span class="fa fa-star-o" data-rating="3"></span>
+                    <span class="fa fa-star-o" data-rating="4"></span>
+                    <span class="fa fa-star-o" data-rating="5"></span>
+                    <input type="hidden" name="whatever1" class="rating-value" value="2.56">
+                </div>
             </div>
         </div>
         <!----------------------------------------- COMMENTS SECTION ----------------------------------------------------------------->
         <div class="row">
             <div class="col-md-12">
-                <div class="row">
+
+                <div class="row"><!-- Comment text box-->
                     <div class="col-md-6">
                          <label for="InputComment">¡Añade un comentario!</label>
                     </div>
@@ -214,12 +229,16 @@
                         </div>
                     </div>
                 </div> <!-- Comment Text Box -->
-                <div class="row">
+                
+                <div class="row"><!-- Send comment button -->
                     <div>
                         <button type="submit" class="btn btn-success" style="margin-top:0.5em">Enviar Comentario</button>
                     </div>
                 </div>
+
             </div>
-        </div>
+        </div><!-- END COMMENT SECTION -->
+
     </div><!--END CONTAINER-->
+        
 </asp:Content>

@@ -1,5 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 using System.Configuration;
+using System.Security.Cryptography;
 
 
 namespace Library{
@@ -10,7 +17,7 @@ namespace Library{
 
         //Initializates connection string to data base
         public CADBottle() {
-            constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
+            constring = ConfigurationManager.ConnectionStrings["AmaronDataBase"].ConnectionString;
         }
 
             /*
@@ -21,6 +28,34 @@ namespace Library{
             public bool CreateBottle(ENBottle bottle){
 
                 bool created = false;
+
+                SqlConnection conection = new SqlConnection(constring);
+
+                try{
+
+                    conection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("", conection)){
+
+                        cmd.CommandText = "INSERT INTO Bottle(product, grade, alcoholicType, volume) values ("
+                            + bottle.cod + "," + bottle.grade+ ", '" + bottle.alcoholicType + "', "
+                            + bottle.volume + ");";
+
+                        cmd.ExecuteNonQuery();
+
+                    }
+
+                    created = true;
+
+                }
+                catch (SqlException ex){
+
+                    Console.WriteLine("Error al inserta la botella en la base de datos. ", ex.Message);
+
+                }finally{
+
+                    conection.Close();
+                }
 
                 return created;
 

@@ -50,6 +50,25 @@ namespace Library {
 
         }
 
+        private string ProductBrand;
+        public string brand{
+
+            get {  return this.ProductBrand;  }
+
+            set { this.ProductBrand = value;  }
+
+        }
+
+        private string ProductType;
+        public string type
+        {
+
+            get { return this.ProductType; }
+
+            set { this.ProductType = value; }
+
+        }
+
         private string ProductDescription;
         public string description
         {
@@ -60,30 +79,48 @@ namespace Library {
 
         }
 
+        private string ProductUrl;
+        public string url
+        {
+
+            get { return this.ProductUrl; }
+
+            set { this.ProductUrl = value; }
+        }
+
+
+
+
         private CADProduct prodCAD = new CADProduct();
 
 
         //----------------------------------------------------------------------------------------------
 
         /*
-         * Creates a default product except for the id
-         * Pameter: the id given for the product
+         * Creates a default product
          */
         public ENProduct(){
 
             name = "Default Name";
             price = 0.0F;
             stock = 0;
+            brand = "Deafult brand";
+            type = "miscelanea";
             description = "This a description by default of the product.";
+            url = "";
         }
 
         //Creates a products with the values that receives in the parameters
-        public ENProduct(string name, float price, int stock, string description){
+        public ENProduct(int id, string name, float price, int stock, string brand, string type, string description, string url)
+        {
 
             this.name = name;
             this.price = price;
             this.stock = stock;
+            this.brand = brand;
+            this.type = type;
             this.description = description;
+            this.url = url;
         }
 
         /*
