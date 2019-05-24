@@ -37,8 +37,10 @@
                         <div class="d-flex align-baseline">
                             <asp:Label runat="server" Font-Size="Larger" Text="Email"></asp:Label>
                         </div>
-                        <asp:TextBox runat="server" ID="recover_email" TextMode="Email" CssClass="form-control" placeholder="Email" required="required" oninvalid="this.setCustomValidity('Introduzca un email válido: ex@abc.xyz')"
+                        <asp:TextBox runat="server" ID="recover_email" TextMode="Email" CssClass="form-control" placeholder="Email"  oninvalid="this.setCustomValidity('Introduzca un email válido: ex@abc.xyz')"
                             oninput="this.setCustomValidity('')"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredEmailForgot" runat="server" ErrorMessage="Introduce tu email" ControlToValidate="recover_email" CssClass="ValidationError" ToolTip="Introduce tu email"></asp:RequiredFieldValidator>
+                        
                     </div>
                     <div class="form-group">
                         <div class=" row d-flex justify-content-around">

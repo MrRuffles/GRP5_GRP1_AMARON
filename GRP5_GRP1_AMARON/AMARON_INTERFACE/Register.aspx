@@ -35,7 +35,7 @@
                                     <asp:Label runat="server" Font-Size="Larger" Text="Nombre *"></asp:Label>
                                 </div>
                                 <asp:TextBox runat="server" ID="tb_name" TextMode="SingleLine" CssClass="form-control" placeholder="Introduce tu nombre" ></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredName" runat="server" ErrorMessage="&laquo; (Required)" ControlToValidate="tb_name" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredName" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_name" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -43,9 +43,9 @@
                                 <div class="d-flex align-baseline">
                                     <asp:Label runat="server" Font-Size="Larger" Text="Fecha de nacimiento *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_birth" Width="150px" TextMode="Date" CssClass="form-control" required="required"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="tb_birth" Width="150px" TextMode="Date" CssClass="form-control" ></asp:TextBox>
                                 <asp:Label runat="server" ID="Error_Birth" ForeColor="Red" Visible="false" Text=""></asp:Label>
-                                <asp:RequiredFieldValidator ID="RequiredBirthdate" runat="server" ErrorMessage="&laquo; (Required)" ControlToValidate="tb_birth" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredBirthdate" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_birth" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                                 </div>
                                 <asp:TextBox runat="server" ID="tb_email" TextMode="Email" CssClass="form-control" placeholder="Introduzca su email" oninvalid="this.setCustomValidity('Introduzca un email válido: ex@abc.xyz')"
                                     oninput="this.setCustomValidity('')" onkeyup="EnforceMaximumLength(this,320)"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredEmail" runat="server" ErrorMessage="&laquo; (Required)" ControlToValidate="tb_email" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredEmail" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_email" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -67,7 +67,7 @@
                                 </div>
                                 <asp:TextBox runat="server" ID="tb_password" TextMode="password" CssClass="form-control" placeholder="********" oninvalid="this.setCustomValidity(')"></asp:TextBox>
                                 <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="tb_password" ID="PasswordValidator" ValidationExpression="^[\s\S]{6,15}$" runat="server" ErrorMessage="Tu contraseña debe tener entre 6 y 15 caracteres."></asp:RegularExpressionValidator>
-                                <asp:RequiredFieldValidator ID="RequiredPassword" runat="server" ErrorMessage="&laquo; (Required)" ControlToValidate="tb_Password" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredPassword" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_Password" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
 
                                 <asp:TextBox runat="server" ID="tb_email_confirm" TextMode="Email" CssClass="form-control" placeholder="Introduzca su email de nuevo" oninvalid="this.setCustomValidity('Introduzca un email válido: ex@abc.xyz')"
                                     oninput="this.setCustomValidity('')" onkeyup="EnforceMaximumLength(this,320)"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredEmailCheck" runat="server" ErrorMessage="&laquo; (Required)" ControlToValidate="tb_email_confirm" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredEmailCheck" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_email_confirm" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                                 <asp:Label runat="server" ID="Error_email" ForeColor="Red" Visible="false" Text="¡Los emails deben coincidir!"></asp:Label>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                                 </div>
                                 <asp:TextBox runat="server" ID="tb_password_confirm" TextMode="password" CssClass="form-control" placeholder="********"></asp:TextBox>
                                 <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="tb_password_confirm" ID="PasswordCheckValidator" ValidationExpression="^[\s\S]{6,15}$" runat="server" ErrorMessage="Tu contraseña debe tener entre 6 y 15 caracteres."></asp:RegularExpressionValidator>
-                                <asp:RequiredFieldValidator ID="RequiredPasswordCheck" runat="server" ErrorMessage="&laquo; (Required)" ControlToValidate="tb_Password_confirm" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredPasswordCheck" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_Password_confirm" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
 
                             </div>
                         </div>
@@ -102,8 +102,8 @@
                                 <div class="d-flex align-baseline">
                                     <asp:Label runat="server" Font-Size="Larger" Text="Dirección de envio *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_delivery_address" TextMode="SingleLine" CssClass="form-control" placeholder="Introduzca la dirección de envio" required="required"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredAddress" runat="server" ErrorMessage="&laquo; (Required)" ControlToValidate="tb_delivery_address" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
+                                <asp:TextBox runat="server" ID="tb_delivery_address" TextMode="SingleLine" CssClass="form-control" placeholder="Introduzca la dirección de envio" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredAddress" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_delivery_address" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="col-md-6">

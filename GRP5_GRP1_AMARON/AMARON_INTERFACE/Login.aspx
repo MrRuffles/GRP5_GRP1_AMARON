@@ -35,16 +35,18 @@
                         <div class="d-flex align-baseline">
                             <asp:Label runat="server" Font-Size="Larger" Text="Email"></asp:Label>
                         </div>
-                        <asp:TextBox runat="server" ID="login_email" TextMode="Email" CssClass="form-control" placeholder="Email" required="required" oninvalid="this.setCustomValidity('Se requiere un email válido: ex@abc.xyz')"
+                        <asp:TextBox runat="server" ID="login_email" TextMode="Email" CssClass="form-control" placeholder="Email" oninvalid="this.setCustomValidity('Se requiere un email válido: ex@abc.xyz')"
                             oninput="this.setCustomValidity('')"></asp:TextBox>
-
+                        <asp:RequiredFieldValidator ID="RequiredEmailLogin" runat="server" ErrorMessage="Introduce tu email" ControlToValidate="login_email" CssClass="ValidationError" ToolTip="Introduce tu email"></asp:RequiredFieldValidator>
+                        
                     </div>
                     <div class="form-group">
 
                         <asp:Label runat="server" CssClass="float-left" Font-Size="Larger" Text="Contraseña"></asp:Label>
-                        <asp:TextBox runat="server" ID="login_password" TextMode="password" CssClass="form-control" placeholder="Contraseña" required="required" oninvalid="this.setCustomValidity('Introduzca su contraseña')"
+                        <asp:TextBox runat="server" ID="login_password" TextMode="password" CssClass="form-control" placeholder="Contraseña" oninvalid="this.setCustomValidity('Introduzca su contraseña')"
                             oninput="this.setCustomValidity('')"></asp:TextBox>
-
+                        <asp:RequiredFieldValidator ID="RequiredPasswordLogin" runat="server" ErrorMessage="Introduce tu contraseña" ControlToValidate="login_password" CssClass="ValidationError" ToolTip="Introduce tu contraseña"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="login_password" ID="PasswordValidator" ValidationExpression="^[\s\S]{6,15}$" runat="server" ErrorMessage="Tu contraseña tiene entre 6 y 15 caracteres."></asp:RegularExpressionValidator>
                         <div style="padding-top: 10px" class="float-right">
                             <asp:HyperLink runat="server" Text="¿Contraseña olvidada?" NavigateUrl="/Forgot.aspx"></asp:HyperLink>
                         </div>
