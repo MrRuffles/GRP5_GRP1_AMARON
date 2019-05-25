@@ -20,7 +20,7 @@ namespace AMARON_INTERFACE
 
             if(cookie != null)
             {
-                ENUser user = new ENUser(0,"", "",cookie["username"],0,"","","");
+                ENUser user = new ENUser(0,"", "",cookie["username"],new DateTime(),"","","");
                 if (user.ReadUserPerfil())
                 {
                     Direccion.Text = user.address;
@@ -51,7 +51,7 @@ namespace AMARON_INTERFACE
             HttpCookie cookie = Request.Cookies["damncookie"];
             if (check_caducidad())
             {
-                ENUser user = new ENUser(0,"","",cookie["username"],0,"","","");
+                ENUser user = new ENUser(0,"","",cookie["username"], new DateTime(),"","","");
                 if (user.ReadID())
                 {
                     ENCart cart = new ENCart(0,user.userID,0.0F,0);

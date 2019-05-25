@@ -84,7 +84,7 @@
                 <asp:label ID="NewProductTypeTB" runat="server" Text="Selecciona el tipo de producto:" CssClass="prod-labels"></asp:label>&nbsp;
             </div>
              <div class="col-md-10">             
-                    <asp:DropDownList ID="ProdTypeDropDown" runat="server" OnSelectedIndexChanged="ProdTypeDropDown_SelectedIndexChanged">
+                    <asp:DropDownList ID="ProdTypeDropDown" runat="server" OnSelectedIndexChanged="ProdTypeDropDown_SelectedIndexChanged" AutoPostBack="true">
                         <asp:listitem text="Botella de Alcohol" value="1"></asp:listitem>
                         <asp:listitem text="Miscelanea" value="2"></asp:listitem>
                     </asp:DropDownList>
@@ -120,8 +120,7 @@
             </div>
             <div class="col-md-10">
                 <div class="form-group form-inline">
-                    <asp:TextBox ID="NewProdVolumeTB" runat="server" CssClass="form-control" Placeholder="0,0" Visible="true"></asp:TextBox>
-                    <asp:Label ID="Label2" runat="server" Text="-1"></asp:Label>
+                    <asp:TextBox ID="NewProdVolumeTB" runat="server" CssClass="form-control" Placeholder="0.0" Visible="true"></asp:TextBox>
                 </div>
             </div>
         </div>
@@ -132,8 +131,7 @@
             </div>
             <div class="col-md-10">
                 <div class="form-group form-inline">
-                    <asp:TextBox ID="NewProdGradeTB" runat="server" placeholder="0,0" CssClass="form-control" visible="true"></asp:TextBox>
-                    <asp:Label ID="Label1" runat="server" Text="-1"></asp:Label>
+                    <asp:TextBox ID="NewProdGradeTB" runat="server" placeholder="0.0" CssClass="form-control" visible="true"></asp:TextBox>
                 </div>
             </div>
         </div>
@@ -144,8 +142,7 @@
             </div>
             <div class="col-md-10">
                 <div class="form-group form-inline">
-                    <asp:TextBox ID="NewProdPriceTB" runat="server" CssClass="form-control" Placeholder="0,0" required="required"></asp:TextBox>
-                    <asp:Label ID="pruebaPrice" runat="server" Text="-1" Visible="true"></asp:Label>
+                    <asp:TextBox ID="NewProdPriceTB" runat="server" CssClass="form-control" Placeholder="0.0" required="required"></asp:TextBox>
                 </div>
             </div>
         </div>

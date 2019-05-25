@@ -20,7 +20,7 @@ namespace AMARON_INTERFACE{
 
             product.id = Convert.ToInt32(Request.QueryString["id"]);
 
-            if (product.ReadProduct()) {
+            if (product.ReadProductName() ) {
 
                 //Image url
                 ProductImage.ImageUrl = product.url;

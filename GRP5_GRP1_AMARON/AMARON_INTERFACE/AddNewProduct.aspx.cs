@@ -43,9 +43,6 @@ namespace AMARON_INTERFACE
                 
                 //Get product properties
                 newProduct.price = float.Parse(NewProdPriceTB.Text); //Puede dar excepcion
-
-                pruebaPrice.Text = float.Parse(NewProdPriceTB.Text).ToString();
-
                 newProduct.name = NewProdNameTB.Text;
                 newProduct.brand = NewProdBrandTB.Text;
                 newProduct.stock = Convert.ToInt32(NewProdStockTB.Text);
@@ -67,6 +64,9 @@ namespace AMARON_INTERFACE
 
                     newProduct.description = NewProdDescriptionTB.Text;
 
+                }else{
+
+                    newProduct.description = "Este producto aún tiene una descripción";
                 }
 
                                 
@@ -88,14 +88,12 @@ namespace AMARON_INTERFACE
 
                     //Los parse pueden dar excepciones
                     bottleGrade = float.Parse(NewProdGradeTB.Text);
-                    Label1.Text = float.Parse(NewProdGradeTB.Text).ToString();
                     bottleVolume = float.Parse(NewProdVolumeTB.Text);
-                    Label2.Text = float.Parse(NewProdVolumeTB.Text).ToString();
                     bottleType = AlcoholicTypeDropDown.Text;
 
                     if (newProduct.CreateProduct()){ //Create base product
 
-                        if (newProduct.ReadProduct()){
+                        if (newProduct.ReadProductName()){
 
                             productCod = newProduct.id;
                             ENBottle newBottle = new ENBottle(productCod, bottleGrade, bottleVolume, bottleType);
@@ -129,6 +127,7 @@ namespace AMARON_INTERFACE
 
                 } else if(ProdTypeDropDown.Items[0].Selected){
                     ConvertErrorLabel.Visible = true;
+                    NewProdPriceTB.BorderColor = System.Drawing.Color.Red;
                     NewProdGradeTB.BorderColor = System.Drawing.Color.Red;
                     NewProdVolumeTB.BorderColor = System.Drawing.Color.Red;
                 }

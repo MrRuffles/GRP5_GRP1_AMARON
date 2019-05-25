@@ -9,12 +9,13 @@ using System.Configuration;
 namespace Library
 {
 
-    public class CADOrder
-    {
- 
+    public class CADOrder{
+
+        private string constring;
+
         public CADOrder()
         {
-           
+            constring = ConfigurationManager.ConnectionStrings["AmaronDataBase"].ConnectionString;
         }
 
         public bool CreateOrder(ENOrder order)
