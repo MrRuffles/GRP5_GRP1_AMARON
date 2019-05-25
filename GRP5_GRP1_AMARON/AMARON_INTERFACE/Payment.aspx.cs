@@ -56,10 +56,21 @@ namespace AMARON_INTERFACE
                 if (user.ReadID())
                 {
                     ENCart cart = new ENCart(0,user.userID,0.0F,0);
-
+                    DataTable table = cart.ReadCart();
                     ENOrder order = new ENOrder(user.userID,"Preparando",paga,DateTime.Now);
                     if (order.CreateOrder())
                     {
+                        for(int i = 0; i<table.Rows.Count; i++)
+                        {
+                            ENProduct p = new ENProduct(Convert.ToInt32(table.Rows[i][0].ToString()), "", 0.0F, 0, "", "", "", "");
+                            if (p.ReadProductFromCatalog())
+                            {
+                                p.stock -= Convert.ToInt32(table.Rows[i][3].ToString());
+                            }
+                            p.UpdateProduct();
+
+                        }
+
                         cart.DeleteCart();
                     }
 
