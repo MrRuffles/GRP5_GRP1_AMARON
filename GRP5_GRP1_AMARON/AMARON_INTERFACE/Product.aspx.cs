@@ -70,8 +70,28 @@ namespace AMARON_INTERFACE{
 
             if (cookie != null){
 
-                Response.Redirect("Cart.aspx");
+                ENProduct producto = new ENProduct(0, "", 0.0F, 0, "", "", "", "");
+                ENUser usuario = new ENUser(0, "", "", cookie["username"], new DateTime(), "", "", "");
+                
+                producto.id = Convert.ToInt32(Request.QueryString["id"]);
+                usuario.ReadID();
 
+                if (producto.ReadProductFromCatalog()){
+
+                    ENCart carrito = new ENCart(producto.id, usuario.userID, producto.price, Convert.ToInt32(ProdAmount.Text));
+
+                    if (carrito.CreateCart()){
+
+                        ProductAddedLabel.Visible = true;
+                    }
+
+
+                }
+
+
+            }else {
+
+                Response.Redirect("Login.aspx");
             }
 
         }

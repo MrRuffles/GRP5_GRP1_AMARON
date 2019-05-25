@@ -72,10 +72,7 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <!-- Contiene las filas y columnas en las que se divide la página -->
     <div class="container" >
-        <!---------------------------------------- PRODUCT INFO SECTION ------------------------------------------------------->
-        <div class="row">
-
-            <!-- Wrong Amount raning Label -->
+           <!-- Wrong Amount raning Label -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group form-inline">
@@ -84,7 +81,19 @@
                     </div>
                 </div>
             </div>
-            <!-- Product Image --><!-- TODO: RESPONSIVE IMAGE-->
+            <!-- Feedback labels -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-inline">
+                        <asp:Label ID="ProductAddedLabel" class="alert alert-success" runat="server" Visible="false" Text="¡El producto ha sido añadido  al carrito con éxito!">
+                        </asp:Label>
+                    </div>
+                </div>
+            </div>
+        <!---------------------------------------- PRODUCT INFO SECTION ------------------------------------------------------->
+        <div class="row">
+
+            <!-- Product Image -->
             <div class="col-md-3 align-self-center">
                 <asp:Image runat="server" ID="ProductImage" CssClass="prod-img"/>
             </div>

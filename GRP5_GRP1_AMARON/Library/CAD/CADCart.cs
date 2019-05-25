@@ -28,7 +28,7 @@ namespace Library
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("", con))
                 {
-                    cmd.CommandText = "INSERT INTO Cart (uesrID, cod, amount, sum) values (" + cart.CartUserID + ", " + cart.CartCod + ", " + cart.CartCantidad + ", " + cart.CartSum + ");";
+                    cmd.CommandText = "INSERT INTO Cart (userID, cod, amount, sum) values (" + cart.CartUserID + ", " + cart.CartCod + ", " + cart.CartCantidad + ", " + cart.CartSum + ");";
                     cmd.ExecuteNonQuery();
                 }
 
