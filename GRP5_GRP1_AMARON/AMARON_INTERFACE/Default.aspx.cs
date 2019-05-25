@@ -22,7 +22,7 @@ namespace AMARON_INTERFACE
             if (loot.readLootCrate())
             {
 
-                Response.Redirect("Product.aspx?id=" + loot.id);
+                Response.Redirect("Product.aspx?lootid=" + loot.id);
             }
 
             
@@ -30,17 +30,35 @@ namespace AMARON_INTERFACE
 
         protected void l1_Click(object sender, EventArgs e)
         {
+            ENLootCrate loot = new ENLootCrate(0, "", 0.0F, "", Image2.ImageUrl.ToString(), "Lootcrate");
 
+            if (loot.readLootCrate())
+            {
+
+                Response.Redirect("Product.aspx?lootid=" + loot.id);
+            }
         }
 
         protected void l2_Click(object sender, EventArgs e)
         {
+            ENLootCrate loot = new ENLootCrate(0, "", 0.0F, "", Image3.ImageUrl.ToString(), "Lootcrate");
 
+            if (loot.readLootCrate())
+            {
+
+                Response.Redirect("Product.aspx?lootid=" + loot.id);
+            }
         }
 
         protected void l3_Click(object sender, EventArgs e)
         {
+            ENLootCrate loot = new ENLootCrate(0, "", 0.0F, "", Image4.ImageUrl.ToString(), "Lootcrate");
 
+            if (loot.readLootCrate())
+            {
+
+                Response.Redirect("Product.aspx?lootid=" + loot.id);
+            }
         }
     }
 }

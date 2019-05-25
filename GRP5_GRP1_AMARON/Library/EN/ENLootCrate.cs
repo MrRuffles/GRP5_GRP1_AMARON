@@ -101,6 +101,12 @@ namespace Library
             return ltc.readLootCrate(this);
         }
 
+        public bool readLootCrateID()
+        {
+            CADLootCrate ltc = new CADLootCrate();
+            return ltc.readLootCrateID(this);
+        }
+
         public bool updateLootCrate()
         {
             CADLootCrate ltc = new CADLootCrate();
