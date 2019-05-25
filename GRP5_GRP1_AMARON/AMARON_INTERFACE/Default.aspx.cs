@@ -17,7 +17,7 @@ namespace AMARON_INTERFACE
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
-            ENLootCrate loot = new ENLootCrate(0, "", 0.0F, "", Image2.ImageUrl.ToString());
+            ENLootCrate loot = new ENLootCrate(0, "", 0.0F, "", Image5.ImageUrl.ToString(), "Lootcrate");
 
             if (loot.readLootCrate())
             {

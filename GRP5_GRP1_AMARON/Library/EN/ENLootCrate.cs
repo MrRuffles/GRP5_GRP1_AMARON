@@ -39,6 +39,19 @@ namespace Library
             }
         }
 
+        private string typeLootCrate;
+        public string type
+        {
+            get
+            {
+                return typeLootCrate;
+            }
+            set
+            {
+                typeLootCrate = value;
+            }
+        }
+
         private float lootcrateprice;
         public float price
         {
@@ -66,13 +79,14 @@ namespace Library
         }
 
 
-        public ENLootCrate(int id, string name, float price, string description, string url)
+        public ENLootCrate(int id, string name, float price, string description, string url, string type)
         {
             this.id = id;
             this.name = name;
             this.price = price;
             this.url = url;
             this.description = description;
+            this.type = type;
         }
         
         public bool createLootCrate()

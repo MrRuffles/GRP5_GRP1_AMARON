@@ -35,7 +35,8 @@ namespace AMARON_INTERFACE{
 
             product.id = Convert.ToInt32(Request.QueryString["id"]);
 
-            if (product.ReadProductFromCatalog() ) {
+            if (product.ReadProductFromCatalog())
+            {
 
                 //Limt the amount to buy to the product stock
                 AmountRV.MaximumValue = Convert.ToString(product.stock);
@@ -52,12 +53,14 @@ namespace AMARON_INTERFACE{
                 //Descripción
                 DescriptionTextLabel.Text = product.description;
 
-                if (product.type == "botella") {
+                if (product.type == "botella")
+                {
 
                     bottle.id = product.id;
 
-                    if (bottle.ReadBottle()) {
-                                               
+                    if (bottle.ReadBottle())
+                    {
+
 
                         //Volume
                         VolumenLabel.Visible = true;
@@ -75,9 +78,42 @@ namespace AMARON_INTERFACE{
                         ProdAlcoholTypeLabel.Text = bottle.alcoholicType;
 
                     }
-                }//
+                }
+            }else
+            {
+                ENLootCrate loot = new ENLootCrate(0, "", 0.0F, "", "", "");
 
+                loot.id = Convert.ToInt32(Request.QueryString["id"]);
+
+                if(loot.readLootCrate()) {
+
+                    //Hide Marca
+                    MarcaLabel.Visible = false;
+                    ProductBrandLabel.Visible = false;
+
+                    //Hide choose amount
+                    ProdAmount.Visible = false;
+                    CantidadLabel.Visible = false;
+
+                    //hide add to cart
+                    AddCartButton.Visible = false;
+
+                    //Show Image
+                    ProductImage.ImageUrl = loot.url;
+
+                    //Show name
+                    ProductNameLabel.Text = loot.nameLootCrate;
+
+                    //Show price
+                    ProductPriceLabel.Text = Convert.ToString(loot.price);
+
+                    //Show description
+                    DescriptionTextLabel.Text = loot.descriptionLootCrate;
+
+
+                }
             }
+
         }//end page load
 
         protected void AddCartButton_Click(object sender, EventArgs e)

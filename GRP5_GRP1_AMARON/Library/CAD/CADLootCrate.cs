@@ -45,9 +45,10 @@ namespace Library
                     while (lootcrateRead.Read())
                     {
                         loot.id = Convert.ToInt32(lootcrateRead[0]);
+                        loot.nameLootCrate = Convert.ToString(lootcrateRead[1]);
                         loot.price = float.Parse(Convert.ToString(lootcrateRead[2]));
                         loot.descriptionLootCrate=Convert.ToString(lootcrateRead[3]);
-                        loot.url = Convert.ToString(lootcrateRead[4]);
+                        loot.type = Convert.ToString(lootcrateRead[5]);
                     }
 
                     lootcrateRead.Close();
