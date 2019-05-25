@@ -1,7 +1,13 @@
 ﻿using System;
-using System.Configuration;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
+using System.Security.Cryptography;
+
 
 namespace Library{
 
@@ -10,7 +16,7 @@ namespace Library{
         private string constring;
 
         //Initializates connection string to data base
-        public CADProduct() {
+        public CADProduct(){
             constring = ConfigurationManager.ConnectionStrings["AmaronDataBase"].ConnectionString;
         }
 
@@ -22,6 +28,33 @@ namespace Library{
         public bool CreateProduct(ENProduct product){
 
             bool created = false;
+            SqlConnection conection = new SqlConnection(constring);
+
+            try{
+
+                conection.Open();
+
+                using (SqlCommand cmd = new SqlCommand("", conection)){
+
+                    cmd.CommandText = "INSERT INTO Product(name, pvp, stock, brand, type, description, urlImage) values ('"
+                        + product.name + "'," + product.price + ", " + product.stock + ", '" + product.brand + "', '"
+                        + product.type + "', '" + product.description + "', '" + product.url + "');";
+
+                    cmd.ExecuteNonQuery();
+
+                }
+
+                created = true;
+
+            }catch (SqlException ex){
+
+                Console.WriteLine("Error al crear product. ", ex.Message);
+
+            }finally{
+
+                conection.Close();
+            }
+            
 
             return created;
 
@@ -32,45 +65,55 @@ namespace Library{
          * Parameters: product to read
          * Returns: true if the product could be read, false on the contrary
          */
-
-
         public bool ReadProduct(ENProduct prod)
         {
 
-            SqlConnection con = new SqlConnection(constring);
-            bool correct = true;
+            bool read = false;
+            SqlConnection conection = new SqlConnection(constring);
 
+            try{
 
-            try
-            {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand("", con))
-                {
-                    cmd.CommandText = "SELECT * FROM Product where cod='" + prod.id + "';";
+                conection.Open();
 
-                    SqlDataReader auxLectura = cmd.ExecuteReader();
+                using (SqlCommand cmd = new SqlCommand("", conection)){
 
-                    while (auxLectura.Read())
-                    {
-                        
+                    cmd.CommandText = "SELECT * FROM Product where name = '" + product.name + "';";
+
+                    SqlDataReader productRead = cmd.ExecuteReader();
+
+                    if(productRead.HasRows){
+
+                        product.id = Convert.ToInt32(productRead[0]);
+                        product.name = Convert.ToString(productRead[1]);
+                        product.price = (float) Convert.ToDouble(productRead[2]);
+                        product.stock = Convert.ToInt32(productRead[3]);
+                        product.brand = Convert.ToString(productRead[4]);
+                        product.type = Convert.ToString(productRead[5]);
+                        product.description = Convert.ToString(productRead[6]);
+                        product.url = Convert.ToString(productRead[7]);
+
                     }
 
-                    auxLectura.Close();
+                    productRead.Close();
+
                 }
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
-                correct = false;
-            }
-            finally
-            {
-                con.Close();
+
+                read = true;
+
+            }catch(SqlException Ex){
+
+                Console.WriteLine("No se ha podido recuperar el producto de la base de datos.", Ex.Message);
+
+
+            }finally {
+
+                conection.Close();
             }
 
-            return correct;
+            return read;
 
         }
+      
         public DataTable ReadProductCat(ENProduct product){
 
             SqlConnection con = new SqlConnection(constring);

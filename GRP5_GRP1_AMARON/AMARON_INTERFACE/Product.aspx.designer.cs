@@ -13,6 +13,15 @@ namespace AMARON_INTERFACE {
     public partial class Product {
         
         /// <summary>
+        /// Control ScriptManager1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
         /// Control ProductImage.
         /// </summary>
         /// <remarks>
@@ -22,13 +31,13 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.Image ProductImage;
         
         /// <summary>
-        /// Control ProductName.
+        /// Control ProductNameLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ProductName;
+        protected global::System.Web.UI.WebControls.Label ProductNameLabel;
         
         /// <summary>
         /// Control ProductPriceLabel.
@@ -40,31 +49,58 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.Label ProductPriceLabel;
         
         /// <summary>
-        /// Control ProductGradeLabel.
+        /// Control ProductVolumeLabel1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ProductGradeLabel;
+        protected global::System.Web.UI.WebControls.Label ProductVolumeLabel1;
         
         /// <summary>
-        /// Control ProductVolumeLabel.
+        /// Control ProductVolumeLabel2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ProductVolumeLabel;
+        protected global::System.Web.UI.WebControls.Label ProductVolumeLabel2;
         
         /// <summary>
-        /// Control AlcoholTypeLabel.
+        /// Control ProductGradeLabel1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AlcoholTypeLabel;
+        protected global::System.Web.UI.WebControls.Label ProductGradeLabel1;
+        
+        /// <summary>
+        /// Control ProductGradeLabel2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ProductGradeLabel2;
+        
+        /// <summary>
+        /// Control AlcoholTypeLabel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AlcoholTypeLabel1;
+        
+        /// <summary>
+        /// Control AlcoholTypeLabel2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AlcoholTypeLabel2;
         
         /// <summary>
         /// Control ProductBrandLabel.
@@ -85,13 +121,13 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.TextBox ProdAmount;
         
         /// <summary>
-        /// Control ProdQuantity.
+        /// Control ProdAmount.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProdQuantity;
+        protected global::System.Web.UI.WebControls.TextBox ProdAmount;
         
         /// <summary>
         /// Control AddCartButton.
@@ -110,6 +146,24 @@ namespace AMARON_INTERFACE {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// Control UpdatePanel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+        /// Control ratingStars.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.Rating ratingStars;
         
         /// <summary>
         /// Control CommentTextBox.
