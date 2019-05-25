@@ -70,6 +70,48 @@ namespace Library{
 
                 bool read = false;
 
+                SqlConnection conection = new SqlConnection(constring);
+
+                try{
+
+                    conection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("", conection)){
+
+                        cmd.CommandText = "SELECT * FROM Bottle where product = '" + bottle.id + "';";
+
+                        SqlDataReader bottleRead = cmd.ExecuteReader();
+
+                        while (bottleRead.Read()){
+
+                            bottle.grade = float.Parse(Convert.ToString(bottleRead[1]));
+                            bottle.alcoholicType = Convert.ToString(bottleRead[2]);
+                            bottle.volume = float.Parse(Convert.ToString(bottleRead[3]));
+
+                        }
+
+                        bottleRead.Close();
+
+                    }
+
+                    read = true;
+
+                }
+                catch (SqlException Ex)
+                {
+
+                    Console.WriteLine("No se ha podido recuperar el producto de la base de datos.", Ex.Message);
+
+
+                }
+                finally
+                {
+
+                        conection.Close();
+                }
+
+
+
                 return read;
 
             }

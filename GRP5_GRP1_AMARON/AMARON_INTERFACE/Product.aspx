@@ -3,7 +3,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script src="Scripts/popper.min.js"></script>
@@ -91,7 +90,7 @@
             </div>
             <!-- Product Image --><!-- TODO: RESPONSIVE IMAGE-->
             <div class="col-md-3 align-self-center">
-                <asp:Image runat="server" ID="ProductImage" CssClass="img-responsive" ImageUrl="~/Imagenes/GIN_Puerto.jpg" />
+                <asp:Image runat="server" ID="ProductImage" CssClass="prod-img"/>
             </div>
 
             <!-- The media body is next to the media -->
@@ -185,16 +184,11 @@
          </div><!-- End MediaProduct Row -->
         
         <!------------------------------------- DESCRIPTION SECTION ------------------------------------------------------------>        
-        <div class="row" style="padding-top: 1em;">
+        <div class="row" style="padding-top: 1em; width:750px">
             <div class="col-xs-1 align-self-center">
                 <div class="jumbotron">
                     <h6>DESCRIPCIÓN DEL PRODUCTO</h6>
-                    <asp:label ID="Label1" runat="server" CssClass="well"
-                        Text="Puerto de Indias es una ginebra Premium elaborada en Carmona (Sevilla), en una de las destilerías 
-                        más antiguas y con mayor tradición de Andalucía. 
-                        Gin Puerto de Indias Classic destaca por su carácter corpulento para una ginebra más intensa, más cítrica. 
-                        La lima, el pomelo, la cáscara de naranja y limón y el cilantro aportan al paladar un toque muy fresco.">
-                    </asp:label>
+                    <asp:label ID="CommentTextLabel" runat="server" CssClass="well" style="height: 300px"></asp:label>
                 </div>
             </div>
         </div>
