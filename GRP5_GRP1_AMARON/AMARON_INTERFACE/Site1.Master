@@ -47,28 +47,32 @@
                     <asp:ImageButton ID="ImageButtonHeader" OnClick="ImageButtonHeader_Click" runat="server" ImageUrl="Imagenes/ron.jpg" Width="100%" Height="105px" />
                 </div>
                 <span></span>
-                <div id="nav-bar" class="row">
-                    <div class="col-md-6 d-flex justify-content-center offset-3 " >
+                <div id="nav-bar"  class="row">
+                    
+                    <div id="username_menu" class="col-3 d-flex justify-content-start">
+                        <asp:Button ID="username_menu_button" runat="server" Text="" Visible="false" OnClick="username_menu_button_Click" CssClass="btn" CausesValidation="False" UseSubmitBehavior="False"></asp:Button>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-center" style="margin-top:5px; margin-bottom:5px">
                         <asp:Menu runat="server" OnMenuItemClick="NavigationMenu_MenuItemClick" ID="NavigationMenu" Orientation="Horizontal">
                             <Items>
                                 <asp:MenuItem runat="server" Text="" Value="Home" ImageUrl="Imagenes/home.png"></asp:MenuItem>
                                 <asp:MenuItem runat="server" Text="" Value="Catalog" ImageUrl="Imagenes/glass-cocktail.png"></asp:MenuItem>
                                 <asp:MenuItem runat="server" Text="" Value="Contact" ImageUrl="Imagenes/contact-phone.png"></asp:MenuItem>
-                                <asp:MenuItem runat="server" Text="" Value="Cart" ImageUrl="Imagenes/cart.png"></asp:MenuItem>
                             </Items>
                         </asp:Menu>
                     </div>
                     <div id="global_actions" class="col-3 d-flex justify-content-end">
-                        <asp:HyperLink ID="login_menu_button" runat="server" ImageUrl="Imagenes/login.png" Visible="true" Text="Log in" NavigateUrl="Login.aspx"></asp:HyperLink>
-                        <asp:HyperLink ID="register_menu_button" runat="server" ImageUrl="Imagenes/account-plus.png" Visible="true" Text="Register" NavigateUrl="Register.aspx"></asp:HyperLink>
-                        <asp:Button ID="username_menu_button" runat="server" Text="" Visible="false" OnClick="username_menu_button_Click" CssClass="btn"></asp:Button>
-                        <asp:Button class="btn btn-danger btn-round " ID="menu_logoff" runat="server" Visible="false" Text="Log off" OnClick="menu_logoff_click" CausesValidation="False" UseSubmitBehavior="False" />
+                        <asp:HyperLink ID="login_menu_button" runat="server" style="margin-top:5px" ImageUrl="Imagenes/login.png" Visible="true" Text="Log in" NavigateUrl="Login.aspx"></asp:HyperLink>
+                        <asp:HyperLink ID="register_menu_button" runat="server" style="margin-top:5px"  ImageUrl="Imagenes/account-plus.png" Visible="true" Text="Register" NavigateUrl="Register.aspx"></asp:HyperLink>
+                        <asp:HyperLink ID="cart_menu_button" runat="server" style="margin-top:5px" ImageUrl="Imagenes/cart.png" Visible="false" Text="Cart" NavigateUrl="Cart.aspx"></asp:HyperLink>
+                        <asp:Button class="btn btn-info btn-round " ID="menu_logoff" style="margin-bottom:3px" runat="server" Visible="false" Text="Log off" OnClick="menu_logoff_click" CausesValidation="False" UseSubmitBehavior="False" />
+                        <asp:Button class="btn btn-danger btn-round " ID="Button1" runat="server" Visible="false" Text="Log off" OnClick="menu_logoff_click" CausesValidation="False" UseSubmitBehavior="False" />
                     </div>
                 </div>
             </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-            <div id="footer">
+            <div style="margin-top:250px" id="footer">
                 <ul>
                     <li><a href="AboutUs.aspx">About Us</a></li>
                 </ul>
@@ -78,4 +82,15 @@
     </form>
 
 </body>
+<script type="text/javascript"> 
+
+function stopRKey(evt) { 
+  var evt = (evt) ? evt : ((event) ? event : null); 
+  var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null); 
+  if ((evt.keyCode == 13) && (node.type=="text"))  {return false;} 
+} 
+
+document.onkeypress = stopRKey; 
+
+</script>
 </html>

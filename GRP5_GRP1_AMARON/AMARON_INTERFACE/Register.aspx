@@ -9,7 +9,7 @@
         body {
             background-color: whitesmoke;
         }
-        
+
         @keyframes backgound {
             100% {
                 background-color: #ffffff;
@@ -24,9 +24,9 @@
         <h2 style="padding: 50px 0px 0px 0px; font-size: 50px; text-align: center; align-items: center">Registro</h2>
         <hr width="60%" align="center" />
     </div>
-    <div class="container col-md-8" id="register-form" >
-        <div class="row rounded"style ="border-radius:200px; background-color:coral">
-            <div class="col-md-8 offset-xl-2 py-5" >
+    <div class="container col-md-8" id="register-form">
+        <div class="row rounded" style="border-radius: 200px; background-color: coral">
+            <div class="col-md-8 offset-xl-2 py-5">
                 <div class="controls">
                     <div class="row ">
                         <div class="col-md-6">
@@ -34,7 +34,8 @@
                                 <div class="d-flex align-baseline">
                                     <asp:Label runat="server" Font-Size="Larger" Text="Nombre *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_name" TextMode="SingleLine" CssClass="form-control" placeholder="Introduce tu nombre" required="required"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="tb_name" TextMode="SingleLine" CssClass="form-control" placeholder="Introduce tu nombre" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredName" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_name" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -42,8 +43,9 @@
                                 <div class="d-flex align-baseline">
                                     <asp:Label runat="server" Font-Size="Larger" Text="Fecha de nacimiento *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_birth" Width="150px" TextMode="Date" CssClass="form-control" required="required" ></asp:TextBox>
-                                <asp:Label runat="server" ID="Error_Birth" ForeColor="Red" Visible="false" Text="Debes ser mayor de 18 años"></asp:Label>
+                                <asp:TextBox runat="server" ID="tb_birth" Width="150px" TextMode="Date" CssClass="form-control" ></asp:TextBox>
+                                <asp:Label runat="server" ID="Error_Birth" ForeColor="Red" Visible="false" Text=""></asp:Label>
+                                <asp:RequiredFieldValidator ID="RequiredBirthdate" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_birth" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                     </div>
@@ -53,8 +55,9 @@
                                 <div class="d-flex align-baseline">
                                     <asp:Label runat="server" Font-Size="Larger" Text="Email *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_email" TextMode="Email" CssClass="form-control" placeholder="Introduzca su email" required="required" oninvalid="this.setCustomValidity('Introduzca un email válido: ex@abc.xyz')"
+                                <asp:TextBox runat="server" ID="tb_email" TextMode="Email" CssClass="form-control" placeholder="Introduzca su email" oninvalid="this.setCustomValidity('Introduzca un email válido: ex@abc.xyz')"
                                     oninput="this.setCustomValidity('')" onkeyup="EnforceMaximumLength(this,320)"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredEmail" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_email" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -62,7 +65,9 @@
                                 <div class="d-flex align-baseline">
                                     <asp:Label runat="server" Font-Size="Larger" Text="Contraseña *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_password" pattern=".{6,}" TextMode="password" CssClass="form-control" placeholder="********" required="required" oninvalid="this.setCustomValidity('Your password must have at least 6 characters length')"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="tb_password" TextMode="password" CssClass="form-control" placeholder="********" oninvalid="this.setCustomValidity(')"></asp:TextBox>
+                                <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="tb_password" ID="PasswordValidator" ValidationExpression="^[\s\S]{6,15}$" runat="server" ErrorMessage="Tu contraseña debe tener entre 6 y 15 caracteres."></asp:RegularExpressionValidator>
+                                <asp:RequiredFieldValidator ID="RequiredPassword" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_Password" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                     </div>
@@ -73,8 +78,9 @@
                                     <asp:Label runat="server" Font-Size="Larger" Text="Comprobación de email *"></asp:Label>
                                 </div>
 
-                                <asp:TextBox runat="server" ID="tb_email_confirm" TextMode="Email" CssClass="form-control" placeholder="Introduzca su email de nuevo" required="required" oninvalid="this.setCustomValidity('Introduzca un email válido: ex@abc.xyz')"
+                                <asp:TextBox runat="server" ID="tb_email_confirm" TextMode="Email" CssClass="form-control" placeholder="Introduzca su email de nuevo" oninvalid="this.setCustomValidity('Introduzca un email válido: ex@abc.xyz')"
                                     oninput="this.setCustomValidity('')" onkeyup="EnforceMaximumLength(this,320)"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredEmailCheck" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_email_confirm" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                                 <asp:Label runat="server" ID="Error_email" ForeColor="Red" Visible="false" Text="¡Los emails deben coincidir!"></asp:Label>
                             </div>
                         </div>
@@ -83,8 +89,9 @@
                                 <div class="d-flex align-baseline">
                                     <asp:Label runat="server" Font-Size="Larger" Text="Comprobación de contraseña *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_password_confirm" TextMode="password" CssClass="form-control" placeholder="********" required="required"></asp:TextBox>
-                                <asp:Label runat="server" ID="Error_password" ForeColor="Red" Visible="false" Text="¡Las contraseñas deben coincidir!"></asp:Label>
+                                <asp:TextBox runat="server" ID="tb_password_confirm" TextMode="password" CssClass="form-control" placeholder="********"></asp:TextBox>
+                                <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="tb_password_confirm" ID="PasswordCheckValidator" ValidationExpression="^[\s\S]{6,15}$" runat="server" ErrorMessage="Tu contraseña debe tener entre 6 y 15 caracteres."></asp:RegularExpressionValidator>
+                                <asp:RequiredFieldValidator ID="RequiredPasswordCheck" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_Password_confirm" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
 
                             </div>
                         </div>
@@ -95,7 +102,8 @@
                                 <div class="d-flex align-baseline">
                                     <asp:Label runat="server" Font-Size="Larger" Text="Dirección de envio *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_delivery_address" TextMode="SingleLine" CssClass="form-control" placeholder="Introduzca la dirección de envio" required="required"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="tb_delivery_address" TextMode="SingleLine" CssClass="form-control" placeholder="Introduzca la dirección de envio" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredAddress" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_delivery_address" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -115,7 +123,7 @@
                                 <div class="d-flex align-baseline">
                                     <asp:Label runat="server" Font-Size="Larger" Text="Empresa"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_empresa" TextMode="SingleLine" CssClass="form-control" placeholder="Si eres un proveedor, añade tu empres"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="tb_empresa" TextMode="SingleLine" CssClass="form-control" placeholder="Si eres un proveedor, añade tu empresa:"></asp:TextBox>
                             </div>
                         </div>
                     </div>

@@ -67,8 +67,8 @@
                     <asp:Label ID="name"  runat="server" Font-Size="Large" Text=""></asp:Label>
                     </div>
                 <div class="d-flex justify-content-start">
-                    <asp:Label runat="server" Width="10%" Text="Edad:" Font-Size="Large">  </asp:Label>
-                    <asp:Label ID="age"  runat="server" Font-Size="Large" Text=""></asp:Label>
+                    <asp:Label runat="server" Width="10%" Text="Nacimiento:" Font-Size="Large">  </asp:Label>
+                    <asp:Label ID="birth"  runat="server" Font-Size="Large" Text=""></asp:Label>
                 </div>
                 <div class="d-flex justify-content-start">
                     <asp:Label runat="server" Width="10%" Text="Email:" Font-Size="Large">  </asp:Label>

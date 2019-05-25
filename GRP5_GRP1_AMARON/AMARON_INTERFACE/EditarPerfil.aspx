@@ -93,10 +93,11 @@
                         <div class="row">
                             <asp:Label runat="server" Text="Nombre:" Font-Size="Larger"></asp:Label>
                             <asp:Textbox runat="server" ID="name" class="form-control" placeholder="Nuevo nombre"></asp:Textbox>
-                            <asp:Label runat="server" Text="Direccion:" Font-Size="Larger"></asp:Label>
-                            <asp:Textbox runat="server" ID="address" class="form-control" placeholder="Nueva direccion"></asp:Textbox>
+                            <asp:Label runat="server" Text="Dirección:" Font-Size="Larger"></asp:Label>
+                            <asp:Textbox runat="server" ID="address" class="form-control" placeholder="Nueva dirección"></asp:Textbox>
                             <asp:Label runat="server" Text="Cambiar contraseña:" Font-Size="Larger"></asp:Label>
                             <asp:Textbox runat="server" ID="pass" class="form-control" TextMode="password" placeholder="Nueva contraseña"></asp:Textbox>
+                            <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="pass" ID="PasswordValidator" ValidationExpression="^[\s\S]{6,15}$" runat="server" ErrorMessage="Tu contraseña debe tener entre 6 y 15 caracteres."></asp:RegularExpressionValidator>
                         </div>
                     
                 </div>
