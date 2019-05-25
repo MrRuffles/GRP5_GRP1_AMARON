@@ -186,15 +186,15 @@ namespace Library{
 
                 using(SqlCommand cmd = new SqlCommand("", conection)){
 
-                    cmd.CommandText = "SELECT * FROM Product where name = '" + product.name + "';";
+                    cmd.CommandText = "SELECT * FROM Product where cod = '" + product.id + "';";
 
                     SqlDataReader productRead = cmd.ExecuteReader();
 
-                    if (productRead.HasRows){
+                    while(productRead.Read()){
 
                         product.id = Convert.ToInt32(productRead[0]);
                         product.name = Convert.ToString(productRead[1]);
-                        product.price = (float)Convert.ToDouble(productRead[2]);
+                        product.price = float.Parse(Convert.ToString(productRead[2]));
                         product.stock = Convert.ToInt32(productRead[3]);
                         product.brand = Convert.ToString(productRead[4]);
                         product.type = Convert.ToString(productRead[5]);

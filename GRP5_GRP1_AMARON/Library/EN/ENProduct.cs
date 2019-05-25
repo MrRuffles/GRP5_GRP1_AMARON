@@ -152,6 +152,17 @@ namespace Library {
 
         }
 
+        public bool ReadProductFromCatalog()
+        {
+
+            bool read = false;
+
+            read = prodCAD.ReadProductFromCatalog(this);
+
+            return read;
+
+        }
+
         public DataTable ReadProductCat(){
 
             DataTable read = prodCAD.ReadProductCat(this);

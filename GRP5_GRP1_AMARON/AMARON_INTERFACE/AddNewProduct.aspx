@@ -87,6 +87,7 @@
                     <asp:DropDownList ID="ProdTypeDropDown" runat="server" OnSelectedIndexChanged="ProdTypeDropDown_SelectedIndexChanged" AutoPostBack="true">
                         <asp:listitem text="Botella de Alcohol" value="1"></asp:listitem>
                         <asp:listitem text="Miscelanea" value="2"></asp:listitem>
+                        <asp:listitem text="Pack" value="3"></asp:listitem>
                     </asp:DropDownList>
             </div>
         </div> 

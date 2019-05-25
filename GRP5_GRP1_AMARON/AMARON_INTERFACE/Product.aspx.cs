@@ -20,7 +20,7 @@ namespace AMARON_INTERFACE{
 
             product.id = Convert.ToInt32(Request.QueryString["id"]);
 
-            if (product.ReadProductName() ) {
+            if (product.ReadProductFromCatalog() ) {
 
                 //Image url
                 ProductImage.ImageUrl = product.url;
@@ -30,10 +30,15 @@ namespace AMARON_INTERFACE{
                 ProductPriceLabel.Text = product.price.ToString() + "€";
                 //Brand
                 ProductBrandLabel.Text = product.brand;
+                //Descripción
+                CommentTextLabel.Text = product.description;
 
                 if (product.type == "botella") {
 
+                    bottle.id = product.id;
+
                     if (bottle.ReadBottle()) {
+                                               
 
                         //Volume
                         VolumenLabel.Visible = true;
