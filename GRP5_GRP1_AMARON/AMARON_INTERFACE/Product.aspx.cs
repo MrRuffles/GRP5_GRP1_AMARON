@@ -22,6 +22,10 @@ namespace AMARON_INTERFACE{
 
             if (product.ReadProductFromCatalog() ) {
 
+                //Limt the amount to buy to the product stock
+                AmountRV.MaximumValue = Convert.ToString(product.stock);
+                AmountRV.MinimumValue = "1";
+
                 //Image url
                 ProductImage.ImageUrl = product.url;
                 //Product Name
@@ -56,8 +60,6 @@ namespace AMARON_INTERFACE{
                         ProdAlcoholTypeLabel.Text = bottle.alcoholicType;
 
                     }
-
-
                 }//
 
             }

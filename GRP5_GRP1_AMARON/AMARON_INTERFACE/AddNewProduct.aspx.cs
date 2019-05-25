@@ -12,8 +12,24 @@ namespace AMARON_INTERFACE
 {
     public partial class AddNewProduct : System.Web.UI.Page{
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
+        protected void Page_Load(object sender, EventArgs e){
+
+            //Control Volume range values
+            NewProdVolumeRV.MaximumValue = "999999999999999999999999.99999999999999";
+            NewProdVolumeRV.MinimumValue = "0.0";
+
+            //Control Grade range values
+            NewProdGradeRV.MaximumValue = "100.00";
+            NewProdGradeRV.MinimumValue = "0.0";
+
+            //Control price range values
+            NewProdPriceRV.MaximumValue = "999999999999999999999999.99999999999999";
+            NewProdPriceRV.MinimumValue = "0.0";
+
+            //Control stock values
+            NewProdStockRV.MaximumValue = "999999999999999999999999.99999999999999";
+            NewProdStockRV.MinimumValue = "1";
+
 
         }
 

@@ -122,6 +122,7 @@
             <div class="col-md-10">
                 <div class="form-group form-inline">
                     <asp:TextBox ID="NewProdVolumeTB" runat="server" CssClass="form-control" Placeholder="0.0" Visible="true"></asp:TextBox>
+                    <asp:RangeValidator ID="NewProdVolumeRV" runat="server" ControlToValidate="NewProdVolumeTB" ErrorMessage="¡Esta cantidad no es correcta!" Type="Double" style="margin-left:7px"></asp:RangeValidator>
                 </div>
             </div>
         </div>
@@ -133,6 +134,7 @@
             <div class="col-md-10">
                 <div class="form-group form-inline">
                     <asp:TextBox ID="NewProdGradeTB" runat="server" placeholder="0.0" CssClass="form-control" visible="true"></asp:TextBox>
+                    <asp:RangeValidator ID="NewProdGradeRV" runat="server" ControlToValidate="NewProdGradeTB" ErrorMessage="¡Esta cantidad no es correcta!" Type="Double" style="margin-left:7px"></asp:RangeValidator>
                 </div>
             </div>
         </div>
@@ -144,6 +146,7 @@
             <div class="col-md-10">
                 <div class="form-group form-inline">
                     <asp:TextBox ID="NewProdPriceTB" runat="server" CssClass="form-control" Placeholder="0.0" required="required"></asp:TextBox>
+                     <asp:RangeValidator ID="NewProdPriceRV" runat="server" ControlToValidate="NewProdPriceTB" ErrorMessage="¡Esta cantidad no es correcta!" Type="Double" style="margin-left:7px"></asp:RangeValidator>
                 </div>
             </div>
         </div>
@@ -155,6 +158,7 @@
             <div class="col-md-10">
                 <div class="form-group form-inline">
                     <asp:TextBox ID="NewProdStockTB" TextMode="Number" runat="server"  CssClass="form-control" required="required"></asp:TextBox>
+                    <asp:RangeValidator ID="NewProdStockRV" runat="server" ControlToValidate="NewProdStockTB" ErrorMessage="¡Esta cantidad no es correcta!" Type="Double" style="margin-left:7px"></asp:RangeValidator>
                 </div>
             </div>
         </div>

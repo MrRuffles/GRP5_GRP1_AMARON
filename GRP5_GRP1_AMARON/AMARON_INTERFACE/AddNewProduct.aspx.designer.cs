@@ -139,6 +139,15 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.TextBox NewProdVolumeTB;
         
         /// <summary>
+        /// Control NewProdVolumeRV.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator NewProdVolumeRV;
+        
+        /// <summary>
         /// Control NewProdGradeLabel.
         /// </summary>
         /// <remarks>
@@ -157,6 +166,15 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.TextBox NewProdGradeTB;
         
         /// <summary>
+        /// Control NewProdGradeRV.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator NewProdGradeRV;
+        
+        /// <summary>
         /// Control NewProdPriceTB.
         /// </summary>
         /// <remarks>
@@ -166,6 +184,15 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.TextBox NewProdPriceTB;
         
         /// <summary>
+        /// Control NewProdPriceRV.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator NewProdPriceRV;
+        
+        /// <summary>
         /// Control NewProdStockTB.
         /// </summary>
         /// <remarks>
@@ -173,6 +200,15 @@ namespace AMARON_INTERFACE {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox NewProdStockTB;
+        
+        /// <summary>
+        /// Control NewProdStockRV.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator NewProdStockRV;
         
         /// <summary>
         /// Control pictureUpload.
