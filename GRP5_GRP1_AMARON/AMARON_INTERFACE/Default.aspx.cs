@@ -19,5 +19,20 @@ namespace AMARON_INTERFACE
         {
             Response.Redirect("Product.aspx");
         }
+
+        protected void l1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void l2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void l3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
