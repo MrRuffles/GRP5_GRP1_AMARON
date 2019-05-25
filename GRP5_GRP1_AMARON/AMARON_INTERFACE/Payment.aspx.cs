@@ -57,7 +57,7 @@ namespace AMARON_INTERFACE
                 {
                     ENCart cart = new ENCart(0,user.userID,0.0F,0);
 
-                    ENOrder order = new ENOrder(user.userID,"pagado",paga,DateTime.Now);
+                    ENOrder order = new ENOrder(user.userID,"Preparando",paga,DateTime.Now);
                     if (order.CreateOrder())
                     {
                         cart.DeleteCart();

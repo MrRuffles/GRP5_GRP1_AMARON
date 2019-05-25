@@ -58,12 +58,15 @@
         <div>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" HeaderStyle-BackColor="OrangeRed" Width="100%">
                 <Columns>
-                    <asp:BoundField DataField="cod" HeaderText="Artículo" SortExpression="cod" />
+                    <asp:BoundField DataField="cod" HeaderText="Cod. Pruducto" SortExpression="cod" />
+                    <asp:BoundField DataField="name" HeaderText="Nombre Producto" SortExpression="name" />
                     <asp:BoundField DataField="amount" HeaderText="Cantidad" SortExpression="amount" />
-                    <asp:BoundField DataField="sum" HeaderText="PVP" SortExpression="sum" />
+                    <asp:BoundField DataField="sum" HeaderText="PVP." SortExpression="sum" />
                 </Columns>
+
+<HeaderStyle BackColor="OrangeRed"></HeaderStyle>
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AmaronDataBase %>" SelectCommand="SELECT [cod], [amount], [sum] FROM [Cart] WHERE ([userID] = @userID)">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AmaronDataBase %>" SelectCommand="SELECT Cart.cod, Product.name, Cart.amount, Cart.sum FROM Cart INNER JOIN Product ON Cart.cod = Product.cod WHERE (Cart.userID = @UserID)">
                 <SelectParameters>
                     <asp:QueryStringParameter Name="userID" QueryStringField="userID" Type="Int32" />
                 </SelectParameters>
