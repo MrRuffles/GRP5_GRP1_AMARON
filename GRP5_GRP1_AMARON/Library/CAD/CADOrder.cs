@@ -11,6 +11,7 @@ namespace Library
 
     public class CADOrder
     {
+
         private string constring;
 
         public CADOrder()

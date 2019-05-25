@@ -139,15 +139,6 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.TextBox NewProdVolumeTB;
         
         /// <summary>
-        /// Control Label2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
         /// Control NewProdGradeLabel.
         /// </summary>
         /// <remarks>
@@ -166,15 +157,6 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.TextBox NewProdGradeTB;
         
         /// <summary>
-        /// Control Label1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
         /// Control NewProdPriceTB.
         /// </summary>
         /// <remarks>
@@ -182,15 +164,6 @@ namespace AMARON_INTERFACE {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox NewProdPriceTB;
-        
-        /// <summary>
-        /// Control pruebaPrice.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pruebaPrice;
         
         /// <summary>
         /// Control NewProdStockTB.

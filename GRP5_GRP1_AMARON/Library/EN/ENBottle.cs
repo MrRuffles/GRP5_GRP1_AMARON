@@ -4,10 +4,10 @@ namespace Library{
 
     public class ENBottle : ENProduct{
 
-        
+
         //Properties--------------------------------------------------------------------------
 
-        private CADBottle bottleCAD = new CADBottle() ;
+        private CADBottle bottleCAD = new CADBottle();
 
         private int ProductCod;
         public int cod{
@@ -27,15 +27,16 @@ namespace Library{
             set{
 
                 if (value > 100.0){
-                    this.BottleGrade = 100.0F;
+
+                    BottleGrade = 100.0F;
 
                 }else if (value < 0.0){
 
-                    this.BottleGrade = 0.0F;
+                    BottleGrade = 0.0F;
 
                 }else{
 
-                    this.BottleGrade = value;
+                    BottleGrade = value;
                 }
 
             }
@@ -69,7 +70,7 @@ namespace Library{
 
             set{
 
-                Bottletype = value;
+                this.Bottletype = value;
             }
         }
 
@@ -86,12 +87,12 @@ namespace Library{
         }
 
         //Creates a bottle with values given in the params
-        public ENBottle(int cod, float grade, float volume, string type){
+        public ENBottle(int cod, float grade, float volume, string alcoholicType){
 
             this.cod = cod;
             this.grade = grade;
             this.volume = volume;
-            this.alcoholicType = type;
+            this.alcoholicType = alcoholicType;
 
         }
 

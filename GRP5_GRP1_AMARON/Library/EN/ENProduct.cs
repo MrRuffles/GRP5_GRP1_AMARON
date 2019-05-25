@@ -141,12 +141,12 @@ namespace Library {
         */
 
 
-        public bool ReadProduct()
+        public bool ReadProductName()
         {
 
             bool read = false;
 
-            read = prodCAD.ReadProduct(this);
+            read = prodCAD.ReadProductName(this);
 
             return read;
 

@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Library;
 
+
 namespace AMARON_INTERFACE
 {
     public partial class AddNewProduct : System.Web.UI.Page{
@@ -15,14 +16,11 @@ namespace AMARON_INTERFACE
         {
 
         }
-      
-        protected void addProductBT_Click(object sender, EventArgs e)
-        {
 
-             ENProduct newProduct = new ENProduct(0, "", 0.00F, 0, "", "", "", "");
+        protected void addProductBT_Click(object sender, EventArgs e){
 
-            float bottleGrade = 0.0F;
-            float bottleVolume = 0.0F;
+            ENProduct newProduct = new ENProduct(0, "", 0.00F, 0, "", "", "", "");
+            float bottleGrade = 0.0F, bottleVolume = 0.0F;
             string bottleType = "";
             int productCod = 0;
             
@@ -43,10 +41,8 @@ namespace AMARON_INTERFACE
 
            try {
                 
+                //Get product properties
                 newProduct.price = float.Parse(NewProdPriceTB.Text); //Puede dar excepcion
-
-                pruebaPrice.Text = float.Parse(NewProdPriceTB.Text).ToString();
-
                 newProduct.name = NewProdNameTB.Text;
                 newProduct.brand = NewProdBrandTB.Text;
                 newProduct.stock = Convert.ToInt32(NewProdStockTB.Text);
@@ -63,45 +59,46 @@ namespace AMARON_INTERFACE
 
                 }
 
-
-                //In case the descriptión is not empty
+                //In case the description is not empty
                 if (NewProdDescriptionTB.Text != ""){
 
                     newProduct.description = NewProdDescriptionTB.Text;
 
+                }else{
+
+                    newProduct.description = "Este producto aún tiene una descripción";
                 }
 
-
-                //For bottle 
-                if (ProdTypeDropDown.Items[0].Selected){
-
-                    //Los parse pueden dar excepciones
-                    bottleGrade = float.Parse(NewProdGradeTB.Text);
-                    Label1.Text = float.Parse(NewProdGradeTB.Text).ToString();
-                    bottleVolume = float.Parse(NewProdVolumeTB.Text);
-                    Label2.Text = float.Parse(NewProdVolumeTB.Text).ToString();
-                    bottleType = AlcoholicTypeDropDown.Text;
-
-                }
-
-                
-
-                if (ProdTypeDropDown.Items[1].Selected && newProduct.CreateProduct()){
-
-                    ProductCreatedLabel.Visible = true;
-                    ErrorCreatingProductLabel.Visible = false;
-
-
-                }else if (ProdTypeDropDown.Items[0].Selected){
+                                
+                //When the product type is "miscelanea"
+                if (ProdTypeDropDown.Items[1].Selected){
 
                     if (newProduct.CreateProduct()){
 
-                        if (newProduct.ReadProduct()){
+                        ProductCreatedLabel.Visible = true;
+
+                    }else{
+
+                        ErrorCreatingProductLabel.Visible = true;
+
+                    }
+                    
+                //product type is "botella"
+                }else if (ProdTypeDropDown.Items[0].Selected){
+
+                    //Los parse pueden dar excepciones
+                    bottleGrade = float.Parse(NewProdGradeTB.Text);
+                    bottleVolume = float.Parse(NewProdVolumeTB.Text);
+                    bottleType = AlcoholicTypeDropDown.Text;
+
+                    if (newProduct.CreateProduct()){ //Create base product
+
+                        if (newProduct.ReadProductName()){
 
                             productCod = newProduct.id;
                             ENBottle newBottle = new ENBottle(productCod, bottleGrade, bottleVolume, bottleType);
 
-                            if (newBottle.CreateBottle()){
+                            if (newBottle.CreateBottle()){ //Create bottle
 
                                 ProductCreatedLabel.Visible = true;
                                 ErrorCreatingProductLabel.Visible = false;
@@ -113,6 +110,7 @@ namespace AMARON_INTERFACE
                             ProductCreatedLabel.Visible = false;
                         }
                     }
+
                 }else{
 
                     ErrorCreatingProductLabel.Visible = true;
@@ -129,6 +127,7 @@ namespace AMARON_INTERFACE
 
                 } else if(ProdTypeDropDown.Items[0].Selected){
                     ConvertErrorLabel.Visible = true;
+                    NewProdPriceTB.BorderColor = System.Drawing.Color.Red;
                     NewProdGradeTB.BorderColor = System.Drawing.Color.Red;
                     NewProdVolumeTB.BorderColor = System.Drawing.Color.Red;
                 }
@@ -172,6 +171,7 @@ namespace AMARON_INTERFACE
 
 
             }
+
         }
     }
 }

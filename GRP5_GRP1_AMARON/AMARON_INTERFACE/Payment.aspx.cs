@@ -52,6 +52,7 @@ namespace AMARON_INTERFACE
             if (check_caducidad())
             {
                 ENUser user = new ENUser(0,"","",cookie["username"],new DateTime(),"","","");
+
                 if (user.ReadID())
                 {
                     ENCart cart = new ENCart(0,user.userID,0.0F,0);

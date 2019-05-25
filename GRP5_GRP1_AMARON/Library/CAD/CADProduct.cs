@@ -38,7 +38,7 @@ namespace Library{
 
                     cmd.CommandText = "INSERT INTO Product(name, pvp, stock, brand, type, description, urlImage) values ('"
                         + product.name + "'," + product.price + ", " + product.stock + ", '" + product.brand + "', '"
-                        + product.type + "', '" + product.description + "', '" + product.url + "');";
+                        + product.@type + "', '" + product.description + "', '" + product.url + "');";
 
                     cmd.ExecuteNonQuery();
 
@@ -65,7 +65,7 @@ namespace Library{
          * Parameters: product to read
          * Returns: true if the product could be read, false on the contrary
          */
-        public bool ReadProduct(ENProduct product)
+        public bool ReadProductName(ENProduct product)
         {
 
             bool read = false;
@@ -81,11 +81,11 @@ namespace Library{
 
                     SqlDataReader productRead = cmd.ExecuteReader();
 
-                    if(productRead.HasRows){
+                    while(productRead.Read()){
 
                         product.id = Convert.ToInt32(productRead[0]);
                         product.name = Convert.ToString(productRead[1]);
-                        product.price = (float) Convert.ToDouble(productRead[2]);
+                        product.price = float.Parse(Convert.ToString(productRead[2]));
                         product.stock = Convert.ToInt32(productRead[3]);
                         product.brand = Convert.ToString(productRead[4]);
                         product.type = Convert.ToString(productRead[5]);
@@ -173,12 +173,68 @@ namespace Library{
             return tb;
         }
 
-        /*
-         * Updates the product in the DataBase
-         * Parameters: product to update
-         * Return: true in case that the product could be updated
-        */
-        public bool UpdateProduct(ENProduct product){
+        //Read product form data base when you click on the catalog
+        public bool ReadProductFromCatalog(ENProduct product){
+
+            bool read = false;
+
+            SqlConnection conection = new SqlConnection(constring);
+
+            try{
+
+                conection.Open();
+
+                using(SqlCommand cmd = new SqlCommand("", conection)){
+
+                    cmd.CommandText = "SELECT * FROM Product where name = '" + product.name + "';";
+
+                    SqlDataReader productRead = cmd.ExecuteReader();
+
+                    if (productRead.HasRows){
+
+                        product.id = Convert.ToInt32(productRead[0]);
+                        product.name = Convert.ToString(productRead[1]);
+                        product.price = (float)Convert.ToDouble(productRead[2]);
+                        product.stock = Convert.ToInt32(productRead[3]);
+                        product.brand = Convert.ToString(productRead[4]);
+                        product.type = Convert.ToString(productRead[5]);
+                        product.description = Convert.ToString(productRead[6]);
+                        product.url = Convert.ToString(productRead[7]);
+
+                    }
+
+                    productRead.Close();
+
+                }
+
+                read = true;
+
+            }
+            catch (SqlException Ex)
+            {
+
+                Console.WriteLine("No se ha podido recuperar el producto de la base de datos.", Ex.Message);
+
+
+            }
+            finally
+            {
+
+                conection.Close();
+            }
+
+
+
+            return read;
+
+        }
+
+            /*
+             * Updates the product in the DataBase
+             * Parameters: product to update
+             * Return: true in case that the product could be updated
+            */
+            public bool UpdateProduct(ENProduct product){
             bool updated = false;
 
             return updated;
