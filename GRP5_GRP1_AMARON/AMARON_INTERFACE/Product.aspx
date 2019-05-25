@@ -89,7 +89,7 @@
                     <div class="row">
                         <div class="col-xs-12 align-self-center"> 
                             <h4>
-                                <asp:Label ID="ProductName" runat="server" CssClass="prod-name-label" Text="GINEBRA CLÁSICA PUERTO DE INDIAS"></asp:Label>
+                                <asp:Label ID="ProductNameLabel" runat="server" CssClass="prod-name-label" Text="GINEBRA CLÁSICA PUERTO DE INDIAS"></asp:Label>
                             </h4>
                         </div>                        
                     </div>
@@ -105,28 +105,28 @@
                     <!-- VOLUME -->
                     <div class="row">
                         <div class="col-xs-2 align-self-center">
-                            <h5 class="prod-info-letter">Volumen:&nbsp;</h5>
+                            <h5><asp:Label ID="ProductVolumeLabel1" CssClass="prod-info-letter" runat="server" Text="Volumen:"></asp:Label></h5>&nbsp;
                         </div>
                         <div class="col-xs-2 align-self-center">
-                            <h5><asp:Label ID="ProductGradeLabel" CssClass="prod-info-label" runat="server" Text="700ml"></asp:Label></h5>
+                            <h5><asp:Label ID="ProductVolumeLabel2" CssClass="prod-info-label" runat="server" Text="700ml"></asp:Label></h5>
                         </div>                         
                     </div>
                     <!-- GRADE -->
                     <div class="row">
                        <div class="col-xs-1 align-self-center">
-                           <h5 class="prod-info-letter">Grado:&nbsp;</h5>
+                           <h5><asp:Label ID="ProductGradeLabel1" CssClass="prod-info-letter" runat="server" Text="Grado:"></asp:Label></h5>&nbsp;
                        </div>
                        <div class="col-xs-2 align-self-center">
-                            <h5><asp:label ID="ProductVolumeLabel" cssClass="prod-info-label" runat="server" Text="40.0%"></asp:label></h5>
+                            <h5><asp:label ID="ProductGradeLabel2" cssClass="prod-info-label" runat="server" Text="40.0%"></asp:label></h5>
                        </div>
                    </div>
                    <!-- TYPE -->
                    <div class="row">
                        <div class="col-xs-1 align-self-center">
-                           <h5 class="prod-info-letter">Tipo:&nbsp;</h5>
+                            <h5><asp:Label ID="AlcoholTypeLabel1" CssClass="prod-info-letter" runat="server" Text="Tipo de Alcohol:"></asp:Label></h5>&nbsp;
                        </div>
                        <div class="col-xs-3 align-self-center">
-                           <h5><asp:label ID="AlcoholTypeLabel" cssClass="prod-info-label" runat="server" Text="Ginebra"></asp:label></h5>
+                           <h5><asp:label ID="AlcoholTypeLabel2" cssClass="prod-info-label" runat="server" Text="Ginebra"></asp:label></h5>
                        </div>
                    </div>
                    <!-- BRAND -->
@@ -150,7 +150,7 @@
                    <div class="row">
                         <div class="col-xs-1 form-group form-inline align-self-center">
                             <h5 class="prod-info-letter"><label for="exampleInputName2">Cantidad:&nbsp;</label></h5>
-                            <asp:TextBox ID="ProdQuantity" TextMode="Number" width="75px" CssClass="form-control" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="ProdAmount" TextMode="Number" width="75px" CssClass="form-control" runat="server"></asp:TextBox>
                        </div>
                    </div>
                     <!--ADD TO CART-->
