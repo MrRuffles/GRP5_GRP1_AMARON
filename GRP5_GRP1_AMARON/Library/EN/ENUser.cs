@@ -15,6 +15,15 @@ namespace Library
         ////////////////////////////////////////////////////////////////////////////
         //                              PROPERTIES
         ////////////////////////////////////////////////////////////////////////////
+        
+
+        private int id;
+        public int userID
+        {
+            get { return this.id; }
+            set { this.id = value; }
+        }
+
 
         private string UserName;
         public string name
@@ -71,6 +80,7 @@ namespace Library
         /**  Creates a default user  **/
         public ENUser()
         {
+            id = 0;
             name = "Default name";
             pass = "";
             email = "Default email";
@@ -81,8 +91,9 @@ namespace Library
         }
 
         /** Creates a user with the values of the parameters **/
-        public ENUser(string name, string pass, string email, DateTime birth, string url, string company, string address)
+        public ENUser(int userID,string name, string pass, string email, DateTime birth, string url, string company, string address)
         {
+            this.userID = userID;
             this.name = name;
             this.pass = pass;
             this.birth = birth;
@@ -124,6 +135,12 @@ namespace Library
         {
             CADUser user = new CADUser();
             return user.ReadUserEDPerfil(this);
+        }
+
+        public bool ReadID()
+        {
+            CADUser user = new CADUser();
+            return user.ReadID(this);
         }
 
         public bool UpdateUser()
