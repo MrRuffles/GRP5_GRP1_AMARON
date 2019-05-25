@@ -12,7 +12,7 @@ namespace Library
         public int userID
         {
             get { return OrderUser; }
-            set { OrderUser = userID; }
+            set { OrderUser = value; }
         }
 
         private string OrderState;

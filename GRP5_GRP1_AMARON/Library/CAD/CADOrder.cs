@@ -27,7 +27,7 @@ namespace Library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("Insert into Order(userID, state, cost, date) VALUES (" + order.userID + "'" + order.state + "', " + order.cost + ", '" + order.date.ToShortDateString() + "')", c);
+                SqlCommand com = new SqlCommand("INSERT INTO \"Order\" (userID, state, cost, date) VALUES (" + order.userID + ",'" + order.state + "', " + order.cost + ", '" + order.date.ToString("yyyy-MM-dd") + "')", c);
                 com.ExecuteNonQuery();
             }
             catch (SqlException ex)

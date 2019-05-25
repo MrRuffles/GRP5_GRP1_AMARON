@@ -229,13 +229,39 @@ namespace Library{
 
         }
 
-            /*
+        /*
              * Updates the product in the DataBase
              * Parameters: product to update
              * Return: true in case that the product could be updated
             */
-            public bool UpdateProduct(ENProduct product){
-            bool updated = false;
+        public bool UpdateProduct(ENProduct product)
+        {
+            bool updated = true;
+
+            SqlConnection conection = new SqlConnection(constring);
+
+            try
+            {
+                conection.Open();
+                using (SqlCommand cmd = new SqlCommand("", conection))
+                {
+                    cmd.CommandText = "UPDATE Product set stock=" + product.stock + " where cod='" + product.id + "';";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException Ex)
+            {
+
+                Console.WriteLine("No se ha podido recuperar el producto de la base de datos.", Ex.Message);
+                updated = false;
+
+            }
+            finally
+            {
+
+                conection.Close();
+            }
+
 
             return updated;
         }
