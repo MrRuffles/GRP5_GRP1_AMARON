@@ -6,7 +6,7 @@ namespace Library{
 
         //Todo: Maybe it is possible to delete this enum and recreate it as a class's propertie
         //and store the diferents types in the data base
-        public enum AlcoholType{
+        /*public enum AlcoholType{
 
             NonAlcoholic,
             Gin,
@@ -20,7 +20,7 @@ namespace Library{
             Cider,
             Champagne,
             Other
-        }
+        }*/
 
 
         //Properties--------------------------------------------------------------------------
@@ -72,8 +72,8 @@ namespace Library{
 
         }
 
-        private AlcoholType Bottletype;
-        public AlcoholType type
+        private string Bottletype;
+        public string alcoholtype
         {
 
             get { return this.Bottletype; }
@@ -96,7 +96,7 @@ namespace Library{
 
                 if (!correctType){
 
-                    this.Bottletype = AlcoholType.Other;
+                    this.Bottletype = "";
                 }
             }
         }
@@ -108,12 +108,12 @@ namespace Library{
 
             this.grade = 0.0F;
             this.volume = 0.0F;
-            this.type = AlcoholType.Other;
+            this.type = "";
 
         }
 
         //Creates a bottle with values given in the params
-        public ENBottle(float grade, float volume, AlcoholType type){
+        public ENBottle(float grade, float volume, string type){
 
             this.grade = grade;
             this.volume = volume;

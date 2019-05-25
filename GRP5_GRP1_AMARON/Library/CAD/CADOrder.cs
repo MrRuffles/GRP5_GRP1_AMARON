@@ -11,10 +11,11 @@ namespace Library
 
     public class CADOrder
     {
- 
+        private string constring;
+
         public CADOrder()
         {
-           
+            constring = ConfigurationManager.ConnectionStrings["AmaronDataBase"].ConnectionString;
         }
 
         public bool CreateOrder(ENOrder order)
@@ -25,7 +26,7 @@ namespace Library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("Insert into Order(userID, state, cost, date) VALUES (" + order.userID + "'" + order.state + "', " + order.cost + ", '" + order.date + "')", c);
+                SqlCommand com = new SqlCommand("Insert into Order(userID, state, cost, date) VALUES (" + order.userID + "'" + order.state + "', " + order.cost + ", '" + order.date.ToShortDateString() + "')", c);
                 com.ExecuteNonQuery();
             }
             catch (SqlException ex)

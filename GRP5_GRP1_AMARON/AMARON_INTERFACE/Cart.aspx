@@ -63,7 +63,11 @@
                     <asp:BoundField DataField="sum" HeaderText="PVP" SortExpression="sum" />
                 </Columns>
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AmaronDataBase %>" SelectCommand="SELECT [cod], [amount], [sum] FROM [Cart]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AmaronDataBase %>" SelectCommand="SELECT [cod], [amount], [sum] FROM [Cart] WHERE ([userID] = @userID)">
+                <SelectParameters>
+                    <asp:QueryStringParameter Name="userID" QueryStringField="userID" Type="Int32" />
+                </SelectParameters>
+            </asp:SqlDataSource>
         </div>
         <h5>&nbsp<asp:Button ID="Button" Text="Finalizar Compra" runat="server" OnClick="Button_FinCompra"></asp:Button></h5>
     </div>
