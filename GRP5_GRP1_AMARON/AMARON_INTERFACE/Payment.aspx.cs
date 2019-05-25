@@ -51,12 +51,13 @@ namespace AMARON_INTERFACE
             HttpCookie cookie = Request.Cookies["damncookie"];
             if (check_caducidad())
             {
-                ENUser user = new ENUser(0,"","",cookie["username"], new DateTime(),"","","");
+                ENUser user = new ENUser(0,"","",cookie["username"],new DateTime(),"","","");
+
                 if (user.ReadID())
                 {
                     ENCart cart = new ENCart(0,user.userID,0.0F,0);
 
-                    ENOrder order = new ENOrder(user.userID,"pagado",paga,DateTime.Now.Date);
+                    ENOrder order = new ENOrder(user.userID,"pagado",paga,DateTime.Now);
                     if (order.CreateOrder())
                     {
                         cart.DeleteCart();

@@ -232,5 +232,3 @@ namespace AMARON_INTERFACE
         }
     }
 }
-
-//ControltoValidate(la id de lo se quiere validar) ErrorMesage Validationexpresion (dentro de regular)
