@@ -23,16 +23,16 @@ namespace AMARON_INTERFACE
             Label_Main.Visible = false;
             Label_Sending_Success.Visible = false;
             Label_Sending_Error.Visible = false;
+            Error_Birth.Text= "Debes ser mayor de 18 años";
             Error_Birth.Visible = false;
-            Error_password.Visible = false;
             Error_email.Visible = false;
         }
         protected void Button_register_click(object sender, EventArgs e)
         {
+
+            DateTime BirthDate = DateTime.ParseExact(tb_birth.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture);
             ClearBoxes();
-            bool echeck = check_email(), pcheck = check_pass();
-            int agecheck = check_age();
-            if(echeck && pcheck && agecheck>=18 )
+            if(check_age(BirthDate))
             {
                 HttpPostedFile file = pictureUpload.PostedFile;
                 string url = "";
@@ -64,7 +64,7 @@ namespace AMARON_INTERFACE
                 //Create user with given info.
                 if (tb_empresa.Text == "")
                 {
-                    ENUser user = new ENUser(tb_name.Text, passw, tb_email.Text, agecheck, url, tb_empresa.Text, tb_delivery_address.Text);
+                    ENUser user = new ENUser(0,tb_name.Text, passw, tb_email.Text, BirthDate, url, tb_empresa.Text, tb_delivery_address.Text);
 
                     if (user.CreateUser())
                     {
@@ -77,7 +77,7 @@ namespace AMARON_INTERFACE
                 }
                 else
                 {
-                    ENProvider prov = new ENProvider(tb_name.Text, passw, tb_email.Text, agecheck, url, tb_empresa.Text, tb_delivery_address.Text);
+                    ENProvider prov = new ENProvider(tb_name.Text, passw, tb_email.Text, BirthDate, url, tb_empresa.Text, tb_delivery_address.Text);
 
                     if (prov.CreateProvider())
                     {
@@ -90,47 +90,29 @@ namespace AMARON_INTERFACE
                 }
             }
         }
-        protected bool check_pass()
-        {
-            if (tb_password_confirm.Text != tb_password.Text)
-            {
-                Error_password.Visible = true;
-                return false;
-            }
-            else
-            {
-                Error_password.Visible = false;
-                return true;
-            }
-        }
-        protected bool check_email()
-        {
-            if (tb_email_confirm.Text != tb_email.Text)
-            {
-                Error_email.Visible = true;
-                return false;
-            }
-            else
-            {
-                Error_email.Visible = false;
-                return true;
-            }
-        }
-        protected int check_age()
+        protected bool check_age(DateTime tempDate)
         {
             CultureInfo culture = new CultureInfo("");
-            DateTime tempDate = DateTime.ParseExact(tb_birth.Text, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
             DateTime nowDate = DateTime.Now;
             int years = Convert.ToInt32(nowDate.Subtract(tempDate).TotalDays) / 365;
             
             if (years < 18) {
                 Error_Birth.Visible = true;
-                return years;
+                return false;
             }
             else
             {
-                Error_Birth.Visible = false;
-                return years;
+                if(years > 200)
+                {
+                    Error_Birth.Text = "Introduce una edad válida";
+                    Error_Birth.Visible = true;
+                    return false;
+                }
+                else
+                {
+                    Error_Birth.Visible = false;
+                    return true;
+                }
             }
         }
     }

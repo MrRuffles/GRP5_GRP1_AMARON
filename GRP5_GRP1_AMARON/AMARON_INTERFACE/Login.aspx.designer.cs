@@ -31,6 +31,15 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.TextBox login_email;
         
         /// <summary>
+        /// Control RequiredEmailLogin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredEmailLogin;
+        
+        /// <summary>
         /// Control login_password.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,24 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.TextBox login_password;
         
         /// <summary>
+        /// Control RequiredPasswordLogin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredPasswordLogin;
+        
+        /// <summary>
+        /// Control PasswordValidator.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator PasswordValidator;
+        
+        /// <summary>
         /// Control login_button.
         /// </summary>
         /// <remarks>
@@ -47,5 +74,23 @@ namespace AMARON_INTERFACE {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button login_button;
+        
+        /// <summary>
+        /// Control Label_Login_Error.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Login_Error;
+        
+        /// <summary>
+        /// Control Label_Main.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Main;
     }
 }

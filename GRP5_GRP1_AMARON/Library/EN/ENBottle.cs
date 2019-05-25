@@ -7,7 +7,7 @@ namespace Library{
         
         //Properties--------------------------------------------------------------------------
 
-        private CADBottle bottleCAD;
+        private CADBottle bottleCAD = new CADBottle() ;
 
         private int ProductCod;
         public int cod{
@@ -27,16 +27,15 @@ namespace Library{
             set{
 
                 if (value > 100.0){
-
-                    BottleGrade = 100.0F;
+                    this.BottleGrade = 100.0F;
 
                 }else if (value < 0.0){
 
-                    BottleGrade = 0.0F;
+                    this.BottleGrade = 0.0F;
 
                 }else{
 
-                    BottleGrade = value;
+                    this.BottleGrade = value;
                 }
 
             }

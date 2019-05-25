@@ -7,7 +7,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Library;
 
-
 namespace AMARON_INTERFACE
 {
     public partial class AddNewProduct : System.Web.UI.Page{
@@ -16,7 +15,7 @@ namespace AMARON_INTERFACE
         {
 
         }
-
+      
         protected void addProductBT_Click(object sender, EventArgs e)
         {
 
@@ -173,7 +172,6 @@ namespace AMARON_INTERFACE
 
 
             }
-
         }
     }
 }
