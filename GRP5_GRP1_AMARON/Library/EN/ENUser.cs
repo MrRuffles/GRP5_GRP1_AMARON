@@ -138,9 +138,11 @@ namespace Library
             return user.DeleteUser(this);
         }
 
-
-
-
+        public bool EmailExist()
+        {
+            CADUser user = new CADUser();
+            return user.EmailExist(this);
+        }
     }
 
 }

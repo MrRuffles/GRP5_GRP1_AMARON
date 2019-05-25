@@ -31,6 +31,15 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.Button pedidios;
         
         /// <summary>
+        /// Control edit_button.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button edit_button;
+        
+        /// <summary>
         /// Control productos.
         /// </summary>
         /// <remarks>

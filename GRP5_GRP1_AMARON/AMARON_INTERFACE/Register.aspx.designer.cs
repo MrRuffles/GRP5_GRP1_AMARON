@@ -211,6 +211,15 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.Button Button_register;
         
         /// <summary>
+        /// Control Label_Duplicate_Error.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Duplicate_Error;
+        
+        /// <summary>
         /// Control Label_Sending_Error.
         /// </summary>
         /// <remarks>
