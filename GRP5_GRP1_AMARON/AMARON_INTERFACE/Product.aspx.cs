@@ -34,8 +34,11 @@ namespace AMARON_INTERFACE{
             ENBottle bottle = new ENBottle();
 
             product.id = Convert.ToInt32(Request.QueryString["id"]);
+            ENLootCrate loot = new ENLootCrate(0, "", 0.0F, "", "", "");
 
-            if (product.ReadProductFromCatalog())
+            loot.id = Convert.ToInt32(Request.QueryString["lootid"]);
+
+            if (product.ReadProductFromCatalog() && loot.id == 0)
             {
 
                 //Limt the amount to buy to the product stock
@@ -81,11 +84,13 @@ namespace AMARON_INTERFACE{
                 }
             }else
             {
-                ENLootCrate loot = new ENLootCrate(0, "", 0.0F, "", "", "");
+                
 
-                loot.id = Convert.ToInt32(Request.QueryString["id"]);
+                if(loot.readLootCrateID()) {
 
-                if(loot.readLootCrate()) {
+                    AmountRV.MinimumValue = "0";
+                    AmountRV.MaximumValue = "1";
+                    AmountRV.Enabled = false;
 
                     //Hide Marca
                     MarcaLabel.Visible = false;

@@ -67,6 +67,15 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.Image Image2;
         
         /// <summary>
+        /// Control l1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button l1;
+        
+        /// <summary>
         /// Control Image3.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.Image Image3;
         
         /// <summary>
+        /// Control l2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button l2;
+        
+        /// <summary>
         /// Control Image4.
         /// </summary>
         /// <remarks>
@@ -83,6 +101,15 @@ namespace AMARON_INTERFACE {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image Image4;
+        
+        /// <summary>
+        /// Control l3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button l3;
         
         /// <summary>
         /// Control Image5.
