@@ -176,6 +176,7 @@
                                 <asp:Label ID="CantidadLabel" CssClass="prod-info-letter" runat="server" Text="Cantidad: "></asp:Label>
                             </h5>
                             <asp:TextBox ID="ProdAmount" TextMode="Number" width="75px" CssClass="form-control" runat="server"></asp:TextBox>
+                            <asp:RangeValidator ID="AmountRV" runat="server" ControlToValidate="ProdAmount" ErrorMessage="¡Esta cantidad está fuera de stock!" Type="Integer"  style="margin-left:7px" ></asp:RangeValidator>
                        </div>
                    </div>
                     <!--ADD TO CART-->
