@@ -9,7 +9,8 @@ using System.Configuration;
 namespace Library
 {
 
-    public class CADOrder{
+    public class CADOrder
+    {
 
         private string constring;
 
@@ -26,7 +27,7 @@ namespace Library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("Insert into Order(userID, state, cost, date) VALUES (" + order.userID + "'" + order.state + "', " + order.cost + ", '" + order.date + "')", c);
+                SqlCommand com = new SqlCommand("Insert into Order(userID, state, cost, date) VALUES (" + order.userID + "'" + order.state + "', " + order.cost + ", '" + order.date.ToShortDateString() + "')", c);
                 com.ExecuteNonQuery();
             }
             catch (SqlException ex)

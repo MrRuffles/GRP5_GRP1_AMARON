@@ -35,6 +35,12 @@ namespace AMARON_INTERFACE
                 menu_logoff.Visible = true;
                 username_menu_button.Visible = true;
                 username_menu_button.Text = cookie["username"];
+                ENUser u = new ENUser(0, "", "", cookie["username"], new DateTime(), "", "", "");
+
+                if (u.ReadID())
+                {
+                    cart_menu_button.NavigateUrl = "Cart.aspx?userID=" + u.userID;
+                }
 
             }
             else

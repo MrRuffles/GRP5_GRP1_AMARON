@@ -39,7 +39,7 @@ namespace AMARON_INTERFACE
         protected void verPedidos(object sender, EventArgs e)
         {
             HttpCookie cookie = Request.Cookies["damncookie"];
-            ENUser user = new ENUser(0,"","",cookie["username"], new DateTime(), "","","");
+            ENUser user = new ENUser(0,"","",cookie["username"],new DateTime(),"","","");
             if (user.ReadID())
             {
                 Response.Redirect("Orders.aspx?userID=" + user.userID);
