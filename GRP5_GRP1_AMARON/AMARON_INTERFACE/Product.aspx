@@ -24,6 +24,7 @@
         }
         .prod-info-label{
             color: black;
+            padding-top: 0.05em;
         }
         .btn-add-cart{
             background-color: coral;
@@ -39,7 +40,8 @@
             background-color: lawngreen;   
         }
        .prod-info-letter{
-            padding-top: 0.15em;
+            color: black;
+            padding-right: 0.25em;
        }
        
        .RatingStar{
@@ -78,6 +80,15 @@
         <!---------------------------------------- PRODUCT INFO SECTION ------------------------------------------------------->
         <div class="row">
 
+            <!-- Wrong Amount raning Label -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-inline">
+                        <asp:Label ID="AmountErrorLabel" class="alert alert-danger" runat="server" Visible="false" Text="¡Este dato no puede ser 0!">
+                        </asp:Label>
+                    </div>
+                </div>
+            </div>
             <!-- Product Image --><!-- TODO: RESPONSIVE IMAGE-->
             <div class="col-md-3 align-self-center">
                 <asp:Image runat="server" ID="ProductImage" CssClass="img-responsive" ImageUrl="~/Imagenes/GIN_Puerto.jpg" />
@@ -89,67 +100,77 @@
                     <div class="row">
                         <div class="col-xs-12 align-self-center"> 
                             <h4>
-                                <asp:Label ID="ProductNameLabel" runat="server" CssClass="prod-name-label" Text="GINEBRA CLÁSICA PUERTO DE INDIAS"></asp:Label>
+                                <asp:Label ID="ProductNameLabel" runat="server" CssClass="prod-name-label"></asp:Label>
                             </h4>
                         </div>                        
                     </div>
                     <!-- PRICE -->
                     <div class="row">
                         <div class="col-xs-1 align-self-center">
-                            <h5 style="padding-top:0.15em">PVP:&nbsp;</h5>
+                            <h5>
+                                <asp:Label ID="PVPLabel" runat="server" CssClass="prod-info-letter" Text="PVP: "></asp:Label>
+                            </h5>
                         </div>
                         <div class="col-xs-2 align-self-center">
-                            <h5><asp:Label ID="ProductPriceLabel" CssClass="prod-info-label" runat="server" Text="13.50€"></asp:Label></h5>
+                            <h5>
+                                <asp:Label ID="ProductPriceLabel" CssClass="prod-info-label" runat="server"></asp:Label>
+                            </h5>
                         </div>
                     </div>
                     <!-- VOLUME -->
                     <div class="row">
                         <div class="col-xs-2 align-self-center">
-                            <h5><asp:Label ID="ProductVolumeLabel1" CssClass="prod-info-letter" runat="server" Text="Volumen:"></asp:Label></h5>&nbsp;
+                            <h5>
+                                <asp:Label ID="VolumenLabel" CssClass="prod-info-letter" runat="server" Text="Volumen:" Visible="false"></asp:Label>
+                            </h5>
                         </div>
                         <div class="col-xs-2 align-self-center">
-                            <h5><asp:Label ID="ProductVolumeLabel2" CssClass="prod-info-label" runat="server" Text="700ml"></asp:Label></h5>
+                            <h5>
+                                <asp:Label ID="ProductVolumeLabel" CssClass="prod-info-label" runat="server" Visible="false"></asp:Label>
+                            </h5>
                         </div>                         
                     </div>
                     <!-- GRADE -->
                     <div class="row">
                        <div class="col-xs-1 align-self-center">
-                           <h5><asp:Label ID="ProductGradeLabel1" CssClass="prod-info-letter" runat="server" Text="Grado:"></asp:Label></h5>&nbsp;
+                           <h5>
+                               <asp:Label ID="GradoLabel" CssClass="prod-info-letter" runat="server" Text="Grado:" Visible="false"></asp:Label>
+                           </h5>
                        </div>
                        <div class="col-xs-2 align-self-center">
-                            <h5><asp:label ID="ProductGradeLabel2" cssClass="prod-info-label" runat="server" Text="40.0%"></asp:label></h5>
+                            <h5>
+                                <asp:label ID="ProductGradeLabel" cssClass="prod-info-label" runat="server" Visible="false"></asp:label>
+                            </h5>
                        </div>
                    </div>
-                   <!-- TYPE -->
+                   <!-- ALCOHOLIC TYPE -->
                    <div class="row">
                        <div class="col-xs-1 align-self-center">
-                            <h5><asp:Label ID="AlcoholTypeLabel1" CssClass="prod-info-letter" runat="server" Text="Tipo de Alcohol:"></asp:Label></h5>&nbsp;
+                            <h5>
+                                <asp:Label ID="TipoDeAlcoholLabel" CssClass="prod-info-letter" runat="server" Text="Tipo de Alcohol: " Visible="false"></asp:Label>
+                            </h5>
                        </div>
                        <div class="col-xs-3 align-self-center">
-                           <h5><asp:label ID="AlcoholTypeLabel2" cssClass="prod-info-label" runat="server" Text="Ginebra"></asp:label></h5>
+                           <h5><asp:label ID="ProdAlcoholTypeLabel" cssClass="prod-info-label" runat="server" Visible="false"></asp:label></h5>
                        </div>
                    </div>
                    <!-- BRAND -->
                    <div class="row">
                         <div class="col-xs-1 align-self-center">
-                            <h5 class="prod-info-letter">Marca:&nbsp;</h5>
+                            <h5>
+                                <asp:Label ID="MarcaLabel" CssClass="prod-info-letter" runat="server" Text="Marca: "></asp:Label>
+                            </h5>
                         </div>
                         <div class="col-xs-4 align-self-center">
                             <h5><asp:label ID="ProductBrandLabel" cssClass="prod-info-label" runat="server" Text="Puerto de Indias"></asp:label></h5>
                         </div>
                    </div>
                    <!-- CHOOSE QUANTITY -->
-                   <!--div class="row">
-                        <div class="col-xs-1">
-                            <h5 class="prod-info-letter">Cantidad:&nbsp;</h5>
-                        </div>
-                        <div class="col-xs-1">
-                           <asp:TextBox ID="ProdAmount" style="width: 40px" runat="server"></asp:TextBox>
-                        </div>
-                   <!--/div-->
                    <div class="row">
                         <div class="col-xs-1 form-group form-inline align-self-center">
-                            <h5 class="prod-info-letter"><label for="exampleInputName2">Cantidad:&nbsp;</label></h5>
+                            <h5>
+                                <asp:Label ID="CantidadLabel" CssClass="prod-info-letter" runat="server" Text="Cantidad: "></asp:Label>
+                            </h5>
                             <asp:TextBox ID="ProdAmount" TextMode="Number" width="75px" CssClass="form-control" runat="server"></asp:TextBox>
                        </div>
                    </div>

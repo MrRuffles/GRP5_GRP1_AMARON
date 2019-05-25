@@ -4,10 +4,10 @@ namespace Library{
 
     public class ENBottle : ENProduct{
 
-        
+
         //Properties--------------------------------------------------------------------------
 
-        private CADBottle bottleCAD;
+        private CADBottle bottleCAD = new CADBottle();
 
         private int ProductCod;
         public int cod{
@@ -70,7 +70,7 @@ namespace Library{
 
             set{
 
-                Bottletype = value;
+                this.Bottletype = value;
             }
         }
 
@@ -87,12 +87,12 @@ namespace Library{
         }
 
         //Creates a bottle with values given in the params
-        public ENBottle(int cod, float grade, float volume, string type){
+        public ENBottle(int cod, float grade, float volume, string alcoholicType){
 
             this.cod = cod;
             this.grade = grade;
             this.volume = volume;
-            this.alcoholicType = type;
+            this.alcoholicType = alcoholicType;
 
         }
 

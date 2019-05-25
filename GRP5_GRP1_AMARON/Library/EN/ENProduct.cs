@@ -111,9 +111,8 @@ namespace Library {
         }
 
         //Creates a products with the values that receives in the parameters
-        public ENProduct(int id, string name, float price, int stock, string brand, string type, string description, string url)
-        {
-
+        public ENProduct(int id, string name, float price, int stock, string brand, string type, string description, string url){
+            this.id = id;
             this.name = name;
             this.price = price;
             this.stock = stock;
