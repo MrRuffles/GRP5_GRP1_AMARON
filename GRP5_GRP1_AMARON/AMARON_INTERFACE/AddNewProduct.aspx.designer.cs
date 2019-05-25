@@ -76,13 +76,13 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.Label NewProdBrandLabel;
         
         /// <summary>
-        /// Control NewProdTYPRTB.
+        /// Control NewProdBrandTB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NewProdTYPRTB;
+        protected global::System.Web.UI.WebControls.TextBox NewProdBrandTB;
         
         /// <summary>
         /// Control NewProductTypeTB.
@@ -112,7 +112,6 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.Label AlcoholicTypeLabel;
         
         /// <summary>
-
         /// Control AlcoholicTypeDropDown.
         /// </summary>
         /// <remarks>

@@ -139,9 +139,6 @@
                 <a class="nav-link" href="Catalog.aspx?cat=packs">
                     <li>Packs</li>
                 </a>
-                <a class="nav-link" href="Catalog.aspx?cat=loot">
-                    <li>Lootboxes</li>
-                </a>
                 <a class="nav-link" href="Catalog.aspx?cat=misc">
                     <li>Miscellaneous</li>
                 </a>

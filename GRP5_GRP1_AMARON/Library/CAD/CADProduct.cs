@@ -65,7 +65,7 @@ namespace Library{
          * Parameters: product to read
          * Returns: true if the product could be read, false on the contrary
          */
-        public bool ReadProduct(ENProduct prod)
+        public bool ReadProduct(ENProduct product)
         {
 
             bool read = false;
