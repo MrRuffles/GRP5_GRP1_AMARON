@@ -14,15 +14,45 @@ namespace Library
 
         public CADRatting()
         {
-            constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
+            constring = ConfigurationManager.ConnectionStrings["AmaronDataBase"].ConnectionString;
         }
 
         public bool createRatting(ENRatting en)
         {
             bool correct = true;
+            SqlConnection conection = new SqlConnection(constring);
+
+            try
+            {
+
+                conection.Open();
+
+                using (SqlCommand cmd = new SqlCommand("", conection))
+                {
+
+                    cmd.CommandText = "INSERT INTO Rating(value, product, userID, comment) values ("
+                        + en.rvalue + "," + en.prodID + ", " + en.user + ", '"+ en.commentPublic + "');";
+
+                    cmd.ExecuteNonQuery();
+
+                }
+
+
+            }
+            catch (SqlException ex)
+            {
+
+                Console.WriteLine("Error al inserta el rating en la base de datos. ", ex.Message);
+                correct = false;
+
+            }
+            finally
+            {
+
+                conection.Close();
+            }
 
             return correct;
-
         }
 
         public bool readRatting(ENRatting en)

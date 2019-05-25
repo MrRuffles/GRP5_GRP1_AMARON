@@ -14,13 +14,29 @@ namespace AMARON_INTERFACE{
 
         protected void Page_Load(object sender, EventArgs e) {
 
+            HttpCookie cookie = Request.Cookies["damncookie"];
+
+            if (cookie == null)
+            {
+                //Rating
+                 RatingLabel.Visible = false;
+                 UpdatePanel1.Visible = false;
+
+                //Comments
+                CommentLabel.Visible = false;
+                CommentTextBox.Visible = false;
+
+                //Boton send Rating
+                SendRating.Visible = false;
+            }
 
             ENProduct product = new ENProduct(0, "", 0.0F, 0, "", "", "", "");
             ENBottle bottle = new ENBottle();
 
             product.id = Convert.ToInt32(Request.QueryString["id"]);
 
-            if (product.ReadProductFromCatalog() ) {
+            if (product.ReadProductFromCatalog())
+            {
 
                 //Limt the amount to buy to the product stock
                 AmountRV.MaximumValue = Convert.ToString(product.stock);
@@ -35,14 +51,16 @@ namespace AMARON_INTERFACE{
                 //Brand
                 ProductBrandLabel.Text = product.brand;
                 //Descripción
-                CommentTextLabel.Text = product.description;
+                DescriptionTextLabel.Text = product.description;
 
-                if (product.type == "botella") {
+                if (product.type == "botella")
+                {
 
                     bottle.id = product.id;
 
-                    if (bottle.ReadBottle()) {
-                                               
+                    if (bottle.ReadBottle())
+                    {
+
 
                         //Volume
                         VolumenLabel.Visible = true;
@@ -60,9 +78,42 @@ namespace AMARON_INTERFACE{
                         ProdAlcoholTypeLabel.Text = bottle.alcoholicType;
 
                     }
-                }//
+                }
+            }else
+            {
+                ENLootCrate loot = new ENLootCrate(0, "", 0.0F, "", "", "");
 
+                loot.id = Convert.ToInt32(Request.QueryString["id"]);
+
+                if(loot.readLootCrate()) {
+
+                    //Hide Marca
+                    MarcaLabel.Visible = false;
+                    ProductBrandLabel.Visible = false;
+
+                    //Hide choose amount
+                    ProdAmount.Visible = false;
+                    CantidadLabel.Visible = false;
+
+                    //hide add to cart
+                    AddCartButton.Visible = false;
+
+                    //Show Image
+                    ProductImage.ImageUrl = loot.url;
+
+                    //Show name
+                    ProductNameLabel.Text = loot.nameLootCrate;
+
+                    //Show price
+                    ProductPriceLabel.Text = Convert.ToString(loot.price);
+
+                    //Show description
+                    DescriptionTextLabel.Text = loot.descriptionLootCrate;
+
+
+                }
             }
+
         }//end page load
 
         protected void AddCartButton_Click(object sender, EventArgs e)
@@ -98,6 +149,28 @@ namespace AMARON_INTERFACE{
 
         }
 
+        protected void SendRating_Click(object sender, EventArgs e)
+        {
+            int productID = Convert.ToInt32(Request.QueryString["id"]); 
+            HttpCookie cookie = Request.Cookies["damncookie"];
+
+            ENUser user = new ENUser(0, "", "", cookie["username"], new DateTime(),  "", "", "");
+            
+
+            if (user.ReadID())
+            {
+                ENRatting rating = new ENRatting(productID, user.userID, CommentTextBox.Text, ratingStars.CurrentRating);
+
+                if (rating.createRatting()){
+
+                    RatingSavedLabel.Visible = true;
+
+                }
+
+            }
+
+
+        }
     }
 
  
