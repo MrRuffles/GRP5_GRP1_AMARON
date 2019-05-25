@@ -94,6 +94,11 @@
     </Content>
     <Content Include="Contact.aspx" />
     <Content Include="AddNewProduct.aspx" />
+    <Content Include="Imagenes\cart.png" />
+    <Content Include="Imagenes\contact-phone.png" />
+    <Content Include="Imagenes\EmptyStar1.png" />
+    <Content Include="Imagenes\glass-cocktail.png" />
+    <Content Include="Imagenes\home.png" />
     <Content Include="Imagenes\bebidas\Absolut.jpg" />
     <Content Include="Imagenes\bebidas\Ballantine%27s.jpg" />
     <Content Include="Imagenes\bebidas\Beefeater.jpg" />

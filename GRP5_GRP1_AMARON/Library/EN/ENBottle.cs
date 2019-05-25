@@ -4,28 +4,19 @@ namespace Library{
 
     public class ENBottle : ENProduct{
 
-        //Todo: Maybe it is possible to delete this enum and recreate it as a class's propertie
-        //and store the diferents types in the data base
-        /*public enum AlcoholType{
-
-            NonAlcoholic,
-            Gin,
-            Rum,
-            Whisky,
-            Vodka,
-            Liquor,
-            Tequila,
-            Wine,
-            Beer,
-            Cider,
-            Champagne,
-            Other
-        }*/
-
-
+        
         //Properties--------------------------------------------------------------------------
 
         private CADBottle bottleCAD = new CADBottle() ;
+
+        private int ProductCod;
+        public int cod{
+
+            get { return this.ProductCod;  }
+
+            set{ this.ProductCod = value;  }
+
+        }
 
         private float BottleGrade;
         public float grade{
@@ -36,7 +27,6 @@ namespace Library{
             set{
 
                 if (value > 100.0){
-
                     this.BottleGrade = 100.0F;
 
                 }else if (value < 0.0){
@@ -73,31 +63,13 @@ namespace Library{
         }
 
         private string Bottletype;
-        public string alcoholtype
-        {
+        public string alcoholicType{
 
             get { return this.Bottletype; }
 
             set{
 
-                bool correctType = false;
-
-                /*foreach (AlcoholType typeaux in AlcoholType){
-
-                    if (value == typeaux)
-                    {
-
-                        this.Bottletype = value;
-                        correctType = true;
-
-                    }
-
-                }*/
-
-                if (!correctType){
-
-                    this.Bottletype = "";
-                }
+                Bottletype = value;
             }
         }
 
@@ -106,18 +78,20 @@ namespace Library{
         //Creates a bottle by default
         public ENBottle(){
 
+            this.cod = 0;
             this.grade = 0.0F;
             this.volume = 0.0F;
-            this.type = "";
+            this.alcoholicType = "Otro";
 
         }
 
         //Creates a bottle with values given in the params
-        public ENBottle(float grade, float volume, string type){
+        public ENBottle(int cod, float grade, float volume, string type){
 
+            this.cod = cod;
             this.grade = grade;
             this.volume = volume;
-            this.type = type;
+            this.alcoholicType = type;
 
         }
 
