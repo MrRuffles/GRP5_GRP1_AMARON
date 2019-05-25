@@ -23,12 +23,12 @@ namespace AMARON_INTERFACE
 
             if (cookie != null)
             {
-                ENUser user = new ENUser(0,"", "", cookie["username"], 0, "", "", "");
+                ENUser user = new ENUser(0,"", "", cookie["username"], new DateTime(), "", "", "");
 
                 if (user.ReadUserEDPerfil())
                 {
-                    nameText = user.name;
-                    addressText = user.address;
+                    nameText = user.name; name.Attributes.Add("placeholder",nameText);
+                    addressText = user.address; address.Attributes.Add("placeholder", addressText);
                     img.ImageUrl = user.url;
                     url = user.url;
                     passw = user.pass;

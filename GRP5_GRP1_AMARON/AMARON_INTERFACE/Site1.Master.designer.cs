@@ -40,6 +40,15 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.ImageButton ImageButtonHeader;
         
         /// <summary>
+        /// Control username_menu_button.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button username_menu_button;
+        
+        /// <summary>
         /// Control NavigationMenu.
         /// </summary>
         /// <remarks>
@@ -67,13 +76,13 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.HyperLink register_menu_button;
         
         /// <summary>
-        /// Control username_menu_button.
+        /// Control cart_menu_button.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button username_menu_button;
+        protected global::System.Web.UI.WebControls.HyperLink cart_menu_button;
         
         /// <summary>
         /// Control menu_logoff.
@@ -83,6 +92,15 @@ namespace AMARON_INTERFACE {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button menu_logoff;
+        
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// Control ContentPlaceHolder1.

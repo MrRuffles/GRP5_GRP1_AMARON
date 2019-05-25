@@ -32,7 +32,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="orders">
-        <h1>TUS PEDIDOS</h1>
+        <h1>Your Orders</h1>
     </div>
     
     <div>
@@ -53,8 +53,4 @@
             </SelectParameters>
         </asp:SqlDataSource>
     </div>
-
-
-
-
 </asp:Content>

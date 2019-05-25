@@ -11,24 +11,22 @@ namespace Library
 
     public class CADOrder
     {
-        private string constring;
+ 
         public CADOrder()
         {
-            constring = ConfigurationManager.ConnectionStrings["AmaronDataBase"].ConnectionString;
+           
         }
-
-
-
 
         public bool CreateOrder(ENOrder order)
         {
+            bool created=true;
+          
             SqlConnection c = new SqlConnection(constring);
             try
             {
                 c.Open();
                 SqlCommand com = new SqlCommand("Insert into Order(userID, state, cost, date) VALUES (" + order.userID + "'" + order.state + "', " + order.cost + ", '" + order.date + "')", c);
                 com.ExecuteNonQuery();
-
             }
             catch (SqlException ex)
             {
@@ -39,14 +37,14 @@ namespace Library
             {
                 c.Close();
             }
-            return true;
+
+
+            return created;
         }
-
-
-
 
         public bool ReadOrder(ENOrder order)
         {
+            bool readed = true;
             SqlConnection c = new SqlConnection(constring);
             try
             {
@@ -60,7 +58,6 @@ namespace Library
                     order.cost = float.Parse(dr["cost"].ToString());
                     order.date = (DateTime) dr["date"];
                 }
-
             }
             catch (SqlException ex)
             {
@@ -71,21 +68,16 @@ namespace Library
             {
                 c.Close();
             }
-            return true;
+
+            return readed;
         }
-
-
-
-
 
         public bool UpdateOrder(ENOrder order)
         {
-            return true;
+            bool updated = false;
+
+            return updated;
         }
-
-
-
-
 
         public bool DeleteOrder(ENOrder order)
         {
@@ -106,6 +98,7 @@ namespace Library
                 c.Close();
             }
             return true;
+
         }
     }
 }

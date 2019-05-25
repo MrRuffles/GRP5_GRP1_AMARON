@@ -39,11 +39,11 @@ namespace Library
             set { this.UserPass = value; }
         }
 
-        private int UserAge;
-        public int age
+        private DateTime UserBirth;
+        public DateTime birth
         {
-            get { return this.UserAge; }
-            set { this.UserAge = value; }
+            get { return this.UserBirth; }
+            set { this.UserBirth = value; }
         }
 
         private string UserEmail;
@@ -84,22 +84,21 @@ namespace Library
             name = "Default name";
             pass = "";
             email = "Default email";
-            age = 0;
+            birth = new DateTime();
             url = "";
             empresa = "";
-            address = "Default addres";
+            address = "Default address";
         }
 
         /** Creates a user with the values of the parameters **/
-        public ENUser(int userID, string name, string pass, string email, int age, string url, string empresa, string address)
+        public ENUser(int userID,string name, string pass, string email, DateTime birth, string url, string company, string address)
         {
             this.userID = userID;
             this.name = name;
             this.pass = pass;
-            this.age = age;
+            this.birth = birth;
             this.email = email;
             this.url = url;
-            this.empresa = empresa;
             this.address = address;
         }
 
