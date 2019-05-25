@@ -17,12 +17,11 @@ namespace AMARON_INTERFACE
 
             if (cookie != null)
             {
-                ENUser user = new ENUser("","",cookie["username"],0,"","","");
-
+                ENUser user = new ENUser(0,"","",cookie["username"], new DateTime(), "","","");
                 if (user.ReadUserPerfil())
                 {
                     name.Text = user.name;
-                    age.Text = Convert.ToString(user.age);
+                    birth.Text = user.birth.ToString("dd-MM-yyyy");
                     mail.Text = user.email;
                     address.Text = user.address;
                     if (user.empresa!="")
@@ -39,7 +38,12 @@ namespace AMARON_INTERFACE
 
         protected void verPedidos(object sender, EventArgs e)
         {
-            Response.Redirect("Orders.aspx");
+            HttpCookie cookie = Request.Cookies["damncookie"];
+            ENUser user = new ENUser(0,"","",cookie["username"],0,"","","");
+            if (user.ReadID())
+            {
+                Response.Redirect("Orders.aspx?userID=" + user.userID);
+            }
         }
 
         protected void editarPerfil(object sender, EventArgs e)

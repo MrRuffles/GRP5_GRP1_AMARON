@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Security.Cryptography;
 
+
 namespace Library{
 
     public class CADProduct{
@@ -64,7 +65,8 @@ namespace Library{
          * Parameters: product to read
          * Returns: true if the product could be read, false on the contrary
          */
-        public bool ReadProduct(ENProduct product){
+        public bool ReadProduct(ENProduct prod)
+        {
 
             bool read = false;
             SqlConnection conection = new SqlConnection(constring);
@@ -108,9 +110,67 @@ namespace Library{
                 conection.Close();
             }
 
-
             return read;
 
+        }
+      
+        public DataTable ReadProductCat(ENProduct product){
+
+            SqlConnection con = new SqlConnection(constring);
+
+            DataSet set = new DataSet();
+
+            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product;", con);
+            ad.Fill(set,"Product");
+
+            DataTable tb = new DataTable();
+            tb = set.Tables["Product"];
+            return tb;
+        }
+
+        public DataTable ReadProductBot(ENProduct product)
+        {
+
+            SqlConnection con = new SqlConnection(constring);
+
+            DataSet set = new DataSet();
+
+            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product where type='botella';", con);
+            ad.Fill(set, "Product");
+
+            DataTable tb = new DataTable();
+            tb = set.Tables["Product"];
+            return tb;
+        }
+
+        public DataTable ReadProductPack(ENProduct product)
+        {
+
+            SqlConnection con = new SqlConnection(constring);
+
+            DataSet set = new DataSet();
+
+            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product where type='pack';", con);
+            ad.Fill(set, "Product");
+
+            DataTable tb = new DataTable();
+            tb = set.Tables["Product"];
+            return tb;
+        }
+
+        public DataTable ReadProductMisc(ENProduct product)
+        {
+
+            SqlConnection con = new SqlConnection(constring);
+
+            DataSet set = new DataSet();
+
+            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product where type='miscelanea';", con);
+            ad.Fill(set, "Product");
+
+            DataTable tb = new DataTable();
+            tb = set.Tables["Product"];
+            return tb;
         }
 
         //Read product form data base when you click on the catalog

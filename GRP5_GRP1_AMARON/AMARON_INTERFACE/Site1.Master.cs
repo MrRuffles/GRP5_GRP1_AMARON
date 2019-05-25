@@ -5,22 +5,35 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
+using Library;
 
 namespace AMARON_INTERFACE
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {
+        protected bool Proveedor(string email)
+        {
+            ENProvider user = new ENProvider(email);
+            user.ReadProvider();
+            if (user.empresa == "")
+                return false;
+            return true;
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            cart_menu_button.Visible = false;
             HttpCookie cookie = Request.Cookies["damncookie"];
             if (cookie != null)
             {
-                
+                if (!Proveedor(cookie["username"]))
+                {
+                    cart_menu_button.Visible = true;
+                }
                 login_menu_button.Visible = false;
                 register_menu_button.Visible = false;
                 menu_logoff.Visible = true;
                 username_menu_button.Visible = true;
-                //username_menu_label.Text = Response.Cookies["authcookie"]["username"];
                 username_menu_button.Text = cookie["username"];
 
             }

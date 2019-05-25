@@ -192,6 +192,7 @@
             <div class="col-md-12">
                  <div class="form-group form-inline">
                      <asp:Button runat="server" ID="addProductBT" Text="¡Añade Este Producto!" class="btn btn-success" OnClick="addProductBT_Click"/>
+
                  </div>
             </div>
         </div>

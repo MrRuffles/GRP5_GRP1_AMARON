@@ -1,6 +1,7 @@
 ﻿//Tamara Elizabeth Salcedo Peinado, 75944876A
 
 using System;
+using System.Data;
 //using Library.CADProduct;
 
 
@@ -53,10 +54,9 @@ namespace Library {
         private string ProductBrand;
         public string brand{
 
-            get {  return this.ProductBrand;  }
+            get { return this.ProductBrand; }
 
-            set { this.ProductBrand = value;  }
-
+            set { this.ProductBrand = value; }
         }
 
         private string ProductType;
@@ -88,9 +88,6 @@ namespace Library {
             set { this.ProductUrl = value; }
         }
 
-
-
-
         private CADProduct prodCAD = new CADProduct();
 
 
@@ -111,7 +108,9 @@ namespace Library {
         }
 
         //Creates a products with the values that receives in the parameters
-        public ENProduct(int id, string name, float price, int stock, string brand, string type, string description, string url){
+
+        public ENProduct(int id, string name, float price, int stock, string brand, string type, string description, string url)
+        {
             this.id = id;
             this.name = name;
             this.price = price;
@@ -140,11 +139,46 @@ namespace Library {
          * Reads the product from the data base
          * Return: true in case that the product could be updated, false on the contrary
         */
-        public bool ReadProduct(){
+
+
+        public bool ReadProduct()
+        {
 
             bool read = false;
 
             read = prodCAD.ReadProduct(this);
+
+            return read;
+
+        }
+
+        public DataTable ReadProductCat(){
+
+            DataTable read = prodCAD.ReadProductCat(this);
+
+            return read;
+        }
+
+        public DataTable ReadProductBot()
+        {
+
+            DataTable read = prodCAD.ReadProductBot(this);
+
+            return read;
+        }
+
+        public DataTable ReadProductPack()
+        {
+
+            DataTable read = prodCAD.ReadProductPack(this);
+
+            return read;
+        }
+
+        public DataTable ReadProductMisc()
+        {
+
+            DataTable read = prodCAD.ReadProductMisc(this);
 
             return read;
         }

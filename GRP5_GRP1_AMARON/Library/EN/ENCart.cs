@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,14 +15,39 @@ namespace Library
             get { return sum; }
             set { sum = value; }
         }
+        private int amount;
+        public int CartCantidad
+        {
+            get { return amount; }
+            set { amount = value; }
+        }
+
+        private int userID;
+        public int CartUserID
+        {
+            get { return userID; }
+            set { userID = value; }
+        }
+  
+        private int cod;
+        public int CartCod
+        {
+            get { return cod; }
+            set { cod = value; }
+        }
+
+
 
         public ENCart()
         {
             sum = 0;
         }
-        public ENCart(float sum)
+        public ENCart(int cod, int userID, float sum, int amount )
         {
             this.sum = sum;
+            this.cod = cod;
+            this.userID = userID;
+            this.amount = amount;
         }
 
         public bool CreateCart()
@@ -31,7 +57,7 @@ namespace Library
             return cart.CreateCart(this);
         }
 
-        public bool ReadCart()
+        public DataTable ReadCart()
         {
             CADCart cart = new CADCart();
 

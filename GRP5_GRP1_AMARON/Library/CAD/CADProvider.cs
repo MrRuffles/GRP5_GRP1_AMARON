@@ -24,13 +24,13 @@ namespace Library
         {
             SqlConnection con = new SqlConnection(constring);
             bool correct = true;
-
+            string datestring = provider.birth.ToString("yyyy-MM-dd");
             try
             {
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("", con))
                 {
-                    cmd.CommandText = "INSERT INTO Users (name, password, email, age, urlImage, empresa, address) values ('" + provider.name + "', '" + provider.pass + "', '" + provider.email + "', " + provider.age + ", '" + provider.url + "', '" + provider.company + "', '" + provider.address + "');";
+                    cmd.CommandText = "INSERT INTO Users (name, password, email, birthdate, urlImage, empresa, address) values ('" + provider.name + "', '" + provider.pass + "', '" + provider.email + "', '" + datestring + "', '" + provider.url + "', '" + provider.company + "', '" + provider.address + "');";
                     cmd.ExecuteNonQuery();
                 }
 
