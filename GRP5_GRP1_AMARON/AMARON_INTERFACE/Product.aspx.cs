@@ -14,6 +14,21 @@ namespace AMARON_INTERFACE{
 
         protected void Page_Load(object sender, EventArgs e) {
 
+            HttpCookie cookie = Request.Cookies["damncookie"];
+
+            if (cookie == null)
+            {
+                //Rating
+                 RatingLabel.Visible = false;
+                 UpdatePanel1.Visible = false;
+
+                //Comments
+                CommentLabel.Visible = false;
+                CommentTextBox.Visible = false;
+
+                //Boton send Rating
+                SendRating.Visible = false;
+            }
 
             ENProduct product = new ENProduct(0, "", 0.0F, 0, "", "", "", "");
             ENBottle bottle = new ENBottle();
@@ -35,7 +50,7 @@ namespace AMARON_INTERFACE{
                 //Brand
                 ProductBrandLabel.Text = product.brand;
                 //Descripción
-                CommentTextLabel.Text = product.description;
+                DescriptionTextLabel.Text = product.description;
 
                 if (product.type == "botella") {
 
@@ -98,6 +113,28 @@ namespace AMARON_INTERFACE{
 
         }
 
+        protected void SendRating_Click(object sender, EventArgs e)
+        {
+            int productID = Convert.ToInt32(Request.QueryString["id"]); 
+            HttpCookie cookie = Request.Cookies["damncookie"];
+
+            ENUser user = new ENUser(0, "", "", cookie["username"], new DateTime(),  "", "", "");
+            
+
+            if (user.ReadID())
+            {
+                ENRatting rating = new ENRatting(productID, user.userID, CommentTextBox.Text, ratingStars.CurrentRating);
+
+                if (rating.createRatting()){
+
+                    RatingSavedLabel.Visible = true;
+
+                }
+
+            }
+
+
+        }
     }
 
  

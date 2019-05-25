@@ -8,18 +8,11 @@ using System.Configuration;
 
 namespace Library
 {
-    class ENLootCrate
+    public class ENLootCrate
     {
-        public enum SuscriptionType
-        {
-            Basic,
-            Normal,
-            Premium
-        }
-
         //Properties
         private string name;
-        private SuscriptionType type;
+       
         private string description;
 
         public string nameLootCrate
@@ -31,18 +24,6 @@ namespace Library
             set
             {
                 name = value;
-            }
-        }
-
-        public SuscriptionType typeLootCrate
-        {
-            get
-            {
-                return type;
-            }
-            set
-            {
-                type = value;
             }
         }
 
@@ -58,10 +39,39 @@ namespace Library
             }
         }
 
-        public ENLootCrate(string name, SuscriptionType type, string description)
+        private float lootcrateprice;
+        public float price
         {
+            get { return this.lootcrateprice;  }
+            set { this.lootcrateprice = value;  }
+
+        }
+
+        private string urlimg;
+
+        public string url
+        {
+
+            get { return this.urlimg; }
+            set { this.urlimg = value; }
+        }
+
+        private int lootcrateID;
+        public int id {
+
+            get { return this.lootcrateID; }
+
+            set { this.lootcrateID = value; }
+
+        }
+
+
+        public ENLootCrate(int id, string name, float price, string description, string url)
+        {
+            this.id = id;
             this.name = name;
-            this.type = type;
+            this.price = price;
+            this.url = url;
             this.description = description;
         }
         

@@ -90,6 +90,15 @@
                     </div>
                 </div>
             </div>
+            <!-- Rating Feedback labels -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-inline">
+                        <asp:Label ID="RatingSavedLabel" class="alert alert-success" runat="server" Visible="false" Text="¡Tu valarocación se ha guardado correctamente!">
+                        </asp:Label>
+                    </div>
+                </div>
+            </div>
         <!---------------------------------------- PRODUCT INFO SECTION ------------------------------------------------------->
         <div class="row">
 
@@ -194,7 +203,7 @@
             <div class="col-xs-1 align-self-center">
                 <div class="jumbotron" style="height: 250px;  width:750px">
                     <h6>DESCRIPCIÓN DEL PRODUCTO</h6>
-                    <asp:label ID="CommentTextLabel" runat="server" CssClass="well" ></asp:label>
+                    <asp:label ID="DescriptionTextLabel" runat="server" CssClass="well" ></asp:label>
                 </div>
             </div>
         </div>
@@ -203,7 +212,7 @@
         <div class="row">
             
             <div class="col-md-2">
-              <label for="InputComment" style="padding-top: 0.5em" >¡Valora este producto!</label>
+                <asp:Label ID="RatingLabel" CssClass="prod-info-letter" runat="server" style="padding-top: 0.5em" Text="¡Valora este producto!"></asp:Label>
             </div>
             <div class="col-md-10">
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -214,8 +223,7 @@
                             StarCssClass="RatingStar"
                             WaitingStarCSSClass="Saved"
                             FilledStarCSSClass="Filled"
-                            EmptyStarCSSClass="Empty"                            
-                        >
+                            EmptyStarCSSClass="Empty">
                         </ajaxToolkit:Rating>
                     </ContentTemplate>
                 </asp:UpdatePanel>
@@ -227,7 +235,7 @@
 
                 <div class="row"><!-- Comment text box-->
                     <div class="col-md-6">
-                         <label for="InputComment">¡Añade un comentario!</label>
+                         <asp:Label ID="CommentLabel" runat="server" style="padding-top: 0.5em" Text="¡Añade un comentario!"></asp:Label>
                     </div>
                 </div>
                 <div class="row">
@@ -241,7 +249,7 @@
                 
                 <div class="row"><!-- Send comment button -->
                     <div>
-                        <button type="submit" class="btn btn-success" style="margin-top:0.5em">Enviar Comentario</button>
+                        <asp:Button runat="server" ID="SendRating" cssclass="btn btn-success" style="margin-top:0.5em" Text="Enviar valoracion" OnClick="SendRating_Click"></asp:Button>
                     </div>
                 </div>
 

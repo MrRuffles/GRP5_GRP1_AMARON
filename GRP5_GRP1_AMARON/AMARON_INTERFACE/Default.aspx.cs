@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using Library;
 
 namespace AMARON_INTERFACE
 {
@@ -17,7 +17,15 @@ namespace AMARON_INTERFACE
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Product.aspx");
+            ENLootCrate loot = new ENLootCrate(0, "", 0.0F, "", Image2.ImageUrl.ToString());
+
+            if (loot.readLootCrate())
+            {
+
+                Response.Redirect("Product.aspx?id=" + loot.id);
+            }
+
+            
         }
     }
 }

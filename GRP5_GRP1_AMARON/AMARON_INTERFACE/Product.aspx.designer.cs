@@ -40,6 +40,15 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.Label ProductAddedLabel;
         
         /// <summary>
+        /// Control RatingSavedLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label RatingSavedLabel;
+        
+        /// <summary>
         /// Control ProductImage.
         /// </summary>
         /// <remarks>
@@ -184,13 +193,22 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.Button AddCartButton;
         
         /// <summary>
-        /// Control CommentTextLabel.
+        /// Control DescriptionTextLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CommentTextLabel;
+        protected global::System.Web.UI.WebControls.Label DescriptionTextLabel;
+        
+        /// <summary>
+        /// Control RatingLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label RatingLabel;
         
         /// <summary>
         /// Control UpdatePanel1.
@@ -211,6 +229,15 @@ namespace AMARON_INTERFACE {
         protected global::AjaxControlToolkit.Rating ratingStars;
         
         /// <summary>
+        /// Control CommentLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CommentLabel;
+        
+        /// <summary>
         /// Control CommentTextBox.
         /// </summary>
         /// <remarks>
@@ -218,5 +245,14 @@ namespace AMARON_INTERFACE {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CommentTextBox;
+        
+        /// <summary>
+        /// Control SendRating.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SendRating;
     }
 }
