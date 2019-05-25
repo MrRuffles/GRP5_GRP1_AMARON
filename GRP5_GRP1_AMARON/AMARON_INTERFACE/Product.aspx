@@ -51,21 +51,17 @@
            display: block;
        }
        .Filled{
-           background-image: url("InterfaceImgs/FilledStar.jpg"); 
-           /*border-image:url("InterfaceImgs/FilledStar.jpg");*/
-           background-color: gold;
-           border: 2px solid beige;
-                      
+           background-image: url("Imagenes/EstrellaRellena.png"); 
+                     
        }
        .Saved{
-           background-image:url("InterfaceImgs/WaitingStar1.png");
-           background-color: red;
+           background-image:url("Imagenes/EstrellaMedio.png");
        }
        .Empty{
-           background-image: url("Imagenes/EmptyStar1.png");
-           background-color: blue;
-           border: 2px solid grey;
-           border-image-outset: 50px;
+           background-image: url("Imagenes/EstrellaVacia.png");
+       }
+       .Well{
+           text-align: start;
        }
 
     </style>
@@ -184,11 +180,11 @@
          </div><!-- End MediaProduct Row -->
         
         <!------------------------------------- DESCRIPTION SECTION ------------------------------------------------------------>        
-        <div class="row" style="padding-top: 1em; width:750px">
+        <div class="row" style="padding-top: 1em;">
             <div class="col-xs-1 align-self-center">
-                <div class="jumbotron">
+                <div class="jumbotron" style="height: 250px;  width:750px">
                     <h6>DESCRIPCIÓN DEL PRODUCTO</h6>
-                    <asp:label ID="CommentTextLabel" runat="server" CssClass="well" style="height: 300px"></asp:label>
+                    <asp:label ID="CommentTextLabel" runat="server" CssClass="well" ></asp:label>
                 </div>
             </div>
         </div>
@@ -214,18 +210,6 @@
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>            
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="star-rating">
-                    <span class="fa fa-star-o" data-rating="1"></span>
-                    <span class="fa fa-star-o" data-rating="2"></span>
-                    <span class="fa fa-star-o" data-rating="3"></span>
-                    <span class="fa fa-star-o" data-rating="4"></span>
-                    <span class="fa fa-star-o" data-rating="5"></span>
-                    <input type="hidden" name="whatever1" class="rating-value" value="2.56">
-                </div>
-            </div>
         </div>
         <!----------------------------------------- COMMENTS SECTION ----------------------------------------------------------------->
         <div class="row">

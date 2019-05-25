@@ -97,6 +97,9 @@
     <Content Include="Imagenes\cart.png" />
     <Content Include="Imagenes\contact-phone.png" />
     <Content Include="Imagenes\EmptyStar1.png" />
+    <Content Include="Imagenes\EstrellaMedio.png" />
+    <Content Include="Imagenes\EstrellaRellena.png" />
+    <Content Include="Imagenes\EstrellaVacia.png" />
     <Content Include="Imagenes\glass-cocktail.png" />
     <Content Include="Imagenes\home.png" />
     <Content Include="Imagenes\bebidas\Absolut.jpg" />
