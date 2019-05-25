@@ -57,6 +57,10 @@ namespace AMARON_INTERFACE
 
                     newProduct.type = "miscelanea";
 
+                }else if (ProdTypeDropDown.Items[2].Selected){
+
+                    newProduct.type = "pack";
+
                 }
 
                 //In case the description is not empty
@@ -71,7 +75,8 @@ namespace AMARON_INTERFACE
 
                                 
                 //When the product type is "miscelanea"
-                if (ProdTypeDropDown.Items[1].Selected){
+                if (ProdTypeDropDown.Items[1].Selected || ProdTypeDropDown.Items[2].Selected)
+                {
 
                     if (newProduct.CreateProduct()){
 
@@ -139,23 +144,8 @@ namespace AMARON_INTERFACE
 
         protected void ProdTypeDropDown_SelectedIndexChanged(object sender, EventArgs e){
 
-            //If Miscelaneus is selected, hide add bottle options
-            if(ProdTypeDropDown.Items[1].Selected){
-
-                //Alcoholic type
-                AlcoholicTypeLabel.Visible = false;
-                AlcoholicTypeDropDown.Visible = false;
-
-                //Bottle 
-                NewProdVolumeLabel.Visible = false;
-                NewProdVolumeTB.Visible = false;
-
-                //Grade
-                NewProdGradeLabel.Visible = false;
-                NewProdGradeTB.Visible = false;
-
-
-            }else if (ProdTypeDropDown.Items[0].Selected){
+            //If bottle is selected, hide add bottle options                    
+            if (ProdTypeDropDown.Items[0].Selected){
 
                 //Alcoholic type
                 AlcoholicTypeLabel.Visible = true;
@@ -169,6 +159,20 @@ namespace AMARON_INTERFACE
                 NewProdGradeLabel.Visible = true;
                 NewProdGradeTB.Visible = true;
 
+
+            }else {
+
+                //Alcoholic type
+                AlcoholicTypeLabel.Visible = false;
+                AlcoholicTypeDropDown.Visible = false;
+
+                //Bottle 
+                NewProdVolumeLabel.Visible = false;
+                NewProdVolumeTB.Visible = false;
+
+                //Grade
+                NewProdGradeLabel.Visible = false;
+                NewProdGradeTB.Visible = false;
 
             }
 
