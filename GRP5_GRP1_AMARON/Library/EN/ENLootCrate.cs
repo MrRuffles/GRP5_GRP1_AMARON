@@ -12,8 +12,11 @@ namespace Library
     {
         //Properties
         private string name;
-       
         private string description;
+        private float price;
+        private int stock;
+        private string brand;
+        private string urlImage;
 
         public string nameLootCrate
         {

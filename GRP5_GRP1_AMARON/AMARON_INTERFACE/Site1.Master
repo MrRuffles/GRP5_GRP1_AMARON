@@ -44,7 +44,7 @@
         <div>
             <div id="header" class="col sticky-top" style="background-color: coral">
                 <div id="logo" class="row">
-                    <asp:Image ID="ImageHeader" runat="server" ImageUrl="Imagenes/ron.jpg" Width="100%" Height="105px"/>
+                    <asp:Image ID="ImageHeader" runat="server" ImageUrl="Imagenes/Logo_AmaRon2.png" Width="14%" Height="92px" Style="margin-left: 43%" />
                 </div>
                 <span></span>
                 <div id="nav-bar"  class="row">
