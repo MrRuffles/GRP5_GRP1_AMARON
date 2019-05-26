@@ -1,5 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 using System.Configuration;
+using System.Security.Cryptography;
 
 
 namespace Library{
@@ -10,7 +17,7 @@ namespace Library{
 
         //Initializates connection string to data base
         public CADBottle() {
-            constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
+            constring = ConfigurationManager.ConnectionStrings["AmaronDataBase"].ConnectionString;
         }
 
             /*
@@ -21,6 +28,34 @@ namespace Library{
             public bool CreateBottle(ENBottle bottle){
 
                 bool created = false;
+
+                SqlConnection conection = new SqlConnection(constring);
+
+                try{
+
+                    conection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("", conection)){
+
+                        cmd.CommandText = "INSERT INTO Bottle(product, grade, alcoholicType, volume) values ("
+                            + bottle.cod + "," + bottle.grade+ ", '" + bottle.alcoholicType + "', "
+                            + bottle.volume + ");";
+
+                        cmd.ExecuteNonQuery();
+
+                    }
+
+                    created = true;
+
+                }
+                catch (SqlException ex){
+
+                    Console.WriteLine("Error al inserta la botella en la base de datos. ", ex.Message);
+
+                }finally{
+
+                    conection.Close();
+                }
 
                 return created;
 
@@ -34,6 +69,48 @@ namespace Library{
             public bool ReadBottle(ENBottle bottle){
 
                 bool read = false;
+
+                SqlConnection conection = new SqlConnection(constring);
+
+                try{
+
+                    conection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("", conection)){
+
+                        cmd.CommandText = "SELECT * FROM Bottle where product = '" + bottle.id + "';";
+
+                        SqlDataReader bottleRead = cmd.ExecuteReader();
+
+                        while (bottleRead.Read()){
+
+                            bottle.grade = float.Parse(Convert.ToString(bottleRead[1]));
+                            bottle.alcoholicType = Convert.ToString(bottleRead[2]);
+                            bottle.volume = float.Parse(Convert.ToString(bottleRead[3]));
+
+                        }
+
+                        bottleRead.Close();
+
+                    }
+
+                    read = true;
+
+                }
+                catch (SqlException Ex)
+                {
+
+                    Console.WriteLine("No se ha podido recuperar el producto de la base de datos.", Ex.Message);
+
+
+                }
+                finally
+                {
+
+                        conection.Close();
+                }
+
+
 
                 return read;
 

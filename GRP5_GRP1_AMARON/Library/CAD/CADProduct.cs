@@ -1,5 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 using System.Configuration;
+using System.Security.Cryptography;
+
 
 namespace Library{
 
@@ -8,8 +16,8 @@ namespace Library{
         private string constring;
 
         //Initializates connection string to data base
-        public CADProduct() {
-            constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
+        public CADProduct(){
+            constring = ConfigurationManager.ConnectionStrings["AmaronDataBase"].ConnectionString;
         }
 
         /*
@@ -20,6 +28,33 @@ namespace Library{
         public bool CreateProduct(ENProduct product){
 
             bool created = false;
+            SqlConnection conection = new SqlConnection(constring);
+
+            try{
+
+                conection.Open();
+
+                using (SqlCommand cmd = new SqlCommand("", conection)){
+
+                    cmd.CommandText = "INSERT INTO Product(name, pvp, stock, brand, type, description, urlImage) values ('"
+                        + product.name + "'," + product.price + ", " + product.stock + ", '" + product.brand + "', '"
+                        + product.@type + "', '" + product.description + "', '" + product.url + "');";
+
+                    cmd.ExecuteNonQuery();
+
+                }
+
+                created = true;
+
+            }catch (SqlException ex){
+
+                Console.WriteLine("Error al crear product. ", ex.Message);
+
+            }finally{
+
+                conection.Close();
+            }
+            
 
             return created;
 
@@ -30,21 +65,203 @@ namespace Library{
          * Parameters: product to read
          * Returns: true if the product could be read, false on the contrary
          */
-        public bool ReadProduct(ENProduct product){
+        public bool ReadProductName(ENProduct product)
+        {
 
             bool read = false;
+            SqlConnection conection = new SqlConnection(constring);
+
+            try{
+
+                conection.Open();
+
+                using (SqlCommand cmd = new SqlCommand("", conection)){
+
+                    cmd.CommandText = "SELECT * FROM Product where name = '" + product.name + "';";
+
+                    SqlDataReader productRead = cmd.ExecuteReader();
+
+                    while(productRead.Read()){
+
+                        product.id = Convert.ToInt32(productRead[0]);
+                        product.name = Convert.ToString(productRead[1]);
+                        product.price = float.Parse(Convert.ToString(productRead[2]));
+                        product.stock = Convert.ToInt32(productRead[3]);
+                        product.brand = Convert.ToString(productRead[4]);
+                        product.type = Convert.ToString(productRead[5]);
+                        product.description = Convert.ToString(productRead[6]);
+                        product.url = Convert.ToString(productRead[7]);
+
+                    }
+
+                    productRead.Close();
+
+                }
+
+                read = true;
+
+            }catch(SqlException Ex){
+
+                Console.WriteLine("No se ha podido recuperar el producto de la base de datos.", Ex.Message);
+
+
+            }finally {
+
+                conection.Close();
+            }
+
+            return read;
+
+        }
+      
+        public DataTable ReadProductCat(ENProduct product){
+
+            SqlConnection con = new SqlConnection(constring);
+
+            DataSet set = new DataSet();
+
+            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product;", con);
+            ad.Fill(set,"Product");
+
+            DataTable tb = new DataTable();
+            tb = set.Tables["Product"];
+            return tb;
+        }
+
+        public DataTable ReadProductBot(ENProduct product)
+        {
+
+            SqlConnection con = new SqlConnection(constring);
+
+            DataSet set = new DataSet();
+
+            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product where type='botella';", con);
+            ad.Fill(set, "Product");
+
+            DataTable tb = new DataTable();
+            tb = set.Tables["Product"];
+            return tb;
+        }
+
+        public DataTable ReadProductPack(ENProduct product)
+        {
+
+            SqlConnection con = new SqlConnection(constring);
+
+            DataSet set = new DataSet();
+
+            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product where type='pack';", con);
+            ad.Fill(set, "Product");
+
+            DataTable tb = new DataTable();
+            tb = set.Tables["Product"];
+            return tb;
+        }
+
+        public DataTable ReadProductMisc(ENProduct product)
+        {
+
+            SqlConnection con = new SqlConnection(constring);
+
+            DataSet set = new DataSet();
+
+            SqlDataAdapter ad = new SqlDataAdapter("Select * from Product where type='miscelanea';", con);
+            ad.Fill(set, "Product");
+
+            DataTable tb = new DataTable();
+            tb = set.Tables["Product"];
+            return tb;
+        }
+
+        //Read product form data base when you click on the catalog
+        public bool ReadProductFromCatalog(ENProduct product){
+
+            bool read = false;
+
+            SqlConnection conection = new SqlConnection(constring);
+
+            try{
+
+                conection.Open();
+
+                using(SqlCommand cmd = new SqlCommand("", conection)){
+
+                    cmd.CommandText = "SELECT * FROM Product where cod = '" + product.id + "';";
+
+                    SqlDataReader productRead = cmd.ExecuteReader();
+
+                    while(productRead.Read()){
+
+                        product.id = Convert.ToInt32(productRead[0]);
+                        product.name = Convert.ToString(productRead[1]);
+                        product.price = float.Parse(Convert.ToString(productRead[2]));
+                        product.stock = Convert.ToInt32(productRead[3]);
+                        product.brand = Convert.ToString(productRead[4]);
+                        product.type = Convert.ToString(productRead[5]);
+                        product.description = Convert.ToString(productRead[6]);
+                        product.url = Convert.ToString(productRead[7]);
+
+                    }
+
+                    productRead.Close();
+
+                }
+
+                read = true;
+
+            }
+            catch (SqlException Ex)
+            {
+
+                Console.WriteLine("No se ha podido recuperar el producto de la base de datos.", Ex.Message);
+
+
+            }
+            finally
+            {
+
+                conection.Close();
+            }
+
+
 
             return read;
 
         }
 
         /*
-         * Updates the product in the DataBase
-         * Parameters: product to update
-         * Return: true in case that the product could be updated
-        */
-        public bool UpdateProduct(ENProduct product){
-            bool updated = false;
+             * Updates the product in the DataBase
+             * Parameters: product to update
+             * Return: true in case that the product could be updated
+            */
+        public bool UpdateProduct(ENProduct product)
+        {
+            bool updated = true;
+
+            SqlConnection conection = new SqlConnection(constring);
+
+            try
+            {
+                conection.Open();
+                using (SqlCommand cmd = new SqlCommand("", conection))
+                {
+                    cmd.CommandText = "UPDATE Product set stock=" + product.stock + " where cod='" + product.id + "';";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException Ex)
+            {
+
+                Console.WriteLine("No se ha podido recuperar el producto de la base de datos.", Ex.Message);
+                updated = false;
+
+            }
+            finally
+            {
+
+                conection.Close();
+            }
+
 
             return updated;
         }

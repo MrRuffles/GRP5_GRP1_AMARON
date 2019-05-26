@@ -8,18 +8,18 @@ namespace Library
 {
     public class ENRatting
     {
-        private int productValor;
+        private int productID;
         private string comment;
 
-        public int productValorPublic
+        public int prodID
         {
             get
             {
-                return productValor;
+                return this.productID;
             }
             set
             {
-                productValor = value;
+                productID = value;
             }
         }
 
@@ -35,10 +35,26 @@ namespace Library
             }
 
         }
-       
-        public ENRatting(int productValor, string comment)
+
+        private int userID;
+        public int user{
+
+            get { return this.userID;  }
+            set { this.userID = value; }
+        }
+
+        private int ratingValue;
+        public int rvalue
         {
-            this.productValor = productValor;
+            get { return this.ratingValue; }
+            set { this.ratingValue = value; }
+        }
+       
+        public ENRatting(int pID, int uID, string comment, int rval)
+        {
+            this.productID = pID;
+            this.userID = uID;
+            this.ratingValue = rval;
             this.comment = comment;
         }
 

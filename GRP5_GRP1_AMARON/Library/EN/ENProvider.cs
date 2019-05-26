@@ -17,8 +17,7 @@ namespace Library
             get { return this.ProviderCompany; }
             set { this.ProviderCompany = value; }
         }
-
-
+        
         ////////////////////////////////////////////////////////////////////////////
         //                              METHODS
         ////////////////////////////////////////////////////////////////////////////
@@ -29,10 +28,20 @@ namespace Library
             company = "default name company";
         }
 
+        public ENProvider(string email)
+        {
+            this.email = email;
+        }
         /**  Creates a provider with the values of the parameters  **/
-        public ENProvider(string company)
+        public ENProvider(string name, string pass, string email, DateTime birth, string url, string company, string address)
         {
             this.company = company;
+            this.name = name;
+            this.pass = pass;
+            this.birth = birth;
+            this.email = email;
+            this.url = url;
+            this.address = address;
         }
 
         public bool CreateProvider()

@@ -1,6 +1,10 @@
 ﻿//Paula Guadalajara Saiz
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Library
 {
@@ -11,6 +15,15 @@ namespace Library
         ////////////////////////////////////////////////////////////////////////////
         //                              PROPERTIES
         ////////////////////////////////////////////////////////////////////////////
+        
+
+        private int id;
+        public int userID
+        {
+            get { return this.id; }
+            set { this.id = value; }
+        }
+
 
         private string UserName;
         public string name
@@ -19,11 +32,18 @@ namespace Library
             set { this.UserName = value; }
         }
 
-        private int UserAge;
-        public int age
+        private string UserPass;
+        public string pass
         {
-            get { return this.UserAge; }
-            set { this.UserAge = value; }
+            get { return this.UserPass; }
+            set { this.UserPass = value; }
+        }
+
+        private DateTime UserBirth;
+        public DateTime birth
+        {
+            get { return this.UserBirth; }
+            set { this.UserBirth = value; }
         }
 
         private string UserEmail;
@@ -33,11 +53,24 @@ namespace Library
             set { this.UserEmail = value; }
         }
 
-        private string UserAddres;
-        public string addres
+        private string UserUrl;
+        public string url
         {
-            get { return this.UserAddres; }
-            set { this.UserAddres = value; }
+            get { return this.UserUrl; }
+            set { this.UserUrl = value; }
+        }
+        private string UserEmpresa;
+        public string empresa
+        {
+            get { return this.UserEmpresa; }
+            set { this.UserEmpresa = value; }
+        }
+
+        private string UserAddress;
+        public string address
+        {
+            get { return this.UserAddress; }
+            set { this.UserAddress = value; }
         }
 
         ////////////////////////////////////////////////////////////////////////////
@@ -47,19 +80,37 @@ namespace Library
         /**  Creates a default user  **/
         public ENUser()
         {
+            id = 0;
             name = "Default name";
-            age = 0;
+            pass = "";
             email = "Default email";
-            addres = "Default addres";
+            birth = new DateTime();
+            url = "";
+            empresa = "";
+            address = "Default address";
         }
 
         /** Creates a user with the values of the parameters **/
-        public ENUser(string name, int age, string email, string addres)
+        public ENUser(int userID,string name, string pass, string email, DateTime birth, string url, string company, string address)
         {
+            this.userID = userID;
             this.name = name;
-            this.age = age;
+            this.pass = pass;
+            this.birth = birth;
             this.email = email;
-            this.addres = addres;
+            this.url = url;
+            this.address = address;
+        }
+
+        public ENUser(string pass, string email)
+        {
+            this.pass = pass;
+            this.email = email;
+        }
+
+        public ENUser(string email)
+        {
+            this.email = email;
         }
 
         public bool CreateUser()
@@ -74,6 +125,24 @@ namespace Library
             return user.ReadUser(this);
         }
 
+        public bool ReadUserPerfil()
+        {
+            CADUser user = new CADUser();
+            return user.ReadUserPerfil(this);
+        }
+
+        public bool ReadUserEDPerfil()
+        {
+            CADUser user = new CADUser();
+            return user.ReadUserEDPerfil(this);
+        }
+
+        public bool ReadID()
+        {
+            CADUser user = new CADUser();
+            return user.ReadID(this);
+        }
+
         public bool UpdateUser()
         {
             CADUser user = new CADUser();
@@ -86,9 +155,11 @@ namespace Library
             return user.DeleteUser(this);
         }
 
-
-
-
+        public bool EmailExist()
+        {
+            CADUser user = new CADUser();
+            return user.EmailExist(this);
+        }
     }
 
 }

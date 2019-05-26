@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Perfil.aspx.cs" Inherits="AMARON_INTERFACE.Perfil" %>
+﻿<%@ Page Title="Perfil" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Perfil.aspx.cs" Inherits="AMARON_INTERFACE.Perfil" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
@@ -48,24 +48,40 @@
     <div class="clearfix">
         <div class="columna-izquierda">
             <div class="col-md-13">
-                <img class="img-responsive img-portfolio img-hover" src="Imagenes/fotoPerfil.jpg">
+                <asp:Image runat="server" style="border-width: 1px 1px 1px 1px; border-style: solid; border-color: coral;" ID="fotoPerfil" class="img-responsive img-portfolio img-hover" ImageUrl="Imagenes/fotoPerfil.jpg" />
             </div>
             <div class="col-md-13">
                 <br/>
                 <ul class="list-group list-primary">
-                    <asp:Button runat="server" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" onclick="verPedidos" text="Ver pedidos hechos"/>
-                    <asp:Button runat="server" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" onclick="editarPerfil" text="Editar perfil"/>
+                    <asp:Button runat="server" ID="pedidios" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" onclick="verPedidos" text="Ver pedidos hechos" Visible="false"/>
+                    <asp:Button runat="server" ID="edit_button" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" Visible="false" onclick="editarPerfil" text="Editar perfil"/>
+                    <asp:Button runat="server" ID="productos" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" onclick="crearProducto" text="Subir Producto" Visible="false"/>
                 </ul>
             </div>
         </div>
         <div class="parte-central">
             <div class="col-md-12" style="border-width: 1px 1px 1px 1px; border-style: solid; border-color: lightgrey; margin: 10px auto">
                 <h3 style="text-align: center">Mi perfil </h3>
-                <h4>Nombre:<strong>  Nombre random</strong></h4>
-                <h4>Apellidos:<strong>  Apellidos random</strong></h4>
-                <h4>Edad:<strong>  Edad random</strong></h4>
-                <h4>Email:<strong>  Email random</strong></h4>
-                <h4>Dirección:<strong>  Dirección random</strong></h4>
+                <div class="d-flex justify-content-start">
+                    <asp:Label runat="server" Width="10%" Text="Nombre:" Font-Size="Large">  </asp:Label>
+                    <asp:Label ID="name"  runat="server" Font-Size="Large" Text=""></asp:Label>
+                    </div>
+                <div class="d-flex justify-content-start">
+                    <asp:Label runat="server" Width="10%" Text="Nacimiento:" Font-Size="Large">  </asp:Label>
+                    <asp:Label ID="birth"  runat="server" Font-Size="Large" Text=""></asp:Label>
+                </div>
+                <div class="d-flex justify-content-start">
+                    <asp:Label runat="server" Width="10%" Text="Email:" Font-Size="Large">  </asp:Label>
+                    <asp:Label ID="mail"  runat="server" Font-Size="Large" Text=""></asp:Label>
+                </div>
+                <div class="d-flex justify-content-start">
+                    <asp:Label runat="server" Width="10%" Text="Dirección:" Font-Size="Large">  </asp:Label>
+                    <asp:Label ID="address"  runat="server" Font-Size="Large" Text=""></asp:Label>
+                </div>
+                <div class="d-flex justify-content-start">
+                    <asp:Label runat="server" Width="10%" Text="Empresa:" ID="company" Visible="false" Font-Size="Large">  </asp:Label>
+                    <asp:Label ID="company1"  runat="server" Font-Size="Large" Text=""></asp:Label>
+                </div>
             </div>
         </div>
     </div>

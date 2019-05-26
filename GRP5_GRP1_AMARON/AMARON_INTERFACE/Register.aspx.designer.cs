@@ -22,6 +22,15 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.TextBox tb_name;
         
         /// <summary>
+        /// Control RequiredName.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredName;
+        
+        /// <summary>
         /// Control tb_birth.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.Label Error_Birth;
         
         /// <summary>
+        /// Control RequiredBirthdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredBirthdate;
+        
+        /// <summary>
         /// Control tb_email.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,24 @@ namespace AMARON_INTERFACE {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tb_email;
+        
+        /// <summary>
+        /// Control RequiredEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredEmail;
+        
+        /// <summary>
+        /// Control RegularExpressionValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
         /// Control tb_password.
@@ -58,6 +94,24 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.TextBox tb_password;
         
         /// <summary>
+        /// Control PasswordValidator.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator PasswordValidator;
+        
+        /// <summary>
+        /// Control RequiredPassword.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredPassword;
+        
+        /// <summary>
         /// Control tb_email_confirm.
         /// </summary>
         /// <remarks>
@@ -67,13 +121,22 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.TextBox tb_email_confirm;
         
         /// <summary>
-        /// Control Error_email.
+        /// Control RequiredEmailCheck.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Error_email;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredEmailCheck;
+        
+        /// <summary>
+        /// Control CompareValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
         
         /// <summary>
         /// Control tb_password_confirm.
@@ -85,13 +148,31 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.TextBox tb_password_confirm;
         
         /// <summary>
-        /// Control Error_password.
+        /// Control PasswordCheckValidator.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Error_password;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator PasswordCheckValidator;
+        
+        /// <summary>
+        /// Control RequiredPasswordCheck.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredPasswordCheck;
+        
+        /// <summary>
+        /// Control CompareValidator2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator2;
         
         /// <summary>
         /// Control tb_delivery_address.
@@ -103,6 +184,42 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.TextBox tb_delivery_address;
         
         /// <summary>
+        /// Control RequiredAddress.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredAddress;
+        
+        /// <summary>
+        /// Control form2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl form2;
+        
+        /// <summary>
+        /// Control pictureUpload.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload pictureUpload;
+        
+        /// <summary>
+        /// Control tb_empresa.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_empresa;
+        
+        /// <summary>
         /// Control Button_register.
         /// </summary>
         /// <remarks>
@@ -110,6 +227,15 @@ namespace AMARON_INTERFACE {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button_register;
+        
+        /// <summary>
+        /// Control Label_Duplicate_Error.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Duplicate_Error;
         
         /// <summary>
         /// Control Label_Sending_Error.

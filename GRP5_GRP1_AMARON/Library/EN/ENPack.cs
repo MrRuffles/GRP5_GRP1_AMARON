@@ -14,6 +14,10 @@ namespace Library
         private string name;
         private float price;
         private string description;
+        private int stock;
+        private string brand;
+        private string type;
+        private string urlImage;
 
         public string namePack
         {
@@ -51,11 +55,54 @@ namespace Library
             }
         }
 
-        public ENPack(string name, float price, string description)
+        public int stockPack
+        {
+
+            get { return this.stock; }
+
+            set { this.stock = value; }
+
+        }
+
+        public string brandPack
+        {
+
+            get { return this.brand; }
+
+            set { this.brand = value; }
+
+        }
+
+        public string typePack
+        {
+
+            get { return this.type; }
+
+            set { this.type = value; }
+
+        }
+
+        public string urlPack
+        {
+
+            get { return this.urlImage; }
+
+            set { this.urlImage = value; }
+
+        }
+
+
+
+        public ENPack(string name, float price, string description, string url, int stock, string brand)
         {
             this.name = name;
             this.price = price;
             this.description = description;
+            this.urlImage = url;
+            this.stock = stock;
+            this.brand = brand;
+            this.type = "pack";
+
         }
 
         public bool createPack()

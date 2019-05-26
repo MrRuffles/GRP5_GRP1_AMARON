@@ -2,6 +2,8 @@
 
 using System;
 using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Library
 {
@@ -14,19 +16,73 @@ namespace Library
         /**  Initializes connection string to data base  **/
         public CADProvider()
         {
-            constring = ConfigurationManager.ConnectionStrings["conex"].ConnectionString;
+            constring = ConfigurationManager.ConnectionStrings["AmaronDataBase"].ConnectionString;
         }
 
         /**  Adds a new provider to data base  **/
         public bool CreateProvider(ENProvider provider)
         {
-            return false;
+            SqlConnection con = new SqlConnection(constring);
+            bool correct = true;
+            try
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+                    cmd.CommandText = "INSERT INTO Users (name, password, email, birthdate, urlImage, empresa, address) values ('" + provider.name + "', '" + provider.pass + "', '" + provider.email + "', '" + provider.birth.ToString("yyyy-MM-dd") + "', '" + provider.url + "', '" + provider.company + "', '" + provider.address + "');";
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+                correct = false;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return correct;
         }
 
         /**  Reads a provider from data base  **/
         public bool ReadProvider(ENProvider provider)
         {
-            return false;
+            SqlConnection con = new SqlConnection(constring);
+            bool correct = true;
+
+
+            try
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+                    cmd.CommandText = "SELECT empresa FROM Users where email='" + provider.email + "';";
+                    SqlDataReader auxLectura = cmd.ExecuteReader();
+
+                    while (auxLectura.Read())
+                    {
+                        provider.empresa = Convert.ToString(auxLectura[0]);
+                    }
+                    auxLectura.Close();
+                }
+
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+                correct = false;
+            }
+            finally
+            {
+                con.Close();
+
+            }
+
+            return correct;
         }
 
         /** Updates a provider from data base **/
