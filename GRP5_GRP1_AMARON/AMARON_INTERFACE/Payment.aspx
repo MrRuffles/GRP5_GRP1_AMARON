@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Payment.aspx.cs" Inherits="AMARON_INTERFACE.Payment" %>
+﻿<%@ Page Title="Pago" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Payment.aspx.cs" Inherits="AMARON_INTERFACE.Payment" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -47,47 +47,58 @@
         </div>
         <div class ="row">
             <div class="col-md-2">
-                <asp:Label ID="Label1" runat="server" Text="Dirección de envío: "></asp:Label>
+                <asp:Label ID="Label1" Font-Size="Larger" runat="server" Text="Dirección de envío: "></asp:Label>
             </div>
             <div class="col-md-2">
-                <asp:Label ID="Direccion" Text="" runat="server"  BorderColor="Window" CssClass="form-control"></asp:Label>
+                <asp:Label ID="Direccion" Text="" runat="server" Font-Size="Large"></asp:Label>
+            </div>
+            <div class="col-md-2">
+                <asp:Button ID="Cambio" Text="Cambiar Dirección" OnClick="Button_ChangeDir" CausesValidation="False" UseSubmitBehavior="False" runat="server" Cssclass="btn btn-outline-secondary"></asp:Button>
             </div>
         </div>
+        <hr />
         <div class="row">
             <div class ="col-md-2">
-                <asp:Label ID="Titular" runat="server" Text="Titular de la tarjeta: "></asp:Label>
+                <asp:Label ID="Titular" runat="server" Font-Size="Larger" Text="Titular de la tarjeta: *"></asp:Label>
             </div>
             <div class="col-md-2">
                 <asp:TextBox ID="nombre" runat="server" CssClass="form-control" oninvalid="this.setCustomValidity('Nombre y apellidos del titular')"
                             oninput="this.setCustomValidity('')" ></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredName" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="nombre" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                 </div>
         </div>
         <div class="row">
             <div class="col-md-2">
-                <asp:Label ID="numero" runat="server" Text="Número de tarjeta: "></asp:Label>&nbsp;
+                <asp:Label ID="numero" runat="server" Font-Size="Larger" Text="Número de tarjeta: *"></asp:Label>&nbsp;
             </div>
             <div class="col-md-2">
                 <div class="form-group form-inline">
                     <asp:TextBox ID="Tarjeta" runat="server" CssClass="form-control" oninvalid="this.setCustomValidity('Numero de tarjeta')"
                             oninput="this.setCustomValidity('')" MaxLength="16"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="Tarjeta" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="Tarjeta" ValidationExpression="^\d{16}$"  CssClass="ValidationError" runat="server" ErrorMessage="La Tarjeta deben tener 16 dígitos."></asp:RegularExpressionValidator>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-2">
-                <asp:Label ID="mes" runat="server" Text="Mes de caducidad: "></asp:Label>&nbsp;
+                <asp:Label ID="mes" runat="server" Font-Size="Larger" Text="Mes de caducidad: *"></asp:Label>&nbsp;
             </div>
             <div class="col-md-2">
                 <div class="form-group form-inline">
-                    <asp:TextBox runat="server" ID="MesCad" MaxLength="2" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="MesCad" MaxLength="2" CssClass="form-control" placeholder="MM"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="MesCad" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="MesCad" ValidationExpression="^\d{2}$"  CssClass="ValidationError" runat="server" ErrorMessage="Mes formado por 2 dígitos."></asp:RegularExpressionValidator>
                 </div>
             </div>
             <div class="col-md-2">
-                <asp:Label ID="ano" runat="server" Text="Año de caducidad: "></asp:Label>
+                <asp:Label ID="ano" runat="server" Font-Size="Larger" Text="Año de caducidad: *"></asp:Label>
             </div>
             <div class="col-md-2">
                 <div class="form-group form-inline">
-                    <asp:TextBox runat="server" ID="AnoCad" MaxLength="4" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="AnoCad" MaxLength="4" CssClass="form-control" placeholder="AAAA"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="AnoCad" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" ControlToValidate="AnoCad" ValidationExpression="^\d{4}$"  CssClass="ValidationError" runat="server" ErrorMessage="Año formado por 4 dígitos."></asp:RegularExpressionValidator>
                     <asp:Label ID="Error_Caducidad" runat="server" Text="Tarjeta caducada" ForeColor="Red" Visible="False" ></asp:Label>
                     <asp:Label ID="Error_Fecha" runat="server" Text="Mes inválido" ForeColor="Red" Visible="False" ></asp:Label>
                 </div>
@@ -95,11 +106,13 @@
          </div>
         <div class="row">
             <div class="col-md-2">
-                <asp:Label ID="CodCVC" runat="server" Text="Código CVC: "></asp:Label>
+                <asp:Label ID="CodCVC" runat="server" Font-Size="Larger" Text="Código CVC: *"></asp:Label>
             </div>
             <div class="col-md-2">
                 <div class="form-group form-inline">
                     <asp:TextBox ID="CVC" runat="server" CssClass="form-control" MaxLength="3"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="CVC" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator4" ControlToValidate="CVC" ValidationExpression="^\d{3}$"  CssClass="ValidationError" runat="server" ErrorMessage="CVC formado por 3 dígitos."></asp:RegularExpressionValidator>
                 </div>
             </div>
         </div>

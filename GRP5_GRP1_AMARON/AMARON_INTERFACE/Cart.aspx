@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="AMARON_INTERFACE.Cart" %>
+﻿<%@ Page Title="Carrito" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="AMARON_INTERFACE.Cart" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
 
@@ -72,7 +72,7 @@
                 </SelectParameters>
             </asp:SqlDataSource>
         </div>
-        <h5>&nbsp<asp:Button ID="Button" Text="Finalizar Compra" runat="server" OnClick="Button_FinCompra"></asp:Button></h5>
+        <h5>&nbsp<asp:Button ID="Button" CssClass="btn btn-outline-secondary" Text="Finalizar Compra" runat="server" OnClick="Button_FinCompra"></asp:Button></h5>
     </div>
     <br />
     

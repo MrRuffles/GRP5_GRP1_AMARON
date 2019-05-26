@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="AMARON_INTERFACE.Login" %>
+﻿<%@ Page Title="Iniciar Sesión" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="AMARON_INTERFACE.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
@@ -26,7 +26,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="align-content: center; align-items: center; text-align: center">
         <h1 style="padding: 50px 0px 0px 0px; font-size: 50px; text-align: center; align-items: center">Inicio de sesión</h1>
-        <hr width="60%" align="center" />
+        <hr style=" width:60%; align-self:center" />
         <asp:Label ID="login_label" runat="server" CssClass="text-success text-center"></asp:Label>
         <div class=" d-flex justify-content-center" style="">
             <div id="login-group" class="card">

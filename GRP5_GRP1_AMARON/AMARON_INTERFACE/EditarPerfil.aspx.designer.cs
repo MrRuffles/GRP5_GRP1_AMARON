@@ -76,6 +76,15 @@ namespace AMARON_INTERFACE {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator PasswordValidator;
         
         /// <summary>
+        /// Control RequiredPass.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredPass;
+        
+        /// <summary>
         /// Control delete_account_label.
         /// </summary>
         /// <remarks>

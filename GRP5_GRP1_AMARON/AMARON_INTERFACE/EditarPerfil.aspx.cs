@@ -108,7 +108,7 @@ namespace AMARON_INTERFACE
             HttpCookie cookie = Request.Cookies["damncookie"];
             if (cookie != null)
             {
-                ENUser user = new ENUser("", "", email, new DateTime(), "", "", "");
+                ENUser user = new ENUser(0,"", "", email, new DateTime(), "", "", "");
                 if (user.ReadUserEDPerfil())
                 {
                     if (user.DeleteUser())

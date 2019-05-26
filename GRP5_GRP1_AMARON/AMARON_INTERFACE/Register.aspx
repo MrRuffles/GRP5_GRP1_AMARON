@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="AMARON_INTERFACE.Register" %>
+﻿<%@ Page Title="Registro" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="AMARON_INTERFACE.Register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
@@ -22,7 +22,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="align-content: center; align-items: center; text-align: center">
         <h2 style="padding: 50px 0px 0px 0px; font-size: 50px; text-align: center; align-items: center">Registro</h2>
-        <hr width="60%" align="center" />
+        <hr style="width :60%; align-self: center"  />
     </div>
     <div class="container col-md-8" id="register-form">
         <div class="row rounded" style="border-radius: 200px; background-color: coral">
@@ -58,6 +58,7 @@
                                 <asp:TextBox runat="server" ID="tb_email" TextMode="Email" CssClass="form-control" placeholder="Introduzca su email" oninvalid="this.setCustomValidity('Introduzca un email válido: ex@abc.xyz')"
                                     oninput="this.setCustomValidity('')" onkeyup="EnforceMaximumLength(this,320)"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredEmail" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_email" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="tb_email" ValidationExpression="^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*\s*$"  CssClass="ValidationError" runat="server" ErrorMessage="El mail debe adecuerse a example@email.com"></asp:RegularExpressionValidator>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -81,7 +82,8 @@
                                 <asp:TextBox runat="server" ID="tb_email_confirm" TextMode="Email" CssClass="form-control" placeholder="Introduzca su email de nuevo" oninvalid="this.setCustomValidity('Introduzca un email válido: ex@abc.xyz')"
                                     oninput="this.setCustomValidity('')" onkeyup="EnforceMaximumLength(this,320)"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredEmailCheck" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_email_confirm" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
-                                <asp:Label runat="server" ID="Error_email" ForeColor="Red" Visible="false" Text="¡Los emails deben coincidir!"></asp:Label>
+                                <asp:CompareValidator ID="CompareValidator1" ControlToValidate="tb_email_confirm" ControlToCompare="tb_email" runat="server" ErrorMessage="¡Los emails deben coincidir!"></asp:CompareValidator>
+                                
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -92,7 +94,7 @@
                                 <asp:TextBox runat="server" ID="tb_password_confirm" TextMode="password" CssClass="form-control" placeholder="********"></asp:TextBox>
                                 <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="tb_password_confirm" ID="PasswordCheckValidator" ValidationExpression="^[\s\S]{6,15}$" runat="server" ErrorMessage="Tu contraseña debe tener entre 6 y 15 caracteres."></asp:RegularExpressionValidator>
                                 <asp:RequiredFieldValidator ID="RequiredPasswordCheck" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_Password_confirm" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
-
+                                <asp:CompareValidator ID="CompareValidator2" ControlToValidate="tb_password_confirm" ControlToCompare="tb_password" runat="server" ErrorMessage="¡Las contraseñas deben coincidir!"></asp:CompareValidator>
                             </div>
                         </div>
                     </div>

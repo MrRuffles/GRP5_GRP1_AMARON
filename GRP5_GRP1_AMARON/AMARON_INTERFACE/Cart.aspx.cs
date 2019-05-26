@@ -11,7 +11,10 @@ namespace AMARON_INTERFACE
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(GridView1.Rows.Count == 0)
+            {
+                Button.Enabled = false;
+            }
         }
 
         protected void Button_FinCompra(object sender, EventArgs e)

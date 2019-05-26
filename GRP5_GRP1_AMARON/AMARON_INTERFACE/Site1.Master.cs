@@ -74,13 +74,6 @@ namespace AMARON_INTERFACE
             Response.Cookies["damncookie"].Expires = DateTime.Now.AddDays(-1);
             Response.Redirect("Default.aspx");
         }
-        protected void ImageButtonHeader_Click(object sender, ImageClickEventArgs e)
-        {
-            //if (Page.IsValid)
-            //{
-                Response.Redirect("Perfil.aspx");
-            //}
-        }
 
         protected void username_menu_button_Click(object sender, EventArgs e)
         {

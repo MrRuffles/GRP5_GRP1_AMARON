@@ -25,7 +25,6 @@ namespace AMARON_INTERFACE
             Label_Sending_Error.Visible = false;
             Error_Birth.Text= "Debes ser mayor de 18 años";
             Error_Birth.Visible = false;
-            Error_email.Visible = false;
             Label_Duplicate_Error.Visible = false;
         }
         protected void Button_register_click(object sender, EventArgs e)

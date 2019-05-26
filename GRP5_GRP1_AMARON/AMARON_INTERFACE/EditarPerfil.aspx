@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="EditarPerfil.aspx.cs" Inherits="AMARON_INTERFACE.EditarPerfil" %>
+<%@ Page Title="Editar Perfil" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="EditarPerfil.aspx.cs" Inherits="AMARON_INTERFACE.EditarPerfil" %>
 
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
@@ -104,7 +104,7 @@
                     <asp:Label runat="server" CssClass="justify-content-start" Text="Cambiar contraseña:" Font-Size="Larger"></asp:Label>
                     <asp:TextBox runat="server" ID="pass" class="form-control" TextMode="password" placeholder="Nueva contraseña"></asp:TextBox>
                     <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="pass" ID="PasswordValidator" ValidationExpression="^[\s\S]{6,15}$" runat="server" ErrorMessage="Tu contraseña debe tener entre 6 y 15 caracteres."></asp:RegularExpressionValidator>
-                    
+                    <asp:RequiredFieldValidator ID="RequiredPass" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="pass" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
             <div class="row" style="margin-top: 5px; margin-left:1px">
                 <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-success" Text="Guardar Información" />
             </div>
@@ -112,8 +112,8 @@
                 <div class="col-md-6">
                     <asp:Label runat="server" ID="delete_account_label" Visible="false" CssClass="justify-content-start"  Text="¿Desea desactivar su cuenta?" Font-Size="Small"></asp:Label>
                     <asp:Label runat="server" ID="delete_check_label" Visible="false" CssClass="justify-content-start" Text="Esta accón no se puede revertir. ¿Estás segur@?" ForeColor="Red"> </asp:Label>
-                    <asp:Button runat="server" ID="delete_request_button" Visible="false" OnClick="Delete_Request" class="btn btn-outline-dark " Text="Eliminar Cuenta" />
-                    <asp:Button runat="server" ID="delete_account_button" Visible="false" OnClick="Delete_Click" class="btn btn-outline-danger" Text="Eliminar Cuenta" />
+                    <asp:Button runat="server" ID="delete_request_button" Visible="false" OnClick="Delete_Request" class="btn btn-outline-dark " Text="Eliminar Cuenta" CausesValidation="False" UseSubmitBehavior="False"/>
+                    <asp:Button runat="server" ID="delete_account_button" Visible="false" OnClick="Delete_Click" class="btn btn-outline-danger" Text="Eliminar Cuenta" CausesValidation="False" UseSubmitBehavior="False" />
                 </div>
             </div>
         </div>

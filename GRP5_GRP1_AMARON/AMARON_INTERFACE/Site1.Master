@@ -44,7 +44,7 @@
         <div>
             <div id="header" class="col sticky-top" style="background-color: coral">
                 <div id="logo" class="row">
-                    <asp:ImageButton ID="ImageButtonHeader" OnClick="ImageButtonHeader_Click" runat="server" ImageUrl="Imagenes/ron.jpg" Width="100%" Height="105px" />
+                    <asp:Image ID="ImageHeader" runat="server" ImageUrl="Imagenes/ron.jpg" Width="100%" Height="105px"/>
                 </div>
                 <span></span>
                 <div id="nav-bar"  class="row">
@@ -74,7 +74,7 @@
             </asp:ContentPlaceHolder>
             <div style="margin-top:250px" id="footer">
                 <ul>
-                    <li><a href="AboutUs.aspx">About Us</a></li>
+                    <li><a href="AboutUs.aspx">Sobre Nosotros</a></li>
                 </ul>
                 <span>&copy; 2019 - Alcohol para todos!!</span>
             </div>
