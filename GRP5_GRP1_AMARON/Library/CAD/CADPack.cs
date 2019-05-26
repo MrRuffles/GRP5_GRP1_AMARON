@@ -12,7 +12,7 @@ namespace Library
         private string constring;
         public CADPack()
         {
-
+            constring = ConfigurationManager.ConnectionStrings["AmaronDataBase"].ConnectionString;
         }
 
         public bool createPack(ENPack en)
@@ -26,7 +26,7 @@ namespace Library
                  con.Open();
                  using (SqlCommand cmd = new SqlCommand("", con))
                  {
-                     cmd.CommandText = "INSERT INTO Product (name, pvp, stock, brand, type, urlImage) values ('" + en.namePack + "', '" + en.pricePack + "', '" + en.stockPack + "', " + en.brandPack + ", '" + en.typePack + "', '" + en.urlPack + "');";
+                     cmd.CommandText = "INSERT INTO Product (name, pvp, stock, brand, type, urlImage) values ('" + en.namePack + "', " + en.pricePack + ", " + en.stockPack + ", '" + en.brandPack + "', '" + en.typePack + "', '" + en.urlPack + "');";
                      cmd.ExecuteNonQuery();
                  }
 

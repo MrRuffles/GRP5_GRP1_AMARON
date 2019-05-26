@@ -14,6 +14,8 @@ namespace AMARON_INTERFACE
 
         protected void Page_Load(object sender, EventArgs e){
 
+            ProductCreatedLabel.Visible = false;
+
             //Control Volume range values
             NewProdVolumeRV.MaximumValue = "999999999999999999999999.99999999999999";
             NewProdVolumeRV.MinimumValue = "0.0";
@@ -90,18 +92,37 @@ namespace AMARON_INTERFACE
                 }
 
                                 
-                //When the product type is "miscelanea"
+                //When the product type is "miscelanea" or "pack"
                 if (ProdTypeDropDown.Items[1].Selected || ProdTypeDropDown.Items[2].Selected)
                 {
+                    if (ProdTypeDropDown.Items[2].Selected)
+                    {
+                        ENPack pack = new ENPack(newProduct.name, newProduct.price, newProduct.description, newProduct.url, newProduct.stock, newProduct.brand);
 
-                    if (newProduct.CreateProduct()){
+                        if (pack.createPack())
+                        {
 
-                        ProductCreatedLabel.Visible = true;
+                            ProductCreatedLabel.Visible = true;
 
-                    }else{
+                        }
+                        else
+                        {
 
-                        ErrorCreatingProductLabel.Visible = true;
+                            ErrorCreatingProductLabel.Visible = true;
 
+                        }
+                    }
+                    else {
+
+                        if (newProduct.CreateProduct()) {
+
+                            ProductCreatedLabel.Visible = true;
+
+                        } else {
+
+                            ErrorCreatingProductLabel.Visible = true;
+
+                        }
                     }
                     
                 //product type is "botella"

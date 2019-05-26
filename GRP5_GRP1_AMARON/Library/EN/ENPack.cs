@@ -93,11 +93,16 @@ namespace Library
 
 
 
-        public ENPack(string name, float price, string description)
+        public ENPack(string name, float price, string description, string url, int stock, string brand)
         {
             this.name = name;
             this.price = price;
             this.description = description;
+            this.urlImage = url;
+            this.stock = stock;
+            this.brand = brand;
+            this.type = "pack";
+
         }
 
         public bool createPack()

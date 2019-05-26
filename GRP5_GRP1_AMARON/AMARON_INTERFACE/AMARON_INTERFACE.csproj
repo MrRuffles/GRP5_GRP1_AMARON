@@ -155,7 +155,8 @@
     <Content Include="Imagenes\Sombrillas.jpg" />
     <Content Include="Imagenes\Vasos.jpg" />
     <Content Include="Imagenes\Vasos_Colores.jpg" />
-	<Content Includ <Content Include="Orders.aspx" />
+    <Content Include="Imagenes\Vasos_Colores.jpg" /> 
+    <Content Include="Orders.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="EditarPerfil.aspx" />
     <Content Include="AboutUs.aspx" />

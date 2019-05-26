@@ -110,7 +110,8 @@
                     <asp:listitem text="Sidra" value="10"></asp:listitem>
                     <asp:listitem text="Licor" value="11"></asp:listitem>
                     <asp:listitem text="Vodka" value="12"></asp:listitem>
-                    <asp:listitem text="Otro" value="13"></asp:listitem>
+                    <asp:ListItem Text="Vermut" Value="13"></asp:ListItem>
+                    <asp:listitem text="Otro" value="14"></asp:listitem>
                 </asp:DropDownList>
             </div>
         </div>    
