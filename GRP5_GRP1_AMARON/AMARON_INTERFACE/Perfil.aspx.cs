@@ -31,8 +31,19 @@ namespace AMARON_INTERFACE
                         productos.Visible = true;
                         pedidios.Visible = false;
                     }
+                    else
+                    {
+                        pedidios.Visible = true;
+                    }
                     fotoPerfil.ImageUrl = user.url;
+                    edit_button.Visible = true;
+
                 }
+                
+            }
+            else
+            {
+                Response.Redirect("Default.aspx");
             }
         }
 

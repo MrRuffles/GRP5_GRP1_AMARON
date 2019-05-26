@@ -26,13 +26,14 @@ namespace AMARON_INTERFACE
             Error_Birth.Text= "Debes ser mayor de 18 años";
             Error_Birth.Visible = false;
             Error_email.Visible = false;
+            Label_Duplicate_Error.Visible = false;
         }
         protected void Button_register_click(object sender, EventArgs e)
         {
-
+            bool duplicate = EmailExist();
             DateTime BirthDate = DateTime.ParseExact(tb_birth.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture);
             ClearBoxes();
-            if(check_age(BirthDate))
+            if(check_age(BirthDate) && !duplicate )
             {
                 HttpPostedFile file = pictureUpload.PostedFile;
                 string url = "";
@@ -88,6 +89,9 @@ namespace AMARON_INTERFACE
                         Label_Sending_Error.Visible = true;
                     }
                 }
+            }else if (duplicate)
+            {
+                Label_Duplicate_Error.Visible = true;
             }
         }
         protected bool check_age(DateTime tempDate)
@@ -114,6 +118,14 @@ namespace AMARON_INTERFACE
                     return true;
                 }
             }
+        }
+        protected bool EmailExist()
+        {
+            ENUser user = new ENUser();
+            user.email = tb_email.Text;
+            if (user.EmailExist())
+                return true;
+            return false;
         }
     }
 }

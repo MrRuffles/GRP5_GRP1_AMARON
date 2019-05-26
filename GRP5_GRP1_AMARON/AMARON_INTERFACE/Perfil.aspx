@@ -53,8 +53,8 @@
             <div class="col-md-13">
                 <br/>
                 <ul class="list-group list-primary">
-                    <asp:Button runat="server" ID="pedidios" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" onclick="verPedidos" text="Ver pedidos hechos" Visible="true"/>
-                    <asp:Button runat="server" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" onclick="editarPerfil" text="Editar perfil"/>
+                    <asp:Button runat="server" ID="pedidios" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" onclick="verPedidos" text="Ver pedidos hechos" Visible="false"/>
+                    <asp:Button runat="server" ID="edit_button" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" Visible="false" onclick="editarPerfil" text="Editar perfil"/>
                     <asp:Button runat="server" ID="productos" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" onclick="crearProducto" text="Subir Producto" Visible="false"/>
                 </ul>
             </div>

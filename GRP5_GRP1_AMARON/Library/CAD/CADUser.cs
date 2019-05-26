@@ -78,16 +78,22 @@ namespace Library
 
                     }
 
+                    if(!auxLectura.HasRows)
+                    {
+                        correct = false;
+                    }
+                    else
+                    {
+                        byte[] hashBytes = Convert.FromBase64String(savedPass);
+                        byte[] salt = new byte[16];
+                        Array.Copy(hashBytes, 0, salt, 0, 16);
+                        var pbkdf2 = new Rfc2898DeriveBytes(user.pass, salt, 1000);
+                        byte[] hash = pbkdf2.GetBytes(20);
 
-                    byte[] hashBytes = Convert.FromBase64String(savedPass);
-                    byte[] salt = new byte[16];
-                    Array.Copy(hashBytes, 0, salt, 0, 16);
-                    var pbkdf2 = new Rfc2898DeriveBytes(user.pass, salt, 1000);
-                    byte[] hash = pbkdf2.GetBytes(20);
-
-                    for (int i = 0; i < 20; i++)
-                        if (hashBytes[i + 16] != hash[i])
-                            correct = false;
+                        for (int i = 0; i < 20; i++)
+                            if (hashBytes[i + 16] != hash[i])
+                                correct = false;
+                    }
                     auxLectura.Close();
                 }
 
@@ -101,7 +107,6 @@ namespace Library
             finally
             {
                 con.Close();
-
             }
 
             return correct;
@@ -126,7 +131,7 @@ namespace Library
                     {
                         user.name = Convert.ToString(auxLectura[1]);
                         user.email = Convert.ToString(auxLectura[3]);
-                        user.birth = Convert.ToDateTime(auxLectura[4]); // Check
+                        user.birth = Convert.ToDateTime(auxLectura[4]);
                         user.url = Convert.ToString(auxLectura[5]);
                         if(auxLectura[6] != null) {
                             user.empresa = Convert.ToString(auxLectura[6]);
@@ -171,7 +176,7 @@ namespace Library
                         user.name = Convert.ToString(auxLectura[1]);
                         user.pass = Convert.ToString(auxLectura[2]);
                         user.email = Convert.ToString(auxLectura[3]);
-                        user.birth = Convert.ToDateTime(auxLectura[4]); // Check
+                        user.birth = Convert.ToDateTime(auxLectura[4]);
                         user.url = Convert.ToString(auxLectura[5]);
                         if (auxLectura[6] != null)
                         {
@@ -204,8 +209,7 @@ namespace Library
             return correct;
         }
 
-
-        public bool ReadID(ENUser user)
+        public bool EmailExist(ENUser user)
         {
             SqlConnection con = new SqlConnection(constring);
             bool correct = true;
@@ -215,18 +219,18 @@ namespace Library
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand("", con))
                 {
-                    cmd.CommandText = "SELECT userID FROM Users where email='" + user.email + "';";
-
+                    cmd.CommandText = "SELECT email, password FROM Users where email='" + user.email + "';"; // "' and password='" + user.pass + "';";
                     SqlDataReader auxLectura = cmd.ExecuteReader();
-
                     while (auxLectura.Read())
                     {
-                        user.userID = Convert.ToInt32(auxLectura["userID"]);
+                        user.email = Convert.ToString(auxLectura[0]);
                     }
-
+                    if (!auxLectura.HasRows)
+                    {
+                        correct = false;
+                    }
                     auxLectura.Close();
                 }
-
             }
             catch (SqlException ex)
             {
@@ -240,8 +244,43 @@ namespace Library
 
             return correct;
         }
+      
+        public bool ReadID(ENUser user)
+        {
+            SqlConnection con = new SqlConnection(constring);
+            bool correct = true;
+            
+            try
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+            
+                    cmd.CommandText = "SELECT userID FROM Users where email='" + user.email + "';";
 
+                    SqlDataReader auxLectura = cmd.ExecuteReader();
 
+                    while (auxLectura.Read())
+                    {
+                        user.userID = Convert.ToInt32(auxLectura["userID"]);
+                    }
+
+                    auxLectura.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+                correct = false;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return correct;
+        }
+      
         /** Updates a user from data base **/
         public bool UpdateUser(ENUser user)
         {
@@ -292,7 +331,32 @@ namespace Library
         /**  Deletes a user from data base  **/
         public bool DeleteUser(ENUser user)
         {
-            return true;
+            SqlConnection con = new SqlConnection(constring);
+            bool correct = true;
+
+            try
+            {
+                
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+                    cmd.CommandText = "delete from Users where email='" + user.email + "';";
+                    cmd.ExecuteNonQuery();
+                }
+
+                
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+                correct = false;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return correct;
         }
 
     }

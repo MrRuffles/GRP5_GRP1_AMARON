@@ -131,6 +131,7 @@
                         <div class="col-md-6">
                             <asp:Button CssClass="btn btn-success" ID="Button_register" OnClick="Button_register_click" runat="server" Text="Crea mi cuenta" />
                             <div class="align-baseline" style="text-align: left">
+                                <asp:Label ID="Label_Duplicate_Error" runat="server" CssClass="justify-content-start" Text="Esa dirección de email ya está en uso." Visible="false" ForeColor="darkred" Font-Size="Large"></asp:Label>
                                 <asp:Label ID="Label_Sending_Error" runat="server" Text="Hubo un error al crear su cuenta, pruebe de nuevo o contacte un administrador." Visible="false" ForeColor="red" Font-Size="Large"></asp:Label>
                                 <asp:Label ID="Label_Sending_Success" runat="server" Text="Tu cuenta ha sido creada" Visible="false" ForeColor="Green" CssClass="text-left btn" Font-Size="Large" Font-Italic="false"></asp:Label>
                                 <asp:Label ID="Label_Main" runat="server" Text="" Visible="false" ForeColor="Red" Font-Bold="false"></asp:Label>
