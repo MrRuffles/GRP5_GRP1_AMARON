@@ -12,10 +12,10 @@ Descripción:
 Se trata de una página web dirigida a la venta de bebidas alcholicas.
 
 Documento Base de Datos:
-- GRP5_GRP1_AMARON/GRP5_GRP1_AMARON/Esquema_BD.png
+- GRP5_GRP1_AMARON/GRP5_GRP1_AMARON/Esquema_BD_AMARON.jpg
 
 Documento Presentacion:
-- GRP5_GRP1_AMARON/GRP5_GRP1_AMARON/
+- GRP5_GRP1_AMARON/Presentacion_AMARON_v2.pptx
 
 
 ## Primera Propuesta:
