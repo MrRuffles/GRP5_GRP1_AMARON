@@ -138,8 +138,8 @@ Añadidos que no fueron contemplados en la propuesta inicial:
 - En la última entrega se dispone de poco tiempo para implementar la parte final de un proyecto de esta envergadura (poco mas de 20 días).
 
 
-
-
+### Tabla de actividad:
+- GRP5_GRP1_AMARON/Tabla_Actividades_Amaron.docx
 
 
 
