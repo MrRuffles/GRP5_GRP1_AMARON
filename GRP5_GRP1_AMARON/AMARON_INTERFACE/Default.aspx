@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="AMARON_INTERFACE.Default" %>
+﻿<%@ Page Title="AMARON" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="AMARON_INTERFACE.Default" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
@@ -45,31 +45,31 @@
     </div>
     <div class="row d-flex justify-content-around" style="margin-top:30px; margin-bottom:30px">
         <div class="card" style="width: 18rem;">
-            <asp:Image runat="server" ID="Image2" Height="270" ImageUrl="Imagenes/ron.jpg" AlternateText="Roncico pa to el mundo" />
+            <asp:Image runat="server" ID="Image2" Height="270" ImageUrl="~/Imagenes/ron.jpg" AlternateText="Roncico pa to el mundo" />
             <div class="card-body">
                 <h5 class="card-title">RON LOOTBOX</h5>
                 <p class="card-text">Quieres disfrutar de los rones mas exoticos del mundo, pues disfruta de este pack mensual con una seleccion diferente de los mejores rones.</p>
-                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Ver más..." />
+                <asp:Button ID="l1" runat="server" OnClick="l1_Click" class="btn btn-primary" Text="Ver más..." />
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <asp:Image runat="server" ID="Image3" ImageUrl="Imagenes/vodka.jpg" AlternateText="Agua para rusos" />
+            <asp:Image runat="server" ID="Image3" ImageUrl="~/Imagenes/vodka.jpg" AlternateText="Agua para rusos" />
             <div class="card-body">
                 <h5 class="card-title">VODKA LOOTBOX</h5>
                 <p class="card-text">Vodka para los mas valientes, sientete como un ciudadano del norte con esa seleccion de vodka mensual.</p>
-                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Ver más..." />
+                <asp:Button ID="l2" runat="server" OnClick="l2_Click" class="btn btn-primary" Text="Ver más..." />
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <asp:Image runat="server" ID="Image4" Height="270" ImageUrl="Imagenes/ginebra.jpg" AlternateText="Mejor en chupitazos" />
+            <asp:Image runat="server" ID="Image4" Height="270" ImageUrl="~/Imagenes/ginebra.jpg" AlternateText="Mejor en chupitazos" />
             <div class="card-body">
                 <h5 class="card-title">GINEBRA LOOTBOX</h5>
                 <p class="card-text">Para las fiestas más exquisitas, que mejor que una buena ginebra, descubre las mejores y más misteriosas, con este pack mensual de ginebra.</p>
-                <asp:Button runat="server" OnClick="Unnamed_Click" class="btn btn-primary" Text="Ver más..." />
+                <asp:Button ID="l3" runat="server" OnClick="l3_Click" class="btn btn-primary" Text="Ver más..." />
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <asp:Image runat="server" ID="Image5" Height="270" ImageUrl="Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
+            <asp:Image runat="server" ID="Image5" Height="270" ImageUrl="~/Imagenes/whisky.jpg" AlternateText="Siempre mejor con hielo" />
             <div class="card-body">
                 <h5 class="card-title">WHISKY LOOTBOX</h5>
                 <p class="card-text">Si siempre has querido probar como sabe un buen whisky, este es tu pack, nada más que decir solo pruebalo... :)</p>

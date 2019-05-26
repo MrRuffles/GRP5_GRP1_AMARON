@@ -5,23 +5,42 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
+using Library;
 
 namespace AMARON_INTERFACE
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {
+        protected bool Proveedor(string email)
+        {
+            ENProvider user = new ENProvider(email);
+            user.ReadProvider();
+            if (user.empresa == "")
+                return false;
+            return true;
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            cart_menu_button.Visible = false;
             HttpCookie cookie = Request.Cookies["damncookie"];
             if (cookie != null)
             {
-                
+                if (!Proveedor(cookie["username"]))
+                {
+                    cart_menu_button.Visible = true;
+                }
                 login_menu_button.Visible = false;
                 register_menu_button.Visible = false;
                 menu_logoff.Visible = true;
                 username_menu_button.Visible = true;
-                //username_menu_label.Text = Response.Cookies["authcookie"]["username"];
                 username_menu_button.Text = cookie["username"];
+                ENUser u = new ENUser(0, "", "", cookie["username"], new DateTime(), "", "", "");
+
+                if (u.ReadID())
+                {
+                    cart_menu_button.NavigateUrl = "Cart.aspx?userID=" + u.userID;
+                }
 
             }
             else
@@ -54,13 +73,6 @@ namespace AMARON_INTERFACE
         {
             Response.Cookies["damncookie"].Expires = DateTime.Now.AddDays(-1);
             Response.Redirect("Default.aspx");
-        }
-        protected void ImageButtonHeader_Click(object sender, ImageClickEventArgs e)
-        {
-            //if (Page.IsValid)
-            //{
-                Response.Redirect("Perfil.aspx");
-            //}
         }
 
         protected void username_menu_button_Click(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Product.aspx.cs" Inherits="AMARON_INTERFACE.Product" %>
+﻿<%@ Page Title="Producto" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Product.aspx.cs" Inherits="AMARON_INTERFACE.Product" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -10,18 +10,20 @@
         .container{
             margin-top: 50px;
             margin-bottom: 50px;
-            vertical-align:central;
+           
         }
         .prod-img{
             width: 250px;
             height: 400px;
         }
         .prod-name-label{
-           /*text-shadow: 2px 1px 1px #333;*/
-            border-bottom:0.5px ridge coral;
+           /*text-shadow: 1px 0.5px 0.5px #333;*/
+           border-bottom:0.5px ridge coral;
+           text-align:left;
         }
         .prod-info-label{
             color: black;
+            padding-top: 0.05em;
         }
         .btn-add-cart{
             background-color: coral;
@@ -37,97 +39,158 @@
             background-color: lawngreen;   
         }
        .prod-info-letter{
-            padding-top: 0.15em;
+            color: black;
+            padding-right: 0.25em;
        }
+       
+       .RatingStar{
+           height:30px;
+           width:30px;
+           cursor: pointer;
+           background-repeat: no-repeat;
+           display: block;
+       }
+       .Filled{
+           background-image: url("Imagenes/EstrellaRellena.png"); 
+                     
+       }
+       .Saved{
+           background-image:url("Imagenes/EstrellaMedio.png");
+       }
+       .Empty{
+           background-image: url("Imagenes/EstrellaVacia.png");
+       }
+       .Well{
+           text-align: start;
+       }
+
     </style>
     <title> PRODUCT PAGE </title>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <!-- Contiene las filas y columnas en las que se divide la página -->
-    <div class="container">
+    <div class="container" >
+           <!-- Wrong Amount raning Label -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-inline">
+                        <asp:Label ID="AmountErrorLabel" class="alert alert-danger" runat="server" Visible="false" Text="¡Este dato no puede ser 0!">
+                        </asp:Label>
+                    </div>
+                </div>
+            </div>
+            <!-- Feedback labels -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-inline">
+                        <asp:Label ID="ProductAddedLabel" class="alert alert-success" runat="server" Visible="false" Text="¡El producto ha sido añadido  al carrito con éxito!">
+                        </asp:Label>
+                    </div>
+                </div>
+            </div>
+            <!-- Rating Feedback labels -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-inline">
+                        <asp:Label ID="RatingSavedLabel" class="alert alert-success" runat="server" Visible="false" Text="¡Tu valarocación se ha guardado correctamente!">
+                        </asp:Label>
+                    </div>
+                </div>
+            </div>
         <!---------------------------------------- PRODUCT INFO SECTION ------------------------------------------------------->
         <div class="row">
 
-            <!-- Product Image --><!-- TODO: RESPONSIVE IMAGE-->
-            <div class="col-xs-6">
-                <asp:Image runat="server" ID="ProductImage" CssClass="img-responsive" ImageUrl="~/Imagenes/GIN_Puerto.jpg" />
+            <!-- Product Image -->
+            <div class="col-md-3 align-self-center">
+                <asp:Image runat="server" ID="ProductImage" CssClass="prod-img"/>
             </div>
 
             <!-- The media body is next to the media -->
-            <div class="col-xs-6">
+            <div class="col-md-6">
                     <!-- NAME -->
                     <div class="row">
-                        <div class="col-xs-1"> 
+                        <div class="col-xs-12 align-self-center"> 
                             <h4>
-                                <asp:Label ID="ProductName" runat="server" CssClass="prod-name-label" Text="GINEBRA CLÁSICA PUERTO DE INDIAS"></asp:Label>
+                                <asp:Label ID="ProductNameLabel" runat="server" CssClass="prod-name-label"></asp:Label>
                             </h4>
                         </div>                        
                     </div>
                     <!-- PRICE -->
                     <div class="row">
-                        <div class="col-xs-1">
-                            <h5 style="padding-top:0.15em">PVP:&nbsp;</h5>
+                        <div class="col-xs-1 align-self-center">
+                            <h5>
+                                <asp:Label ID="PVPLabel" runat="server" CssClass="prod-info-letter" Text="PVP: "></asp:Label>
+                            </h5>
                         </div>
-                        <div class="col-xs-1">
-                            <h5><asp:Label ID="ProductPriceLabel" CssClass="prod-info-label" runat="server" Text="13.50€"></asp:Label></h5>
+                        <div class="col-xs-2 align-self-center">
+                            <h5>
+                                <asp:Label ID="ProductPriceLabel" CssClass="prod-info-label" runat="server"></asp:Label>
+                            </h5>
                         </div>
                     </div>
                     <!-- VOLUME -->
                     <div class="row">
-                        <div class="col-xs-1">
-                            <h5 class="prod-info-letter">Volumen:&nbsp;</h5>
+                        <div class="col-xs-2 align-self-center">
+                            <h5>
+                                <asp:Label ID="VolumenLabel" CssClass="prod-info-letter" runat="server" Text="Volumen:" Visible="false"></asp:Label>
+                            </h5>
                         </div>
-                        <div class="col-xs-1">
-                            <h5><asp:Label ID="ProductGradeLabel" CssClass="prod-info-label" runat="server" Text="700ml"></asp:Label></h5>
+                        <div class="col-xs-2 align-self-center">
+                            <h5>
+                                <asp:Label ID="ProductVolumeLabel" CssClass="prod-info-label" runat="server" Visible="false"></asp:Label>
+                            </h5>
                         </div>                         
                     </div>
                     <!-- GRADE -->
                     <div class="row">
-                       <div class="col-xs-1">
-                           <h5 class="prod-info-letter">Grado:&nbsp;</h5>
+                       <div class="col-xs-1 align-self-center">
+                           <h5>
+                               <asp:Label ID="GradoLabel" CssClass="prod-info-letter" runat="server" Text="Grado:" Visible="false"></asp:Label>
+                           </h5>
                        </div>
-                       <div class="col-xs-11">
-                            <h5><asp:label ID="ProductVolumeLabel" cssClass="prod-info-label" runat="server" Text="40.0%"></asp:label></h5>
+                       <div class="col-xs-2 align-self-center">
+                            <h5>
+                                <asp:label ID="ProductGradeLabel" cssClass="prod-info-label" runat="server" Visible="false"></asp:label>
+                            </h5>
                        </div>
                    </div>
-                   <!-- TYPE -->
+                   <!-- ALCOHOLIC TYPE -->
                    <div class="row">
-                       <div class="col-xs-1">
-                           <h5 class="prod-info-letter">Tipo:&nbsp;</h5>
+                       <div class="col-xs-1 align-self-center">
+                            <h5>
+                                <asp:Label ID="TipoDeAlcoholLabel" CssClass="prod-info-letter" runat="server" Text="Tipo de Alcohol: " Visible="false"></asp:Label>
+                            </h5>
                        </div>
-                       <div class="col-xs-1">
-                           <h5><asp:label ID="AlcoholTypeLabel" cssClass="prod-info-label" runat="server" Text="Ginebra"></asp:label></h5>
+                       <div class="col-xs-3 align-self-center">
+                           <h5><asp:label ID="ProdAlcoholTypeLabel" cssClass="prod-info-label" runat="server" Visible="false"></asp:label></h5>
                        </div>
                    </div>
                    <!-- BRAND -->
                    <div class="row">
-                        <div class="col-xs-1">
-                            <h5 class="prod-info-letter">Marca:&nbsp;</h5>
+                        <div class="col-xs-1 align-self-center">
+                            <h5>
+                                <asp:Label ID="MarcaLabel" CssClass="prod-info-letter" runat="server" Text="Marca: "></asp:Label>
+                            </h5>
                         </div>
-                        <div class="col-xs-1">
+                        <div class="col-xs-4 align-self-center">
                             <h5><asp:label ID="ProductBrandLabel" cssClass="prod-info-label" runat="server" Text="Puerto de Indias"></asp:label></h5>
                         </div>
                    </div>
                    <!-- CHOOSE QUANTITY -->
-                   <!--div class="row">
-                        <div class="col-xs-1">
-                            <h5 class="prod-info-letter">Cantidad:&nbsp;</h5>
-                        </div>
-                        <div class="col-xs-1">
-                           <asp:TextBox ID="ProdAmount" style="width: 40px" runat="server"></asp:TextBox>
-                        </div>
-                   <!--/div-->
                    <div class="row">
-                        <div class="col-xs-1 form-group form-inline">
-                            <h5 class="prod-info-letter"><label for="exampleInputName2">Cantidad:&nbsp;</label></h5>
-                            <asp:TextBox ID="ProdQuantity" style="width: 60px" CssClass="form-control" runat="server"></asp:TextBox>
+                        <div class="col-xs-1 form-group form-inline align-self-center">
+                            <h5>
+                                <asp:Label ID="CantidadLabel" CssClass="prod-info-letter" runat="server" Text="Cantidad: "></asp:Label>
+                            </h5>
+                            <asp:TextBox ID="ProdAmount" TextMode="Number" width="75px" CssClass="form-control" runat="server"></asp:TextBox>
+                            <asp:RangeValidator ID="AmountRV" runat="server" ControlToValidate="ProdAmount" ErrorMessage="¡Esta cantidad está fuera de stock!" Type="Integer"  style="margin-left:7px" ></asp:RangeValidator>
                        </div>
                    </div>
                     <!--ADD TO CART-->
                    <div class="row">
-                       <div class="col-xs-1">
+                       <div class="col-xs-1 align-self-center">
                            <asp:Button ID="AddCartButton" runat="server" CssClass="btn btn-add-cart" Text="AÑADIR AL CARRITO" OnClick="AddCartButton_Click"/>
                        </div>
                    </div>
@@ -137,37 +200,62 @@
         
         <!------------------------------------- DESCRIPTION SECTION ------------------------------------------------------------>        
         <div class="row" style="padding-top: 1em;">
-            <div class="col-xs-1">
-                <div class="jumbotron">
+            <div class="col-xs-1 align-self-center">
+                <div class="jumbotron" style="height: 250px;  width:750px">
                     <h6>DESCRIPCIÓN DEL PRODUCTO</h6>
-                    <asp:label ID="Label1" runat="server" CssClass="well"
-                        Text="Puerto de Indias es una ginebra Premium elaborada en Carmona (Sevilla), en una de las destilerías 
-                        más antiguas y con mayor tradición de Andalucía. 
-                        Gin Puerto de Indias Classic destaca por su carácter corpulento para una ginebra más intensa, más cítrica. 
-                        La lima, el pomelo, la cáscara de naranja y limón y el cilantro aportan al paladar un toque muy fresco.">
-                    </asp:label>
+                    <asp:label ID="DescriptionTextLabel" runat="server" CssClass="well" ></asp:label>
                 </div>
             </div>
+        </div>
+        <!----------------------------------------- RATING SECTION ------------------------------------------------------------------->
+        <!-- video que me ha ayudado: https://www.youtube.com/watch?v=D0ppJ7iF4y0 -->
+        <div class="row">
+            
+            <div class="col-md-2">
+                <asp:Label ID="RatingLabel" CssClass="prod-info-letter" runat="server" style="padding-top: 0.5em" Text="¡Valora este producto!"></asp:Label>
+            </div>
+            <div class="col-md-10">
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <ajaxToolkit:Rating ID="ratingStars" runat="server"
+                            MaxRating="5" Direction="LeftToRight"
+                            CurrentRating="0"
+                            StarCssClass="RatingStar"
+                            WaitingStarCSSClass="Saved"
+                            FilledStarCSSClass="Filled"
+                            EmptyStarCSSClass="Empty">
+                        </ajaxToolkit:Rating>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>            
         </div>
         <!----------------------------------------- COMMENTS SECTION ----------------------------------------------------------------->
         <div class="row">
-            <div class="col-xs-12">
-                <div class="row">
-                    <div class="col-xs-1">
-                         <label for="InputComment">¡Añade un comentario!</label>
+            <div class="col-md-12">
+
+                <div class="row"><!-- Comment text box-->
+                    <div class="col-md-6">
+                         <asp:Label ID="CommentLabel" runat="server" style="padding-top: 0.5em" Text="¡Añade un comentario!"></asp:Label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-1">
-                        <asp:TextBox ID="CommentTextBox" runat="server" style="padding-bottom: 0.5em"></asp:TextBox>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <asp:TextBox ID="CommentTextBox" type="text" TextMode="MultiLine" runat="server" style="padding-bottom: 0.5em" Rows="4"
+                                CssClass="form-control" width="650px"></asp:TextBox>
+                        </div>
+                    </div>
+                </div> <!-- Comment Text Box -->
+                
+                <div class="row"><!-- Send comment button -->
+                    <div>
+                        <asp:Button runat="server" ID="SendRating" cssclass="btn btn-success" style="margin-top:0.5em" Text="Enviar valoracion" OnClick="SendRating_Click"></asp:Button>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-1">
-                        <button type="submit" class="btn btn-success" style="margin-top:0.5em">Enviar Comentario</button>
-                    </div>
-                </div>
+
             </div>
-        </div>
+        </div><!-- END COMMENT SECTION -->
+
     </div><!--END CONTAINER-->
+        
 </asp:Content>

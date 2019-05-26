@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Catalog.aspx.cs" Inherits="AMARON_INTERFACE.Catalog" %>
+﻿<%@ Page Title="Catálogo" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Catalog.aspx.cs" Inherits="AMARON_INTERFACE.Catalog" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/bootstrap.min.js"></script>
@@ -138,9 +138,6 @@
                 </a>
                 <a class="nav-link" href="Catalog.aspx?cat=packs">
                     <li>Packs</li>
-                </a>
-                <a class="nav-link" href="Catalog.aspx?cat=loot">
-                    <li>Lootboxes</li>
                 </a>
                 <a class="nav-link" href="Catalog.aspx?cat=misc">
                     <li>Miscellaneous</li>

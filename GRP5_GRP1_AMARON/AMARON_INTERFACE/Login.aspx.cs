@@ -13,9 +13,12 @@ namespace AMARON_INTERFACE
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            HttpCookie cookie = Request.Cookies["damncookie"];
+            if (cookie != null)
+            {
+                Response.Redirect("Default.aspx");
+            }
         }
-
         protected void login_button_Click(object sender, EventArgs e)
         {
             
@@ -34,7 +37,7 @@ namespace AMARON_INTERFACE
             }
             else
             {
-                Response.Redirect("Login.aspx");
+                Label_Login_Error.Visible = true;
             }
         }
     }

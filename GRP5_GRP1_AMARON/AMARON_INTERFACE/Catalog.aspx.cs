@@ -21,9 +21,10 @@ namespace AMARON_INTERFACE
             {
                 DataTable t = prod.ReadProductBot();
                 int cont = 0;
-                for (int i = -1; i < t.Rows.Count % 3; i++)
+                int obj = t.Rows.Count;
+                for (int i = -1; i <( t.Rows.Count / 4); i++)
                 {
-                    int obj = t.Rows.Count;
+                    
                     TableRow row = new TableRow();
                     if (obj >= 4)
                     {
@@ -43,6 +44,7 @@ namespace AMARON_INTERFACE
                             cell.Controls.Add(hy);
                             row.Cells.Add(cell);
                             cont++;
+                            obj--;
                         }
                     }
                     else
@@ -72,9 +74,10 @@ namespace AMARON_INTERFACE
             {
                 DataTable t = prod.ReadProductPack();
                 int cont = 0;
-                for (int i = -1; i < t.Rows.Count % 3; i++)
+                int obj = t.Rows.Count;
+                for (int i = -1; i < (t.Rows.Count / 4); i++)
                 {
-                    int obj = t.Rows.Count;
+                    
                     TableRow row = new TableRow();
                     if (obj >= 4)
                     {
@@ -94,6 +97,7 @@ namespace AMARON_INTERFACE
                             cell.Controls.Add(hy);
                             row.Cells.Add(cell);
                             cont++;
+                            obj--;
                         }
                     }
                     else
@@ -123,9 +127,10 @@ namespace AMARON_INTERFACE
             {
                 DataTable t = prod.ReadProductMisc();
                 int cont = 0;
-                for (int i = -1; i < t.Rows.Count % 3; i++)
+                int obj = t.Rows.Count;
+                for (int i = -1; i < (t.Rows.Count / 4); i++)
                 {
-                    int obj = t.Rows.Count;
+                    
                     TableRow row = new TableRow();
                     if (obj >= 4)
                     {
@@ -145,6 +150,7 @@ namespace AMARON_INTERFACE
                             cell.Controls.Add(hy);
                             row.Cells.Add(cell);
                             cont++;
+                            obj--;
                         }
                     }
                     else
@@ -175,9 +181,9 @@ namespace AMARON_INTERFACE
 
                 DataTable t = prod.ReadProductCat();
                 int cont = 0;
-                for (int i = -1; i < t.Rows.Count % 3; i++)
+                int obj = t.Rows.Count;
+                for (int i = -1; i < (t.Rows.Count/4); i++)
                 {
-                    int obj = t.Rows.Count;
                     TableRow row = new TableRow();
                     if (obj >= 4)
                     {
@@ -197,6 +203,7 @@ namespace AMARON_INTERFACE
                             cell.Controls.Add(hy);
                             row.Cells.Add(cell);
                             cont++;
+                            obj--;
                         }
                     }
                     else
@@ -225,5 +232,3 @@ namespace AMARON_INTERFACE
         }
     }
 }
-
-//ControltoValidate(la id de lo se quiere validar) ErrorMesage Validationexpresion (dentro de regular)

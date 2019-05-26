@@ -8,18 +8,10 @@ using System.Configuration;
 
 namespace Library
 {
-    class ENLootCrate
+    public class ENLootCrate
     {
-        public enum SuscriptionType
-        {
-            Basic,
-            Normal,
-            Premium
-        }
-
         //Properties
         private string name;
-        private SuscriptionType type;
         private string description;
         private float price;
         private int stock;
@@ -38,18 +30,6 @@ namespace Library
             }
         }
 
-        public SuscriptionType typeLootCrate
-        {
-            get
-            {
-                return type;
-            }
-            set
-            {
-                type = value;
-            }
-        }
-
         public string descriptionLootCrate
         {
             get
@@ -62,48 +42,54 @@ namespace Library
             }
         }
 
-        public float priceLootCrate
+        private string typeLootCrate;
+        public string type
         {
             get
             {
-                return price;
+                return typeLootCrate;
             }
             set
             {
-                price = value;
+                typeLootCrate = value;
             }
         }
 
-        public int stockLootCrate
+        private float lootcrateprice;
+        public float price
         {
-
-            get { return this.stock; }
-
-            set { this.stock = value; }
-
-        }
-        public string brandLootCrate
-        {
-
-            get { return this.brand; }
-
-            set { this.brand = value; }
-
-        }
-        public string urlLootCrate
-        {
-
-            get { return this.urlImage; }
-
-            set { this.urlImage = value; }
+            get { return this.lootcrateprice;  }
+            set { this.lootcrateprice = value;  }
 
         }
 
-        public ENLootCrate(string name, SuscriptionType type, string description)
+        private string urlimg;
+
+        public string url
         {
+
+            get { return this.urlimg; }
+            set { this.urlimg = value; }
+        }
+
+        private int lootcrateID;
+        public int id {
+
+            get { return this.lootcrateID; }
+
+            set { this.lootcrateID = value; }
+
+        }
+
+
+        public ENLootCrate(int id, string name, float price, string description, string url, string type)
+        {
+            this.id = id;
             this.name = name;
-            this.type = type;
+            this.price = price;
+            this.url = url;
             this.description = description;
+            this.type = type;
         }
         
         public bool createLootCrate()
@@ -116,6 +102,12 @@ namespace Library
         {
             CADLootCrate ltc = new CADLootCrate();
             return ltc.readLootCrate(this);
+        }
+
+        public bool readLootCrateID()
+        {
+            CADLootCrate ltc = new CADLootCrate();
+            return ltc.readLootCrateID(this);
         }
 
         public bool updateLootCrate()

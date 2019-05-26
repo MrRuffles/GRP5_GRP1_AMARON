@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AboutUs.aspx.cs" Inherits="AMARON_INTERFACE.AboutUs" %>
+﻿<%@ Page Title="Sobre Nosotros" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AboutUs.aspx.cs" Inherits="AMARON_INTERFACE.AboutUs" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
@@ -78,7 +78,7 @@
                     </section>
                 <section class="about-map">
                     <h2>Dónde Estamos</h2>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3127.3630437906095!2d-0.5138438849322668!3d38.38685407965262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6236b980f079a5%3A0xf3dd7912db768f0a!2sEscuela+Polit%C3%A9cnica+Superior+I%2C+03690+San+Vicente+del+Raspeig%2C+Alicante!5e0!3m2!1ses!2ses!4v1556319457188!5m2!1ses!2ses" allowfullscreen></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3127.3630437906095!2d-0.5138438849322668!3d38.38685407965262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6236b980f079a5%3A0xf3dd7912db768f0a!2sEscuela+Polit%C3%A9cnica+Superior+I%2C+03690+San+Vicente+del+Raspeig%2C+Alicante!5e0!3m2!1ses!2ses!4v1556319457188!5m2!1ses!2ses"></iframe>
                 </section>
                 <section class="about-contact">
                     <h2>Contacta</h2>

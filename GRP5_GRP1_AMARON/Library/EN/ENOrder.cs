@@ -8,6 +8,12 @@ namespace Library
 {
     public class ENOrder
     {
+        private int OrderUser;
+        public int userID
+        {
+            get { return OrderUser; }
+            set { OrderUser = value; }
+        }
 
         private string OrderState;
         public string state
@@ -23,15 +29,16 @@ namespace Library
             set { OrderCost = value; }
         }
 
-        private string OrderDate;
-        public string date
+        private DateTime OrderDate;
+        public DateTime date
         {
             get { return OrderDate; }
             set { OrderDate = value; }
         }
 
-        public ENOrder(string state, float cost, string date)
+        public ENOrder(int userID, string state, float cost, DateTime date)
         {
+            this.userID = userID;
             this.state = state;
             this.cost = cost;
             this.date = date;
@@ -41,7 +48,7 @@ namespace Library
         {
             state = "";
             cost = 0;
-            date = "0/0/0";
+            date = DateTime.Now;
         }
 
         public bool CreateOrder()
