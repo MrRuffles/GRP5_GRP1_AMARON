@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="AMARON_INTERFACE.Contact" %>
+﻿<%@ Page Title="Contacto" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="AMARON_INTERFACE.Contact" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
@@ -8,9 +8,13 @@
     <script async defer src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.3"></script>
     <style type="text/css">
         body {
-            background-color: darkorange;
+            background-color: whitesmoke;
         }
-
+        
+        #contact-form {
+            background-color: coral;
+           
+        }
         @keyframes backgound {
             100% {
                 background-color: #faa166;
@@ -36,7 +40,8 @@
                                 <div class="d-flex align-baseline">
                                     <asp:Label runat="server" Font-Size="Larger" Text="Nombre *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_name" TextMode="SingleLine" CssClass="form-control" placeholder="Introduzca su nombre *" required="required"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="tb_name" TextMode="SingleLine" CssClass="form-control" placeholder="Introduzca su nombre *"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredName" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_name" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -47,8 +52,9 @@
                                 <div class="d-flex align-baseline">
                                     <asp:Label runat="server" Font-Size="Larger" Text="Email *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_email" TextMode="Email" CssClass="form-control" placeholder="Introduzca su email *" required="required" oninvalid="this.setCustomValidity('Introduzca un email válido: ex@abc.xyz')"
+                                <asp:TextBox runat="server" ID="tb_email" TextMode="Email" CssClass="form-control" placeholder="Introduzca su email *" oninvalid="this.setCustomValidity('Introduzca un email válido: ex@abc.xyz')"
                                     oninput="this.setCustomValidity('')" onkeyup="EnforceMaximumLength(this,320)"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredEmail" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_email" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -59,7 +65,8 @@
                                 <div class="d-flex align-baseline">
                                     <asp:Label runat="server" Font-Size="Larger" Text="Asunto *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_subject" TextMode="SingleLine" CssClass="form-control" placeholder="Asunto *" required="required"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="tb_subject" TextMode="SingleLine" CssClass="form-control" placeholder="Asunto *" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredSubject" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_subject" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -81,7 +88,8 @@
                                 <div class="d-flex align-baseline">
                                     <asp:Label runat="server" Font-Size="Larger" Text="Mensaje *"></asp:Label>
                                 </div>
-                                <asp:TextBox runat="server" ID="tb_message" type="text" TextMode="MultiLine" CssClass="form-control" placeholder="Mensaje *" required="required" Rows="8"></asp:TextBox>
+                                <asp:TextBox runat="server" ID="tb_message" type="text" TextMode="MultiLine" CssClass="form-control" placeholder="Mensaje *"  Rows="8"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredMessage" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="tb_message" CssClass="ValidationError" ToolTip="Este campo es obligatorio"></asp:RequiredFieldValidator>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>

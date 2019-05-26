@@ -15,6 +15,15 @@ namespace Library
         ////////////////////////////////////////////////////////////////////////////
         //                              PROPERTIES
         ////////////////////////////////////////////////////////////////////////////
+        
+
+        private int id;
+        public int userID
+        {
+            get { return this.id; }
+            set { this.id = value; }
+        }
+
 
         private string UserName;
         public string name
@@ -30,11 +39,11 @@ namespace Library
             set { this.UserPass = value; }
         }
 
-        private int UserAge;
-        public int age
+        private DateTime UserBirth;
+        public DateTime birth
         {
-            get { return this.UserAge; }
-            set { this.UserAge = value; }
+            get { return this.UserBirth; }
+            set { this.UserBirth = value; }
         }
 
         private string UserEmail;
@@ -71,24 +80,25 @@ namespace Library
         /**  Creates a default user  **/
         public ENUser()
         {
+            id = 0;
             name = "Default name";
             pass = "";
             email = "Default email";
-            age = 0;
+            birth = new DateTime();
             url = "";
             empresa = "";
-            address = "Default addres";
+            address = "Default address";
         }
 
         /** Creates a user with the values of the parameters **/
-        public ENUser(string name, string pass, string email, int age, string url, string empresa, string address)
+        public ENUser(int userID,string name, string pass, string email, DateTime birth, string url, string company, string address)
         {
+            this.userID = userID;
             this.name = name;
             this.pass = pass;
-            this.age = age;
+            this.birth = birth;
             this.email = email;
             this.url = url;
-            this.empresa = empresa;
             this.address = address;
         }
 
@@ -127,6 +137,12 @@ namespace Library
             return user.ReadUserEDPerfil(this);
         }
 
+        public bool ReadID()
+        {
+            CADUser user = new CADUser();
+            return user.ReadID(this);
+        }
+
         public bool UpdateUser()
         {
             CADUser user = new CADUser();
@@ -139,9 +155,11 @@ namespace Library
             return user.DeleteUser(this);
         }
 
-
-
-
+        public bool EmailExist()
+        {
+            CADUser user = new CADUser();
+            return user.EmailExist(this);
+        }
     }
 
 }

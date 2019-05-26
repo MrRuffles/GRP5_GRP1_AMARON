@@ -12,7 +12,6 @@ namespace Library {
 
         //Properties------------------------------------------------------------------------------------
 
-
         private int ProductID;
         public int id{
 
@@ -53,13 +52,11 @@ namespace Library {
         }
 
         private string ProductBrand;
-        public string brand
-        {
+        public string brand{
 
             get { return this.ProductBrand; }
 
             set { this.ProductBrand = value; }
-
         }
 
         private string ProductType;
@@ -89,7 +86,6 @@ namespace Library {
             get { return this.ProductUrl; }
 
             set { this.ProductUrl = value; }
-
         }
 
         private CADProduct prodCAD = new CADProduct();
@@ -98,20 +94,24 @@ namespace Library {
         //----------------------------------------------------------------------------------------------
 
         /*
-         * Creates a default product except for the id
-         * Pameter: the id given for the product
+         * Creates a default product
          */
         public ENProduct(){
 
             name = "Default Name";
             price = 0.0F;
             stock = 0;
+            brand = "Deafult brand";
+            type = "miscelanea";
             description = "This a description by default of the product.";
+            url = "";
         }
 
         //Creates a products with the values that receives in the parameters
-        public ENProduct(int id,string name, float price, int stock, string brand, string type ,string description, string url){
 
+        public ENProduct(int id, string name, float price, int stock, string brand, string type, string description, string url)
+        {
+            this.id = id;
             this.name = name;
             this.price = price;
             this.stock = stock;
@@ -141,12 +141,23 @@ namespace Library {
         */
 
 
-        public bool ReadProduct()
+        public bool ReadProductName()
         {
 
             bool read = false;
 
-            read = prodCAD.ReadProduct(this);
+            read = prodCAD.ReadProductName(this);
+
+            return read;
+
+        }
+
+        public bool ReadProductFromCatalog()
+        {
+
+            bool read = false;
+
+            read = prodCAD.ReadProductFromCatalog(this);
 
             return read;
 

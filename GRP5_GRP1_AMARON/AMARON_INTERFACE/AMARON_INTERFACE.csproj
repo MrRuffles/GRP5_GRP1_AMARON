@@ -94,6 +94,16 @@
     </Content>
     <Content Include="Contact.aspx" />
     <Content Include="AddNewProduct.aspx" />
+    <Content Include="Imagenes\abre_botellas.jpg" />
+    <Content Include="Imagenes\bebidas\Malibu.jpg" />
+    <Content Include="Imagenes\cart.png" />
+    <Content Include="Imagenes\contact-phone.png" />
+    <Content Include="Imagenes\EmptyStar1.png" />
+    <Content Include="Imagenes\EstrellaMedio.png" />
+    <Content Include="Imagenes\EstrellaRellena.png" />
+    <Content Include="Imagenes\EstrellaVacia.png" />
+    <Content Include="Imagenes\glass-cocktail.png" />
+    <Content Include="Imagenes\home.png" />
     <Content Include="Imagenes\bebidas\Absolut.jpg" />
     <Content Include="Imagenes\bebidas\Ballantine%27s.jpg" />
     <Content Include="Imagenes\bebidas\Beefeater.jpg" />
@@ -128,12 +138,26 @@
     <Content Include="Imagenes\Copas_Champan.jpg" />
     <Content Include="Imagenes\Hielos.jpg" />
     <Content Include="Imagenes\Limones.jpg" />
+    <Content Include="Imagenes\Logo_AmaRon.png" />
+    <Content Include="Imagenes\Logo_AmaRon2.png" />
     <Content Include="Imagenes\Nubes.jpg" />
     <Content Include="Imagenes\Ositos.jpg" />
+    <Content Include="Imagenes\packs\ginebra-limon.jpg" />
+    <Content Include="Imagenes\packs\ginebra-tonica.jpg" />
+    <Content Include="Imagenes\packs\Glenfiddich_pack.jpg" />
+    <Content Include="Imagenes\packs\jagermeister-cocacola.jpg" />
+    <Content Include="Imagenes\packs\jagermeister-monster.jpg" />
+    <Content Include="Imagenes\packs\licor43-limon.jpg" />
+    <Content Include="Imagenes\packs\projectX.jpg" />
+    <Content Include="Imagenes\packs\ron-cocacola.jpg" />
+    <Content Include="Imagenes\packs\vodka-limon.jpg" />
+    <Content Include="Imagenes\packs\vodka-naranja.jpg" />
+    <Content Include="Imagenes\packs\whiskey-redBull.jpg" />
     <Content Include="Imagenes\Pajitas.jpg" />
     <Content Include="Imagenes\Sandias_Gominola.jpg" />
     <Content Include="Imagenes\Sombrillas.jpg" />
     <Content Include="Imagenes\Vasos.jpg" />
+    <Content Include="Imagenes\Vasos_Colores.jpg" />
     <Content Include="Imagenes\Vasos_Colores.jpg" />
     <Content Include="Orders.aspx" />
     <Content Include="Perfil.aspx" />
@@ -216,7 +240,9 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Content Include="SlideService.asmx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutUs.aspx.cs">
@@ -329,7 +355,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Site1.Master" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
@@ -364,6 +392,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

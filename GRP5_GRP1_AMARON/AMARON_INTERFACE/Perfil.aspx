@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Perfil.aspx.cs" Inherits="AMARON_INTERFACE.Perfil" %>
+﻿<%@ Page Title="Perfil" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Perfil.aspx.cs" Inherits="AMARON_INTERFACE.Perfil" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
@@ -53,8 +53,8 @@
             <div class="col-md-13">
                 <br/>
                 <ul class="list-group list-primary">
-                    <asp:Button runat="server" ID="pedidios" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" onclick="verPedidos" text="Ver pedidos hechos" Visible="true"/>
-                    <asp:Button runat="server" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" onclick="editarPerfil" text="Editar perfil"/>
+                    <asp:Button runat="server" ID="pedidios" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" onclick="verPedidos" text="Ver pedidos hechos" Visible="false"/>
+                    <asp:Button runat="server" ID="edit_button" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" Visible="false" onclick="editarPerfil" text="Editar perfil"/>
                     <asp:Button runat="server" ID="productos" class="btn btn-outline-secondary" Style="margin: 2px auto" Width ="165px" onclick="crearProducto" text="Subir Producto" Visible="false"/>
                 </ul>
             </div>
@@ -67,8 +67,8 @@
                     <asp:Label ID="name"  runat="server" Font-Size="Large" Text=""></asp:Label>
                     </div>
                 <div class="d-flex justify-content-start">
-                    <asp:Label runat="server" Width="10%" Text="Edad:" Font-Size="Large">  </asp:Label>
-                    <asp:Label ID="age"  runat="server" Font-Size="Large" Text=""></asp:Label>
+                    <asp:Label runat="server" Width="10%" Text="Nacimiento:" Font-Size="Large">  </asp:Label>
+                    <asp:Label ID="birth"  runat="server" Font-Size="Large" Text=""></asp:Label>
                 </div>
                 <div class="d-flex justify-content-start">
                     <asp:Label runat="server" Width="10%" Text="Email:" Font-Size="Large">  </asp:Label>
