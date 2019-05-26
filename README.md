@@ -113,11 +113,11 @@ Añadidos que no fueron contemplados en la propuesta inicial:
 
 ##### EN Privadas:
 
--User (Usuario)
--Provider (Proveedor)
--Cart (Carrito)
--Order (Pedidos Realizados)
--Rating (Comentarios y Valoración)
+- User (Usuario)
+- Provider (Proveedor)
+- Cart (Carrito)
+- Order (Pedidos Realizados)
+- Rating (Comentarios y Valoración)
 
 ### Dificultades Encontradas:
 
