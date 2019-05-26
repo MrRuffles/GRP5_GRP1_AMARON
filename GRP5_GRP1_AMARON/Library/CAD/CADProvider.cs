@@ -50,7 +50,39 @@ namespace Library
         /**  Reads a provider from data base  **/
         public bool ReadProvider(ENProvider provider)
         {
-            return false;
+            SqlConnection con = new SqlConnection(constring);
+            bool correct = true;
+
+
+            try
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+                    cmd.CommandText = "SELECT empresa FROM Users where email='" + provider.email + "';";
+                    SqlDataReader auxLectura = cmd.ExecuteReader();
+
+                    while (auxLectura.Read())
+                    {
+                        provider.empresa = Convert.ToString(auxLectura[0]);
+                    }
+                    auxLectura.Close();
+                }
+
+
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+                correct = false;
+            }
+            finally
+            {
+                con.Close();
+
+            }
+
+            return correct;
         }
 
         /** Updates a provider from data base **/

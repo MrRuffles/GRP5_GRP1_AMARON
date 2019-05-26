@@ -55,18 +55,23 @@
 
     <div class="cart">
         <h2>Artículos en mi cesta</h2>
-    
-        <h3>
-            <br />
-            &nbsp;<asp:Label ID="Articulo_1" Text="" runat="server" BorderColor="Window" style="text-align: left"></asp:Label><br />
-            &nbsp;<asp:Label ID="Articulo_2" Text="" runat="server" BorderColor="Window" style="text-align: left"></asp:Label><br />
-            &nbsp;<asp:Label ID="Articulo_3" Text="" runat="server" BorderColor="Window" style="text-align: left"></asp:Label><br />
-            &nbsp;<asp:Label ID="Articulo_4" Text="" runat="server" BorderColor="Window" style="text-align: left"></asp:Label><br />
-            <br />
-        </h3>
-        <h4>TOTAL:
-            <asp:Label ID="TotalPrice" Text="" runat="server" BorderColor="Window" style="text-align: left"></asp:Label><br />
-        </h4>
+        <div>
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" HeaderStyle-BackColor="OrangeRed" Width="100%">
+                <Columns>
+                    <asp:BoundField DataField="cod" HeaderText="Cod. Pruducto" SortExpression="cod" />
+                    <asp:BoundField DataField="name" HeaderText="Nombre Producto" SortExpression="name" />
+                    <asp:BoundField DataField="amount" HeaderText="Cantidad" SortExpression="amount" />
+                    <asp:BoundField DataField="sum" HeaderText="PVP." SortExpression="sum" />
+                </Columns>
+
+<HeaderStyle BackColor="OrangeRed"></HeaderStyle>
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AmaronDataBase %>" SelectCommand="SELECT Cart.cod, Product.name, Cart.amount, Cart.sum FROM Cart INNER JOIN Product ON Cart.cod = Product.cod WHERE (Cart.userID = @UserID)">
+                <SelectParameters>
+                    <asp:QueryStringParameter Name="userID" QueryStringField="userID" Type="Int32" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+        </div>
         <h5>&nbsp<asp:Button ID="Button" Text="Finalizar Compra" runat="server" OnClick="Button_FinCompra"></asp:Button></h5>
     </div>
     <br />

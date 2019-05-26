@@ -244,6 +244,43 @@ namespace Library
 
             return correct;
         }
+      
+        public bool ReadID(ENUser user)
+        {
+            SqlConnection con = new SqlConnection(constring);
+            bool correct = true;
+            
+            try
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("", con))
+                {
+            
+                    cmd.CommandText = "SELECT userID FROM Users where email='" + user.email + "';";
+
+                    SqlDataReader auxLectura = cmd.ExecuteReader();
+
+                    while (auxLectura.Read())
+                    {
+                        user.userID = Convert.ToInt32(auxLectura["userID"]);
+                    }
+
+                    auxLectura.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+                correct = false;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return correct;
+        }
+      
         /** Updates a user from data base **/
         public bool UpdateUser(ENUser user)
         {

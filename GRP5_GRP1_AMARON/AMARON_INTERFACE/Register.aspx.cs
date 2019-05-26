@@ -65,7 +65,7 @@ namespace AMARON_INTERFACE
                 //Create user with given info.
                 if (tb_empresa.Text == "")
                 {
-                    ENUser user = new ENUser(tb_name.Text, passw, tb_email.Text, BirthDate, url, tb_empresa.Text, tb_delivery_address.Text);
+                    ENUser user = new ENUser(0,tb_name.Text, passw, tb_email.Text, BirthDate, url, tb_empresa.Text, tb_delivery_address.Text);
 
                     if (user.CreateUser())
                     {
