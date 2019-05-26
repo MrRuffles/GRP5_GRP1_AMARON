@@ -11,6 +11,12 @@ Miembros del grupo:
 Descripción:
 Se trata de una página web dirigida a la venta de bebidas alcholicas.
 
+Documento Base de Datos:
+- GRP5_GRP1_AMARON/GRP5_GRP1_AMARON/Esquema_BD_AMARON.jpg
+
+Documento Presentacion:
+- GRP5_GRP1_AMARON/Presentacion_AMARON_v2.pptx
+
 
 ## Primera Propuesta:
 
@@ -42,9 +48,6 @@ Posibles mejoras:
 - Internacionalización de la pagina
 - Suscripción premium
 - Packs de productos
-
-Documento Base de Datos:
-- GRP5_GRP1_AMARON/GRP5_GRP1_AMARON/Esquema_BD.png
 
 
 ## Entrega Final AMARON
@@ -94,7 +97,45 @@ Añadidos que no fueron contemplados en la propuesta inicial:
 
 - Utilización de mandar emails autogenerados, para recuperar la contraseña.
 
-- Cambio de algunas Entidades de Negocio. (Los cambios se muestran mas abajo.)
+- Uso de ajax y bootstrap para la implementación y diseño de la Aplicación Web.
+
+
+#### Cambios en las EN:
+
+##### EN Publicas:
+
+- Productos
+- Lootcrates
+- Support (Soporte)
+- Suggerst (Sugeencias)
+- Bottellas
+- Packs
+
+##### EN Privadas:
+
+-User (Usuario)
+-Provider (Proveedor)
+-Cart (Carrito)
+-Order (Pedidos Realizados)
+-Rating (Comentarios y Valoración)
+
+### Dificultades Encontradas:
+
+- Visual Studio a veces comete fallos: A veces no muestra la base de datos, te pone errores en lineas donde no existen errores, etc.
+
+- En una de las páginas no funcionaba el paso de las palabras a utf-8: Arreglado en web.config añadiendo lineas para obligar el funcionamiento.
+
+- Los validadores de asp generaban un fallo de ejecución de ScripMapping por culpa del jquery que se usa en bootstrap: Arreglado en el web.config añadiendo codigo para que desaparezca el fallo.
+
+### Dificultades con Personas:
+
+- Ninguna, todos han cumplido tanto con los plazos de entrega, como con los objetivos que se les daba, ademas informaban e algunas dificultades que podian tener con el codigo para que ayudaran los demas y avisban con antelación por si habia algun problema al quedar el grupo entero.
+
+### Problemas de Planificación:
+
+- Tener la semana santa en mitad del proyecto fue un problema (por suerte menor), ya que es tiempo de descanso y algunas personas pasan unas vacaciones con familia fuera de Alicante.
+
+- En la última entrega se dispone de poco tiempo para implementar la parte final de un proyecto de esta envergadura (poco mas de 20 días).
 
 
 
