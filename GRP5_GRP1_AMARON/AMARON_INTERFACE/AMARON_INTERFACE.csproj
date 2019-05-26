@@ -94,6 +94,8 @@
     </Content>
     <Content Include="Contact.aspx" />
     <Content Include="AddNewProduct.aspx" />
+    <Content Include="Imagenes\abre_botellas.jpg" />
+    <Content Include="Imagenes\bebidas\Malibu.jpg" />
     <Content Include="Imagenes\cart.png" />
     <Content Include="Imagenes\contact-phone.png" />
     <Content Include="Imagenes\EmptyStar1.png" />
@@ -142,6 +144,7 @@
     <Content Include="Imagenes\Ositos.jpg" />
     <Content Include="Imagenes\packs\ginebra-limon.jpg" />
     <Content Include="Imagenes\packs\ginebra-tonica.jpg" />
+    <Content Include="Imagenes\packs\Glenfiddich_pack.jpg" />
     <Content Include="Imagenes\packs\jagermeister-cocacola.jpg" />
     <Content Include="Imagenes\packs\jagermeister-monster.jpg" />
     <Content Include="Imagenes\packs\licor43-limon.jpg" />
@@ -155,7 +158,7 @@
     <Content Include="Imagenes\Sombrillas.jpg" />
     <Content Include="Imagenes\Vasos.jpg" />
     <Content Include="Imagenes\Vasos_Colores.jpg" />
-    <Content Include="Imagenes\Vasos_Colores.jpg" /> 
+    <Content Include="Imagenes\Vasos_Colores.jpg" />
     <Content Include="Orders.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="EditarPerfil.aspx" />
